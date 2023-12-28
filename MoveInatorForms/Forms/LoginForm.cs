@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MoveInatorForms.Services;
 
 namespace MoveInatorForms.Forms
 {
@@ -15,6 +7,32 @@ namespace MoveInatorForms.Forms
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+
+
+        private void Exit_ClickEvent(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Conectar_ClickEvent(object sender, EventArgs e)
+        {
+            var connectionString = textBoxConnectionString.Text;
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                try
+                {
+                    ConnectService.ConnectionStringValidate(connectionString);
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
