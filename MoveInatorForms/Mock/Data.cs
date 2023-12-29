@@ -22,7 +22,9 @@
             "Ayrton Senna",
             "Ivete Sangalo",
             "Rodrigo Hilbert",
-            "Loro José"
+            "Loro José",
+            "Geralt de Rivia",
+            "Thiaguera Avila de Oliveira"
         };
     }
 }
