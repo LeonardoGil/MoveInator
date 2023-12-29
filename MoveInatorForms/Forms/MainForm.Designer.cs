@@ -36,28 +36,28 @@
             labelSerieDocumento = new Label();
             textBoxNumeroDocumento = new TextBox();
             labelNumeroDocumento = new Label();
-            checkedListBoxTipoDocumento = new CheckedListBox();
+            checkedListBoxTipoViagem = new CheckedListBox();
             labelTipoViagem = new Label();
             labelDataEmissao = new Label();
             maskedTextBoxDataEmissao = new MaskedTextBox();
-            maskedTextBox3 = new MaskedTextBox();
+            maskedTextBoxCnpjEmissor = new MaskedTextBox();
             labelCnpjEmissor = new Label();
-            checkedListBox1 = new CheckedListBox();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            checkedListBoxTipoDocumento = new CheckedListBox();
+            labelTipoDocumento = new Label();
+            textBoxQuantidadeDocumentos = new TextBox();
             labelQuantidadeDocumentos = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            maskedTextBox2 = new MaskedTextBox();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            label7 = new Label();
+            textBoxNomeMotorista = new TextBox();
+            labelNomeMotorista = new Label();
+            maskedTextBoxCpfMotorista = new MaskedTextBox();
+            labelCpfMotorista = new Label();
+            textBoxSerieInicial = new TextBox();
+            labelSerieInicial = new Label();
+            textBoxNumeroInicial = new TextBox();
+            labelNumeroInicial = new Label();
+            maskedTextBoxCpfCnpjDestinatario = new MaskedTextBox();
+            labelCpfCnpjDestinatario = new Label();
+            textBoxNomeDestinatario = new TextBox();
+            labelNomeDestinatario = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -99,23 +99,23 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(27, 27, 27);
-            panel1.Controls.Add(maskedTextBox2);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(maskedTextBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(maskedTextBoxCpfCnpjDestinatario);
+            panel1.Controls.Add(labelCpfCnpjDestinatario);
+            panel1.Controls.Add(textBoxNomeDestinatario);
+            panel1.Controls.Add(labelNomeDestinatario);
+            panel1.Controls.Add(textBoxSerieInicial);
+            panel1.Controls.Add(labelSerieInicial);
+            panel1.Controls.Add(textBoxNumeroInicial);
+            panel1.Controls.Add(labelNumeroInicial);
+            panel1.Controls.Add(maskedTextBoxCpfMotorista);
+            panel1.Controls.Add(labelCpfMotorista);
+            panel1.Controls.Add(textBoxNomeMotorista);
+            panel1.Controls.Add(labelNomeMotorista);
+            panel1.Controls.Add(textBoxQuantidadeDocumentos);
             panel1.Controls.Add(labelQuantidadeDocumentos);
-            panel1.Controls.Add(checkedListBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(maskedTextBox3);
+            panel1.Controls.Add(checkedListBoxTipoDocumento);
+            panel1.Controls.Add(labelTipoDocumento);
+            panel1.Controls.Add(maskedTextBoxCnpjEmissor);
             panel1.Controls.Add(labelCnpjEmissor);
             panel1.Controls.Add(maskedTextBoxDataEmissao);
             panel1.Controls.Add(labelDataEmissao);
@@ -123,7 +123,7 @@
             panel1.Controls.Add(labelSerieDocumento);
             panel1.Controls.Add(textBoxNumeroDocumento);
             panel1.Controls.Add(labelNumeroDocumento);
-            panel1.Controls.Add(checkedListBoxTipoDocumento);
+            panel1.Controls.Add(checkedListBoxTipoViagem);
             panel1.Controls.Add(labelTipoViagem);
             panel1.Location = new Point(8, 100);
             panel1.Name = "panel1";
@@ -164,17 +164,17 @@
             labelNumeroDocumento.TabIndex = 2;
             labelNumeroDocumento.Text = "Numero Doc.";
             // 
-            // checkedListBoxTipoDocumento
+            // checkedListBoxTipoViagem
             // 
-            checkedListBoxTipoDocumento.BackColor = Color.FromArgb(27, 27, 27);
-            checkedListBoxTipoDocumento.BorderStyle = BorderStyle.None;
-            checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
-            checkedListBoxTipoDocumento.FormattingEnabled = true;
-            checkedListBoxTipoDocumento.Items.AddRange(new object[] { "MDF-e", "Manifesto" });
-            checkedListBoxTipoDocumento.Location = new Point(17, 32);
-            checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
-            checkedListBoxTipoDocumento.Size = new Size(97, 40);
-            checkedListBoxTipoDocumento.TabIndex = 1;
+            checkedListBoxTipoViagem.BackColor = Color.FromArgb(27, 27, 27);
+            checkedListBoxTipoViagem.BorderStyle = BorderStyle.None;
+            checkedListBoxTipoViagem.ForeColor = SystemColors.ControlLightLight;
+            checkedListBoxTipoViagem.FormattingEnabled = true;
+            checkedListBoxTipoViagem.Items.AddRange(new object[] { "MDF-e", "Manifesto" });
+            checkedListBoxTipoViagem.Location = new Point(17, 32);
+            checkedListBoxTipoViagem.Name = "checkedListBoxTipoViagem";
+            checkedListBoxTipoViagem.Size = new Size(97, 40);
+            checkedListBoxTipoViagem.TabIndex = 1;
             // 
             // labelTipoViagem
             // 
@@ -193,7 +193,7 @@
             labelDataEmissao.Location = new Point(552, 12);
             labelDataEmissao.Name = "labelDataEmissao";
             labelDataEmissao.Size = new Size(92, 17);
-            labelDataEmissao.TabIndex = 6;
+            labelDataEmissao.TabIndex = 14;
             labelDataEmissao.Text = "Data Emissão";
             // 
             // maskedTextBoxDataEmissao
@@ -201,14 +201,14 @@
             maskedTextBoxDataEmissao.Location = new Point(552, 32);
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
             maskedTextBoxDataEmissao.Size = new Size(100, 25);
-            maskedTextBoxDataEmissao.TabIndex = 7;
+            maskedTextBoxDataEmissao.TabIndex = 15;
             // 
-            // maskedTextBox3
+            // maskedTextBoxCnpjEmissor
             // 
-            maskedTextBox3.Location = new Point(658, 32);
-            maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(100, 25);
-            maskedTextBox3.TabIndex = 11;
+            maskedTextBoxCnpjEmissor.Location = new Point(658, 32);
+            maskedTextBoxCnpjEmissor.Name = "maskedTextBoxCnpjEmissor";
+            maskedTextBoxCnpjEmissor.Size = new Size(100, 25);
+            maskedTextBoxCnpjEmissor.TabIndex = 17;
             // 
             // labelCnpjEmissor
             // 
@@ -217,37 +217,37 @@
             labelCnpjEmissor.Location = new Point(658, 12);
             labelCnpjEmissor.Name = "labelCnpjEmissor";
             labelCnpjEmissor.Size = new Size(92, 17);
-            labelCnpjEmissor.TabIndex = 10;
+            labelCnpjEmissor.TabIndex = 16;
             labelCnpjEmissor.Text = "CNPJ Emissor";
             // 
-            // checkedListBox1
+            // checkedListBoxTipoDocumento
             // 
-            checkedListBox1.BackColor = Color.FromArgb(27, 27, 27);
-            checkedListBox1.BorderStyle = BorderStyle.None;
-            checkedListBox1.ForeColor = SystemColors.ControlLightLight;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "CT-e", "NF-e" });
-            checkedListBox1.Location = new Point(170, 32);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(97, 40);
-            checkedListBox1.TabIndex = 13;
+            checkedListBoxTipoDocumento.BackColor = Color.FromArgb(27, 27, 27);
+            checkedListBoxTipoDocumento.BorderStyle = BorderStyle.None;
+            checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
+            checkedListBoxTipoDocumento.FormattingEnabled = true;
+            checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
+            checkedListBoxTipoDocumento.Location = new Point(170, 32);
+            checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
+            checkedListBoxTipoDocumento.Size = new Size(97, 40);
+            checkedListBoxTipoDocumento.TabIndex = 7;
             // 
-            // label1
+            // labelTipoDocumento
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(170, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 17);
-            label1.TabIndex = 12;
-            label1.Text = "Tipo Documento";
+            labelTipoDocumento.AutoSize = true;
+            labelTipoDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTipoDocumento.Location = new Point(170, 12);
+            labelTipoDocumento.Name = "labelTipoDocumento";
+            labelTipoDocumento.Size = new Size(106, 17);
+            labelTipoDocumento.TabIndex = 6;
+            labelTipoDocumento.Text = "Tipo Documento";
             // 
-            // textBox1
+            // textBoxQuantidadeDocumentos
             // 
-            textBox1.Location = new Point(275, 158);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(78, 25);
-            textBox1.TabIndex = 15;
+            textBoxQuantidadeDocumentos.Location = new Point(275, 158);
+            textBoxQuantidadeDocumentos.Name = "textBoxQuantidadeDocumentos";
+            textBoxQuantidadeDocumentos.Size = new Size(78, 25);
+            textBoxQuantidadeDocumentos.TabIndex = 13;
             // 
             // labelQuantidadeDocumentos
             // 
@@ -256,110 +256,110 @@
             labelQuantidadeDocumentos.Location = new Point(275, 138);
             labelQuantidadeDocumentos.Name = "labelQuantidadeDocumentos";
             labelQuantidadeDocumentos.Size = new Size(78, 17);
-            labelQuantidadeDocumentos.TabIndex = 14;
+            labelQuantidadeDocumentos.TabIndex = 12;
             labelQuantidadeDocumentos.Text = "Quantidade";
             // 
-            // textBox2
+            // textBoxNomeMotorista
             // 
-            textBox2.Location = new Point(609, 103);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(156, 25);
-            textBox2.TabIndex = 17;
+            textBoxNomeMotorista.Location = new Point(609, 103);
+            textBoxNomeMotorista.Name = "textBoxNomeMotorista";
+            textBoxNomeMotorista.Size = new Size(156, 25);
+            textBoxNomeMotorista.TabIndex = 23;
             // 
-            // label2
+            // labelNomeMotorista
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(609, 83);
-            label2.Name = "label2";
-            label2.Size = new Size(106, 17);
-            label2.TabIndex = 16;
-            label2.Text = "Nome Motorista";
+            labelNomeMotorista.AutoSize = true;
+            labelNomeMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNomeMotorista.Location = new Point(609, 83);
+            labelNomeMotorista.Name = "labelNomeMotorista";
+            labelNomeMotorista.Size = new Size(106, 17);
+            labelNomeMotorista.TabIndex = 22;
+            labelNomeMotorista.Text = "Nome Motorista";
             // 
-            // maskedTextBox1
+            // maskedTextBoxCpfMotorista
             // 
-            maskedTextBox1.Location = new Point(608, 157);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(156, 25);
-            maskedTextBox1.TabIndex = 19;
+            maskedTextBoxCpfMotorista.Location = new Point(608, 157);
+            maskedTextBoxCpfMotorista.Name = "maskedTextBoxCpfMotorista";
+            maskedTextBoxCpfMotorista.Size = new Size(156, 25);
+            maskedTextBoxCpfMotorista.TabIndex = 25;
             // 
-            // label3
+            // labelCpfMotorista
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(608, 137);
-            label3.Name = "label3";
-            label3.Size = new Size(99, 17);
-            label3.TabIndex = 18;
-            label3.Text = "CPF Motorista";
+            labelCpfMotorista.AutoSize = true;
+            labelCpfMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCpfMotorista.Location = new Point(608, 137);
+            labelCpfMotorista.Name = "labelCpfMotorista";
+            labelCpfMotorista.Size = new Size(99, 17);
+            labelCpfMotorista.TabIndex = 24;
+            labelCpfMotorista.Text = "CPF Motorista";
             // 
-            // textBox3
+            // textBoxSerieInicial
             // 
-            textBox3.Location = new Point(170, 158);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(97, 25);
-            textBox3.TabIndex = 23;
+            textBoxSerieInicial.Location = new Point(170, 158);
+            textBoxSerieInicial.Name = "textBoxSerieInicial";
+            textBoxSerieInicial.Size = new Size(97, 25);
+            textBoxSerieInicial.TabIndex = 11;
             // 
-            // label4
+            // labelSerieInicial
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(170, 138);
-            label4.Name = "label4";
-            label4.Size = new Size(99, 17);
-            label4.TabIndex = 22;
-            label4.Text = "Série Inicial";
+            labelSerieInicial.AutoSize = true;
+            labelSerieInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSerieInicial.Location = new Point(170, 138);
+            labelSerieInicial.Name = "labelSerieInicial";
+            labelSerieInicial.Size = new Size(99, 17);
+            labelSerieInicial.TabIndex = 10;
+            labelSerieInicial.Text = "Série Inicial";
             // 
-            // textBox4
+            // textBoxNumeroInicial
             // 
-            textBox4.Location = new Point(170, 103);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(97, 25);
-            textBox4.TabIndex = 21;
+            textBoxNumeroInicial.Location = new Point(170, 103);
+            textBoxNumeroInicial.Name = "textBoxNumeroInicial";
+            textBoxNumeroInicial.Size = new Size(97, 25);
+            textBoxNumeroInicial.TabIndex = 9;
             // 
-            // label5
+            // labelNumeroInicial
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(170, 83);
-            label5.Name = "label5";
-            label5.Size = new Size(106, 17);
-            label5.TabIndex = 20;
-            label5.Text = "Numero Inicial";
+            labelNumeroInicial.AutoSize = true;
+            labelNumeroInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNumeroInicial.Location = new Point(170, 83);
+            labelNumeroInicial.Name = "labelNumeroInicial";
+            labelNumeroInicial.Size = new Size(106, 17);
+            labelNumeroInicial.TabIndex = 8;
+            labelNumeroInicial.Text = "Numero Inicial";
             // 
-            // maskedTextBox2
+            // maskedTextBoxCpfCnpjDestinatario
             // 
-            maskedTextBox2.Location = new Point(441, 157);
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(156, 25);
-            maskedTextBox2.TabIndex = 27;
+            maskedTextBoxCpfCnpjDestinatario.Location = new Point(441, 157);
+            maskedTextBoxCpfCnpjDestinatario.Name = "maskedTextBoxCpfCnpjDestinatario";
+            maskedTextBoxCpfCnpjDestinatario.Size = new Size(156, 25);
+            maskedTextBoxCpfCnpjDestinatario.TabIndex = 21;
             // 
-            // label6
+            // labelCpfCnpjDestinatario
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(442, 138);
-            label6.Name = "label6";
-            label6.Size = new Size(155, 17);
-            label6.TabIndex = 26;
-            label6.Text = "CPF/CNPJ Destinatário";
+            labelCpfCnpjDestinatario.AutoSize = true;
+            labelCpfCnpjDestinatario.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCpfCnpjDestinatario.Location = new Point(442, 138);
+            labelCpfCnpjDestinatario.Name = "labelCpfCnpjDestinatario";
+            labelCpfCnpjDestinatario.Size = new Size(155, 17);
+            labelCpfCnpjDestinatario.TabIndex = 20;
+            labelCpfCnpjDestinatario.Text = "CPF/CNPJ Destinatário";
             // 
-            // textBox5
+            // textBoxNomeDestinatario
             // 
-            textBox5.Location = new Point(442, 103);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(156, 25);
-            textBox5.TabIndex = 25;
+            textBoxNomeDestinatario.Location = new Point(442, 103);
+            textBoxNomeDestinatario.Name = "textBoxNomeDestinatario";
+            textBoxNomeDestinatario.Size = new Size(156, 25);
+            textBoxNomeDestinatario.TabIndex = 19;
             // 
-            // label7
+            // labelNomeDestinatario
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(442, 83);
-            label7.Name = "label7";
-            label7.Size = new Size(127, 17);
-            label7.TabIndex = 24;
-            label7.Text = "Nome Destinatário";
+            labelNomeDestinatario.AutoSize = true;
+            labelNomeDestinatario.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNomeDestinatario.Location = new Point(442, 83);
+            labelNomeDestinatario.Name = "labelNomeDestinatario";
+            labelNomeDestinatario.Size = new Size(127, 17);
+            labelNomeDestinatario.TabIndex = 18;
+            labelNomeDestinatario.Text = "Nome Destinatário";
             // 
             // MainForm
             // 
@@ -388,31 +388,31 @@
         private Label labelSubTitulo;
         private Panel panel2;
         private Panel panel1;
-        private CheckedListBox checkedListBoxTipoDocumento;
+        private CheckedListBox checkedListBoxTipoViagem;
         private Label labelTipoViagem;
         private TextBox textBoxSerieDocumento;
         private Label labelSerieDocumento;
         private TextBox textBoxNumeroDocumento;
         private Label labelNumeroDocumento;
-        private CheckedListBox checkedListBox1;
-        private Label label1;
-        private MaskedTextBox maskedTextBox3;
+        private CheckedListBox checkedListBoxTipoDocumento;
+        private Label labelTipoDocumento;
+        private MaskedTextBox maskedTextBoxCnpjEmissor;
         private Label labelCnpjEmissor;
         private MaskedTextBox maskedTextBoxDataEmissao;
         private Label labelDataEmissao;
-        private TextBox textBox1;
+        private TextBox textBoxQuantidadeDocumentos;
         private Label labelQuantidadeDocumentos;
-        private MaskedTextBox maskedTextBox2;
-        private Label label6;
-        private TextBox textBox5;
-        private Label label7;
-        private TextBox textBox3;
-        private Label label4;
-        private TextBox textBox4;
-        private Label label5;
-        private MaskedTextBox maskedTextBox1;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label2;
+        private MaskedTextBox maskedTextBoxCpfCnpjDestinatario;
+        private Label labelCpfCnpjDestinatario;
+        private TextBox textBoxNomeDestinatario;
+        private Label labelNomeDestinatario;
+        private TextBox textBoxSerieInicial;
+        private Label labelSerieInicial;
+        private TextBox textBoxNumeroInicial;
+        private Label labelNumeroInicial;
+        private MaskedTextBox maskedTextBoxCpfMotorista;
+        private Label labelCpfMotorista;
+        private TextBox textBoxNomeMotorista;
+        private Label labelNomeMotorista;
     }
 }
