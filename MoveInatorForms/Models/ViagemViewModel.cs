@@ -1,15 +1,32 @@
-﻿namespace MoveInatorForms.Models
+﻿using MoveInatorForms.Enums;
+
+namespace MoveInatorForms.Models
 {
     public class ViagemViewModel
     {
-        public int TipoViagem { get; set; }
+        private TipoDocumentoViagemEnum _tipoViagem;
 
-        public int NumeroViagem { get; set; }
+        public TipoDocumentoViagemEnum TipoViagem
+        {
+            get => _tipoViagem;
+            set
+            {
+                _tipoViagem = value;
 
-        public int SerieViagem { get; set; }
+                if (value != TipoDocumentoViagemEnum.MDFe)
+                {
+                    NumeroViagem = null;
+                    SerieViagem = null;
+                }
+            }
+        }
+
+        public int? NumeroViagem { get; set; }
+
+        public int? SerieViagem { get; set; }
 
 
-        public int TipoDocumento { get; set; }
+        public TipoDocumentoEnum TipoDocumento { get; set; }
 
         public int NumeroDocumento { get; set; }
 
@@ -24,11 +41,11 @@
 
 
         public string NomeDestinatario { get; set; }
-        
+
         public string CpfCnpjDestinatario { get; set; }
-        
+
         public string NomeMotorista { get; set; }
-        
+
         public string CpfMotorista { get; set; }
     }
 }
