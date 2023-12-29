@@ -375,6 +375,7 @@
             // 
             checkedListBoxTipoDocumento.BackColor = Color.FromArgb(23, 23, 23);
             checkedListBoxTipoDocumento.BorderStyle = BorderStyle.None;
+            checkedListBoxTipoDocumento.CheckOnClick = true;
             checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoDocumento.FormattingEnabled = true;
             checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
@@ -382,6 +383,7 @@
             checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
             checkedListBoxTipoDocumento.Size = new Size(97, 40);
             checkedListBoxTipoDocumento.TabIndex = 7;
+            checkedListBoxTipoDocumento.ItemCheck += ResetCheckedListDocumento_ItemCheckEvent;
             // 
             // labelTipoDocumento
             // 
@@ -435,6 +437,7 @@
             // 
             // textBoxSerieDocumento
             // 
+            textBoxSerieDocumento.Enabled = false;
             textBoxSerieDocumento.Location = new Point(17, 155);
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
             textBoxSerieDocumento.Size = new Size(97, 25);
@@ -452,6 +455,7 @@
             // 
             // textBoxNumeroDocumento
             // 
+            textBoxNumeroDocumento.Enabled = false;
             textBoxNumeroDocumento.Location = new Point(17, 100);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
             textBoxNumeroDocumento.Size = new Size(97, 25);
@@ -471,6 +475,7 @@
             // 
             checkedListBoxTipoViagem.BackColor = Color.FromArgb(23, 23, 23);
             checkedListBoxTipoViagem.BorderStyle = BorderStyle.None;
+            checkedListBoxTipoViagem.CheckOnClick = true;
             checkedListBoxTipoViagem.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoViagem.FormattingEnabled = true;
             checkedListBoxTipoViagem.Items.AddRange(new object[] { "MDF-e", "Manifesto" });
@@ -478,6 +483,7 @@
             checkedListBoxTipoViagem.Name = "checkedListBoxTipoViagem";
             checkedListBoxTipoViagem.Size = new Size(97, 40);
             checkedListBoxTipoViagem.TabIndex = 1;
+            checkedListBoxTipoViagem.ItemCheck += ResetCheckedListViagem_ItemCheckEvent;
             // 
             // labelTipoViagem
             // 
