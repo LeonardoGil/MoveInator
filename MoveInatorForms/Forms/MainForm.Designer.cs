@@ -28,10 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            BackColor = Color.FromArgb(31, 31, 31);
+            ClientSize = new Size(784, 636);
+            ControlBox = false;
+            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = SystemColors.ControlLightLight;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "MainForm";
+            Opacity = 0.9D;
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            ResumeLayout(false);
         }
 
         #endregion
