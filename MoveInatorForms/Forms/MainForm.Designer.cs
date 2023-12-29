@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panel2 = new Panel();
+            dataGridView = new DataGridView();
             buttonGerarCSV = new Button();
             buttonLimpar = new Button();
             buttonGerar = new Button();
@@ -66,10 +67,9 @@
             labelNumeroDocumento = new Label();
             checkedListBoxTipoViagem = new CheckedListBox();
             labelTipoViagem = new Label();
-            dataGridView = new DataGridView();
             panel2.SuspendLayout();
-            panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panelSuperior.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitulo
@@ -111,6 +111,56 @@
             panel2.Size = new Size(792, 592);
             panel2.TabIndex = 3;
             // 
+            // dataGridView
+            // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.BackgroundColor = Color.FromArgb(23, 23, 23);
+            dataGridView.BorderStyle = BorderStyle.None;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.GridColor = Color.FromArgb(12, 12, 12);
+            dataGridView.Location = new Point(8, 283);
+            dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView.RowTemplate.Height = 25;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.ShowCellErrors = false;
+            dataGridView.ShowCellToolTips = false;
+            dataGridView.ShowRowErrors = false;
+            dataGridView.Size = new Size(776, 252);
+            dataGridView.TabIndex = 7;
+            // 
             // buttonGerarCSV
             // 
             buttonGerarCSV.BackColor = Color.FromArgb(41, 41, 41);
@@ -148,7 +198,7 @@
             buttonGerar.Name = "buttonGerar";
             buttonGerar.Size = new Size(83, 28);
             buttonGerar.TabIndex = 4;
-            buttonGerar.Text = "Gerar";
+            buttonGerar.Text = "Auto";
             buttonGerar.UseVisualStyleBackColor = false;
             // 
             // buttonAdicionar
@@ -439,56 +489,6 @@
             labelTipoViagem.TabIndex = 0;
             labelTipoViagem.Text = "Tipo Viagem";
             // 
-            // dataGridView
-            // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.AllowUserToOrderColumns = true;
-            dataGridView.BackgroundColor = Color.FromArgb(23, 23, 23);
-            dataGridView.BorderStyle = BorderStyle.None;
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.GridColor = Color.FromArgb(12, 12, 12);
-            dataGridView.Location = new Point(8, 283);
-            dataGridView.MultiSelect = false;
-            dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
-            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle8.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView.RowTemplate.Height = 25;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.ShowCellErrors = false;
-            dataGridView.ShowCellToolTips = false;
-            dataGridView.ShowRowErrors = false;
-            dataGridView.Size = new Size(776, 252);
-            dataGridView.TabIndex = 7;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -505,9 +505,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
