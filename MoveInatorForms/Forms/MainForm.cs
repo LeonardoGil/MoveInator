@@ -36,8 +36,8 @@ namespace MoveInatorForms.Forms
                 SerieViagem = serieViagem,
 
                 TipoDocumento = (TipoDocumentoEnum)checkedListBoxTipoDocumento.SelectedIndex,
-                NumeroDocumento = int.Parse(textBoxNumeroDocumento.Text),
-                SerieDocumento = int.Parse(textBoxSerieDocumento.Text),
+                NumeroDocumento = int.Parse(textBoxNumeroInicial.Text),
+                SerieDocumento = int.Parse(textBoxSerieInicial.Text),
                 Quantidade = (int)numericUpDownQuantidade.Value,
 
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
@@ -89,7 +89,7 @@ namespace MoveInatorForms.Forms
             if (!int.TryParse(textBoxSerieInicial.Text, out _))
                 throw new Exception("Informe uma Série inicial!");
 
-            if (numericUpDownQuantidade.Value > 0)
+            if (numericUpDownQuantidade.Value <= 0)
                 throw new Exception("Informe uma quantidade valída!");
 
             // Emissor
@@ -170,18 +170,21 @@ namespace MoveInatorForms.Forms
 
                 EnableButtons(false);
 
-                ClearFields();
+                //ClearFields();
 
                 await addTask;
 
                 if (addTask.Exception is not null)
                     throw addTask.Exception;
 
-                EnableButtons();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                EnableButtons();
             }
         }
 
