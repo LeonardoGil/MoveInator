@@ -41,6 +41,7 @@
             buttonGerar = new Button();
             buttonAdicionar = new Button();
             panelSuperior = new Panel();
+            numericUpDownQuantidade = new NumericUpDown();
             maskedTextBoxCpfCnpjDestinatario = new MaskedTextBox();
             labelCpfCnpjDestinatario = new Label();
             textBoxNomeDestinatario = new TextBox();
@@ -53,7 +54,6 @@
             labelCpfMotorista = new Label();
             textBoxNomeMotorista = new TextBox();
             labelNomeMotorista = new Label();
-            textBoxQuantidadeDocumentos = new TextBox();
             labelQuantidadeDocumentos = new Label();
             checkedListBoxTipoDocumento = new CheckedListBox();
             labelTipoDocumento = new Label();
@@ -70,6 +70,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
             SuspendLayout();
             // 
             // labelTitulo
@@ -213,10 +214,12 @@
             buttonAdicionar.TabIndex = 3;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = false;
+            buttonAdicionar.Click += Add_ClickEvent;
             // 
             // panelSuperior
             // 
             panelSuperior.BackColor = Color.FromArgb(23, 23, 23);
+            panelSuperior.Controls.Add(numericUpDownQuantidade);
             panelSuperior.Controls.Add(maskedTextBoxCpfCnpjDestinatario);
             panelSuperior.Controls.Add(labelCpfCnpjDestinatario);
             panelSuperior.Controls.Add(textBoxNomeDestinatario);
@@ -229,7 +232,6 @@
             panelSuperior.Controls.Add(labelCpfMotorista);
             panelSuperior.Controls.Add(textBoxNomeMotorista);
             panelSuperior.Controls.Add(labelNomeMotorista);
-            panelSuperior.Controls.Add(textBoxQuantidadeDocumentos);
             panelSuperior.Controls.Add(labelQuantidadeDocumentos);
             panelSuperior.Controls.Add(checkedListBoxTipoDocumento);
             panelSuperior.Controls.Add(labelTipoDocumento);
@@ -247,6 +249,14 @@
             panelSuperior.Name = "panelSuperior";
             panelSuperior.Size = new Size(776, 191);
             panelSuperior.TabIndex = 2;
+            // 
+            // numericUpDownQuantidade
+            // 
+            numericUpDownQuantidade.Location = new Point(313, 154);
+            numericUpDownQuantidade.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numericUpDownQuantidade.Name = "numericUpDownQuantidade";
+            numericUpDownQuantidade.Size = new Size(80, 25);
+            numericUpDownQuantidade.TabIndex = 26;
             // 
             // maskedTextBoxCpfCnpjDestinatario
             // 
@@ -288,7 +298,7 @@
             // 
             textBoxSerieInicial.Location = new Point(188, 155);
             textBoxSerieInicial.Name = "textBoxSerieInicial";
-            textBoxSerieInicial.Size = new Size(97, 25);
+            textBoxSerieInicial.Size = new Size(106, 25);
             textBoxSerieInicial.TabIndex = 11;
             // 
             // labelSerieInicial
@@ -305,7 +315,7 @@
             // 
             textBoxNumeroInicial.Location = new Point(188, 100);
             textBoxNumeroInicial.Name = "textBoxNumeroInicial";
-            textBoxNumeroInicial.Size = new Size(97, 25);
+            textBoxNumeroInicial.Size = new Size(106, 25);
             textBoxNumeroInicial.TabIndex = 9;
             // 
             // labelNumeroInicial
@@ -354,18 +364,11 @@
             labelNomeMotorista.TabIndex = 22;
             labelNomeMotorista.Text = "Nome Motorista";
             // 
-            // textBoxQuantidadeDocumentos
-            // 
-            textBoxQuantidadeDocumentos.Location = new Point(293, 155);
-            textBoxQuantidadeDocumentos.Name = "textBoxQuantidadeDocumentos";
-            textBoxQuantidadeDocumentos.Size = new Size(78, 25);
-            textBoxQuantidadeDocumentos.TabIndex = 13;
-            // 
             // labelQuantidadeDocumentos
             // 
             labelQuantidadeDocumentos.AutoSize = true;
             labelQuantidadeDocumentos.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelQuantidadeDocumentos.Location = new Point(293, 135);
+            labelQuantidadeDocumentos.Location = new Point(313, 135);
             labelQuantidadeDocumentos.Name = "labelQuantidadeDocumentos";
             labelQuantidadeDocumentos.Size = new Size(78, 17);
             labelQuantidadeDocumentos.TabIndex = 12;
@@ -440,7 +443,7 @@
             textBoxSerieDocumento.Enabled = false;
             textBoxSerieDocumento.Location = new Point(17, 155);
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
-            textBoxSerieDocumento.Size = new Size(97, 25);
+            textBoxSerieDocumento.Size = new Size(106, 25);
             textBoxSerieDocumento.TabIndex = 5;
             // 
             // labelSerieDocumento
@@ -458,7 +461,7 @@
             textBoxNumeroDocumento.Enabled = false;
             textBoxNumeroDocumento.Location = new Point(17, 100);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
-            textBoxNumeroDocumento.Size = new Size(97, 25);
+            textBoxNumeroDocumento.Size = new Size(106, 25);
             textBoxNumeroDocumento.TabIndex = 3;
             // 
             // labelNumeroDocumento
@@ -514,6 +517,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();
             ResumeLayout(false);
         }
 
@@ -535,7 +539,6 @@
         private Label labelCnpjEmissor;
         private MaskedTextBox maskedTextBoxDataEmissao;
         private Label labelDataEmissao;
-        private TextBox textBoxQuantidadeDocumentos;
         private Label labelQuantidadeDocumentos;
         private MaskedTextBox maskedTextBoxCpfCnpjDestinatario;
         private Label labelCpfCnpjDestinatario;
@@ -554,5 +557,6 @@
         private Button buttonLimpar;
         private Button buttonGerar;
         protected DataGridView dataGridView;
+        private NumericUpDown numericUpDownQuantidade;
     }
 }
