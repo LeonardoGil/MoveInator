@@ -97,7 +97,7 @@ namespace MoveInatorForms.Forms
             labelSubTitulo.TabIndex = 1;
             labelSubTitulo.Text = "Created by LAG";
             // 
-            // panel2
+            // panelFundo
             // 
             panelFundo.BackColor = Color.FromArgb(27, 27, 27);
             panelFundo.Controls.Add(dataGridView);
@@ -167,6 +167,7 @@ namespace MoveInatorForms.Forms
             // buttonGerarCSV
             // 
             buttonGerarCSV.BackColor = Color.FromArgb(41, 41, 41);
+            buttonGerarCSV.Enabled = false;
             buttonGerarCSV.FlatAppearance.BorderSize = 0;
             buttonGerarCSV.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonGerarCSV.FlatStyle = FlatStyle.Flat;
@@ -268,7 +269,6 @@ namespace MoveInatorForms.Forms
             maskedTextBoxCpfCnpjDestinatario.Size = new Size(156, 25);
             maskedTextBoxCpfCnpjDestinatario.TabIndex = 21;
             maskedTextBoxCpfCnpjDestinatario.TextAlign = HorizontalAlignment.Center;
-            maskedTextBoxCpfCnpjDestinatario.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCpfCnpjDestinatario
             // 
@@ -303,7 +303,6 @@ namespace MoveInatorForms.Forms
             textBoxSerieInicial.Name = "textBoxSerieInicial";
             textBoxSerieInicial.Size = new Size(106, 25);
             textBoxSerieInicial.TabIndex = 11;
-            textBoxSerieInicial.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelSerieInicial
             // 
@@ -321,7 +320,6 @@ namespace MoveInatorForms.Forms
             textBoxNumeroInicial.Name = "textBoxNumeroInicial";
             textBoxNumeroInicial.Size = new Size(106, 25);
             textBoxNumeroInicial.TabIndex = 9;
-            textBoxNumeroInicial.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelNumeroInicial
             // 
@@ -341,7 +339,6 @@ namespace MoveInatorForms.Forms
             maskedTextBoxCpfMotorista.Size = new Size(120, 25);
             maskedTextBoxCpfMotorista.TabIndex = 25;
             maskedTextBoxCpfMotorista.TextAlign = HorizontalAlignment.Center;
-            maskedTextBoxCpfMotorista.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCpfMotorista
             // 
@@ -413,7 +410,6 @@ namespace MoveInatorForms.Forms
             maskedTextBoxCnpjEmissor.TabIndex = 17;
             maskedTextBoxCnpjEmissor.TextAlign = HorizontalAlignment.Center;
             maskedTextBoxCnpjEmissor.ValidatingType = typeof(DateTime);
-            maskedTextBoxCnpjEmissor.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCnpjEmissor
             // 
@@ -452,7 +448,6 @@ namespace MoveInatorForms.Forms
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
             textBoxSerieDocumento.Size = new Size(106, 25);
             textBoxSerieDocumento.TabIndex = 5;
-            textBoxSerieDocumento.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelSerieDocumento
             // 
@@ -470,7 +465,6 @@ namespace MoveInatorForms.Forms
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
             textBoxNumeroDocumento.Size = new Size(106, 25);
             textBoxNumeroDocumento.TabIndex = 3;
-            textBoxNumeroDocumento.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelNumeroDocumento
             // 

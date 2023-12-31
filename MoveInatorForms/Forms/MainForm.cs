@@ -2,12 +2,13 @@
 using MoveInatorForms.Extensions;
 using MoveInatorForms.Mock;
 using MoveInatorForms.Models;
+using System.ComponentModel;
 
 namespace MoveInatorForms.Forms
 {
     public partial class MainForm : Form
     {
-        public BindingSource ViagensViewBindingSource { get; set; }
+        public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource();
 
         public MainForm()
         {
@@ -38,13 +39,13 @@ namespace MoveInatorForms.Forms
                 Quantidade = (int)numericUpDownQuantidade.Value,
 
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
-                CnpjEmissor = maskedTextBoxCnpjEmissor.Text,
+                CnpjEmissor = maskedTextBoxCnpjEmissor.Text.OnlyNumber(),
 
                 NomeDestinatario = textBoxNomeDestinatario.Text,
-                CpfCnpjDestinatario = maskedTextBoxCpfCnpjDestinatario.Text,
+                CpfCnpjDestinatario = maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber(),
 
                 NomeMotorista = textBoxNomeMotorista.Text,
-                CpfMotorista = maskedTextBoxCpfMotorista.Text
+                CpfMotorista = maskedTextBoxCpfMotorista.Text.OnlyNumber()
             };
         }
 
@@ -94,7 +95,7 @@ namespace MoveInatorForms.Forms
             if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
                 throw new Exception("Informe uma Data Emissão valída!");
 
-            if (string.IsNullOrEmpty(maskedTextBoxCnpjEmissor.Text))
+            if (string.IsNullOrEmpty(maskedTextBoxCnpjEmissor.Text.OnlyNumber()))
                 throw new Exception("Informe um CNPJ para o Emissor");
 
             // Destinatario
@@ -102,7 +103,7 @@ namespace MoveInatorForms.Forms
             if (string.IsNullOrEmpty(textBoxNomeDestinatario.Text))
                 throw new Exception("Informe o nome do Destinatário!");
 
-            if (string.IsNullOrEmpty(maskedTextBoxCpfCnpjDestinatario.Text))
+            if (string.IsNullOrEmpty(maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber()))
                 throw new Exception("Informe o Cpf/Cnpj do Destinatário!");
 
             // Motorista
@@ -110,7 +111,7 @@ namespace MoveInatorForms.Forms
             if (string.IsNullOrEmpty(textBoxNomeMotorista.Text))
                 throw new Exception("Informe o nome do Motorista!");
 
-            if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text))
+            if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text.OnlyNumber()))
                 throw new Exception("Informe o Cpf do Motorista!");
 
             return true;
@@ -142,10 +143,8 @@ namespace MoveInatorForms.Forms
 
         private async Task LoadFormAsync()
         {
-            ViagensViewBindingSource = new BindingSource
-            {
-                DataSource = new List<ViagemViewModel>()
-            };
+            ViagensViewBindingSource.DataSource = new List<ViagemViewModel>();
+            ViagensViewBindingSource.ListChanged += ListViagemViewModel_ChangedEvent;
 
             dataGridView.DataSource = ViagensViewBindingSource;
 
@@ -161,7 +160,6 @@ namespace MoveInatorForms.Forms
         {
             buttonAdicionar.Enabled = enabled;
             buttonGerar.Enabled = enabled;
-            buttonGerarCSV.Enabled = enabled;
             buttonLimpar.Enabled = enabled;
         }
 
@@ -216,6 +214,11 @@ namespace MoveInatorForms.Forms
 
                 textBoxSerieDocumento.Enabled = mdfeChecked;
             }
+        }
+
+        private async void ListViagemViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
+        {
+            buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
         }
 
         #endregion
