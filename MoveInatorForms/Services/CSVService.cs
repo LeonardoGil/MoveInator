@@ -1,4 +1,5 @@
 ﻿using MoveInatorForms.Domain;
+using MoveInatorForms.Domain.MoveInatorForms.Domain;
 using MoveInatorForms.Models;
 using MoveInatorForms.Services.Interfaces;
 
@@ -36,6 +37,17 @@ namespace MoveInatorForms.Services
         private async Task<List<ViagemCSVModel>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
         {
             var viagens = new List<ViagemCSVModel>();
+            var chaveAcesso = string.Empty;
+
+            if (viagemViewModel.TipoViagem == Enums.TipoDocumentoViagemEnum.MDFe)
+            {
+                var mes = int.Parse(viagemViewModel.DataEmissao.ToString("MM"));
+                var ano = int.Parse(viagemViewModel.DataEmissao.ToString("yy"));
+
+                var mdfe = new MDFe(42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.NumeroViagem, viagemViewModel.SerieViagem.Value);
+                chaveAcesso = mdfe.ChaveDeAcesso;
+            }
+            
 
             for (int i = 0; i < viagemViewModel.Quantidade; i++)
             {
@@ -46,7 +58,7 @@ namespace MoveInatorForms.Services
                     NumeroDocumento = viagemViewModel.NumeroViagem.ToString(),
                     SerieDocumento = viagemViewModel.SerieViagem?.ToString() ?? string.Empty,
                     DataEmissao = viagemViewModel.DataEmissao,
-                    ChaveAcesso = default, // VERIFICAR
+                    ChaveAcesso = chaveAcesso,
                     CNPJEmissor = viagemViewModel.CnpjEmissor,
                     ValorDaMercadoria = null,
                     UnidadeDeMedida = string.Empty,
@@ -91,7 +103,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var cte = new CTe(2, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var cte = new CTe(42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDoCTe = viagemViewModel.SerieDocumento;
             viagem.NumeroDoCTe = numero;
@@ -105,7 +117,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var nfe = new NFe(2, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var nfe = new NFe(42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDaNFe = viagemViewModel.SerieDocumento;
             viagem.NumerodaNFe = numero;
