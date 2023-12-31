@@ -4,7 +4,7 @@
     {
         public int TipoDocumento { get; set; }
 
-        public string OrdemViagem { get; set; }
+        public int OrdemViagem { get; set; }
 
         public string NumeroDocumento { get; set; }
 
@@ -16,11 +16,11 @@
 
         public string CNPJEmissor { get; set; }
 
-        public decimal ValorDaMercadoria { get; set; }
+        public decimal? ValorDaMercadoria { get; set; }
 
         public string UnidadeDeMedida { get; set; }
 
-        public int QuantidadeDaCarga { get; set; }
+        public int? QuantidadeDaCarga { get; set; }
 
         public int QuantidadeCTe { get; set; }
 
