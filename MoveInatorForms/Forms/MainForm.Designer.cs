@@ -1,4 +1,6 @@
-﻿namespace MoveInatorForms.Forms
+﻿using MoveInatorForms.Extensions;
+
+namespace MoveInatorForms.Forms
 {
     partial class MainForm
     {
@@ -34,7 +36,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             labelTitulo = new Label();
             labelSubTitulo = new Label();
-            panel2 = new Panel();
+            panelFundo = new Panel();
             dataGridView = new DataGridView();
             buttonGerarCSV = new Button();
             buttonLimpar = new Button();
@@ -67,7 +69,7 @@
             labelNumeroDocumento = new Label();
             checkedListBoxTipoViagem = new CheckedListBox();
             labelTipoViagem = new Label();
-            panel2.SuspendLayout();
+            panelFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
@@ -97,20 +99,20 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(27, 27, 27);
-            panel2.Controls.Add(dataGridView);
-            panel2.Controls.Add(buttonGerarCSV);
-            panel2.Controls.Add(buttonLimpar);
-            panel2.Controls.Add(buttonGerar);
-            panel2.Controls.Add(buttonAdicionar);
-            panel2.Controls.Add(panelSuperior);
-            panel2.Controls.Add(labelTitulo);
-            panel2.Controls.Add(labelSubTitulo);
-            panel2.Location = new Point(4, 4);
-            panel2.Margin = new Padding(4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(792, 592);
-            panel2.TabIndex = 3;
+            panelFundo.BackColor = Color.FromArgb(27, 27, 27);
+            panelFundo.Controls.Add(dataGridView);
+            panelFundo.Controls.Add(buttonGerarCSV);
+            panelFundo.Controls.Add(buttonLimpar);
+            panelFundo.Controls.Add(buttonGerar);
+            panelFundo.Controls.Add(buttonAdicionar);
+            panelFundo.Controls.Add(panelSuperior);
+            panelFundo.Controls.Add(labelTitulo);
+            panelFundo.Controls.Add(labelSubTitulo);
+            panelFundo.Location = new Point(4, 4);
+            panelFundo.Margin = new Padding(4);
+            panelFundo.Name = "panelFundo";
+            panelFundo.Size = new Size(792, 592);
+            panelFundo.TabIndex = 3;
             // 
             // dataGridView
             // 
@@ -266,6 +268,7 @@
             maskedTextBoxCpfCnpjDestinatario.Size = new Size(156, 25);
             maskedTextBoxCpfCnpjDestinatario.TabIndex = 21;
             maskedTextBoxCpfCnpjDestinatario.TextAlign = HorizontalAlignment.Center;
+            maskedTextBoxCpfCnpjDestinatario.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCpfCnpjDestinatario
             // 
@@ -300,6 +303,7 @@
             textBoxSerieInicial.Name = "textBoxSerieInicial";
             textBoxSerieInicial.Size = new Size(106, 25);
             textBoxSerieInicial.TabIndex = 11;
+            textBoxSerieInicial.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelSerieInicial
             // 
@@ -317,6 +321,7 @@
             textBoxNumeroInicial.Name = "textBoxNumeroInicial";
             textBoxNumeroInicial.Size = new Size(106, 25);
             textBoxNumeroInicial.TabIndex = 9;
+            textBoxNumeroInicial.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelNumeroInicial
             // 
@@ -336,6 +341,7 @@
             maskedTextBoxCpfMotorista.Size = new Size(120, 25);
             maskedTextBoxCpfMotorista.TabIndex = 25;
             maskedTextBoxCpfMotorista.TextAlign = HorizontalAlignment.Center;
+            maskedTextBoxCpfMotorista.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCpfMotorista
             // 
@@ -407,6 +413,7 @@
             maskedTextBoxCnpjEmissor.TabIndex = 17;
             maskedTextBoxCnpjEmissor.TextAlign = HorizontalAlignment.Center;
             maskedTextBoxCnpjEmissor.ValidatingType = typeof(DateTime);
+            maskedTextBoxCnpjEmissor.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelCnpjEmissor
             // 
@@ -445,6 +452,7 @@
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
             textBoxSerieDocumento.Size = new Size(106, 25);
             textBoxSerieDocumento.TabIndex = 5;
+            textBoxSerieDocumento.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelSerieDocumento
             // 
@@ -462,6 +470,7 @@
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
             textBoxNumeroDocumento.Size = new Size(106, 25);
             textBoxNumeroDocumento.TabIndex = 3;
+            textBoxNumeroDocumento.KeyPress += ControlExtensions.OnlyNumber_KeyPressEvent;
             // 
             // labelNumeroDocumento
             // 
@@ -504,15 +513,15 @@
             BackColor = Color.FromArgb(27, 27, 27);
             ClientSize = new Size(800, 600);
             ControlBox = false;
-            Controls.Add(panel2);
+            Controls.Add(panelFundo);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelFundo.ResumeLayout(false);
+            panelFundo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();
@@ -524,7 +533,7 @@
 
         private Label labelTitulo;
         private Label labelSubTitulo;
-        private Panel panel2;
+        private Panel panelFundo;
         private Panel panelSuperior;
         private CheckedListBox checkedListBoxTipoViagem;
         private Label labelTipoViagem;
