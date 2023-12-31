@@ -18,21 +18,18 @@ namespace MoveInatorForms.Forms
 
         private ViagemViewModel BuildViagemViewModel()
         {
-            int? numeroViagem = null;
             int? serieViagem = null;
-
             var tipoViagem = (TipoDocumentoViagemEnum)checkedListBoxTipoViagem.SelectedIndex;
 
             if (tipoViagem == TipoDocumentoViagemEnum.MDFe)
             {
-                numeroViagem = int.Parse(textBoxNumeroDocumento.Text);
                 serieViagem = int.Parse(textBoxSerieDocumento.Text);
             }
 
             return new ViagemViewModel
             {
                 TipoViagem = tipoViagem,
-                NumeroViagem = numeroViagem,
+                NumeroViagem = int.Parse(textBoxNumeroDocumento.Text),
                 SerieViagem = serieViagem,
 
                 TipoDocumento = (TipoDocumentoEnum)checkedListBoxTipoDocumento.SelectedIndex,
@@ -128,9 +125,19 @@ namespace MoveInatorForms.Forms
             }
         }
 
-        private void ClearFields()
+        private async Task PrepareFieldForNextViagem()
         {
-            throw new NotImplementedException();
+            // Incrementa em 1 o numero Documento
+            textBoxNumeroDocumento.Text = (int.Parse(textBoxNumeroDocumento.Text) + 1).ToString();
+
+            // Incrementa a quantidade de Documentos na Numero Inicial
+            textBoxNumeroInicial.Text = (int.Parse(textBoxNumeroInicial.Text) + numericUpDownQuantidade.Value).ToString();
+
+            // Defini a quantidade de Documento em 1
+            numericUpDownQuantidade.Value = 1;
+
+            // Defini um Destinatário aleat[orio
+            textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
         }
 
         private async Task LoadFormAsync()
@@ -168,15 +175,11 @@ namespace MoveInatorForms.Forms
 
                 var addTask = AddViagemViewModelGrid();
 
+                PrepareFieldForNextViagem();
+
                 EnableButtons(false);
 
-                //ClearFields();
-
                 await addTask;
-
-                if (addTask.Exception is not null)
-                    throw addTask.Exception;
-
             }
             catch (Exception ex)
             {
@@ -211,12 +214,10 @@ namespace MoveInatorForms.Forms
                     mdfeChecked = e.NewValue == CheckState.Checked;
                 }
 
-                textBoxNumeroDocumento.Enabled = mdfeChecked;
                 textBoxSerieDocumento.Enabled = mdfeChecked;
             }
         }
 
         #endregion
-
     }
 }

@@ -15,13 +15,12 @@ namespace MoveInatorForms.Models
 
                 if (value != TipoDocumentoViagemEnum.MDFe)
                 {
-                    NumeroViagem = null;
                     SerieViagem = null;
                 }
             }
         }
 
-        public int? NumeroViagem { get; set; }
+        public int NumeroViagem { get; set; }
 
         public int? SerieViagem { get; set; }
 

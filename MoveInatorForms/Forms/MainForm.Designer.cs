@@ -458,7 +458,6 @@
             // 
             // textBoxNumeroDocumento
             // 
-            textBoxNumeroDocumento.Enabled = false;
             textBoxNumeroDocumento.Location = new Point(17, 100);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
             textBoxNumeroDocumento.Size = new Size(106, 25);
