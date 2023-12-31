@@ -68,6 +68,7 @@ namespace MoveInatorForms.Services
                 {
                     case Enums.TipoDocumentoEnum.CTe:
                         ProcessEntregaCSVCTe(viagem, viagemViewModel, i);
+                        ProcessEntregaCSVNFe(viagem, viagemViewModel, i);
                         viagem.QuantidadeCTe = viagemViewModel.Quantidade;
                         break;
                  
@@ -85,7 +86,16 @@ namespace MoveInatorForms.Services
 
         private void ProcessEntregaCSVCTe(ViagemCSVModel viagem, ViagemViewModel viagemViewModel, int index)
         {
-            throw new NotImplementedException();
+            var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
+            var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
+
+            var numero = viagemViewModel.NumeroDocumento + index;
+
+            var cte = new CTe(2, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+
+            viagem.SerieDoCTe = viagemViewModel.SerieDocumento;
+            viagem.NumeroDoCTe = numero;
+            viagem.ChaveDeAcessoDoCTe = cte.ChaveDeAcesso;
         }
 
         private void ProcessEntregaCSVNFe(ViagemCSVModel viagem, ViagemViewModel viagemViewModel, int index)
