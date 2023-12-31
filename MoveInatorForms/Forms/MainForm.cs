@@ -1,4 +1,5 @@
-﻿using MoveInatorForms.Enums;
+﻿using DocumentosBrasileiros;
+using MoveInatorForms.Enums;
 using MoveInatorForms.Extensions;
 using MoveInatorForms.Mock;
 using MoveInatorForms.Models;
@@ -26,7 +27,7 @@ namespace MoveInatorForms.Forms
         private ViagemViewModel BuildViagemViewModel()
         {
             int? serieViagem = null;
-            var tipoViagem = (TipoDocumentoViagemEnum)checkedListBoxTipoViagem.SelectedIndex;
+            var tipoViagem = (TipoDocumentoViagemEnum)checkedListBoxTipoViagem.CheckedIndices.OfType<int>().First();
 
             if (tipoViagem == TipoDocumentoViagemEnum.MDFe)
             {
@@ -39,7 +40,7 @@ namespace MoveInatorForms.Forms
                 NumeroViagem = int.Parse(textBoxNumeroDocumento.Text),
                 SerieViagem = serieViagem,
 
-                TipoDocumento = (TipoDocumentoEnum)checkedListBoxTipoDocumento.SelectedIndex,
+                TipoDocumento = (TipoDocumentoEnum)checkedListBoxTipoDocumento.CheckedIndices.OfType<int>().First(),
                 NumeroDocumento = int.Parse(textBoxNumeroInicial.Text),
                 SerieDocumento = int.Parse(textBoxSerieInicial.Text),
                 Quantidade = (int)numericUpDownQuantidade.Value,
@@ -66,25 +67,25 @@ namespace MoveInatorForms.Forms
         {
             // Viagem
 
-            var tipoViagemValid = checkedListBoxTipoViagem.SelectedIndex >= 0;
+            var checkedIndiceViagem = checkedListBoxTipoViagem.CheckedIndices.OfType<int?>().FirstOrDefault();
 
-            if (!tipoViagemValid)
+            if (checkedIndiceViagem is null)
                 throw new Exception("Selecione um Tipo Viagem!");
 
-            if ((TipoDocumentoViagemEnum)checkedListBoxTipoViagem.SelectedIndex == TipoDocumentoViagemEnum.MDFe)
-            {
-                if (string.IsNullOrEmpty(textBoxNumeroDocumento.Text))
-                    throw new Exception("Informe um Numero Documento!");
+            if (string.IsNullOrEmpty(textBoxNumeroDocumento.Text))
+                throw new Exception("Informe um Numero Documento!");
 
+            if ((TipoDocumentoViagemEnum)checkedIndiceViagem == TipoDocumentoViagemEnum.MDFe)
+            {
                 if (string.IsNullOrEmpty(textBoxSerieDocumento.Text))
                     throw new Exception("Informe uma Série Documento!");
             }
 
             // Documento
 
-            var tipoDocumentoValid = checkedListBoxTipoDocumento.SelectedIndex >= 0;
+            var checkedIndiceDocumento = checkedListBoxTipoDocumento.CheckedIndices.OfType<int?>().FirstOrDefault();
 
-            if (!tipoDocumentoValid)
+            if (checkedIndiceDocumento is null)
                 throw new Exception("Selecione um Tipo Documento!");
 
             if (!int.TryParse(textBoxNumeroInicial.Text, out _))
@@ -261,7 +262,7 @@ namespace MoveInatorForms.Forms
                 var viagens = (List<ViagemViewModel>)ViagensViewBindingSource.DataSource;
 
                 var csv = CSVService.Generate(viagens);
-                
+
                 SaveFileAsync(csv);
 
                 ViagensViewBindingSource.Clear();
@@ -274,6 +275,71 @@ namespace MoveInatorForms.Forms
             {
                 EnableButtons();
             }
+        }
+
+        private void Exit_ClickEvent(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AutoComplete_ClickEvent(object sender, EventArgs e)
+        {
+            var random = new Random();
+            var cnpj = new Cnpj();
+            var cpf = new Cpf();
+
+            ResetCheckedList(checkedListBoxTipoViagem);
+            ResetCheckedList(checkedListBoxTipoDocumento);
+
+            var tipoViagem = random.Next(0, 2);
+
+            checkedListBoxTipoViagem.SetItemChecked(tipoViagem, true);
+            textBoxNumeroDocumento.Text = random.Next(1, 9999).ToString();
+
+            if (tipoViagem == (int)TipoDocumentoViagemEnum.MDFe)
+            {
+                textBoxSerieDocumento.Text = random.Next(1, 999).ToString();
+            }
+            else
+            {
+                textBoxSerieDocumento.Text = string.Empty;
+            }
+
+            checkedListBoxTipoDocumento.SetItemChecked(random.Next(0, 2), true);
+            textBoxNumeroInicial.Text = random.Next(1, 9999).ToString();
+            textBoxSerieInicial.Text = random.Next(1, 999).ToString();
+            numericUpDownQuantidade.Value = random.Next(1, 50);
+
+            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
+            maskedTextBoxCnpjEmissor.Text = cnpj.GerarFake();
+
+            textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
+            maskedTextBoxCpfCnpjDestinatario.Text = cnpj.GerarFake();
+
+            textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
+            maskedTextBoxCpfMotorista.Text = cpf.GerarFake();
+        }
+
+        private void ClearFields_ClickEvent(object sender, EventArgs e)
+        {
+            ResetCheckedList(checkedListBoxTipoViagem);
+            ResetCheckedList(checkedListBoxTipoDocumento);
+
+            textBoxNumeroDocumento.Text = string.Empty;
+            textBoxSerieDocumento.Text = string.Empty;
+
+            textBoxNumeroInicial.Text = string.Empty;
+            textBoxSerieInicial.Text = string.Empty;
+            numericUpDownQuantidade.Value = 1;
+
+            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
+            maskedTextBoxCnpjEmissor.Text = string.Empty;
+
+            textBoxNomeDestinatario.Text = string.Empty;
+            maskedTextBoxCpfCnpjDestinatario.Text = string.Empty;
+
+            textBoxNumeroDocumento.Text = string.Empty;
+            maskedTextBoxCpfMotorista.Text = string.Empty;
         }
 
         #endregion
