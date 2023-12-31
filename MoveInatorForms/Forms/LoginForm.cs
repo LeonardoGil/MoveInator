@@ -6,6 +6,8 @@
 
         public string ConnectionString { get; private set; }
 
+        public bool OfflineMode { get; private set; }
+
         public bool Exit { get; private set; }
 
         public LoginForm()
@@ -34,7 +36,7 @@
                 throw new Exception("Informar Password!");
         }
 
-        private void Conectar_ClickEvent(object sender, EventArgs e)
+        private void Connect_ClickEvent(object sender, EventArgs e)
         {
             try
             {
@@ -51,6 +53,12 @@
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Offline_ClickEvent(object sender, EventArgs e)
+        {
+            OfflineMode = true;
+            Close();
         }
     }
 }

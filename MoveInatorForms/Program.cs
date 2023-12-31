@@ -16,32 +16,32 @@ namespace MoveInatorForms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            var builder = Host.CreateApplicationBuilder().Inject();
+
+            //Login(builder);
+
+            ServiceProvider = builder.Build().Services;
+
             Run();
         }
 
         static void Run()
         {
-            var login = new LoginForm();
-
-            Application.Run(login);
-
-            if (login.Exit) return;
-
-            CreateHost(login.ConnectionString);
-
             var main = ServiceProvider.GetRequiredService<MainForm>();
 
             Application.Run(main);
         }
 
-        static void CreateHost(string connectionString)
+        static void Login(HostApplicationBuilder builder)
         {
-            var host = Host.CreateApplicationBuilder()
-                           .Inject()
-                           //.InjectContext(connectionString)
-                           .Build();
+            var login = new LoginForm();
 
-            ServiceProvider = host.Services;
+            Application.Run(login);
+
+            if (login.OfflineMode)
+                return;
+
+            builder.InjectContext(login.ConnectionString);
         }
     }
 }

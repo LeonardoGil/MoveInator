@@ -39,6 +39,7 @@
             labelUser = new Label();
             textBoxPassword = new TextBox();
             textBoxUser = new TextBox();
+            buttonOffline = new Button();
             SuspendLayout();
             // 
             // labelTitulo
@@ -67,13 +68,13 @@
             buttonConectar.FlatStyle = FlatStyle.Flat;
             buttonConectar.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonConectar.ForeColor = SystemColors.ControlLightLight;
-            buttonConectar.Location = new Point(226, 98);
+            buttonConectar.Location = new Point(226, 60);
             buttonConectar.Name = "buttonConectar";
             buttonConectar.Size = new Size(81, 40);
             buttonConectar.TabIndex = 2;
             buttonConectar.Text = "Conectar";
             buttonConectar.UseVisualStyleBackColor = true;
-            buttonConectar.Click += Conectar_ClickEvent;
+            buttonConectar.Click += Connect_ClickEvent;
             // 
             // buttonExit
             // 
@@ -156,6 +157,22 @@
             textBoxUser.Size = new Size(90, 23);
             textBoxUser.TabIndex = 9;
             // 
+            // buttonOffline
+            // 
+            buttonOffline.FlatAppearance.BorderColor = Color.FromArgb(48, 48, 48);
+            buttonOffline.FlatAppearance.BorderSize = 2;
+            buttonOffline.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonOffline.FlatStyle = FlatStyle.Flat;
+            buttonOffline.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonOffline.ForeColor = SystemColors.ControlLightLight;
+            buttonOffline.Location = new Point(226, 106);
+            buttonOffline.Name = "buttonOffline";
+            buttonOffline.Size = new Size(81, 40);
+            buttonOffline.TabIndex = 13;
+            buttonOffline.Text = "Offline";
+            buttonOffline.UseVisualStyleBackColor = true;
+            buttonOffline.Click += Offline_ClickEvent;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -163,6 +180,7 @@
             BackColor = Color.FromArgb(31, 31, 31);
             ClientSize = new Size(316, 150);
             ControlBox = false;
+            Controls.Add(buttonOffline);
             Controls.Add(labelPassword);
             Controls.Add(labelUser);
             Controls.Add(textBoxPassword);
@@ -196,5 +214,6 @@
         private Label labelUser;
         private TextBox textBoxPassword;
         private TextBox textBoxUser;
+        private Button buttonOffline;
     }
 }
