@@ -256,7 +256,7 @@ namespace MoveInatorForms.Forms
             buttonAdicionar.TabIndex = 3;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = false;
-            buttonAdicionar.Click += AddViagemViewModel_ClickEvent;
+            buttonAdicionar.Click += AddViagemViewModel_ClickEventAsync;
             // 
             // panelSuperior
             // 
