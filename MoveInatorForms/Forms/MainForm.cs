@@ -4,6 +4,7 @@ using MoveInatorForms.Mock;
 using MoveInatorForms.Models;
 using MoveInatorForms.Services.Interfaces;
 using System.ComponentModel;
+using System.Text;
 
 namespace MoveInatorForms.Forms
 {
@@ -159,6 +160,25 @@ namespace MoveInatorForms.Forms
             textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
 
             numericUpDownQuantidade.Value = 1;
+
+            textBoxDiretorio.Text = @"C:/Temp";
+        }
+
+        private async Task SaveFile(string text)
+        {
+            var fileName = $"Move_{DateTime.Now:dd-MM-yyTHH-mm-ss}.csv";
+
+            var path = textBoxDiretorio.Text.TrimEnd('/').TrimEnd(@"\"[0]);
+
+            var pathFile = string.Concat(path, '/', fileName);
+
+            using (var file = File.Create(pathFile))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes(text);
+                file.Write(info, 0, info.Length);
+            }
+
+            Invoke(() => MessageBox.Show($"CSV Gerado: {pathFile}"));
         }
 
         private void EnableButtons(bool enabled = true)
@@ -231,6 +251,9 @@ namespace MoveInatorForms.Forms
         {
             try
             {
+                if (!Directory.Exists(textBoxDiretorio.Text))
+                    throw new Exception("Informe um Diretório válido");
+
                 EnableButtons(false);
 
                 buttonGerarCSV.Enabled = false;
@@ -238,6 +261,10 @@ namespace MoveInatorForms.Forms
                 var viagens = (List<ViagemViewModel>)ViagensViewBindingSource.DataSource;
 
                 var csv = CSVService.Generate(viagens);
+                
+                SaveFile(csv);
+
+                ViagensViewBindingSource.Clear();
             }
             catch (Exception ex)
             {

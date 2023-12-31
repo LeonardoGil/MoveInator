@@ -30,13 +30,16 @@ namespace MoveInatorForms.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panelFundo = new Panel();
+            labelDiretorio = new Label();
+            textBoxDiretorio = new TextBox();
+            buttonLimparViagens = new Button();
             dataGridView = new DataGridView();
             buttonGerarCSV = new Button();
             buttonLimpar = new Button();
@@ -100,6 +103,9 @@ namespace MoveInatorForms.Forms
             // panelFundo
             // 
             panelFundo.BackColor = Color.FromArgb(27, 27, 27);
+            panelFundo.Controls.Add(labelDiretorio);
+            panelFundo.Controls.Add(textBoxDiretorio);
+            panelFundo.Controls.Add(buttonLimparViagens);
             panelFundo.Controls.Add(dataGridView);
             panelFundo.Controls.Add(buttonGerarCSV);
             panelFundo.Controls.Add(buttonLimpar);
@@ -114,6 +120,38 @@ namespace MoveInatorForms.Forms
             panelFundo.Size = new Size(792, 592);
             panelFundo.TabIndex = 3;
             // 
+            // labelDiretorio
+            // 
+            labelDiretorio.AutoSize = true;
+            labelDiretorio.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDiretorio.Location = new Point(8, 541);
+            labelDiretorio.Name = "labelDiretorio";
+            labelDiretorio.Size = new Size(71, 17);
+            labelDiretorio.TabIndex = 27;
+            labelDiretorio.Text = "Diretório";
+            // 
+            // textBoxDiretorio
+            // 
+            textBoxDiretorio.Location = new Point(8, 559);
+            textBoxDiretorio.Name = "textBoxDiretorio";
+            textBoxDiretorio.Size = new Size(391, 25);
+            textBoxDiretorio.TabIndex = 9;
+            // 
+            // buttonLimparViagens
+            // 
+            buttonLimparViagens.BackColor = Color.FromArgb(41, 41, 41);
+            buttonLimparViagens.Enabled = false;
+            buttonLimparViagens.FlatAppearance.BorderSize = 0;
+            buttonLimparViagens.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonLimparViagens.FlatStyle = FlatStyle.Flat;
+            buttonLimparViagens.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimparViagens.Location = new Point(570, 541);
+            buttonLimparViagens.Name = "buttonLimparViagens";
+            buttonLimparViagens.Size = new Size(104, 43);
+            buttonLimparViagens.TabIndex = 8;
+            buttonLimparViagens.Text = "Limpar";
+            buttonLimparViagens.UseVisualStyleBackColor = false;
+            // 
             // dataGridView
             // 
             dataGridView.AllowUserToAddRows = false;
@@ -123,23 +161,23 @@ namespace MoveInatorForms.Forms
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
             dataGridView.Location = new Point(8, 283);
@@ -147,15 +185,15 @@ namespace MoveInatorForms.Forms
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle8.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -561,5 +599,8 @@ namespace MoveInatorForms.Forms
         private Button buttonGerar;
         protected DataGridView dataGridView;
         private NumericUpDown numericUpDownQuantidade;
+        private Button buttonLimparViagens;
+        private Label labelDiretorio;
+        private TextBox textBoxDiretorio;
     }
 }
