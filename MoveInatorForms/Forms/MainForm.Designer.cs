@@ -169,6 +169,7 @@ namespace MoveInatorForms.Forms
             buttonLimparViagens.TabIndex = 8;
             buttonLimparViagens.Text = "Limpar";
             buttonLimparViagens.UseVisualStyleBackColor = false;
+            buttonLimparViagens.Click += buttonLimparViagens_Click;
             // 
             // dataGridView
             // 

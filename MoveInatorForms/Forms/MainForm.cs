@@ -245,7 +245,10 @@ namespace MoveInatorForms.Forms
 
         private void ListViagemViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
         {
-            buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
+            var enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
+
+            buttonGerarCSV.Enabled = enabled;
+            buttonLimparViagens.Enabled = enabled;
         }
 
         private void GenerateCSV_ClickEvent(object sender, EventArgs e)
@@ -343,5 +346,15 @@ namespace MoveInatorForms.Forms
         }
 
         #endregion
+
+        private void buttonLimparViagens_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Deseja excluír as Viagens?", "Excluír Viagens", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                ViagensViewBindingSource.Clear();
+            }
+        }
     }
 }
