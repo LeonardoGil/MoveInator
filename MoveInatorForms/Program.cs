@@ -38,7 +38,7 @@ namespace MoveInatorForms
         {
             var host = Host.CreateApplicationBuilder()
                            .Inject()
-                           .InjectContext(connectionString)
+                           //.InjectContext(connectionString)
                            .Build();
 
             ServiceProvider = host.Services;

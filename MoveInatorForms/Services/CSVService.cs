@@ -1,13 +1,23 @@
-﻿using MoveInatorForms.Models;
+﻿using MoveInatorForms.Domain;
+using MoveInatorForms.Models;
 using MoveInatorForms.Services.Interfaces;
 
 namespace MoveInatorForms.Services
 {
     public class CSVService : ICSVService
     {
-        public string Generate(List<ViagemViewModel> viagens)
+        public string Generate(List<ViagemViewModel> viagensViewModel)
         {
-            throw new NotImplementedException();
+            var viagens = ConvertToViagemCSV(viagensViewModel);
+            var csv = ViagemCSVModel.Header();
+
+            foreach (var viagem in viagens)
+            {
+                csv += Environment.NewLine;
+                csv += viagem.Row();
+            }
+
+            return csv;
         }
 
         #region Private
@@ -58,10 +68,12 @@ namespace MoveInatorForms.Services
                 {
                     case Enums.TipoDocumentoEnum.CTe:
                         ProcessEntregaCSVCTe(viagem, viagemViewModel, i);
+                        viagem.QuantidadeCTe = viagemViewModel.Quantidade;
                         break;
                  
                     case Enums.TipoDocumentoEnum.NFe:
                         ProcessEntregaCSVNFe(viagem, viagemViewModel, i);
+                        viagem.QuantidadeNFe = viagemViewModel.Quantidade;
                         break;
                 }
 
@@ -78,7 +90,16 @@ namespace MoveInatorForms.Services
 
         private void ProcessEntregaCSVNFe(ViagemCSVModel viagem, ViagemViewModel viagemViewModel, int index)
         {
-            throw new NotImplementedException();
+            var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
+            var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
+
+            var numero = viagemViewModel.NumeroDocumento + index;
+
+            var nfe = new NFe(2, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+
+            viagem.SerieDaNFe = viagemViewModel.SerieDocumento;
+            viagem.NumerodaNFe = numero;
+            viagem.ChaveDeAcessoDaNFe = nfe.ChaveDeAcesso; 
         }
 
         #endregion

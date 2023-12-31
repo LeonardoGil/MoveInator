@@ -2,16 +2,21 @@
 using MoveInatorForms.Extensions;
 using MoveInatorForms.Mock;
 using MoveInatorForms.Models;
+using MoveInatorForms.Services.Interfaces;
 using System.ComponentModel;
 
 namespace MoveInatorForms.Forms
 {
     public partial class MainForm : Form
     {
+        private readonly ICSVService CSVService;
+
         public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource();
 
-        public MainForm()
+        public MainForm(ICSVService csvService)
         {
+            CSVService = csvService;
+
             InitializeComponent();
 
             LoadFormAsync();
@@ -161,11 +166,12 @@ namespace MoveInatorForms.Forms
             buttonAdicionar.Enabled = enabled;
             buttonGerar.Enabled = enabled;
             buttonLimpar.Enabled = enabled;
+            buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
         }
 
         #region Events
 
-        private async void Add_ClickEvent(object sender, EventArgs e)
+        private async void AddViagemViewModel_ClickEvent(object sender, EventArgs e)
         {
             try
             {
@@ -216,9 +222,31 @@ namespace MoveInatorForms.Forms
             }
         }
 
-        private async void ListViagemViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
+        private void ListViagemViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
         {
             buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
+        }
+
+        private void GenerateCSV_ClickEvent(object sender, EventArgs e)
+        {
+            try
+            {
+                EnableButtons(false);
+
+                buttonGerarCSV.Enabled = false;
+
+                var viagens = (List<ViagemViewModel>)ViagensViewBindingSource.DataSource;
+
+                var csv = CSVService.Generate(viagens);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                EnableButtons();
+            }
         }
 
         #endregion

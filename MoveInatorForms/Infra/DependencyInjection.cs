@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MoveInatorForms.Forms;
+using MoveInatorForms.Services;
+using MoveInatorForms.Services.Interfaces;
 
 namespace MoveInatorForms.Infra
 {
@@ -9,6 +11,8 @@ namespace MoveInatorForms.Infra
     {
         public static HostApplicationBuilder Inject(this HostApplicationBuilder builder)
         {
+            builder.Services.AddSingleton<ICSVService, CSVService>();
+
             builder.Services.AddTransient<MainForm>();
 
             return builder;

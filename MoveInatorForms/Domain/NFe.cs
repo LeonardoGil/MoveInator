@@ -2,7 +2,7 @@
 {
     public class NFe
     {
-        public NFe(int uf, int mes, int ano, int cnpj, int serie, int numero)
+        public NFe(int uf, int mes, int ano, long cnpj, int serie, int numero)
         {
             cUF = uf;
             cMes = mes;
@@ -17,7 +17,7 @@
         private int cUF;
         private int cMes;
         private int cAno;
-        private int cCnpj;
+        private long cCnpj;
         private int cModelo = 55;
         private int cSerie;
         private int cNumero;

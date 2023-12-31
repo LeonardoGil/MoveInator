@@ -178,6 +178,7 @@ namespace MoveInatorForms.Forms
             buttonGerarCSV.TabIndex = 6;
             buttonGerarCSV.Text = "Gerar CSV";
             buttonGerarCSV.UseVisualStyleBackColor = false;
+            buttonGerarCSV.Click += GenerateCSV_ClickEvent;
             // 
             // buttonLimpar
             // 
@@ -217,7 +218,7 @@ namespace MoveInatorForms.Forms
             buttonAdicionar.TabIndex = 3;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = false;
-            buttonAdicionar.Click += Add_ClickEvent;
+            buttonAdicionar.Click += AddViagemViewModel_ClickEvent;
             // 
             // panelSuperior
             // 
