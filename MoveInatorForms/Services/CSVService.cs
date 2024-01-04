@@ -1,5 +1,5 @@
-﻿using MoveInatorForms.Domain;
-using MoveInatorForms.Domain.MoveInatorForms.Domain;
+﻿using MoveInatorForms.Domain.DocumentoFiscal;
+using MoveInatorForms.Enums;
 using MoveInatorForms.Models;
 using MoveInatorForms.Services.Interfaces;
 
@@ -44,7 +44,7 @@ namespace MoveInatorForms.Services
                 var mes = int.Parse(viagemViewModel.DataEmissao.ToString("MM"));
                 var ano = int.Parse(viagemViewModel.DataEmissao.ToString("yy"));
 
-                var mdfe = new MDFe(42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.NumeroViagem, viagemViewModel.SerieViagem.Value);
+                var mdfe = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.NumeroViagem, viagemViewModel.SerieViagem.Value);
                 chaveAcesso = mdfe.ChaveDeAcesso;
             }
             
@@ -103,7 +103,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var cte = new CTe(42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var cte = new ChaveAcesso(ModeloDocumentoEnum.CTe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDoCTe = viagemViewModel.SerieDocumento;
             viagem.NumeroDoCTe = numero;
@@ -117,7 +117,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var nfe = new NFe(42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var nfe = new ChaveAcesso(ModeloDocumentoEnum.NFe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDaNFe = viagemViewModel.SerieDocumento;
             viagem.NumerodaNFe = numero;

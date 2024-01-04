@@ -1,13 +1,16 @@
-﻿namespace MoveInatorForms.Domain
+﻿using MoveInatorForms.Enums;
+
+namespace MoveInatorForms.Domain.DocumentoFiscal
 {
-    public class CTe
+    public class ChaveAcesso
     {
-        public CTe(int uf, int mes, int ano, long cnpj, int serie, int numero)
+        public ChaveAcesso(ModeloDocumentoEnum modelo, int uf, int mes, int ano, long cnpj, int serie, int numero)
         {
             cUF = uf;
             cMes = mes;
             cAno = ano;
             cCnpj = cnpj;
+            cModelo = (int)modelo;
             cSerie = serie;
             cNumero = numero;
 
@@ -18,7 +21,7 @@
         private int cMes;
         private int cAno;
         private long cCnpj;
-        private int cModelo = 57;
+        private int cModelo = 55;
         private int cSerie;
         private int cNumero;
         private int cTipoEmissao = 1;
@@ -52,6 +55,10 @@
         private void SetDigitoVerificador()
         {
             var chaveSemDigito = string.Concat(UF, DataEmissao, CNPJ, Modelo, Serie, Numero, TipoEmissao, CodigoNumerico);
+
+            if (chaveSemDigito.Length != 43)
+                throw new Exception("Não foi possível calcular o digito Verificador. Motivo: Chave de acesso não contem 43 digitos.");
+
             var multiplicador = 2;
             var soma = 0;
 
@@ -66,7 +73,7 @@
 
             var resto = soma % 11;
 
-            cDigitoVerificador = resto == 1 ? 0 : resto;
+            cDigitoVerificador = resto <= 1 ? 0 : 11 - resto;
         }
     }
 }
