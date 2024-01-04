@@ -11,6 +11,8 @@ namespace MoveInatorForms.Forms
 {
     public partial class MainForm : Form
     {
+        private Point Point;
+
         private readonly ICSVService CSVService;
 
         public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource();
@@ -352,6 +354,20 @@ namespace MoveInatorForms.Forms
             if (result == DialogResult.Yes)
             {
                 ViagensViewBindingSource.Clear();
+            }
+        }
+
+        private void SetPoint_MouseDownEvent(object sender, MouseEventArgs e)
+        {
+            Point = e.Location;
+        }
+
+        private void MoveForm_MouseMoveEvent(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Left += e.X - Point.X;
+                Top += e.Y - Point.Y;
             }
         }
 

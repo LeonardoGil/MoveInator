@@ -119,6 +119,8 @@
             panelFundo.Name = "panelFundo";
             panelFundo.Size = new Size(792, 592);
             panelFundo.TabIndex = 3;
+            panelFundo.MouseDown += SetPoint_MouseDownEvent;
+            panelFundo.MouseMove += MoveForm_MouseMoveEvent;
             // 
             // buttonExit
             // 
