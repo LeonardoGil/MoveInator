@@ -301,7 +301,7 @@ namespace MoveInatorForms.Forms
 
             if (tipoViagem == (int)TipoDocumentoViagemEnum.MDFe)
             {
-                textBoxSerieDocumento.Text = random.Next(1, 999).ToString();
+                textBoxSerieDocumento.Text = random.Next(1, 500).ToString();
             }
             else
             {
@@ -310,7 +310,7 @@ namespace MoveInatorForms.Forms
 
             checkedListBoxTipoDocumento.SetItemChecked(random.Next(0, 2), true);
             textBoxNumeroInicial.Text = random.Next(1, 9999).ToString();
-            textBoxSerieInicial.Text = random.Next(1, 999).ToString();
+            textBoxSerieInicial.Text = random.Next(1, 500).ToString();
             numericUpDownQuantidade.Value = random.Next(1, 50);
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");

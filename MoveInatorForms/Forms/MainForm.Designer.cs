@@ -358,6 +358,7 @@
             // textBoxSerieInicial
             // 
             textBoxSerieInicial.Location = new Point(188, 155);
+            textBoxSerieInicial.MaxLength = 3;
             textBoxSerieInicial.Name = "textBoxSerieInicial";
             textBoxSerieInicial.Size = new Size(106, 25);
             textBoxSerieInicial.TabIndex = 11;
@@ -503,6 +504,7 @@
             // 
             textBoxSerieDocumento.Enabled = false;
             textBoxSerieDocumento.Location = new Point(17, 155);
+            textBoxSerieDocumento.MaxLength = 3;
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
             textBoxSerieDocumento.Size = new Size(106, 25);
             textBoxSerieDocumento.TabIndex = 5;

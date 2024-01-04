@@ -44,7 +44,7 @@ namespace MoveInatorForms.Services
                 var mes = int.Parse(viagemViewModel.DataEmissao.ToString("MM"));
                 var ano = int.Parse(viagemViewModel.DataEmissao.ToString("yy"));
 
-                var mdfe = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.NumeroViagem, viagemViewModel.SerieViagem.Value);
+                var mdfe = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.SerieViagem.Value, viagemViewModel.NumeroViagem);
                 chaveAcesso = mdfe.ChaveDeAcesso;
             }
             

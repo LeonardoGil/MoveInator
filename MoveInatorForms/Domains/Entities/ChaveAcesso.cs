@@ -21,7 +21,7 @@ namespace MoveInatorForms.Domains.Entities
         private int cMes;
         private int cAno;
         private long cCnpj;
-        private int cModelo = 55;
+        private int cModelo;
         private int cSerie;
         private int cNumero;
         private int cTipoEmissao = 1;
