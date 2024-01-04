@@ -345,9 +345,7 @@ namespace MoveInatorForms.Forms
             maskedTextBoxCpfMotorista.Text = string.Empty;
         }
 
-        #endregion
-
-        private void buttonLimparViagens_Click(object sender, EventArgs e)
+        private void LimparViagensGrid_ClickEvent(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Deseja excluír as Viagens?", "Excluír Viagens", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
@@ -356,5 +354,7 @@ namespace MoveInatorForms.Forms
                 ViagensViewBindingSource.Clear();
             }
         }
+
+        #endregion
     }
 }

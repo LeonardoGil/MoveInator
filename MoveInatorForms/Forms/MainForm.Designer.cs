@@ -167,7 +167,7 @@
             buttonLimparViagens.TabIndex = 8;
             buttonLimparViagens.Text = "Limpar";
             buttonLimparViagens.UseVisualStyleBackColor = false;
-            buttonLimparViagens.Click += buttonLimparViagens_Click;
+            buttonLimparViagens.Click += LimparViagensGrid_ClickEvent;
             // 
             // dataGridView
             // 
