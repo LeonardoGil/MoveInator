@@ -1,9 +1,9 @@
 ﻿using DocumentosBrasileiros;
-using MoveInatorForms.Enums;
-using MoveInatorForms.Extensions;
-using MoveInatorForms.Mock;
-using MoveInatorForms.Models;
+using MoveInatorForms.Domains.Enums;
+using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
+using MoveInatorForms.Utilities.Extensions;
+using MoveInatorForms.Utilities.Mocks;
 using System.ComponentModel;
 using System.Text;
 

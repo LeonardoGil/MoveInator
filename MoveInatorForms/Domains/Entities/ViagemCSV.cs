@@ -1,6 +1,6 @@
-﻿namespace MoveInatorForms.Models
+﻿namespace MoveInatorForms.Domains.Entities
 {
-    public class ViagemCSVModel
+    public class ViagemCSV
     {
         public int TipoDocumento { get; set; }
 
@@ -9,7 +9,7 @@
         public string NumeroDocumento { get; set; }
 
         public string SerieDocumento { get; set; }
-        
+
         public DateTime DataEmissao { get; set; }
 
         public string ChaveAcesso { get; set; }

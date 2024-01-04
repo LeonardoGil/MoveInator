@@ -1,4 +1,4 @@
-﻿namespace MoveInatorForms.Extensions
+﻿namespace MoveInatorForms.Utilities.Extensions
 {
     public static class ControlExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace MoveInatorForms.Enums
+﻿namespace MoveInatorForms.Domains.Enums
 {
     public enum ModeloDocumentoEnum
     {

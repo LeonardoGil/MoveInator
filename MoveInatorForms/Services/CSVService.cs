@@ -1,6 +1,6 @@
-﻿using MoveInatorForms.Domain.DocumentoFiscal;
-using MoveInatorForms.Enums;
-using MoveInatorForms.Models;
+﻿using MoveInatorForms.Domains.Entities;
+using MoveInatorForms.Domains.Enums;
+using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
 
 namespace MoveInatorForms.Services
@@ -10,7 +10,7 @@ namespace MoveInatorForms.Services
         public string Generate(List<ViagemViewModel> viagensViewModel)
         {
             var viagens = ConvertToViagemCSV(viagensViewModel);
-            var csv = ViagemCSVModel.Header();
+            var csv = ViagemCSV.Header();
 
             foreach (var viagem in viagens)
             {
@@ -23,7 +23,7 @@ namespace MoveInatorForms.Services
 
         #region Private
 
-        private List<ViagemCSVModel> ConvertToViagemCSV(List<ViagemViewModel> viagensViewModel)
+        private List<ViagemCSV> ConvertToViagemCSV(List<ViagemViewModel> viagensViewModel)
         {
             var taskProcessViagensCSV = viagensViewModel.Select(ProcessConvertToViagemCSVAsync);
 
@@ -34,12 +34,12 @@ namespace MoveInatorForms.Services
             return viagens;
         }
 
-        private async Task<List<ViagemCSVModel>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
+        private async Task<List<ViagemCSV>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
         {
-            var viagens = new List<ViagemCSVModel>();
+            var viagens = new List<ViagemCSV>();
             var chaveAcesso = string.Empty;
 
-            if (viagemViewModel.TipoViagem == Enums.TipoDocumentoViagemEnum.MDFe)
+            if (viagemViewModel.TipoViagem == TipoDocumentoViagemEnum.MDFe)
             {
                 var mes = int.Parse(viagemViewModel.DataEmissao.ToString("MM"));
                 var ano = int.Parse(viagemViewModel.DataEmissao.ToString("yy"));
@@ -51,7 +51,7 @@ namespace MoveInatorForms.Services
 
             for (int i = 0; i < viagemViewModel.Quantidade; i++)
             {
-                var viagem = new ViagemCSVModel()
+                var viagem = new ViagemCSV()
                 {
                     TipoDocumento = (int)viagemViewModel.TipoDocumento,
                     OrdemViagem = 1,
@@ -78,13 +78,13 @@ namespace MoveInatorForms.Services
 
                 switch (viagemViewModel.TipoDocumento)
                 {
-                    case Enums.TipoDocumentoEnum.CTe:
+                    case TipoDocumentoEnum.CTe:
                         ProcessEntregaCSVCTe(viagem, viagemViewModel, i);
                         ProcessEntregaCSVNFe(viagem, viagemViewModel, i);
                         viagem.QuantidadeCTe = viagemViewModel.Quantidade;
                         break;
                  
-                    case Enums.TipoDocumentoEnum.NFe:
+                    case TipoDocumentoEnum.NFe:
                         ProcessEntregaCSVNFe(viagem, viagemViewModel, i);
                         viagem.QuantidadeNFe = viagemViewModel.Quantidade;
                         break;
@@ -96,7 +96,7 @@ namespace MoveInatorForms.Services
             return viagens;
         }
 
-        private void ProcessEntregaCSVCTe(ViagemCSVModel viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVCTe(ViagemCSV viagem, ViagemViewModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
@@ -110,7 +110,7 @@ namespace MoveInatorForms.Services
             viagem.ChaveDeAcessoDoCTe = cte.ChaveDeAcesso;
         }
 
-        private void ProcessEntregaCSVNFe(ViagemCSVModel viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVNFe(ViagemCSV viagem, ViagemViewModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));

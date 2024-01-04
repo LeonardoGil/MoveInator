@@ -1,6 +1,6 @@
-﻿using MoveInatorForms.Enums;
+﻿using MoveInatorForms.Domains.Enums;
 
-namespace MoveInatorForms.Models
+namespace MoveInatorForms.Domains.Models
 {
     public class ViagemViewModel
     {

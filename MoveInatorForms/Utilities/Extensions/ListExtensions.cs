@@ -1,4 +1,4 @@
-﻿namespace MoveInatorForms.Extensions
+﻿namespace MoveInatorForms.Utilities.Extensions
 {
     public static class ListExtensions
     {
@@ -7,7 +7,7 @@
             if (!list.Any())
                 throw new Exception("Lista Vazia");
 
-            return list[(new Random()).Next(0, list.Count - 1)];
+            return list[new Random().Next(0, list.Count - 1)];
         }
     }
 }

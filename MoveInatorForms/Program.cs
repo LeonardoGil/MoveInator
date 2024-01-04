@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MoveInatorForms.Forms;
-using MoveInatorForms.Infra;
+using MoveInatorForms.Structures;
 
 namespace MoveInatorForms
 {

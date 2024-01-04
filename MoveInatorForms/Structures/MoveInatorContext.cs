@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace MoveInatorForms.Infra
+namespace MoveInatorForms.Structures
 {
     public class MoveInatorContext : DbContext
     {

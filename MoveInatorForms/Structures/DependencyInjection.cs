@@ -5,7 +5,7 @@ using MoveInatorForms.Forms;
 using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
 
-namespace MoveInatorForms.Infra
+namespace MoveInatorForms.Structures
 {
     public static class DependencyInjection
     {

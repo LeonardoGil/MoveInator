@@ -1,6 +1,4 @@
-﻿using MoveInatorForms.Extensions;
-
-namespace MoveInatorForms.Forms
+﻿namespace MoveInatorForms.Forms
 {
     partial class MainForm
     {

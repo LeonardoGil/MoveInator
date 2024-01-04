@@ -1,4 +1,4 @@
-﻿namespace MoveInatorForms.Mock
+﻿namespace MoveInatorForms.Utilities.Mocks
 {
     public class Data
     {

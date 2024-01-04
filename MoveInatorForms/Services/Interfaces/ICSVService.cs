@@ -1,4 +1,4 @@
-﻿using MoveInatorForms.Models;
+﻿using MoveInatorForms.Domains.Models;
 
 namespace MoveInatorForms.Services.Interfaces
 {

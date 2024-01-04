@@ -1,6 +1,6 @@
-﻿using MoveInatorForms.Enums;
+﻿using MoveInatorForms.Domains.Enums;
 
-namespace MoveInatorForms.Domain.DocumentoFiscal
+namespace MoveInatorForms.Domains.Entities
 {
     public class ChaveAcesso
     {
