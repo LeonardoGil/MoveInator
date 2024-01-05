@@ -371,9 +371,9 @@
             labelSerieInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieInicial.Location = new Point(188, 135);
             labelSerieInicial.Name = "labelSerieInicial";
-            labelSerieInicial.Size = new Size(99, 17);
+            labelSerieInicial.Size = new Size(43, 17);
             labelSerieInicial.TabIndex = 10;
-            labelSerieInicial.Text = "Série Inicial";
+            labelSerieInicial.Text = "Série";
             // 
             // textBoxNumeroInicial
             // 

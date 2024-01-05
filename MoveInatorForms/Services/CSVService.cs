@@ -53,7 +53,7 @@ namespace MoveInatorForms.Services
             {
                 var viagem = new ViagemCSV()
                 {
-                    TipoDocumento = (int)viagemViewModel.TipoDocumento,
+                    TipoDocumento = (int)viagemViewModel.TipoViagem,
                     OrdemViagem = 1,
                     NumeroDocumento = viagemViewModel.NumeroViagem.ToString(),
                     SerieDocumento = viagemViewModel.SerieViagem?.ToString() ?? string.Empty,
