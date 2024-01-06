@@ -284,7 +284,10 @@ namespace MoveInatorForms.Forms
 
         private void Exit_ClickEvent(object sender, EventArgs e)
         {
-            Close();
+            var messageBoxResult = MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo);
+
+            if (messageBoxResult == DialogResult.Yes)
+                Close();
         }
 
         private void AutoComplete_ClickEvent(object sender, EventArgs e)
