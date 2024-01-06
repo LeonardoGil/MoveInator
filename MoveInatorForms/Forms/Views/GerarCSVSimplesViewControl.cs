@@ -17,9 +17,8 @@ namespace MoveInatorForms.Forms.Views
 
         public GerarCSVSimplesViewControl(ICSVService cSVService)
         {
-            InitializeComponent();
             CSVService = cSVService;
-
+            InitializeComponent();
             LoadFormAsync();
         }
 

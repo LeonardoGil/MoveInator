@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelView = new Panel();
             buttonExit = new Button();
             labelTitulo = new Label();
             labelSubTitulo = new Label();
+            panelView = new Panel();
             SuspendLayout();
-            // 
-            // panelView
-            // 
-            panelView.BackColor = Color.Red;
-            panelView.Location = new Point(0, 80);
-            panelView.Margin = new Padding(0);
-            panelView.Name = "panelView";
-            panelView.Size = new Size(800, 520);
-            panelView.TabIndex = 9;
             // 
             // buttonExit
             // 
@@ -81,11 +72,20 @@
             labelSubTitulo.TabIndex = 7;
             labelSubTitulo.Text = "Created by LAG";
             // 
+            // panelView
+            // 
+            panelView.BackColor = Color.FromArgb(31, 31, 31);
+            panelView.Dock = DockStyle.Bottom;
+            panelView.Location = new Point(0, 80);
+            panelView.Name = "panelView";
+            panelView.Size = new Size(800, 520);
+            panelView.TabIndex = 9;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(27, 27, 27);
+            BackColor = Color.FromArgb(10, 10, 10);
             ClientSize = new Size(800, 600);
             ControlBox = false;
             Controls.Add(panelView);
@@ -106,9 +106,9 @@
 
         #endregion
 
-        private Panel panelView;
         private Button buttonExit;
         private Label labelTitulo;
         private Label labelSubTitulo;
+        private Panel panelView;
     }
 }

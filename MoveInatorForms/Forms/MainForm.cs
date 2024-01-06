@@ -1,13 +1,5 @@
-﻿using DocumentosBrasileiros;
-using Microsoft.Extensions.DependencyInjection;
-using MoveInatorForms.Domains.Enums;
-using MoveInatorForms.Domains.Models;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
-using MoveInatorForms.Services.Interfaces;
-using MoveInatorForms.Utilities.Extensions;
-using MoveInatorForms.Utilities.Mocks;
-using System.ComponentModel;
-using System.Text;
 
 namespace MoveInatorForms.Forms
 {
@@ -27,7 +19,6 @@ namespace MoveInatorForms.Forms
         private async Task LoadView()
         {
             GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
-            GerarCSVSimplesView.Dock = DockStyle.Fill;
 
             panelView.Controls.Add(GerarCSVSimplesView);
         }
