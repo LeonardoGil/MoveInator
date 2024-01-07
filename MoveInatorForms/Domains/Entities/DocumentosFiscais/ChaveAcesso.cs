@@ -7,8 +7,8 @@ namespace MoveInatorForms.Domains.Entities.DocumentosFiscais
         public ChaveAcesso(ModeloDocumentoEnum modelo, int uf, DateTime date, long cnpj, int serie, int numero)
         {
             cUF = uf;
-            cMes = date.Month;
-            cAno = date.Year;
+            cMes = int.Parse(date.ToString("MM"));
+            cAno = int.Parse(date.ToString("yy"));
             cCnpj = cnpj;
             cModelo = (int)modelo;
             cSerie = serie;
