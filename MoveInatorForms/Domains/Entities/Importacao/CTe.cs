@@ -10,6 +10,7 @@ namespace MoveInatorForms.Domains.Entities.Importacao
 
         public DateTime DataEmissao { get; set; }
 
+        public ChaveAcesso ChaveAcessoNFe { get;set;}
 
     }
 }
