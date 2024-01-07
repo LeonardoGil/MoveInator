@@ -1,31 +1,37 @@
 ## ✏ Sobre ✏ 
+> Version: 1.0.1.0
 
 A ideía dessa aplicação é auxiliar os colaboradores do time Lonestar na realização do Desenvolvimento/Teste da aplicação do Move,
 agilizando processos manuais como: 
 
-* Geração de CSV
+* Geração de Manifesto e MDFe
 * Comunicação com Aplicativo (Iniciar Viagem, Gerar Ocorrência, Concluír Entrega...) **(Em breve)**
 * Json de Integração (Adicionar/Editar/Excluir as Viagens/Entregas) **(Em breve)**
 * Requisição do Token (Portal e Mobile) **(Em breve)**
 
-![image](https://github.com/LeonardoGil/MoveInator/assets/37351399/6eee299a-0631-4a1f-902f-f82d4bd1fcc0)
+> Pagina Principal:  
+![image](https://github.com/LeonardoGil/MoveInator/assets/37351399/28fa9adf-9440-49e5-82d8-ac71a29a4ee0)  
+
+> Gerar Manifesto:  
+![image](https://github.com/LeonardoGil/MoveInator/assets/37351399/6654b103-f54c-4a14-a4c0-5af032743b96)  
   
-> Arquivo CSV Gerado:
-![image](https://github.com/LeonardoGil/MoveInator/assets/37351399/ed0ce34c-4661-4a75-8d4c-1f20e7d5fedf)
-  
+> Gerar MDFe e CTes:  
+![image](https://github.com/LeonardoGil/MoveInator/assets/37351399/79e5baf4-6c4b-4eb4-900e-1f25c2bfaff1)  
+
 ## ✅ Features Disponíveis ✅
 
-* Geração de CSV de forma Simples
+* Geração de Manifesto de forma Simples
 > Permite o usuário gerar o CSV de importação do Move  
-> Nessa feature o usuário informa o numero inicial do CT-e ou NF-e e a quantidade de documentos. Cada documento gerado incrementa o numero Inicial. 
-> Dentro das possibilidades de documentos para gerar temos: **MDFe**, **Manifesto**, **CT-e** e **NF-e**
 
 * Auto-Complete na Geração do CSV Simples
 > Permite o usuário gerar automatícamente o CSV com dados aleatórios armazenados no sistema   
   
+* Geração de MDFe de forma Simples
+> Permite o usuário gerar o MDFe e CTes de importação do Move  
+
 ## ⚙ Features Futuras ⚙
 
-* Integração do dados Offline **(Em desenvolvimento)**
+* Integração do dados Offline
 > Usuário será capaz de armazenar algumas informações relevantes de forma offline. Sendo elas: CNPJ do Emissor, Informações do Motorista, Urls para geração de Token 
 
 * Integração de dados Online
@@ -39,7 +45,7 @@ agilizando processos manuais como:
 > Usuário poderá realizar comandos do Aplicativo Move dentro da aplicação.  
 > Dentro das possibilidades temos: **Iniciar Viagem**, **Gerar Ocorrencia Entrega/Viagem**, **Concluír Entrega**...
 
-* Geração do Token de Autenticação do Portal e Mobile (Em desenvolvimento)
+* Geração do Token de Autenticação do Portal e Mobile
 > Usuário poderá gerar o Token de Autenticação da API do Portal e Mobile
 
 
