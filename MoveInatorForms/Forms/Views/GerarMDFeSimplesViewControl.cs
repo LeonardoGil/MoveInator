@@ -87,10 +87,10 @@ namespace MoveInatorForms.Forms.Views
             if (string.IsNullOrEmpty(textBoxSerieMDFe.Text))
                 throw new Exception("Informe uma Série MDFe!");
 
-            if (!int.TryParse(textBoxNumeroCTe.Text, out _))
+            if (!int.TryParse(textBoxNumeroCTe.Text, out var numero))
                 throw new Exception("Informe um Numero CTe!");
 
-            if (!int.TryParse(textBoxSerieCTe.Text, out _))
+            if (!int.TryParse(textBoxSerieCTe.Text, out var serie))
                 throw new Exception("Informe uma Série CTe!");
 
             // Emissor
@@ -108,6 +108,12 @@ namespace MoveInatorForms.Forms.Views
 
             if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text.OnlyNumber()))
                 throw new Exception("Informe o Cpf do Motorista!");
+
+            // Lista de CTes
+            var ctes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
+
+            if (ctes.Any(x => x.NumeroCTe == numero && x.SerieCTe == serie))
+                throw new Exception("Já possuí um CTe com esse Numero e Serie");
         }
 
         private async void PrepareFieldForNextCTeAsync()
