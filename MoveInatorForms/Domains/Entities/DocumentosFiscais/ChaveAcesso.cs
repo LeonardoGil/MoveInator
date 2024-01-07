@@ -4,6 +4,19 @@ namespace MoveInatorForms.Domains.Entities.DocumentosFiscais
 {
     public class ChaveAcesso
     {
+        public ChaveAcesso(ModeloDocumentoEnum modelo, int uf, DateTime date, long cnpj, int serie, int numero)
+        {
+            cUF = uf;
+            cMes = date.Month;
+            cAno = date.Year;
+            cCnpj = cnpj;
+            cModelo = (int)modelo;
+            cSerie = serie;
+            cNumero = numero;
+
+            SetDigitoVerificador();
+        }
+
         public ChaveAcesso(ModeloDocumentoEnum modelo, int uf, int mes, int ano, long cnpj, int serie, int numero)
         {
             cUF = uf;

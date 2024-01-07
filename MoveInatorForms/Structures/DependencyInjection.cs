@@ -36,6 +36,7 @@ namespace MoveInatorForms.Structures
         private static HostApplicationBuilder InjectServices(this HostApplicationBuilder builder)
         {
             builder.Services.AddSingleton<ICSVService, CSVService>();
+            builder.Services.AddSingleton<IMDFeService, MDFeService>();
 
             return builder;
         }
