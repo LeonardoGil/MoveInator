@@ -32,11 +32,11 @@
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panelView = new Panel();
-            menuStrip = new MenuStrip();
-            toolStripMenuItemGerarCSV = new ToolStripMenuItem();
-            menuItemCsvSimples = new ToolStripMenuItem();
-            labelInformativa = new Label();
             linkLabel = new LinkLabel();
+            labelInformativa = new Label();
+            menuStrip = new MenuStrip();
+            menuImportacao = new ToolStripMenuItem();
+            menuItemCsvSimples = new ToolStripMenuItem();
             panelView.SuspendLayout();
             menuStrip.SuspendLayout();
             SuspendLayout();
@@ -63,7 +63,8 @@
             labelTitulo.AutoSize = true;
             labelTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelTitulo.Font = new Font("MesloLGL NF", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitulo.Location = new Point(9, 27);
+            labelTitulo.ForeColor = Color.FromArgb(75, 30, 50);
+            labelTitulo.Location = new Point(4, 4);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(212, 50);
@@ -75,8 +76,8 @@
             labelSubTitulo.AutoSize = true;
             labelSubTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelSubTitulo.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            labelSubTitulo.ForeColor = SystemColors.ControlLightLight;
-            labelSubTitulo.Location = new Point(76, 72);
+            labelSubTitulo.ForeColor = Color.DarkGray;
+            labelSubTitulo.Location = new Point(69, 49);
             labelSubTitulo.Margin = new Padding(0);
             labelSubTitulo.Name = "labelSubTitulo";
             labelSubTitulo.Size = new Size(122, 21);
@@ -89,39 +90,21 @@
             panelView.Controls.Add(linkLabel);
             panelView.Controls.Add(labelInformativa);
             panelView.Dock = DockStyle.Bottom;
-            panelView.Location = new Point(0, 100);
+            panelView.Location = new Point(0, 80);
             panelView.Name = "panelView";
-            panelView.Size = new Size(800, 500);
+            panelView.Size = new Size(800, 520);
             panelView.TabIndex = 9;
             // 
-            // menuStrip
+            // linkLabel
             // 
-            menuStrip.BackColor = Color.FromArgb(10, 10, 10);
-            menuStrip.Dock = DockStyle.None;
-            menuStrip.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStrip.Items.AddRange(new ToolStripItem[] { toolStripMenuItemGerarCSV });
-            menuStrip.Location = new Point(0, 0);
-            menuStrip.Name = "menuStrip";
-            menuStrip.Size = new Size(211, 25);
-            menuStrip.TabIndex = 10;
-            menuStrip.Text = "menuStrip";
-            // 
-            // toolStripMenuItemGerarCSV
-            // 
-            toolStripMenuItemGerarCSV.BackColor = Color.FromArgb(31, 31, 31);
-            toolStripMenuItemGerarCSV.DropDownItems.AddRange(new ToolStripItem[] { menuItemCsvSimples });
-            toolStripMenuItemGerarCSV.ForeColor = SystemColors.ControlLightLight;
-            toolStripMenuItemGerarCSV.Name = "toolStripMenuItemGerarCSV";
-            toolStripMenuItemGerarCSV.Size = new Size(83, 21);
-            toolStripMenuItemGerarCSV.Text = "Gerar CSV";
-            // 
-            // menuItemCsvSimples
-            // 
-            menuItemCsvSimples.BackColor = Color.FromArgb(31, 31, 31);
-            menuItemCsvSimples.Name = "menuItemCsvSimples";
-            menuItemCsvSimples.Size = new Size(180, 22);
-            menuItemCsvSimples.Text = "CSV Simples";
-            menuItemCsvSimples.Click += LoadCSVSimples_ClickEvent;
+            linkLabel.AutoSize = true;
+            linkLabel.LinkColor = SystemColors.HotTrack;
+            linkLabel.Location = new Point(255, 245);
+            linkLabel.Name = "linkLabel";
+            linkLabel.Size = new Size(295, 17);
+            linkLabel.TabIndex = 1;
+            linkLabel.TabStop = true;
+            linkLabel.Text = "https://github.com/LeonardoGil/MoveInator";
             // 
             // labelInformativa
             // 
@@ -129,22 +112,44 @@
             labelInformativa.BackColor = Color.FromArgb(31, 31, 31);
             labelInformativa.FlatStyle = FlatStyle.Flat;
             labelInformativa.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            labelInformativa.Location = new Point(268, 230);
+            labelInformativa.ForeColor = Color.LightSlateGray;
+            labelInformativa.Location = new Point(268, 221);
             labelInformativa.Name = "labelInformativa";
             labelInformativa.Size = new Size(264, 21);
             labelInformativa.TabIndex = 0;
             labelInformativa.Text = "Considere apoiar o projeto 💪😁";
             // 
-            // linkLabel
+            // menuStrip
             // 
-            linkLabel.AutoSize = true;
-            linkLabel.LinkColor = SystemColors.HotTrack;
-            linkLabel.Location = new Point(255, 254);
-            linkLabel.Name = "linkLabel";
-            linkLabel.Size = new Size(295, 17);
-            linkLabel.TabIndex = 1;
-            linkLabel.TabStop = true;
-            linkLabel.Text = "https://github.com/LeonardoGil/MoveInator";
+            menuStrip.BackColor = Color.FromArgb(10, 10, 10);
+            menuStrip.Dock = DockStyle.None;
+            menuStrip.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            menuStrip.Items.AddRange(new ToolStripItem[] { menuImportacao });
+            menuStrip.Location = new Point(690, 48);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Padding = new Padding(4, 3, 0, 2);
+            menuStrip.Size = new Size(108, 30);
+            menuStrip.TabIndex = 10;
+            menuStrip.Text = "menuStrip";
+            // 
+            // menuImportacao
+            // 
+            menuImportacao.BackColor = Color.FromArgb(31, 31, 31);
+            menuImportacao.DropDownItems.AddRange(new ToolStripItem[] { menuItemCsvSimples });
+            menuImportacao.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            menuImportacao.ForeColor = Color.DarkGray;
+            menuImportacao.Name = "menuImportacao";
+            menuImportacao.Size = new Size(102, 25);
+            menuImportacao.Text = "Importação";
+            // 
+            // menuItemCsvSimples
+            // 
+            menuItemCsvSimples.BackColor = Color.FromArgb(31, 31, 31);
+            menuItemCsvSimples.ForeColor = Color.DarkGray;
+            menuItemCsvSimples.Name = "menuItemCsvSimples";
+            menuItemCsvSimples.Size = new Size(180, 26);
+            menuItemCsvSimples.Text = "CSV Simples";
+            menuItemCsvSimples.Click += LoadCSVSimples_ClickEvent;
             // 
             // MainForm
             // 
@@ -182,7 +187,7 @@
         private Label labelSubTitulo;
         private Panel panelView;
         private MenuStrip menuStrip;
-        private ToolStripMenuItem toolStripMenuItemGerarCSV;
+        private ToolStripMenuItem menuImportacao;
         private ToolStripMenuItem menuItemCsvSimples;
         private Label labelInformativa;
         private LinkLabel linkLabel;
