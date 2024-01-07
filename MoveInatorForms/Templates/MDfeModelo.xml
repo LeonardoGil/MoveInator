@@ -1,0 +1,142 @@
+<mdfeProc xmlns="http://www.portalfiscal.inf.br/mdfe" versao="3.00">
+	<MDFe xmlns="http://www.portalfiscal.inf.br/mdfe">
+		<infMDFe versao="3.00" Id="MDFe[ChaveAcesso]">
+			<ide>
+				<cUF>[Estado]</cUF>
+				<tpAmb>1</tpAmb>
+				<tpEmit>1</tpEmit>
+				<mod>58</mod>
+				<serie>[Serie]</serie>
+				<nMDF>[Numero]</nMDF>
+				<cMDF>04785112</cMDF>
+				<cDV>[DigitoVerificar]</cDV>
+				<modal>1</modal>
+				<dhEmi>[DataEmissao]-03:00</dhEmi>
+				<tpEmis>1</tpEmis>
+				<procEmi>0</procEmi>
+				<verProc>0001</verProc>
+				<UFIni>MS</UFIni>
+				<UFFim>SP</UFFim>
+				<infMunCarrega>
+					<cMunCarrega>5008305</cMunCarrega>
+					<xMunCarrega>MoveInator</xMunCarrega>
+				</infMunCarrega>
+				<dhIniViagem>[DataEmissao]-03:00</dhIniViagem>
+			</ide>
+			<emit>
+				<CNPJ>[CnpjEmissor]</CNPJ>
+				<IE>417351729119</IE>
+				<xNome>Transportador MoveInator</xNome>
+				<enderEmit>
+					<xLgr>Polaris</xLgr>
+					<nro>123</nro>
+					<xBairro>LAGEADO</xBairro>
+					<cMun>3526902</cMun>
+					<xMun>Limeira</xMun>
+					<CEP>88200000</CEP>
+					<UF>SC</UF>
+					<fone>998348080</fone>
+				</enderEmit>
+			</emit>
+			<infModal versaoModal="3.00">
+				<rodo>
+					<infANTT>
+						<RNTRC>11567852</RNTRC>
+						<infContratante>
+							<CNPJ>16404287003332</CNPJ>
+						</infContratante>
+					</infANTT>
+					<veicTracao>
+						<cInt>1</cInt>
+						<placa>HTP0028</placa>
+						<tara>0</tara>
+						<condutor>
+							<xNome>[NomeMotorista]</xNome>
+							<CPF>[CpfMotorista]</CPF>
+						</condutor>
+						<tpRod>06</tpRod>
+						<tpCar>00</tpCar>
+						<UF>SC</UF>
+					</veicTracao>
+				</rodo>
+			</infModal>
+			<infDoc>
+				<infMunDescarga>
+					<cMunDescarga>3507605</cMunDescarga>
+					<xMunDescarga>Municipio de MoveInator</xMunDescarga>
+					[CTes]
+				</infMunDescarga>
+			</infDoc>
+			<seg>
+				<infResp>
+					<respSeg>2</respSeg>
+					<CNPJ>16404287003332</CNPJ>
+				</infResp>
+				<infSeg>
+					<xSeg>ARGO</xSeg>
+					<CNPJ>14868712000131</CNPJ>
+				</infSeg>
+				<nApol>16010654000010</nApol>
+				<nAver>0279811223026554300010057003000111549119</nAver>
+			</seg>
+			<prodPred>
+				<tpCarga>05</tpCarga>
+				<xProd>MacConha</xProd>
+				<cEAN>SEM GTIN</cEAN>
+				<NCM>47032900</NCM>
+				<infLotacao>
+					<infLocalCarrega>
+						<CEP>88200000</CEP>
+					</infLocalCarrega>
+					<infLocalDescarrega>
+						<CEP>88220000</CEP>
+					</infLocalDescarrega>
+				</infLotacao>
+			</prodPred>
+			<tot>
+				<qCTe>[QuantidadeCTes]</qCTe>
+				<vCarga>500100.55</vCarga>
+				<cUnid>01</cUnid>
+				<qCarga>38000.0000</qCarga>
+			</tot>
+			<infAdic>
+				<infCpl>Move Move Move Inaaaaitoorr</infCpl>
+			</infAdic>
+		</infMDFe>
+		<infMDFeSupl>
+			<qrCodMDFe>HTTPS://DFE-PORTAL.SVRS.RS.GOV.BR/MDFE/QRCODE?chMDFe=35220510619651000380580010000772461047851128&amp;tpAmb=1</qrCodMDFe>
+		</infMDFeSupl>
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="#MDFe35220510619651000380580010000772461047851128">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue>LyeeJgH0JWwp3STIJLPaXlG6Gew=</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>XLjH03WE9eFdZ16q8XcXxkczOO4t3iw8RJ+xrH6bTmWghdLcluyb2kJ1Ix7mXAR7xaJoLLxCa11vTvu9xUaO0A6J9zrYI18OhqAr9OAxiShpRQLYdm5HHPoklVDCtx34t0arWiFFScI2cfWS6vnqQdNUuPXTuOVNKSjEp07QP6iuFP2+YavT8b2/O0RNkR5+q45FZHryyJjxH6da5cWjrgj90Tv4ovL+G9ByHT5dyC+g+qTnpjPX78xImnUMdzjMIty22t1pZAJrSGlzEVJf66MyEoHpcgL+Vu1ePFBEsLlig1ePftOltYlYrQDHmkl8PNKQLAVmMzQ1Sss9YbQw4g==</SignatureValue>
+			<KeyInfo>
+				<X509Data>
+					<X509Certificate>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</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</Signature>
+	</MDFe>
+	<protMDFe versao="3.00" xmlns="http://www.portalfiscal.inf.br/mdfe">
+		<infProt Id="MDFe935220012482713">
+			<tpAmb>1</tpAmb>
+			<verAplic>RS20220512135344</verAplic>
+			<chMDFe>[ChaveAcesso]</chMDFe>
+			<dhRecbto>[DataEmissao]-03:00</dhRecbto>
+			<nProt>935220012482713</nProt>
+			<digVal>LyeeJgH0JWwp3STIJLPaXlG6Gew=</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso do MDF-e</xMotivo>
+		</infProt>
+	</protMDFe>
+</mdfeProc>

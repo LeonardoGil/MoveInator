@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cteProc xmlns="http://www.portalfiscal.inf.br/cte" versao="3.00">
+	<CTe xmlns="http://www.portalfiscal.inf.br/cte">
+		<infCte versao="3.00" Id="CTe[ChaveAcesso]">
+			<ide>
+				<cUF>[Estado]</cUF>
+				<cCT>46923608</cCT>
+				<CFOP>6932</CFOP>
+				<natOp>Prest. serv. transp. inic. UF div. insc. o prest.</natOp>
+				<mod>57</mod>
+				<serie>[Serie]</serie>
+				<nCT>[Numero]</nCT>
+				<dhEmi>[DataEmissao]-03:00</dhEmi>
+				<tpImp>1</tpImp>
+				<tpEmis>1</tpEmis>
+				<cDV>[DigitoVerificador]</cDV>
+				<tpAmb>1</tpAmb>
+				<tpCTe>0</tpCTe>
+				<procEmi>0</procEmi>
+				<verProc>SAP NFE 10.0</verProc>
+				<cMunEnv>3526902</cMunEnv>
+				<xMunEnv>MoveInatorzinho</xMunEnv>
+				<UFEnv>SP</UFEnv>
+				<modal>01</modal>
+				<tpServ>0</tpServ>
+				<cMunIni>5008305</cMunIni>
+				<xMunIni>Tres Moves</xMunIni>
+				<UFIni>MS</UFIni>
+				<cMunFim>3507605</cMunFim>
+				<xMunFim>BRAGANCA INATOR</xMunFim>
+				<UFFim>SP</UFFim>
+				<retira>1</retira>
+				<indIEToma>1</indIEToma>
+				<toma3>
+					<toma>0</toma>
+				</toma3>
+			</ide>
+			<compl>
+				<xObs>O ICMS sera recolhido pelo remetente da mercadoria, conf. Comunicado SAT N.006 de 01 Fevereiro de 2018 TRANSPORTE SUBCONTRATADO COM WATANABE TRANSPORTES LTDA, CNPJ: 11.210.441 /0001-34 PROPRIETARIO DO VEICULO MARCA VOLVO, MODELO CAVALO MECANICO, PLACA No HTP0028, UF SP. BASE DE CALCULO 8.800,18 E ICMS RETIDO 844,82.</xObs>
+			</compl>
+			<emit>
+				<CNPJ>[CnpjEmissor]</CNPJ>
+				<IE>417351729119</IE>
+				<xNome>Transportador Inator</xNome>
+				<xFant>Escritorio Administrativo</xFant>
+				<enderEmit>
+					<xLgr>EST DO MOVE</xLgr>
+					<nro>69</nro>
+					<xBairro>Polatis</xBairro>
+					<cMun>3526902</cMun>
+					<xMun>Lonezinho</xMun>
+					<CEP>88200000</CEP>
+					<UF>SC</UF>
+					<fone>511136365191</fone>
+				</enderEmit>
+			</emit>
+			<rem>
+				<CNPJ>48365368000180</CNPJ>
+				<IE>284349755</IE>
+				<xNome>Teste MOVE</xNome>
+				<fone>1136365797</fone>
+				<enderReme>
+					<xLgr>BR 158 KM 298 ACESSO A ESQUERDA NO KM 08 AREA INDUSTRIAL</xLgr>
+					<nro>SN</nro>
+					<xBairro>ZONA RURAL</xBairro>
+					<cMun>5008305</cMun>
+					<xMun>Tres Lagoas</xMun>
+					<CEP>79601970</CEP>
+					<UF>MS</UF>
+					<cPais>1058</cPais>
+					<xPais>Brasil</xPais>
+				</enderReme>
+			</rem>
+			<exped>
+				<CNPJ>48365368000180</CNPJ>
+				<IE>284349755</IE>
+				<xNome>Teste Expedidor MOVE</xNome>
+				<fone>1199999999</fone>
+				<enderExped>
+					<xLgr>ROD BR 158 KM 298</xLgr>
+					<nro>S/N</nro>
+					<xBairro>CENTRO</xBairro>
+					<cMun>5008305</cMun>
+					<xMun>Tres lagoas</xMun>
+					<CEP>79601970</CEP>
+					<UF>MS</UF>
+					<cPais>1058</cPais>
+					<xPais>Brasil</xPais>
+				</enderExped>
+			</exped>
+			<receb>
+				<CNPJ>61101895000498</CNPJ>
+				<IE>225029281112</IE>
+				<xNome>SANTHER FABRICA DE PAP STA THEREZIN</xNome>
+				<fone>1144818423</fone>
+				<enderReceb>
+					<xLgr>ROD CAPITAO BARDUINO</xLgr>
+					<nro>SN</nro>
+					<xCpl>KM 98</xCpl>
+					<xBairro>CURITIBANOS</xBairro>
+					<cMun>3507605</cMun>
+					<xMun>BRAGANCA PAULISTA</xMun>
+					<CEP>12929731</CEP>
+					<UF>SP</UF>
+					<cPais>1058</cPais>
+					<xPais>Brasil</xPais>
+				</enderReceb>
+			</receb>
+			<dest>
+				<CNPJ>61101895000498</CNPJ>
+				<IE>225029281112</IE>
+				<xNome>MacConha Inator</xNome>
+				<fone>1144818423</fone>
+				<enderDest>
+					<xLgr>ROD CAPITÃO BARDUINO</xLgr>
+					<nro>SN</nro>
+					<xCpl>KM 98</xCpl>
+					<xBairro>CURITIBANOS</xBairro>
+					<cMun>3507605</cMun>
+					<xMun>BRAGANCA PAULISTA</xMun>
+					<CEP>12922754</CEP>
+					<UF>SP</UF>
+					<cPais>1058</cPais>
+					<xPais>Brasil</xPais>
+				</enderDest>
+			</dest>
+			<vPrest>
+				<vTPrest>8800.18</vTPrest>
+				<vRec>7955.36</vRec>
+			</vPrest>
+			<imp>
+				<ICMS>
+					<ICMS60>
+						<CST>60</CST>
+						<vBCSTRet>8800.18</vBCSTRet>
+						<vICMSSTRet>1056.02</vICMSSTRet>
+						<pICMSSTRet>12.00</pICMSSTRet>
+						<vCred>211.20</vCred>
+					</ICMS60>
+				</ICMS>
+			</imp>
+			<infCTeNorm>
+				<infCarga>
+					<vCarga>139029.53</vCarga>
+					<proPred>Papel e Celulose</proPred>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO BRUTO</tpMed>
+						<qCarga>38000.0000</qCarga>
+					</infQ>
+					<vCargaAverb>139029.53</vCargaAverb>
+				</infCarga>
+				<infDoc>
+					<infNFe>
+						<chave>[ChaveAcessoNFe]</chave>
+					</infNFe>
+				</infDoc>
+				<infModal versaoModal="3.00">
+					<rodo>
+						<RNTRC>00000019</RNTRC>
+					</rodo>
+				</infModal>
+			</infCTeNorm>
+		</infCte>
+		<infCTeSupl>
+			<qrCodCTe>HTTPS://NFE.FAZENDA.SP.GOV.BR/CTECONSULTA/QRCODE?chCTe=35220510619651000380570030001115491469236084&amp;tpAmb=1</qrCodCTe>
+		</infCTeSupl>
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="#CTe35220510619651000380570030001115491469236084">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue>bq52KCjN6hn3/gklw0va2whvA3k=</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>URgcjAXwzgjIbFKEpTWnvnlbGMHoun4eyUdtIoLhbWt0H78deuHzNIvrLdM7TOGrcKUtii5fCM1LSvs15pB/kbmJZ+4SNRckf6oRC5p65mpfnaOjE0ThpmB/vIrjmFu40vLHrIAZjsYOBmclIh/EpMe7YkvaUis2vEh/PBnuMClBeWk5i/dt3pQXsK7GLGMa3RpuGs178f9wCNTqTYFw5wMEOfanE8PUrCWMJnZWHtDJ30HGO4Em2yj6Z1B/f5xrGjnMmq8MQnlVML5NzvkdytepKvw2vwFljWG0w5hxlUFvpUwyhLRVT48DdajPKYo5SkgtgO0Tj/ZjkmHy0B4qKQ==</SignatureValue>
+			<KeyInfo>
+				<X509Data>
+					<X509Certificate>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</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</Signature>
+	</CTe>
+	<protCTe xmlns="http://www.portalfiscal.inf.br/cte" versao="3.00">
+		<infProt>
+			<tpAmb>1</tpAmb>
+			<verAplic>SP-CTe-2021-08-19-1</verAplic>
+			<chCTe>[ChaveAcesso]</chCTe>
+			<dhRecbto>[DataEmissao]-03:00</dhRecbto>
+			<nProt>135225350947934</nProt>
+			<digVal>bq52KCjN6hn3/gklw0va2whvA3k=</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso do CT-e</xMotivo>
+		</infProt>
+	</protCTe>
+</cteProc>                                                                                                                              

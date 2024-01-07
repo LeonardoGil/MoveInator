@@ -1,4 +1,5 @@
-﻿using MoveInatorForms.Domains.Entities;
+﻿using MoveInatorForms.Domains.Entities.DocumentosFiscais;
+using MoveInatorForms.Domains.Entities.Importacao;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
@@ -10,7 +11,7 @@ namespace MoveInatorForms.Services
         public string Generate(List<ViagemViewModel> viagensViewModel)
         {
             var viagens = ConvertToViagemCSV(viagensViewModel);
-            var csv = ViagemCSV.Header();
+            var csv = Manifesto.Header();
 
             foreach (var viagem in viagens)
             {
@@ -23,7 +24,7 @@ namespace MoveInatorForms.Services
 
         #region Private
 
-        private List<ViagemCSV> ConvertToViagemCSV(List<ViagemViewModel> viagensViewModel)
+        private List<Manifesto> ConvertToViagemCSV(List<ViagemViewModel> viagensViewModel)
         {
             var taskProcessViagensCSV = viagensViewModel.Select(ProcessConvertToViagemCSVAsync);
 
@@ -34,9 +35,9 @@ namespace MoveInatorForms.Services
             return viagens;
         }
 
-        private async Task<List<ViagemCSV>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
+        private async Task<List<Manifesto>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
         {
-            var viagens = new List<ViagemCSV>();
+            var viagens = new List<Manifesto>();
             var chaveAcesso = string.Empty;
 
             if (viagemViewModel.TipoViagem == TipoDocumentoViagemEnum.MDFe)
@@ -51,7 +52,7 @@ namespace MoveInatorForms.Services
 
             for (int i = 0; i < viagemViewModel.Quantidade; i++)
             {
-                var viagem = new ViagemCSV()
+                var viagem = new Manifesto()
                 {
                     TipoDocumento = (int)viagemViewModel.TipoViagem,
                     OrdemViagem = 1,
@@ -96,7 +97,7 @@ namespace MoveInatorForms.Services
             return viagens;
         }
 
-        private void ProcessEntregaCSVCTe(ViagemCSV viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVCTe(Manifesto viagem, ViagemViewModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
@@ -110,7 +111,7 @@ namespace MoveInatorForms.Services
             viagem.ChaveDeAcessoDoCTe = cte.ChaveDeAcesso;
         }
 
-        private void ProcessEntregaCSVNFe(ViagemCSV viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVNFe(Manifesto viagem, ViagemViewModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));

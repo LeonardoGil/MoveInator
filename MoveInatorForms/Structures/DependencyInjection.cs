@@ -28,6 +28,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddTransient<MainForm>();
 
             builder.Services.AddTransient<GerarCSVSimplesViewControl>();
+            builder.Services.AddTransient<GerarMDFeSimplesViewControl>();
 
             return builder;
         }
@@ -35,6 +36,7 @@ namespace MoveInatorForms.Structures
         private static HostApplicationBuilder InjectServices(this HostApplicationBuilder builder)
         {
             builder.Services.AddSingleton<ICSVService, CSVService>();
+            builder.Services.AddSingleton<IMDFeService, MDFeService>();
 
             return builder;
         }
