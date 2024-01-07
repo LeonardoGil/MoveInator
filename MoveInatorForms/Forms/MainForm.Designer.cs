@@ -37,6 +37,7 @@
             menuStrip = new MenuStrip();
             menuImportacao = new ToolStripMenuItem();
             menuItemCsvSimples = new ToolStripMenuItem();
+            menuItemMDFeSimples = new ToolStripMenuItem();
             panelView.SuspendLayout();
             menuStrip.SuspendLayout();
             SuspendLayout();
@@ -135,7 +136,7 @@
             // menuImportacao
             // 
             menuImportacao.BackColor = Color.FromArgb(31, 31, 31);
-            menuImportacao.DropDownItems.AddRange(new ToolStripItem[] { menuItemCsvSimples });
+            menuImportacao.DropDownItems.AddRange(new ToolStripItem[] { menuItemCsvSimples, menuItemMDFeSimples });
             menuImportacao.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             menuImportacao.ForeColor = Color.DarkGray;
             menuImportacao.Name = "menuImportacao";
@@ -147,9 +148,18 @@
             menuItemCsvSimples.BackColor = Color.FromArgb(31, 31, 31);
             menuItemCsvSimples.ForeColor = Color.DarkGray;
             menuItemCsvSimples.Name = "menuItemCsvSimples";
-            menuItemCsvSimples.Size = new Size(180, 26);
+            menuItemCsvSimples.Size = new Size(184, 26);
             menuItemCsvSimples.Text = "CSV Simples";
             menuItemCsvSimples.Click += LoadCSVSimples_ClickEvent;
+            // 
+            // menuItemMDFeSimples
+            // 
+            menuItemMDFeSimples.BackColor = Color.FromArgb(31, 31, 31);
+            menuItemMDFeSimples.ForeColor = Color.DarkGray;
+            menuItemMDFeSimples.Name = "menuItemMDFeSimples";
+            menuItemMDFeSimples.Size = new Size(184, 26);
+            menuItemMDFeSimples.Text = "MDF-e Simples";
+            menuItemMDFeSimples.Click += LoadMDFeSimples_ClickEvent;
             // 
             // MainForm
             // 
@@ -191,5 +201,6 @@
         private ToolStripMenuItem menuItemCsvSimples;
         private Label labelInformativa;
         private LinkLabel linkLabel;
+        private ToolStripMenuItem menuItemMDFeSimples;
     }
 }

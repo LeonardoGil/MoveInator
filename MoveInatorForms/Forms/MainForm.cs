@@ -8,6 +8,7 @@ namespace MoveInatorForms.Forms
         private Point Point;
 
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
+        private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
 
         public MainForm()
         {
@@ -53,6 +54,15 @@ namespace MoveInatorForms.Forms
                 GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
 
             LoadView(GerarCSVSimplesView);
+        }
+
+        private void LoadMDFeSimples_ClickEvent(object sender, EventArgs e)
+        {
+            if (GerarMDFeSimplesView is default(GerarMDFeSimplesViewControl))
+                GerarMDFeSimplesView = Program.ServiceProvider.GetRequiredService<GerarMDFeSimplesViewControl>();
+
+            LoadView(GerarMDFeSimplesView);
+
         }
     }
 }
