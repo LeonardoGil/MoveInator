@@ -14,7 +14,7 @@ namespace MoveInatorForms.Domains.Entities.Importacao
 
         public string CpfMotorista { get; set; }
 
-        public int QuantidadeCTe { get => CTes.Count; }
+        public int QuantidadeCTes { get => CTes.Count; }
 
         public List<CTe> CTes { get; set; } = new List<CTe>();
     }
