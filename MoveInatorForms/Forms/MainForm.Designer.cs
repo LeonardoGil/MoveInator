@@ -64,7 +64,7 @@
             labelTitulo.AutoSize = true;
             labelTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelTitulo.Font = new Font("MesloLGL NF", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitulo.ForeColor = Color.FromArgb(75, 30, 50);
+            labelTitulo.ForeColor = Color.FromArgb(85, 35, 35);
             labelTitulo.Location = new Point(4, 4);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
