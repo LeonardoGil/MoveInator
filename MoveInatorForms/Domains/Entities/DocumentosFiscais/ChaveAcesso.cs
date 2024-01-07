@@ -1,6 +1,6 @@
 ﻿using MoveInatorForms.Domains.Enums;
 
-namespace MoveInatorForms.Domains.Entities
+namespace MoveInatorForms.Domains.Entities.DocumentosFiscais
 {
     public class ChaveAcesso
     {
@@ -68,12 +68,17 @@ namespace MoveInatorForms.Domains.Entities
 
                 soma += number * multiplicador;
 
-                multiplicador = multiplicador >= 9 ? 2 : (multiplicador + 1);
+                multiplicador = multiplicador >= 9 ? 2 : multiplicador + 1;
             }
 
             var resto = soma % 11;
 
             cDigitoVerificador = resto <= 1 ? 0 : 11 - resto;
+        }
+
+        public override string ToString()
+        {
+            return ChaveDeAcesso;
         }
     }
 }

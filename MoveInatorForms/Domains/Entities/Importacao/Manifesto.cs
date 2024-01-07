@@ -1,6 +1,6 @@
-﻿namespace MoveInatorForms.Domains.Entities
+﻿namespace MoveInatorForms.Domains.Entities.Importacao
 {
-    public class ViagemCSV
+    public class Manifesto
     {
         public int TipoDocumento { get; set; }
 
