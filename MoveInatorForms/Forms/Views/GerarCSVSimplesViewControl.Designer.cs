@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelSuperior = new Panel();
             panel2 = new Panel();
             buttonAdicionar = new Button();
@@ -424,23 +424,23 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
@@ -450,21 +450,21 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle8.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
             dataGridView.ShowCellToolTips = false;
             dataGridView.ShowRowErrors = false;
-            dataGridView.Size = new Size(790, 280);
+            dataGridView.Size = new Size(790, 260);
             dataGridView.TabIndex = 33;
             // 
             // panelView
@@ -473,7 +473,7 @@
             panelView.Location = new Point(5, 190);
             panelView.Margin = new Padding(0);
             panelView.Name = "panelView";
-            panelView.Size = new Size(790, 280);
+            panelView.Size = new Size(790, 260);
             panelView.TabIndex = 41;
             // 
             // buttonGerarCSV
@@ -484,7 +484,7 @@
             buttonGerarCSV.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonGerarCSV.FlatStyle = FlatStyle.Flat;
             buttonGerarCSV.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonGerarCSV.Location = new Point(695, 475);
+            buttonGerarCSV.Location = new Point(695, 455);
             buttonGerarCSV.Margin = new Padding(5);
             buttonGerarCSV.Name = "buttonGerarCSV";
             buttonGerarCSV.Size = new Size(100, 40);
@@ -501,7 +501,7 @@
             buttonLimparViagens.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonLimparViagens.FlatStyle = FlatStyle.Flat;
             buttonLimparViagens.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonLimparViagens.Location = new Point(590, 475);
+            buttonLimparViagens.Location = new Point(590, 455);
             buttonLimparViagens.Margin = new Padding(5);
             buttonLimparViagens.Name = "buttonLimparViagens";
             buttonLimparViagens.Size = new Size(100, 40);
@@ -512,7 +512,7 @@
             // 
             // textBoxDiretorio
             // 
-            textBoxDiretorio.Location = new Point(4, 490);
+            textBoxDiretorio.Location = new Point(4, 470);
             textBoxDiretorio.Name = "textBoxDiretorio";
             textBoxDiretorio.Size = new Size(391, 25);
             textBoxDiretorio.TabIndex = 44;
@@ -521,7 +521,7 @@
             // 
             labelDiretorio.AutoSize = true;
             labelDiretorio.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelDiretorio.Location = new Point(4, 470);
+            labelDiretorio.Location = new Point(4, 450);
             labelDiretorio.Name = "labelDiretorio";
             labelDiretorio.Size = new Size(71, 17);
             labelDiretorio.TabIndex = 45;
@@ -542,7 +542,7 @@
             ForeColor = SystemColors.ControlLightLight;
             Margin = new Padding(0);
             Name = "GerarCSVSimplesViewControl";
-            Size = new Size(800, 520);
+            Size = new Size(800, 500);
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();
             panel2.ResumeLayout(false);

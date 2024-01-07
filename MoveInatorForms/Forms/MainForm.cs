@@ -12,15 +12,17 @@ namespace MoveInatorForms.Forms
         public MainForm()
         {
             InitializeComponent();
-
-            LoadView();
         }
 
-        private async Task LoadView()
+        private async Task LoadView(Control control)
         {
-            GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
+            if (panelView.Controls.Contains(control))
+                return;
 
-            panelView.Controls.Add(GerarCSVSimplesView);
+            panelView.Controls.Clear();
+            panelView.Controls.Add(control);
+
+            control.Dock = DockStyle.Fill;
         }
 
         private void SetPoint_MouseDownEvent(object sender, MouseEventArgs e)
@@ -43,6 +45,14 @@ namespace MoveInatorForms.Forms
 
             if (messageBoxResult == DialogResult.Yes)
                 Close();
+        }
+
+        private void LoadCSVSimples_ClickEvent(object sender, EventArgs e)
+        {
+            if (GerarCSVSimplesView is default(GerarCSVSimplesViewControl))
+                GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
+
+            LoadView(GerarCSVSimplesView);
         }
     }
 }
