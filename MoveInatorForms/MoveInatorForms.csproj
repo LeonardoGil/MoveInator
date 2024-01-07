@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
