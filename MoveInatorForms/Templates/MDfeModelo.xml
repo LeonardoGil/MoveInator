@@ -2,16 +2,16 @@
 	<MDFe xmlns="http://www.portalfiscal.inf.br/mdfe">
 		<infMDFe versao="3.00" Id="MDFe[ChaveAcesso]">
 			<ide>
-				<cUF>35</cUF>
+				<cUF>[Estado]</cUF>
 				<tpAmb>1</tpAmb>
 				<tpEmit>1</tpEmit>
 				<mod>58</mod>
-				<serie>1</serie>
-				<nMDF>2</nMDF>
+				<serie>[Serie]</serie>
+				<nMDF>[Numero]</nMDF>
 				<cMDF>04785112</cMDF>
 				<cDV>[DigitoVerificar]</cDV>
 				<modal>1</modal>
-				<dhEmi>2023-11-13T00:07:14-03:00</dhEmi>
+				<dhEmi>[DataEmissao]-03:00</dhEmi>
 				<tpEmis>1</tpEmis>
 				<procEmi>0</procEmi>
 				<verProc>0001</verProc>
@@ -21,7 +21,7 @@
 					<cMunCarrega>5008305</cMunCarrega>
 					<xMunCarrega>MoveInator</xMunCarrega>
 				</infMunCarrega>
-				<dhIniViagem>[DataEmissao]</dhIniViagem>
+				<dhIniViagem>[DataEmissao]-03:00</dhIniViagem>
 			</ide>
 			<emit>
 				<CNPJ>[CnpjEmissor]</CNPJ>
@@ -65,9 +65,6 @@
 					<cMunDescarga>3507605</cMunDescarga>
 					<xMunDescarga>Municipio de MoveInator</xMunDescarga>
 					[CTes]
-					<!-- <infCTe> -->
-						<!-- <chCTe>[ChaveAcessoCTe]</chCTe> -->
-					<!-- </infCTe> -->
 				</infMunDescarga>
 			</infDoc>
 			<seg>
@@ -135,7 +132,7 @@
 			<tpAmb>1</tpAmb>
 			<verAplic>RS20220512135344</verAplic>
 			<chMDFe>[ChaveAcesso]</chMDFe>
-			<dhRecbto>[DataEmissao]</dhRecbto>
+			<dhRecbto>[DataEmissao]-03:00</dhRecbto>
 			<nProt>935220012482713</nProt>
 			<digVal>LyeeJgH0JWwp3STIJLPaXlG6Gew=</digVal>
 			<cStat>100</cStat>
