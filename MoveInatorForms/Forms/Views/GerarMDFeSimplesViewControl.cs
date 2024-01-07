@@ -188,6 +188,26 @@ namespace MoveInatorForms.Forms.Views
                 MDFeCTesViewBindingSource.Clear();
         }
 
+        private void ClearFields_ClickEvent(object sender, EventArgs e)
+        {
+            var anyMDFeCTe = ((List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource).Any();
+
+            textBoxNumeroCTe.Text = string.Empty;
+            textBoxSerieCTe.Text = string.Empty;
+
+            if (anyMDFeCTe)
+                return;
+
+            textBoxNumeroMDFe.Text = string.Empty;
+            textBoxSerieMDFe.Text = string.Empty;
+            
+            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
+            maskedTextBoxCnpjEmissor.Text = string.Empty;
+
+            textBoxNomeMotorista.Text = string.Empty;
+            maskedTextBoxCpfMotorista.Text = string.Empty;
+        }
+
         #endregion
     }
 }

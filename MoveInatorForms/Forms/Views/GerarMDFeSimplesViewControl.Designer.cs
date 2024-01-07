@@ -266,6 +266,7 @@
             buttonLimpar.TabIndex = 52;
             buttonLimpar.Text = "Limpar";
             buttonLimpar.UseVisualStyleBackColor = false;
+            buttonLimpar.Click += ClearFields_ClickEvent;
             // 
             // dataGridView
             // 
