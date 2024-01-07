@@ -344,6 +344,7 @@
             buttonGerarMDFe.TabIndex = 46;
             buttonGerarMDFe.Text = "Gerar MDFe";
             buttonGerarMDFe.UseVisualStyleBackColor = false;
+            buttonGerarMDFe.Click += GenerateMDFe_ClickEvent;
             // 
             // buttonLimparMDFeCTes
             // 
@@ -360,6 +361,7 @@
             buttonLimparMDFeCTes.TabIndex = 47;
             buttonLimparMDFeCTes.Text = "Limpar";
             buttonLimparMDFeCTes.UseVisualStyleBackColor = false;
+            buttonLimparMDFeCTes.Click += ClearMDFeCTesGrid_ClickEvent;
             // 
             // GerarMDFeSimplesViewControl
             // 
