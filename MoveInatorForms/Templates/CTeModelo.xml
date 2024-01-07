@@ -3,31 +3,31 @@
 	<CTe xmlns="http://www.portalfiscal.inf.br/cte">
 		<infCte versao="3.00" Id="CTe[ChaveAcesso]">
 			<ide>
-				<cUF>35</cUF>
+				<cUF>[Estado]</cUF>
 				<cCT>46923608</cCT>
 				<CFOP>6932</CFOP>
 				<natOp>Prest. serv. transp. inic. UF div. insc. o prest.</natOp>
 				<mod>57</mod>
-				<serie>1</serie>
-				<nCT>1</nCT>
-				<dhEmi>2023-11-13T00:35:45-03:00</dhEmi>
+				<serie>[Serie]</serie>
+				<nCT>[Numero]</nCT>
+				<dhEmi>[DataEmissao]-03:00</dhEmi>
 				<tpImp>1</tpImp>
 				<tpEmis>1</tpEmis>
-				<cDV>4</cDV>
+				<cDV>[DigitoVerificador]</cDV>
 				<tpAmb>1</tpAmb>
 				<tpCTe>0</tpCTe>
 				<procEmi>0</procEmi>
 				<verProc>SAP NFE 10.0</verProc>
 				<cMunEnv>3526902</cMunEnv>
-				<xMunEnv>LIMEIRA</xMunEnv>
+				<xMunEnv>MoveInatorzinho</xMunEnv>
 				<UFEnv>SP</UFEnv>
 				<modal>01</modal>
 				<tpServ>0</tpServ>
 				<cMunIni>5008305</cMunIni>
-				<xMunIni>Tres Lagoas</xMunIni>
+				<xMunIni>Tres Moves</xMunIni>
 				<UFIni>MS</UFIni>
 				<cMunFim>3507605</cMunFim>
-				<xMunFim>BRAGANCA PAULISTA</xMunFim>
+				<xMunFim>BRAGANCA INATOR</xMunFim>
 				<UFFim>SP</UFFim>
 				<retira>1</retira>
 				<indIEToma>1</indIEToma>
@@ -39,25 +39,25 @@
 				<xObs>O ICMS sera recolhido pelo remetente da mercadoria, conf. Comunicado SAT N.006 de 01 Fevereiro de 2018 TRANSPORTE SUBCONTRATADO COM WATANABE TRANSPORTES LTDA, CNPJ: 11.210.441 /0001-34 PROPRIETARIO DO VEICULO MARCA VOLVO, MODELO CAVALO MECANICO, PLACA No HTP0028, UF SP. BASE DE CALCULO 8.800,18 E ICMS RETIDO 844,82.</xObs>
 			</compl>
 			<emit>
-				<CNPJ>30265543000100</CNPJ>
+				<CNPJ>[CnpjEmissor]</CNPJ>
 				<IE>417351729119</IE>
-				<xNome>Transportador Teste</xNome>
+				<xNome>Transportador Inator</xNome>
 				<xFant>Escritorio Administrativo</xFant>
 				<enderEmit>
-					<xLgr>EST DO LAGEADO</xLgr>
-					<nro>391</nro>
-					<xBairro>Lageado</xBairro>
+					<xLgr>EST DO MOVE</xLgr>
+					<nro>69</nro>
+					<xBairro>Polatis</xBairro>
 					<cMun>3526902</cMun>
-					<xMun>LIMEIRA</xMun>
-					<CEP>13486000</CEP>
-					<UF>SP</UF>
+					<xMun>Lonezinho</xMun>
+					<CEP>88200000</CEP>
+					<UF>SC</UF>
 					<fone>511136365191</fone>
 				</enderEmit>
 			</emit>
 			<rem>
 				<CNPJ>48365368000180</CNPJ>
 				<IE>284349755</IE>
-				<xNome>Teste Embarcador</xNome>
+				<xNome>Teste MOVE</xNome>
 				<fone>1136365797</fone>
 				<enderReme>
 					<xLgr>BR 158 KM 298 ACESSO A ESQUERDA NO KM 08 AREA INDUSTRIAL</xLgr>
@@ -74,7 +74,7 @@
 			<exped>
 				<CNPJ>48365368000180</CNPJ>
 				<IE>284349755</IE>
-				<xNome>Teste Embarcador</xNome>
+				<xNome>Teste Expedidor MOVE</xNome>
 				<fone>1199999999</fone>
 				<enderExped>
 					<xLgr>ROD BR 158 KM 298</xLgr>
@@ -109,7 +109,7 @@
 			<dest>
 				<CNPJ>61101895000498</CNPJ>
 				<IE>225029281112</IE>
-				<xNome>SANTHÊR FÁBRICA DE PAÇP STA THEREZIN</xNome>
+				<xNome>MacConha Inator</xNome>
 				<fone>1144818423</fone>
 				<enderDest>
 					<xLgr>ROD CAPITÃO BARDUINO</xLgr>
@@ -152,7 +152,7 @@
 				</infCarga>
 				<infDoc>
 					<infNFe>
-						<chave>50220548365368000180550010000014061364562254</chave>
+						<chave>[ChaveAcessoNFe]</chave>
 					</infNFe>
 				</infDoc>
 				<infModal versaoModal="3.00">
@@ -190,8 +190,8 @@
 		<infProt>
 			<tpAmb>1</tpAmb>
 			<verAplic>SP-CTe-2021-08-19-1</verAplic>
-			<chCTe>35220530265543000100570010000000011469236084</chCTe>
-			<dhRecbto>2023-11-13T00:37:04-03:00</dhRecbto>
+			<chCTe>[ChaveAcesso]</chCTe>
+			<dhRecbto>[DataEmissao]-03:00</dhRecbto>
 			<nProt>135225350947934</nProt>
 			<digVal>bq52KCjN6hn3/gklw0va2whvA3k=</digVal>
 			<cStat>100</cStat>

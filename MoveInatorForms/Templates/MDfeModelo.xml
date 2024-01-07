@@ -94,7 +94,7 @@
 				</infLotacao>
 			</prodPred>
 			<tot>
-				<qCTe>1</qCTe>
+				<qCTe>[QuantidadeCTes]</qCTe>
 				<vCarga>500100.55</vCarga>
 				<cUnid>01</cUnid>
 				<qCarga>38000.0000</qCarga>
