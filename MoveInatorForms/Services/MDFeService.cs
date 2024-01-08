@@ -69,8 +69,8 @@ namespace MoveInatorForms.Services
             template = template.Replace("[ChaveAcesso]", mdfe.ChaveAcesso.ToString())
                                .Replace("[DigitoVerificar]", mdfe.ChaveAcesso.DigitoVerificador)
                                .Replace("[Estado]", mdfe.ChaveAcesso.UF)
-                               .Replace("[Serie]", mdfe.ChaveAcesso.Serie)
-                               .Replace("[Numero]", mdfe.ChaveAcesso.Numero)
+                               .Replace("[Serie]", mdfe.ChaveAcesso.Serie.TrimStart('0'))
+                               .Replace("[Numero]", mdfe.ChaveAcesso.Numero.TrimStart('0'))
                                .Replace("[DataEmissao]", mdfe.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
                                .Replace("[CnpjEmissor]", mdfe.CnpjEmissor)
                                .Replace("[NomeMotorista]", mdfe.Motorista)
@@ -106,8 +106,8 @@ namespace MoveInatorForms.Services
                                .Replace("[ChaveAcessoNFe]", cte.ChaveAcessoNFe.ToString())
                                .Replace("[DigitoVerificador]", cte.ChaveAcesso.DigitoVerificador)
                                .Replace("[Estado]", cte.ChaveAcesso.UF)
-                               .Replace("[Serie]", cte.ChaveAcesso.Serie)
-                               .Replace("[Numero]", cte.ChaveAcesso.Numero)
+                               .Replace("[Serie]", cte.ChaveAcesso.Serie.TrimStart('0'))
+                               .Replace("[Numero]", cte.ChaveAcesso.Numero.TrimStart('0'))
                                .Replace("[DataEmissao]", cte.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
                                .Replace("[CnpjEmissor]", cte.CnpjEmissor);
 
