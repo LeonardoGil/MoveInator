@@ -4,6 +4,6 @@ namespace MoveInatorForms.Services.Interfaces
 {
     public interface ICSVService
     {
-        string Generate(List<ViagemViewModel> viagens);
+        Task<string> GenerateAsync(string path, List<ViagemViewModel> viagens);
     }
 }

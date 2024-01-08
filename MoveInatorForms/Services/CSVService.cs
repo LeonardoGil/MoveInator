@@ -8,8 +8,18 @@ namespace MoveInatorForms.Services
 {
     public class CSVService : ICSVService
     {
-        public string Generate(List<ViagemViewModel> viagensViewModel)
+        private readonly IFileService fileService;
+
+        public CSVService(IFileService fileService)
         {
+            this.fileService = fileService;
+        }
+
+        public async Task<string> GenerateAsync(string path, List<ViagemViewModel> viagensViewModel)
+        {
+            if (!Directory.Exists(path))
+                throw new Exception("Diretório não existe!");
+
             var viagens = ConvertToViagemCSV(viagensViewModel);
             var csv = Manifesto.Header();
 
@@ -19,7 +29,11 @@ namespace MoveInatorForms.Services
                 csv += viagem.Row();
             }
 
-            return csv;
+            var filePath = Path.Combine(path, $"Move_{DateTime.Now:dd-MM-yyTHH-mm-ss}.csv");
+
+            await fileService.GenerateFileAsync(filePath, csv);
+
+            return filePath;
         }
 
         #region Private

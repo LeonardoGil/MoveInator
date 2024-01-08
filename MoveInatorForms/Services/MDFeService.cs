@@ -9,6 +9,13 @@ namespace MoveInatorForms.Services
 {
     public class MDFeService : IMDFeService
     {
+        private readonly IFileService fileService;
+
+        public MDFeService(IFileService fileService)
+        {
+            this.fileService = fileService;
+        }
+
         public async Task<string> GenerateAsync(string path, List<MDFeCTeViewModel> mdfeCtes)
         {
             var taskConvertMDFe = ConvertToMDFeAsync(mdfeCtes);
@@ -34,7 +41,6 @@ namespace MoveInatorForms.Services
         }
 
         #region Private
-        
         private async Task<MDFe> ConvertToMDFeAsync(List<MDFeCTeViewModel> mdfeCTes)
         {
             var single = mdfeCTes.First();
@@ -97,7 +103,7 @@ namespace MoveInatorForms.Services
 
             var filePath = Path.Combine(path, $"MoveInator_MDFe{mdfe.ChaveAcesso}.xml");
 
-            await GenerateFileAsync(filePath, template);
+            await fileService.GenerateFileAsync(filePath, template);
         }
 
         private async Task GenerateCTeAsync(string path, CTe cte)
@@ -115,18 +121,8 @@ namespace MoveInatorForms.Services
 
             var filePath = Path.Combine(path, $"MoveInator_CTe{cte.ChaveAcesso}.xml");
 
-            await GenerateFileAsync(filePath, template);
+            await fileService.GenerateFileAsync(filePath, template);
         }
-
-        private async Task GenerateFileAsync(string pathFile, string content)
-        {
-            using (var file = File.Create(pathFile))
-            {
-                byte[] info = new UTF8Encoding(true).GetBytes(content);
-                file.Write(info, 0, info.Length);
-            }
-        }
-
         #endregion
     }
 }

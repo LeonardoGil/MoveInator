@@ -163,23 +163,6 @@ namespace MoveInatorForms.Forms.Views
             textBoxDiretorio.Text = @"C:/Temp";
         }
 
-        private async Task SaveFileAsync(string text)
-        {
-            var fileName = $"Move_{DateTime.Now:dd-MM-yyTHH-mm-ss}.csv";
-
-            var path = textBoxDiretorio.Text.TrimEnd('/').TrimEnd(@"\"[0]);
-
-            var pathFile = string.Concat(path, '/', fileName);
-
-            using (var file = File.Create(pathFile))
-            {
-                byte[] info = new UTF8Encoding(true).GetBytes(text);
-                file.Write(info, 0, info.Length);
-            }
-
-            Invoke(() => MessageBox.Show($"CSV Gerado: {pathFile}"));
-        }
-
         private void EnableButtons(bool enabled = true)
         {
             buttonAdicionar.Enabled = enabled;
@@ -262,11 +245,11 @@ namespace MoveInatorForms.Forms.Views
 
                 var viagens = (List<ViagemViewModel>)ViagensViewBindingSource.DataSource;
 
-                var csv = CSVService.Generate(viagens);
-
-                SaveFileAsync(csv);
+                var csv = CSVService.GenerateAsync(textBoxDiretorio.Text, viagens).Result;
 
                 ViagensViewBindingSource.Clear();
+
+                MessageBox.Show($"Documento Gerado no diretório:{Environment.NewLine}{csv}");
             }
             catch (Exception ex)
             {
