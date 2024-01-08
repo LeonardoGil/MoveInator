@@ -42,6 +42,7 @@ namespace MoveInatorForms.Services
             var mdfe = new MDFe
             {
                 ChaveAcesso = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.SerieMDFe, single.NumeroMDFe),
+                Emissor = single.Emissor,
                 CnpjEmissor = single.CnpjEmissor,
                 DataEmissao = single.DataEmissao,
                 Motorista = single.NomeMotorista,
@@ -72,6 +73,7 @@ namespace MoveInatorForms.Services
                                .Replace("[Serie]", mdfe.ChaveAcesso.Serie.TrimStart('0'))
                                .Replace("[Numero]", mdfe.ChaveAcesso.Numero.TrimStart('0'))
                                .Replace("[DataEmissao]", mdfe.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
+                               .Replace("[Emissor]", mdfe.Emissor)
                                .Replace("[CnpjEmissor]", mdfe.CnpjEmissor)
                                .Replace("[NomeMotorista]", mdfe.Motorista)
                                .Replace("[CpfMotorista]", mdfe.CpfMotorista);

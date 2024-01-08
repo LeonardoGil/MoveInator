@@ -12,6 +12,8 @@
 
         public DateTime DataEmissao { get; set; }
 
+        public string Emissor { get; set; }
+
         public string CnpjEmissor { get; set; }
 
         public string NomeMotorista { get; set; }

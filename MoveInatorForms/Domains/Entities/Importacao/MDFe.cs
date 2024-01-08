@@ -8,6 +8,8 @@ namespace MoveInatorForms.Domains.Entities.Importacao
 
         public DateTime DataEmissao { get; set; }
 
+        public string Emissor { get; set; }
+
         public string CnpjEmissor { get; set; }
 
         public string Motorista { get; set; }
