@@ -26,7 +26,7 @@
 			<emit>
 				<CNPJ>[CnpjEmissor]</CNPJ>
 				<IE>417351729119</IE>
-				<xNome>Transportador MoveInator</xNome>
+				<xNome>[Emissor]</xNome>
 				<enderEmit>
 					<xLgr>Polaris</xLgr>
 					<nro>123</nro>

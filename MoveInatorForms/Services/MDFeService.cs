@@ -9,6 +9,13 @@ namespace MoveInatorForms.Services
 {
     public class MDFeService : IMDFeService
     {
+        private readonly IFileService fileService;
+
+        public MDFeService(IFileService fileService)
+        {
+            this.fileService = fileService;
+        }
+
         public async Task<string> GenerateAsync(string path, List<MDFeCTeViewModel> mdfeCtes)
         {
             var taskConvertMDFe = ConvertToMDFeAsync(mdfeCtes);
@@ -34,7 +41,6 @@ namespace MoveInatorForms.Services
         }
 
         #region Private
-        
         private async Task<MDFe> ConvertToMDFeAsync(List<MDFeCTeViewModel> mdfeCTes)
         {
             var single = mdfeCTes.First();
@@ -42,6 +48,7 @@ namespace MoveInatorForms.Services
             var mdfe = new MDFe
             {
                 ChaveAcesso = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.SerieMDFe, single.NumeroMDFe),
+                Emissor = single.Emissor,
                 CnpjEmissor = single.CnpjEmissor,
                 DataEmissao = single.DataEmissao,
                 Motorista = single.NomeMotorista,
@@ -69,9 +76,10 @@ namespace MoveInatorForms.Services
             template = template.Replace("[ChaveAcesso]", mdfe.ChaveAcesso.ToString())
                                .Replace("[DigitoVerificar]", mdfe.ChaveAcesso.DigitoVerificador)
                                .Replace("[Estado]", mdfe.ChaveAcesso.UF)
-                               .Replace("[Serie]", mdfe.ChaveAcesso.Serie)
-                               .Replace("[Numero]", mdfe.ChaveAcesso.Numero)
+                               .Replace("[Serie]", mdfe.ChaveAcesso.Serie.TrimStart('0'))
+                               .Replace("[Numero]", mdfe.ChaveAcesso.Numero.TrimStart('0'))
                                .Replace("[DataEmissao]", mdfe.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
+                               .Replace("[Emissor]", mdfe.Emissor)
                                .Replace("[CnpjEmissor]", mdfe.CnpjEmissor)
                                .Replace("[NomeMotorista]", mdfe.Motorista)
                                .Replace("[CpfMotorista]", mdfe.CpfMotorista);
@@ -95,7 +103,7 @@ namespace MoveInatorForms.Services
 
             var filePath = Path.Combine(path, $"MoveInator_MDFe{mdfe.ChaveAcesso}.xml");
 
-            await GenerateFileAsync(filePath, template);
+            await fileService.GenerateFileAsync(filePath, template);
         }
 
         private async Task GenerateCTeAsync(string path, CTe cte)
@@ -106,25 +114,15 @@ namespace MoveInatorForms.Services
                                .Replace("[ChaveAcessoNFe]", cte.ChaveAcessoNFe.ToString())
                                .Replace("[DigitoVerificador]", cte.ChaveAcesso.DigitoVerificador)
                                .Replace("[Estado]", cte.ChaveAcesso.UF)
-                               .Replace("[Serie]", cte.ChaveAcesso.Serie)
-                               .Replace("[Numero]", cte.ChaveAcesso.Numero)
+                               .Replace("[Serie]", cte.ChaveAcesso.Serie.TrimStart('0'))
+                               .Replace("[Numero]", cte.ChaveAcesso.Numero.TrimStart('0'))
                                .Replace("[DataEmissao]", cte.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
                                .Replace("[CnpjEmissor]", cte.CnpjEmissor);
 
             var filePath = Path.Combine(path, $"MoveInator_CTe{cte.ChaveAcesso}.xml");
 
-            await GenerateFileAsync(filePath, template);
+            await fileService.GenerateFileAsync(filePath, template);
         }
-
-        private async Task GenerateFileAsync(string pathFile, string content)
-        {
-            using (var file = File.Create(pathFile))
-            {
-                byte[] info = new UTF8Encoding(true).GetBytes(content);
-                file.Write(info, 0, info.Length);
-            }
-        }
-
         #endregion
     }
 }

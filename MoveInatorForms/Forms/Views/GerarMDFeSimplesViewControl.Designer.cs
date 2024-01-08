@@ -55,6 +55,8 @@
             labelDiretorio = new Label();
             buttonGerarMDFe = new Button();
             buttonLimparMDFeCTes = new Button();
+            textBoxEmissor = new TextBox();
+            labelEmissor = new Label();
             panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -62,6 +64,8 @@
             // panelSuperior
             // 
             panelSuperior.BackColor = Color.FromArgb(27, 27, 27);
+            panelSuperior.Controls.Add(textBoxEmissor);
+            panelSuperior.Controls.Add(labelEmissor);
             panelSuperior.Controls.Add(textBoxSerieMDFe);
             panelSuperior.Controls.Add(labelSerieMDFe);
             panelSuperior.Controls.Add(textBoxNumeroMDFe);
@@ -88,7 +92,7 @@
             // 
             // textBoxSerieMDFe
             // 
-            textBoxSerieMDFe.Location = new Point(133, 28);
+            textBoxSerieMDFe.Location = new Point(133, 30);
             textBoxSerieMDFe.MaxLength = 3;
             textBoxSerieMDFe.Name = "textBoxSerieMDFe";
             textBoxSerieMDFe.Size = new Size(106, 25);
@@ -99,7 +103,7 @@
             labelSerieMDFe.AutoSize = true;
             labelSerieMDFe.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelSerieMDFe.Location = new Point(133, 6);
+            labelSerieMDFe.Location = new Point(133, 8);
             labelSerieMDFe.Name = "labelSerieMDFe";
             labelSerieMDFe.Size = new Size(78, 17);
             labelSerieMDFe.TabIndex = 67;
@@ -107,7 +111,7 @@
             // 
             // textBoxNumeroMDFe
             // 
-            textBoxNumeroMDFe.Location = new Point(12, 28);
+            textBoxNumeroMDFe.Location = new Point(12, 30);
             textBoxNumeroMDFe.Name = "textBoxNumeroMDFe";
             textBoxNumeroMDFe.Size = new Size(106, 25);
             textBoxNumeroMDFe.TabIndex = 66;
@@ -117,7 +121,7 @@
             labelNumeroMDFe.AutoSize = true;
             labelNumeroMDFe.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroMDFe.Location = new Point(12, 6);
+            labelNumeroMDFe.Location = new Point(12, 8);
             labelNumeroMDFe.Name = "labelNumeroMDFe";
             labelNumeroMDFe.Size = new Size(85, 17);
             labelNumeroMDFe.TabIndex = 65;
@@ -125,7 +129,7 @@
             // 
             // textBoxSerieCTe
             // 
-            textBoxSerieCTe.Location = new Point(133, 90);
+            textBoxSerieCTe.Location = new Point(133, 92);
             textBoxSerieCTe.MaxLength = 3;
             textBoxSerieCTe.Name = "textBoxSerieCTe";
             textBoxSerieCTe.Size = new Size(106, 25);
@@ -136,7 +140,7 @@
             labelSerieInicial.AutoSize = true;
             labelSerieInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieInicial.ForeColor = SystemColors.ControlLightLight;
-            labelSerieInicial.Location = new Point(133, 68);
+            labelSerieInicial.Location = new Point(133, 70);
             labelSerieInicial.Name = "labelSerieInicial";
             labelSerieInicial.Size = new Size(71, 17);
             labelSerieInicial.TabIndex = 63;
@@ -144,7 +148,7 @@
             // 
             // textBoxNumeroCTe
             // 
-            textBoxNumeroCTe.Location = new Point(12, 90);
+            textBoxNumeroCTe.Location = new Point(12, 92);
             textBoxNumeroCTe.Name = "textBoxNumeroCTe";
             textBoxNumeroCTe.Size = new Size(106, 25);
             textBoxNumeroCTe.TabIndex = 62;
@@ -154,7 +158,7 @@
             labelNumeroInicial.AutoSize = true;
             labelNumeroInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroInicial.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroInicial.Location = new Point(12, 68);
+            labelNumeroInicial.Location = new Point(12, 70);
             labelNumeroInicial.Name = "labelNumeroInicial";
             labelNumeroInicial.Size = new Size(78, 17);
             labelNumeroInicial.TabIndex = 61;
@@ -162,7 +166,7 @@
             // 
             // maskedTextBoxCpfMotorista
             // 
-            maskedTextBoxCpfMotorista.Location = new Point(461, 90);
+            maskedTextBoxCpfMotorista.Location = new Point(567, 92);
             maskedTextBoxCpfMotorista.Mask = "000.000.000-00";
             maskedTextBoxCpfMotorista.Name = "maskedTextBoxCpfMotorista";
             maskedTextBoxCpfMotorista.Size = new Size(120, 25);
@@ -174,7 +178,7 @@
             labelCpfMotorista.AutoSize = true;
             labelCpfMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelCpfMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelCpfMotorista.Location = new Point(461, 68);
+            labelCpfMotorista.Location = new Point(567, 70);
             labelCpfMotorista.Name = "labelCpfMotorista";
             labelCpfMotorista.Size = new Size(99, 17);
             labelCpfMotorista.TabIndex = 59;
@@ -182,7 +186,7 @@
             // 
             // textBoxNomeMotorista
             // 
-            textBoxNomeMotorista.Location = new Point(461, 28);
+            textBoxNomeMotorista.Location = new Point(567, 30);
             textBoxNomeMotorista.Name = "textBoxNomeMotorista";
             textBoxNomeMotorista.Size = new Size(120, 25);
             textBoxNomeMotorista.TabIndex = 58;
@@ -192,7 +196,7 @@
             labelNomeMotorista.AutoSize = true;
             labelNomeMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNomeMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelNomeMotorista.Location = new Point(461, 6);
+            labelNomeMotorista.Location = new Point(567, 8);
             labelNomeMotorista.Name = "labelNomeMotorista";
             labelNomeMotorista.Size = new Size(106, 17);
             labelNomeMotorista.TabIndex = 57;
@@ -200,7 +204,7 @@
             // 
             // maskedTextBoxCnpjEmissor
             // 
-            maskedTextBoxCnpjEmissor.Location = new Point(277, 91);
+            maskedTextBoxCnpjEmissor.Location = new Point(390, 92);
             maskedTextBoxCnpjEmissor.Mask = "00.000.000/0000-00";
             maskedTextBoxCnpjEmissor.Name = "maskedTextBoxCnpjEmissor";
             maskedTextBoxCnpjEmissor.Size = new Size(140, 25);
@@ -213,7 +217,7 @@
             labelCnpjEmissor.AutoSize = true;
             labelCnpjEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelCnpjEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelCnpjEmissor.Location = new Point(277, 68);
+            labelCnpjEmissor.Location = new Point(390, 69);
             labelCnpjEmissor.Name = "labelCnpjEmissor";
             labelCnpjEmissor.Size = new Size(92, 17);
             labelCnpjEmissor.TabIndex = 55;
@@ -221,7 +225,7 @@
             // 
             // maskedTextBoxDataEmissao
             // 
-            maskedTextBoxDataEmissao.Location = new Point(277, 29);
+            maskedTextBoxDataEmissao.Location = new Point(254, 31);
             maskedTextBoxDataEmissao.Mask = "00/00/0000";
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
             maskedTextBoxDataEmissao.Size = new Size(100, 25);
@@ -234,7 +238,7 @@
             labelDataEmissao.AutoSize = true;
             labelDataEmissao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(277, 6);
+            labelDataEmissao.Location = new Point(254, 8);
             labelDataEmissao.Name = "labelDataEmissao";
             labelDataEmissao.Size = new Size(92, 17);
             labelDataEmissao.TabIndex = 53;
@@ -364,6 +368,24 @@
             buttonLimparMDFeCTes.UseVisualStyleBackColor = false;
             buttonLimparMDFeCTes.Click += ClearMDFeCTesGrid_ClickEvent;
             // 
+            // textBoxEmissor
+            // 
+            textBoxEmissor.Location = new Point(254, 92);
+            textBoxEmissor.Name = "textBoxEmissor";
+            textBoxEmissor.Size = new Size(119, 25);
+            textBoxEmissor.TabIndex = 70;
+            // 
+            // labelEmissor
+            // 
+            labelEmissor.AutoSize = true;
+            labelEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmissor.ForeColor = SystemColors.ControlLightLight;
+            labelEmissor.Location = new Point(254, 70);
+            labelEmissor.Name = "labelEmissor";
+            labelEmissor.Size = new Size(57, 17);
+            labelEmissor.TabIndex = 69;
+            labelEmissor.Text = "Emissor";
+            // 
             // GerarMDFeSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -412,5 +434,7 @@
         private Label labelSerieMDFe;
         private TextBox textBoxNumeroMDFe;
         private Label labelNumeroMDFe;
+        private TextBox textBoxEmissor;
+        private Label labelEmissor;
     }
 }

@@ -52,11 +52,12 @@ namespace MoveInatorForms.Forms.Views
                 NumeroCTe = int.Parse(textBoxNumeroCTe.Text),
                 SerieCTe = int.Parse(textBoxSerieCTe.Text),
 
+                Emissor = textBoxEmissor.Text,
                 CnpjEmissor = maskedTextBoxCnpjEmissor.Text.OnlyNumber(),
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
 
                 NomeMotorista = textBoxNomeMotorista.Text,
-                CpfMotorista = maskedTextBoxCpfMotorista.Text.OnlyNumber()
+                CpfMotorista = maskedTextBoxCpfMotorista.Text.OnlyNumber(),
             };
         }
 
@@ -94,6 +95,9 @@ namespace MoveInatorForms.Forms.Views
                 throw new Exception("Informe uma Série CTe!");
 
             // Emissor
+
+            if (string.IsNullOrEmpty(textBoxEmissor.Text))
+                throw new Exception("Informe um Emissor");
 
             if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
                 throw new Exception("Informe uma Data Emissão valída!");
@@ -206,7 +210,7 @@ namespace MoveInatorForms.Forms.Views
 
             textBoxNumeroMDFe.Text = string.Empty;
             textBoxSerieMDFe.Text = string.Empty;
-            
+
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
             maskedTextBoxCnpjEmissor.Text = string.Empty;
 

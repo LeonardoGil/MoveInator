@@ -37,6 +37,7 @@ namespace MoveInatorForms.Structures
         {
             builder.Services.AddSingleton<ICSVService, CSVService>();
             builder.Services.AddSingleton<IMDFeService, MDFeService>();
+            builder.Services.AddSingleton<IFileService, FileService>();
 
             return builder;
         }
