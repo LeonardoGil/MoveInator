@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panelEmissor = new Panel();
             textBoxClientSecret = new TextBox();
             labelClientSecret = new Label();
@@ -82,14 +82,14 @@
             panelEmissor.Controls.Add(dataGridViewEmpresas);
             panelEmissor.Location = new Point(0, 0);
             panelEmissor.Name = "panelEmissor";
-            panelEmissor.Size = new Size(475, 468);
+            panelEmissor.Size = new Size(456, 468);
             panelEmissor.TabIndex = 0;
             // 
             // textBoxClientSecret
             // 
             textBoxClientSecret.Location = new Point(161, 120);
             textBoxClientSecret.Name = "textBoxClientSecret";
-            textBoxClientSecret.Size = new Size(204, 25);
+            textBoxClientSecret.Size = new Size(192, 25);
             textBoxClientSecret.TabIndex = 78;
             // 
             // labelClientSecret
@@ -99,15 +99,15 @@
             labelClientSecret.ForeColor = SystemColors.ControlLightLight;
             labelClientSecret.Location = new Point(161, 100);
             labelClientSecret.Name = "labelClientSecret";
-            labelClientSecret.Size = new Size(92, 17);
+            labelClientSecret.Size = new Size(99, 17);
             labelClientSecret.TabIndex = 77;
-            labelClientSecret.Text = "ClientSecret";
+            labelClientSecret.Text = "Client Secret";
             // 
             // textBoxClientId
             // 
             textBoxClientId.Location = new Point(161, 67);
             textBoxClientId.Name = "textBoxClientId";
-            textBoxClientId.Size = new Size(204, 25);
+            textBoxClientId.Size = new Size(192, 25);
             textBoxClientId.TabIndex = 76;
             // 
             // labelClientId
@@ -166,7 +166,7 @@
             buttonAdicionarEmissor.FlatAppearance.BorderSize = 0;
             buttonAdicionarEmissor.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionarEmissor.FlatStyle = FlatStyle.Flat;
-            buttonAdicionarEmissor.Location = new Point(377, 117);
+            buttonAdicionarEmissor.Location = new Point(361, 120);
             buttonAdicionarEmissor.Name = "buttonAdicionarEmissor";
             buttonAdicionarEmissor.Size = new Size(90, 34);
             buttonAdicionarEmissor.TabIndex = 37;
@@ -179,7 +179,7 @@
             panelEsquerdoPreto.Dock = DockStyle.Bottom;
             panelEsquerdoPreto.Location = new Point(0, 158);
             panelEsquerdoPreto.Name = "panelEsquerdoPreto";
-            panelEsquerdoPreto.Size = new Size(475, 5);
+            panelEsquerdoPreto.Size = new Size(456, 5);
             panelEsquerdoPreto.TabIndex = 36;
             // 
             // labelEmpresa
@@ -187,7 +187,7 @@
             labelEmpresa.AutoSize = true;
             labelEmpresa.Font = new Font("MesloLGL NF", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelEmpresa.ForeColor = SystemColors.ControlLightLight;
-            labelEmpresa.Location = new Point(10, 10);
+            labelEmpresa.Location = new Point(11, 13);
             labelEmpresa.Name = "labelEmpresa";
             labelEmpresa.Size = new Size(101, 29);
             labelEmpresa.TabIndex = 35;
@@ -202,14 +202,14 @@
             dataGridViewEmpresas.BorderStyle = BorderStyle.None;
             dataGridViewEmpresas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewEmpresas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle7.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridViewEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewEmpresas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEmpresas.Dock = DockStyle.Bottom;
             dataGridViewEmpresas.EnableHeadersVisualStyles = false;
@@ -220,22 +220,22 @@
             dataGridViewEmpresas.Name = "dataGridViewEmpresas";
             dataGridViewEmpresas.ReadOnly = true;
             dataGridViewEmpresas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewEmpresas.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle9.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewEmpresas.RowTemplate.Height = 25;
             dataGridViewEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEmpresas.ShowCellErrors = false;
             dataGridViewEmpresas.ShowCellToolTips = false;
             dataGridViewEmpresas.ShowRowErrors = false;
-            dataGridViewEmpresas.Size = new Size(475, 305);
+            dataGridViewEmpresas.Size = new Size(456, 305);
             dataGridViewEmpresas.TabIndex = 34;
             // 
             // panelMotorista
@@ -251,16 +251,16 @@
             panelMotorista.Controls.Add(labelNomeMotorista);
             panelMotorista.Controls.Add(labelMotoristas);
             panelMotorista.Controls.Add(dataGridViewMotorista);
-            panelMotorista.Location = new Point(481, 0);
+            panelMotorista.Location = new Point(459, 0);
             panelMotorista.Name = "panelMotorista";
-            panelMotorista.Size = new Size(319, 468);
+            panelMotorista.Size = new Size(341, 468);
             panelMotorista.TabIndex = 1;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(13, 122);
+            textBoxPassword.Location = new Point(127, 120);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(147, 25);
+            textBoxPassword.Size = new Size(112, 25);
             textBoxPassword.TabIndex = 80;
             // 
             // labelPassword
@@ -268,7 +268,7 @@
             labelPassword.AutoSize = true;
             labelPassword.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelPassword.ForeColor = SystemColors.ControlLightLight;
-            labelPassword.Location = new Point(13, 100);
+            labelPassword.Location = new Point(127, 98);
             labelPassword.Name = "labelPassword";
             labelPassword.Size = new Size(64, 17);
             labelPassword.TabIndex = 79;
@@ -280,7 +280,7 @@
             buttonAdicionarMotorista.FlatAppearance.BorderSize = 0;
             buttonAdicionarMotorista.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionarMotorista.FlatStyle = FlatStyle.Flat;
-            buttonAdicionarMotorista.Location = new Point(224, 118);
+            buttonAdicionarMotorista.Location = new Point(246, 118);
             buttonAdicionarMotorista.Name = "buttonAdicionarMotorista";
             buttonAdicionarMotorista.Size = new Size(90, 34);
             buttonAdicionarMotorista.TabIndex = 42;
@@ -293,15 +293,15 @@
             panelDireitoPreto.Dock = DockStyle.Bottom;
             panelDireitoPreto.Location = new Point(0, 158);
             panelDireitoPreto.Name = "panelDireitoPreto";
-            panelDireitoPreto.Size = new Size(319, 5);
+            panelDireitoPreto.Size = new Size(341, 5);
             panelDireitoPreto.TabIndex = 41;
             // 
             // maskedTextBoxCpfMotorista
             // 
-            maskedTextBoxCpfMotorista.Location = new Point(168, 67);
+            maskedTextBoxCpfMotorista.Location = new Point(13, 120);
             maskedTextBoxCpfMotorista.Mask = "000.000.000-00";
             maskedTextBoxCpfMotorista.Name = "maskedTextBoxCpfMotorista";
-            maskedTextBoxCpfMotorista.Size = new Size(130, 25);
+            maskedTextBoxCpfMotorista.Size = new Size(108, 25);
             maskedTextBoxCpfMotorista.TabIndex = 40;
             maskedTextBoxCpfMotorista.TextAlign = HorizontalAlignment.Center;
             // 
@@ -310,17 +310,17 @@
             labelCpfMotorista.AutoSize = true;
             labelCpfMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelCpfMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelCpfMotorista.Location = new Point(168, 48);
+            labelCpfMotorista.Location = new Point(13, 98);
             labelCpfMotorista.Name = "labelCpfMotorista";
-            labelCpfMotorista.Size = new Size(99, 17);
+            labelCpfMotorista.Size = new Size(29, 17);
             labelCpfMotorista.TabIndex = 39;
-            labelCpfMotorista.Text = "CPF Motorista";
+            labelCpfMotorista.Text = "CPF";
             // 
             // textBoxNomeMotorista
             // 
             textBoxNomeMotorista.Location = new Point(13, 67);
             textBoxNomeMotorista.Name = "textBoxNomeMotorista";
-            textBoxNomeMotorista.Size = new Size(147, 25);
+            textBoxNomeMotorista.Size = new Size(226, 25);
             textBoxNomeMotorista.TabIndex = 38;
             // 
             // labelNomeMotorista
@@ -330,16 +330,16 @@
             labelNomeMotorista.ForeColor = SystemColors.ControlLightLight;
             labelNomeMotorista.Location = new Point(13, 48);
             labelNomeMotorista.Name = "labelNomeMotorista";
-            labelNomeMotorista.Size = new Size(106, 17);
+            labelNomeMotorista.Size = new Size(36, 17);
             labelNomeMotorista.TabIndex = 37;
-            labelNomeMotorista.Text = "Nome Motorista";
+            labelNomeMotorista.Text = "Nome";
             // 
             // labelMotoristas
             // 
             labelMotoristas.AutoSize = true;
             labelMotoristas.Font = new Font("MesloLGL NF", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelMotoristas.ForeColor = SystemColors.ControlLightLight;
-            labelMotoristas.Location = new Point(10, 10);
+            labelMotoristas.Location = new Point(11, 13);
             labelMotoristas.Name = "labelMotoristas";
             labelMotoristas.Size = new Size(123, 29);
             labelMotoristas.TabIndex = 36;
@@ -354,14 +354,14 @@
             dataGridViewMotorista.BorderStyle = BorderStyle.None;
             dataGridViewMotorista.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewMotorista.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle10.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridViewMotorista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewMotorista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewMotorista.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewMotorista.Dock = DockStyle.Bottom;
             dataGridViewMotorista.EnableHeadersVisualStyles = false;
@@ -372,22 +372,22 @@
             dataGridViewMotorista.Name = "dataGridViewMotorista";
             dataGridViewMotorista.ReadOnly = true;
             dataGridViewMotorista.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewMotorista.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewMotorista.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewMotorista.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle12.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewMotorista.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewMotorista.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewMotorista.RowTemplate.Height = 25;
             dataGridViewMotorista.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewMotorista.ShowCellErrors = false;
             dataGridViewMotorista.ShowCellToolTips = false;
             dataGridViewMotorista.ShowRowErrors = false;
-            dataGridViewMotorista.Size = new Size(319, 305);
+            dataGridViewMotorista.Size = new Size(341, 305);
             dataGridViewMotorista.TabIndex = 35;
             // 
             // buttonGerarCSV
