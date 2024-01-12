@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelSuperior = new Panel();
+            comboBoxMotorista = new ComboBox();
+            comboBoxEmissor = new ComboBox();
             buttonAdicionar = new Button();
             buttonGerar = new Button();
             buttonLimpar = new Button();
@@ -44,15 +46,11 @@
             labelSerieInicial = new Label();
             textBoxNumeroInicial = new TextBox();
             labelNumeroInicial = new Label();
-            maskedTextBoxCpfMotorista = new MaskedTextBox();
-            labelCpfMotorista = new Label();
-            textBoxNomeMotorista = new TextBox();
             labelNomeMotorista = new Label();
             labelQuantidadeDocumentos = new Label();
             checkedListBoxTipoDocumento = new CheckedListBox();
             labelTipoDocumento = new Label();
-            maskedTextBoxCnpjEmissor = new MaskedTextBox();
-            labelCnpjEmissor = new Label();
+            labelEmissor = new Label();
             maskedTextBoxDataEmissao = new MaskedTextBox();
             labelDataEmissao = new Label();
             textBoxSerieDocumento = new TextBox();
@@ -74,6 +72,8 @@
             // panelSuperior
             // 
             panelSuperior.BackColor = Color.FromArgb(27, 27, 27);
+            panelSuperior.Controls.Add(comboBoxMotorista);
+            panelSuperior.Controls.Add(comboBoxEmissor);
             panelSuperior.Controls.Add(buttonAdicionar);
             panelSuperior.Controls.Add(buttonGerar);
             panelSuperior.Controls.Add(buttonLimpar);
@@ -86,15 +86,11 @@
             panelSuperior.Controls.Add(labelSerieInicial);
             panelSuperior.Controls.Add(textBoxNumeroInicial);
             panelSuperior.Controls.Add(labelNumeroInicial);
-            panelSuperior.Controls.Add(maskedTextBoxCpfMotorista);
-            panelSuperior.Controls.Add(labelCpfMotorista);
-            panelSuperior.Controls.Add(textBoxNomeMotorista);
             panelSuperior.Controls.Add(labelNomeMotorista);
             panelSuperior.Controls.Add(labelQuantidadeDocumentos);
             panelSuperior.Controls.Add(checkedListBoxTipoDocumento);
             panelSuperior.Controls.Add(labelTipoDocumento);
-            panelSuperior.Controls.Add(maskedTextBoxCnpjEmissor);
-            panelSuperior.Controls.Add(labelCnpjEmissor);
+            panelSuperior.Controls.Add(labelEmissor);
             panelSuperior.Controls.Add(maskedTextBoxDataEmissao);
             panelSuperior.Controls.Add(labelDataEmissao);
             panelSuperior.Controls.Add(textBoxSerieDocumento);
@@ -109,6 +105,24 @@
             panelSuperior.Name = "panelSuperior";
             panelSuperior.Size = new Size(800, 180);
             panelSuperior.TabIndex = 28;
+            // 
+            // comboBoxMotorista
+            // 
+            comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMotorista.FormattingEnabled = true;
+            comboBoxMotorista.Location = new Point(361, 145);
+            comboBoxMotorista.Name = "comboBoxMotorista";
+            comboBoxMotorista.Size = new Size(170, 25);
+            comboBoxMotorista.TabIndex = 33;
+            // 
+            // comboBoxEmissor
+            // 
+            comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEmissor.FormattingEnabled = true;
+            comboBoxEmissor.Location = new Point(361, 97);
+            comboBoxEmissor.Name = "comboBoxEmissor";
+            comboBoxEmissor.Size = new Size(170, 25);
+            comboBoxEmissor.TabIndex = 32;
             // 
             // buttonAdicionar
             // 
@@ -154,7 +168,7 @@
             // 
             // numericUpDownQuantidade
             // 
-            numericUpDownQuantidade.Location = new Point(270, 146);
+            numericUpDownQuantidade.Location = new Point(264, 146);
             numericUpDownQuantidade.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDownQuantidade.Name = "numericUpDownQuantidade";
             numericUpDownQuantidade.Size = new Size(80, 25);
@@ -162,7 +176,7 @@
             // 
             // maskedTextBoxCpfCnpjDestinatario
             // 
-            maskedTextBoxCpfCnpjDestinatario.Location = new Point(399, 146);
+            maskedTextBoxCpfCnpjDestinatario.Location = new Point(537, 146);
             maskedTextBoxCpfCnpjDestinatario.Mask = "00.000.000/0000-00";
             maskedTextBoxCpfCnpjDestinatario.Name = "maskedTextBoxCpfCnpjDestinatario";
             maskedTextBoxCpfCnpjDestinatario.Size = new Size(156, 25);
@@ -174,7 +188,7 @@
             labelCpfCnpjDestinatario.AutoSize = true;
             labelCpfCnpjDestinatario.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelCpfCnpjDestinatario.ForeColor = SystemColors.ControlLightLight;
-            labelCpfCnpjDestinatario.Location = new Point(400, 125);
+            labelCpfCnpjDestinatario.Location = new Point(538, 125);
             labelCpfCnpjDestinatario.Name = "labelCpfCnpjDestinatario";
             labelCpfCnpjDestinatario.Size = new Size(155, 17);
             labelCpfCnpjDestinatario.TabIndex = 20;
@@ -182,7 +196,7 @@
             // 
             // textBoxNomeDestinatario
             // 
-            textBoxNomeDestinatario.Location = new Point(400, 95);
+            textBoxNomeDestinatario.Location = new Point(538, 97);
             textBoxNomeDestinatario.Name = "textBoxNomeDestinatario";
             textBoxNomeDestinatario.Size = new Size(156, 25);
             textBoxNomeDestinatario.TabIndex = 19;
@@ -192,7 +206,7 @@
             labelNomeDestinatario.AutoSize = true;
             labelNomeDestinatario.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNomeDestinatario.ForeColor = SystemColors.ControlLightLight;
-            labelNomeDestinatario.Location = new Point(400, 73);
+            labelNomeDestinatario.Location = new Point(538, 75);
             labelNomeDestinatario.Name = "labelNomeDestinatario";
             labelNomeDestinatario.Size = new Size(127, 17);
             labelNomeDestinatario.TabIndex = 18;
@@ -211,7 +225,7 @@
             labelSerieInicial.AutoSize = true;
             labelSerieInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieInicial.ForeColor = SystemColors.ControlLightLight;
-            labelSerieInicial.Location = new Point(152, 124);
+            labelSerieInicial.Location = new Point(152, 125);
             labelSerieInicial.Name = "labelSerieInicial";
             labelSerieInicial.Size = new Size(43, 17);
             labelSerieInicial.TabIndex = 10;
@@ -219,7 +233,7 @@
             // 
             // textBoxNumeroInicial
             // 
-            textBoxNumeroInicial.Location = new Point(152, 95);
+            textBoxNumeroInicial.Location = new Point(152, 97);
             textBoxNumeroInicial.Name = "textBoxNumeroInicial";
             textBoxNumeroInicial.Size = new Size(106, 25);
             textBoxNumeroInicial.TabIndex = 9;
@@ -229,45 +243,18 @@
             labelNumeroInicial.AutoSize = true;
             labelNumeroInicial.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroInicial.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroInicial.Location = new Point(152, 73);
+            labelNumeroInicial.Location = new Point(152, 75);
             labelNumeroInicial.Name = "labelNumeroInicial";
             labelNumeroInicial.Size = new Size(106, 17);
             labelNumeroInicial.TabIndex = 8;
             labelNumeroInicial.Text = "Numero Inicial";
-            // 
-            // maskedTextBoxCpfMotorista
-            // 
-            maskedTextBoxCpfMotorista.Location = new Point(566, 146);
-            maskedTextBoxCpfMotorista.Mask = "000.000.000-00";
-            maskedTextBoxCpfMotorista.Name = "maskedTextBoxCpfMotorista";
-            maskedTextBoxCpfMotorista.Size = new Size(120, 25);
-            maskedTextBoxCpfMotorista.TabIndex = 25;
-            maskedTextBoxCpfMotorista.TextAlign = HorizontalAlignment.Center;
-            // 
-            // labelCpfMotorista
-            // 
-            labelCpfMotorista.AutoSize = true;
-            labelCpfMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCpfMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelCpfMotorista.Location = new Point(566, 124);
-            labelCpfMotorista.Name = "labelCpfMotorista";
-            labelCpfMotorista.Size = new Size(99, 17);
-            labelCpfMotorista.TabIndex = 24;
-            labelCpfMotorista.Text = "CPF Motorista";
-            // 
-            // textBoxNomeMotorista
-            // 
-            textBoxNomeMotorista.Location = new Point(567, 95);
-            textBoxNomeMotorista.Name = "textBoxNomeMotorista";
-            textBoxNomeMotorista.Size = new Size(120, 25);
-            textBoxNomeMotorista.TabIndex = 23;
             // 
             // labelNomeMotorista
             // 
             labelNomeMotorista.AutoSize = true;
             labelNomeMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNomeMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelNomeMotorista.Location = new Point(567, 73);
+            labelNomeMotorista.Location = new Point(361, 125);
             labelNomeMotorista.Name = "labelNomeMotorista";
             labelNomeMotorista.Size = new Size(106, 17);
             labelNomeMotorista.TabIndex = 22;
@@ -278,7 +265,7 @@
             labelQuantidadeDocumentos.AutoSize = true;
             labelQuantidadeDocumentos.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelQuantidadeDocumentos.ForeColor = SystemColors.ControlLightLight;
-            labelQuantidadeDocumentos.Location = new Point(270, 124);
+            labelQuantidadeDocumentos.Location = new Point(264, 125);
             labelQuantidadeDocumentos.Name = "labelQuantidadeDocumentos";
             labelQuantidadeDocumentos.Size = new Size(78, 17);
             labelQuantidadeDocumentos.TabIndex = 12;
@@ -292,7 +279,7 @@
             checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoDocumento.FormattingEnabled = true;
             checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
-            checkedListBoxTipoDocumento.Location = new Point(152, 28);
+            checkedListBoxTipoDocumento.Location = new Point(152, 30);
             checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
             checkedListBoxTipoDocumento.Size = new Size(97, 40);
             checkedListBoxTipoDocumento.TabIndex = 7;
@@ -303,36 +290,26 @@
             labelTipoDocumento.AutoSize = true;
             labelTipoDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelTipoDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelTipoDocumento.Location = new Point(152, 6);
+            labelTipoDocumento.Location = new Point(152, 8);
             labelTipoDocumento.Name = "labelTipoDocumento";
             labelTipoDocumento.Size = new Size(106, 17);
             labelTipoDocumento.TabIndex = 6;
             labelTipoDocumento.Text = "Tipo Documento";
             // 
-            // maskedTextBoxCnpjEmissor
+            // labelEmissor
             // 
-            maskedTextBoxCnpjEmissor.Location = new Point(510, 40);
-            maskedTextBoxCnpjEmissor.Mask = "00.000.000/0000-00";
-            maskedTextBoxCnpjEmissor.Name = "maskedTextBoxCnpjEmissor";
-            maskedTextBoxCnpjEmissor.Size = new Size(140, 25);
-            maskedTextBoxCnpjEmissor.TabIndex = 17;
-            maskedTextBoxCnpjEmissor.TextAlign = HorizontalAlignment.Center;
-            maskedTextBoxCnpjEmissor.ValidatingType = typeof(DateTime);
-            // 
-            // labelCnpjEmissor
-            // 
-            labelCnpjEmissor.AutoSize = true;
-            labelCnpjEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCnpjEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelCnpjEmissor.Location = new Point(510, 17);
-            labelCnpjEmissor.Name = "labelCnpjEmissor";
-            labelCnpjEmissor.Size = new Size(92, 17);
-            labelCnpjEmissor.TabIndex = 16;
-            labelCnpjEmissor.Text = "CNPJ Emissor";
+            labelEmissor.AutoSize = true;
+            labelEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmissor.ForeColor = SystemColors.ControlLightLight;
+            labelEmissor.Location = new Point(361, 75);
+            labelEmissor.Name = "labelEmissor";
+            labelEmissor.Size = new Size(57, 17);
+            labelEmissor.TabIndex = 16;
+            labelEmissor.Text = "Emissor";
             // 
             // maskedTextBoxDataEmissao
             // 
-            maskedTextBoxDataEmissao.Location = new Point(400, 40);
+            maskedTextBoxDataEmissao.Location = new Point(361, 45);
             maskedTextBoxDataEmissao.Mask = "00/00/0000";
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
             maskedTextBoxDataEmissao.Size = new Size(100, 25);
@@ -345,7 +322,7 @@
             labelDataEmissao.AutoSize = true;
             labelDataEmissao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(400, 17);
+            labelDataEmissao.Location = new Point(361, 22);
             labelDataEmissao.Name = "labelDataEmissao";
             labelDataEmissao.Size = new Size(92, 17);
             labelDataEmissao.TabIndex = 14;
@@ -357,7 +334,7 @@
             textBoxSerieDocumento.Location = new Point(12, 146);
             textBoxSerieDocumento.MaxLength = 3;
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
-            textBoxSerieDocumento.Size = new Size(106, 25);
+            textBoxSerieDocumento.Size = new Size(134, 25);
             textBoxSerieDocumento.TabIndex = 5;
             // 
             // labelSerieDocumento
@@ -365,7 +342,7 @@
             labelSerieDocumento.AutoSize = true;
             labelSerieDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelSerieDocumento.Location = new Point(12, 124);
+            labelSerieDocumento.Location = new Point(12, 125);
             labelSerieDocumento.Name = "labelSerieDocumento";
             labelSerieDocumento.Size = new Size(78, 17);
             labelSerieDocumento.TabIndex = 4;
@@ -373,9 +350,9 @@
             // 
             // textBoxNumeroDocumento
             // 
-            textBoxNumeroDocumento.Location = new Point(12, 95);
+            textBoxNumeroDocumento.Location = new Point(12, 97);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
-            textBoxNumeroDocumento.Size = new Size(106, 25);
+            textBoxNumeroDocumento.Size = new Size(134, 25);
             textBoxNumeroDocumento.TabIndex = 3;
             // 
             // labelNumeroDocumento
@@ -383,7 +360,7 @@
             labelNumeroDocumento.AutoSize = true;
             labelNumeroDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroDocumento.Location = new Point(12, 73);
+            labelNumeroDocumento.Location = new Point(12, 75);
             labelNumeroDocumento.Name = "labelNumeroDocumento";
             labelNumeroDocumento.Size = new Size(85, 17);
             labelNumeroDocumento.TabIndex = 2;
@@ -397,7 +374,7 @@
             checkedListBoxTipoViagem.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoViagem.FormattingEnabled = true;
             checkedListBoxTipoViagem.Items.AddRange(new object[] { "MDF-e", "Manifesto" });
-            checkedListBoxTipoViagem.Location = new Point(12, 28);
+            checkedListBoxTipoViagem.Location = new Point(12, 30);
             checkedListBoxTipoViagem.Name = "checkedListBoxTipoViagem";
             checkedListBoxTipoViagem.Size = new Size(97, 40);
             checkedListBoxTipoViagem.TabIndex = 1;
@@ -408,7 +385,7 @@
             labelTipoViagem.AutoSize = true;
             labelTipoViagem.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelTipoViagem.ForeColor = SystemColors.ControlLightLight;
-            labelTipoViagem.Location = new Point(12, 6);
+            labelTipoViagem.Location = new Point(12, 8);
             labelTipoViagem.Name = "labelTipoViagem";
             labelTipoViagem.Size = new Size(85, 17);
             labelTipoViagem.TabIndex = 0;
@@ -548,15 +525,10 @@
         private Label labelSerieInicial;
         private TextBox textBoxNumeroInicial;
         private Label labelNumeroInicial;
-        private MaskedTextBox maskedTextBoxCpfMotorista;
-        private Label labelCpfMotorista;
-        private TextBox textBoxNomeMotorista;
         private Label labelNomeMotorista;
         private Label labelQuantidadeDocumentos;
         private CheckedListBox checkedListBoxTipoDocumento;
         private Label labelTipoDocumento;
-        private MaskedTextBox maskedTextBoxCnpjEmissor;
-        private Label labelCnpjEmissor;
         private MaskedTextBox maskedTextBoxDataEmissao;
         private Label labelDataEmissao;
         private TextBox textBoxSerieDocumento;
@@ -570,5 +542,8 @@
         private Button buttonLimparViagens;
         private TextBox textBoxDiretorio;
         private Label labelDiretorio;
+        private Label labelEmissor;
+        private ComboBox comboBoxMotorista;
+        private ComboBox comboBoxEmissor;
     }
 }

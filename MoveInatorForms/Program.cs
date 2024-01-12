@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MoveInatorForms.Domains.Entities.Outros;
 using MoveInatorForms.Forms;
 using MoveInatorForms.Structures;
 
@@ -8,6 +9,8 @@ namespace MoveInatorForms
     internal static class Program
     {
         public static IServiceProvider ServiceProvider { get; private set; }
+
+        public static DatabaseJson DatabaseJson { get; private set; }
 
         [STAThread]
         static void Main()
@@ -21,6 +24,9 @@ namespace MoveInatorForms
             //Login(builder);
 
             ServiceProvider = builder.Build().Services;
+            DatabaseJson = new DatabaseJson();
+
+            DatabaseJson.Load();
 
             Run();
         }

@@ -9,6 +9,7 @@ namespace MoveInatorForms.Forms
 
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
+        private CadastrosViewControl CadastrosViewControl;
 
         public MainForm()
         {
@@ -51,7 +52,13 @@ namespace MoveInatorForms.Forms
         private void LoadCSVSimples_ClickEvent(object sender, EventArgs e)
         {
             if (GerarCSVSimplesView is default(GerarCSVSimplesViewControl))
+            {
                 GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
+            }
+            else
+            {
+                GerarCSVSimplesView.Reload();
+            }
 
             LoadView(GerarCSVSimplesView);
         }
@@ -59,10 +66,24 @@ namespace MoveInatorForms.Forms
         private void LoadMDFeSimples_ClickEvent(object sender, EventArgs e)
         {
             if (GerarMDFeSimplesView is default(GerarMDFeSimplesViewControl))
+            {
                 GerarMDFeSimplesView = Program.ServiceProvider.GetRequiredService<GerarMDFeSimplesViewControl>();
+            }
+            else
+            {
+                GerarMDFeSimplesView.Reload();
+            }
 
             LoadView(GerarMDFeSimplesView);
 
+        }
+
+        private void LoadCadastros_ClickEvent(object sender, EventArgs e)
+        {
+            if (CadastrosViewControl is default(CadastrosViewControl))
+                CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastrosViewControl>();
+
+            LoadView(CadastrosViewControl);
         }
     }
 }

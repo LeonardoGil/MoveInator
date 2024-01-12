@@ -1,4 +1,5 @@
 ﻿using DocumentosBrasileiros;
+using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
@@ -15,11 +16,100 @@ namespace MoveInatorForms.Forms.Views
 
         public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource();
 
+        public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
+
+        public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
+
+        public List<ViagemViewModel> Viagens => ViagensViewBindingSource.OfType<ViagemViewModel>().ToList();
+
+        public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
+
+        public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
+
         public GerarCSVSimplesViewControl(ICSVService cSVService)
         {
             CSVService = cSVService;
             InitializeComponent();
             LoadFormAsync();
+        }
+
+        public void Reload()
+        {
+            buttonGerarCSV.Enabled = false;
+
+            var reloadMotorista = ReloadComboBoxMotorista();
+            var reloadEmpresa = ReloadComboBoxEmpresa();
+
+            Task.WaitAll(reloadEmpresa, reloadMotorista);
+
+            try
+            {
+                if (!Empresas.Any())
+                    throw new Exception("Cadastre um Emissor na aba Cadastros!");
+
+                if (!Motoristas.Any())
+                    throw new Exception("Cadastre um Motorista na aba Cadastros!");
+
+                EnableButtons();
+                buttonGerarCSV.Enabled = Viagens.Any();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                EnableButtons(false);
+            }
+        }
+
+        #region Private Methods
+
+        private async Task ReloadComboBoxMotorista()
+        {
+            var motoristaOld = default(Motorista);
+
+            if (comboBoxMotorista.SelectedItem is not null &&
+                comboBoxMotorista.SelectedItem is Motorista motorista)
+            {
+                MotoristasBindingSource.ResetCurrentItem();
+                motoristaOld = motorista;
+            }
+
+            comboBoxMotorista.DataSource = null;
+            comboBoxMotorista.DataSource = MotoristasBindingSource;
+            comboBoxMotorista.DisplayMember = "Nome";
+
+            if (motoristaOld is not null)
+            {
+                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault(x => x.Cpf == motoristaOld.Cpf);
+            }
+            else
+            {
+                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault();
+            }
+        }
+
+        private async Task ReloadComboBoxEmpresa()
+        {
+            var empresaOld = default(Empresa);
+
+            if (comboBoxEmissor.SelectedItem is not null &&
+                comboBoxEmissor.SelectedItem is Empresa empresa)
+            {
+                EmpresasBindingSource.ResetCurrentItem();
+                empresaOld = empresa;
+            }
+
+            comboBoxEmissor.DataSource = null;
+            comboBoxEmissor.DataSource = EmpresasBindingSource;
+            comboBoxEmissor.DisplayMember = "RazaoSocial";
+
+            if (empresaOld is not null)
+            {
+                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault(x => x.Cnpj == empresaOld.Cnpj);
+            }
+            else
+            {
+                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault();
+            }
         }
 
         private ViagemViewModel BuildViagemViewModel()
@@ -44,13 +134,13 @@ namespace MoveInatorForms.Forms.Views
                 Quantidade = (int)numericUpDownQuantidade.Value,
 
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
-                CnpjEmissor = maskedTextBoxCnpjEmissor.Text.OnlyNumber(),
+                CnpjEmissor = (comboBoxEmissor.SelectedItem as Empresa).Cnpj,
 
                 NomeDestinatario = textBoxNomeDestinatario.Text,
                 CpfCnpjDestinatario = maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber(),
 
-                NomeMotorista = textBoxNomeMotorista.Text,
-                CpfMotorista = maskedTextBoxCpfMotorista.Text.OnlyNumber()
+                NomeMotorista = (comboBoxMotorista.SelectedItem as Motorista).Nome,
+                CpfMotorista = (comboBoxMotorista.SelectedItem as Motorista).Cpf
             };
         }
 
@@ -100,9 +190,6 @@ namespace MoveInatorForms.Forms.Views
             if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
                 throw new Exception("Informe uma Data Emissão valída!");
 
-            if (string.IsNullOrEmpty(maskedTextBoxCnpjEmissor.Text.OnlyNumber()))
-                throw new Exception("Informe um CNPJ para o Emissor");
-
             // Destinatario
 
             if (string.IsNullOrEmpty(textBoxNomeDestinatario.Text))
@@ -110,14 +197,6 @@ namespace MoveInatorForms.Forms.Views
 
             if (string.IsNullOrEmpty(maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber()))
                 throw new Exception("Informe o Cpf/Cnpj do Destinatário!");
-
-            // Motorista
-
-            if (string.IsNullOrEmpty(textBoxNomeMotorista.Text))
-                throw new Exception("Informe o nome do Motorista!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text.OnlyNumber()))
-                throw new Exception("Informe o Cpf do Motorista!");
 
             return true;
         }
@@ -153,10 +232,10 @@ namespace MoveInatorForms.Forms.Views
 
             dataGridView.DataSource = ViagensViewBindingSource;
 
-            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
+            Reload();
 
+            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
-            textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
 
             numericUpDownQuantidade.Value = 1;
 
@@ -168,8 +247,9 @@ namespace MoveInatorForms.Forms.Views
             buttonAdicionar.Enabled = enabled;
             buttonGerar.Enabled = enabled;
             buttonLimpar.Enabled = enabled;
-            buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
         }
+
+        #endregion
 
         #region Events
 
@@ -194,6 +274,7 @@ namespace MoveInatorForms.Forms.Views
             finally
             {
                 EnableButtons();
+                buttonGerarCSV.Enabled = Viagens.Any();
             }
         }
 
@@ -290,13 +371,13 @@ namespace MoveInatorForms.Forms.Views
             numericUpDownQuantidade.Value = random.Next(1, 50);
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-            maskedTextBoxCnpjEmissor.Text = cnpj.GerarFake();
+            //maskedTextBoxCnpjEmissor.Text = cnpj.GerarFake();
 
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
             maskedTextBoxCpfCnpjDestinatario.Text = cnpj.GerarFake();
 
-            textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
-            maskedTextBoxCpfMotorista.Text = cpf.GerarFake();
+            //textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
+            //maskedTextBoxCpfMotorista.Text = cpf.GerarFake();
         }
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
@@ -312,13 +393,13 @@ namespace MoveInatorForms.Forms.Views
             numericUpDownQuantidade.Value = 1;
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-            maskedTextBoxCnpjEmissor.Text = string.Empty;
+            //maskedTextBoxCnpjEmissor.Text = string.Empty;
 
             textBoxNomeDestinatario.Text = string.Empty;
             maskedTextBoxCpfCnpjDestinatario.Text = string.Empty;
 
             textBoxNumeroDocumento.Text = string.Empty;
-            maskedTextBoxCpfMotorista.Text = string.Empty;
+            //maskedTextBoxCpfMotorista.Text = string.Empty;
         }
 
         private void LimparViagensGrid_ClickEvent(object sender, EventArgs e)
