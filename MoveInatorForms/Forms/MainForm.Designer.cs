@@ -38,6 +38,7 @@
             menuImportacao = new ToolStripMenuItem();
             menuItemCsvSimples = new ToolStripMenuItem();
             menuItemMDFeSimples = new ToolStripMenuItem();
+            stripMenuCadastros = new ToolStripMenuItem();
             panelView.SuspendLayout();
             menuStrip.SuspendLayout();
             SuspendLayout();
@@ -125,11 +126,11 @@
             menuStrip.BackColor = Color.FromArgb(10, 10, 10);
             menuStrip.Dock = DockStyle.None;
             menuStrip.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStrip.Items.AddRange(new ToolStripItem[] { menuImportacao });
-            menuStrip.Location = new Point(690, 48);
+            menuStrip.Items.AddRange(new ToolStripItem[] { menuImportacao, stripMenuCadastros });
+            menuStrip.Location = new Point(595, 47);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(4, 3, 0, 2);
-            menuStrip.Size = new Size(108, 30);
+            menuStrip.Size = new Size(324, 30);
             menuStrip.TabIndex = 10;
             menuStrip.Text = "menuStrip";
             // 
@@ -160,6 +161,16 @@
             menuItemMDFeSimples.Size = new Size(184, 26);
             menuItemMDFeSimples.Text = "MDF-e Simples";
             menuItemMDFeSimples.Click += LoadMDFeSimples_ClickEvent;
+            // 
+            // stripMenuCadastros
+            // 
+            stripMenuCadastros.BackColor = Color.FromArgb(31, 31, 31);
+            stripMenuCadastros.ForeColor = Color.DarkGray;
+            stripMenuCadastros.Margin = new Padding(2, 0, 0, 0);
+            stripMenuCadastros.Name = "stripMenuCadastros";
+            stripMenuCadastros.Size = new Size(94, 25);
+            stripMenuCadastros.Text = "Cadastros";
+            stripMenuCadastros.Click += LoadCadastros_ClickEvent;
             // 
             // MainForm
             // 
@@ -202,5 +213,6 @@
         private Label labelInformativa;
         private LinkLabel linkLabel;
         private ToolStripMenuItem menuItemMDFeSimples;
+        private ToolStripMenuItem stripMenuCadastros;
     }
 }
