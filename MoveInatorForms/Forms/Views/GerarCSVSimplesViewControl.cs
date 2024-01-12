@@ -20,6 +20,8 @@ namespace MoveInatorForms.Forms.Views
 
         public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
 
+        public List<ViagemViewModel> Viagens => ViagensViewBindingSource.OfType<ViagemViewModel>().ToList();
+
         public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
 
         public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
@@ -33,6 +35,8 @@ namespace MoveInatorForms.Forms.Views
 
         public void Reload()
         {
+            buttonGerarCSV.Enabled = false;
+
             var reloadMotorista = ReloadComboBoxMotorista();
             var reloadEmpresa = ReloadComboBoxEmpresa();
 
@@ -47,6 +51,7 @@ namespace MoveInatorForms.Forms.Views
                     throw new Exception("Cadastre um Motorista na aba Cadastros!");
 
                 EnableButtons();
+                buttonGerarCSV.Enabled = Viagens.Any();
             }
             catch (Exception ex)
             {
@@ -227,11 +232,7 @@ namespace MoveInatorForms.Forms.Views
 
             dataGridView.DataSource = ViagensViewBindingSource;
 
-            comboBoxEmissor.DataSource = EmpresasBindingSource;
-            comboBoxEmissor.DisplayMember = "RazaoSocial";
-
-            comboBoxMotorista.DataSource = MotoristasBindingSource;
-            comboBoxMotorista.DisplayMember = "Nome";
+            Reload();
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
@@ -246,7 +247,6 @@ namespace MoveInatorForms.Forms.Views
             buttonAdicionar.Enabled = enabled;
             buttonGerar.Enabled = enabled;
             buttonLimpar.Enabled = enabled;
-            buttonGerarCSV.Enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
         }
 
         #endregion
@@ -274,6 +274,7 @@ namespace MoveInatorForms.Forms.Views
             finally
             {
                 EnableButtons();
+                buttonGerarCSV.Enabled = Viagens.Any();
             }
         }
 
