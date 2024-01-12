@@ -1,4 +1,5 @@
-﻿using MoveInatorForms.Domains.Models;
+﻿using MoveInatorForms.Domains.Entities.Cadastros;
+using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
 using MoveInatorForms.Utilities.Extensions;
@@ -13,12 +14,94 @@ namespace MoveInatorForms.Forms.Views
 
         public BindingSource MDFeCTesViewBindingSource { get; set; } = new BindingSource();
 
+        public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
+
+        public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
+
+        public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
+
+        public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
+
         public GerarMDFeSimplesViewControl(IMDFeService mDFeService)
         {
             InitializeComponent();
 
             LoadFormAsync();
             MDFeService = mDFeService;
+        }
+
+        public void Reload()
+        {
+            var reloadMotorista = ReloadComboBoxMotorista();
+            var reloadEmpresa = ReloadComboBoxEmpresa();
+
+            Task.WaitAll(reloadEmpresa, reloadMotorista);
+
+            try
+            {
+                if (!Empresas.Any())
+                    throw new Exception("Cadastre um Emissor na aba Cadastros!");
+
+                if (!Motoristas.Any())
+                    throw new Exception("Cadastre um Motorista na aba Cadastros!");
+
+                EnableButtons();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                EnableButtons(false);
+            }
+        }
+
+        private async Task ReloadComboBoxMotorista()
+        {
+            var motoristaOld = default(Motorista);
+
+            if (comboBoxMotorista.SelectedItem is not null &&
+                comboBoxMotorista.SelectedItem is Motorista motorista)
+            {
+                MotoristasBindingSource.ResetCurrentItem();
+                motoristaOld = motorista;
+            }
+
+            comboBoxMotorista.DataSource = null;
+            comboBoxMotorista.DataSource = MotoristasBindingSource;
+            comboBoxMotorista.DisplayMember = "Nome";
+
+            if (motoristaOld is not null)
+            {
+                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault(x => x.Cpf == motoristaOld.Cpf);
+            }
+            else
+            {
+                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault();
+            }
+        }
+
+        private async Task ReloadComboBoxEmpresa()
+        {
+            var empresaOld = default(Empresa);
+
+            if (comboBoxEmissor.SelectedItem is not null &&
+                comboBoxEmissor.SelectedItem is Empresa empresa)
+            {
+                EmpresasBindingSource.ResetCurrentItem();
+                empresaOld = empresa;
+            }
+
+            comboBoxEmissor.DataSource = null;
+            comboBoxEmissor.DataSource = EmpresasBindingSource;
+            comboBoxEmissor.DisplayMember = "RazaoSocial";
+
+            if (empresaOld is not null)
+            {
+                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault(x => x.Cnpj == empresaOld.Cnpj);
+            }
+            else
+            {
+                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault();
+            }
         }
 
         private async Task LoadFormAsync()
@@ -28,9 +111,13 @@ namespace MoveInatorForms.Forms.Views
 
             dataGridView.DataSource = MDFeCTesViewBindingSource;
 
-            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
+            comboBoxEmissor.DataSource = EmpresasBindingSource;
+            comboBoxEmissor.DisplayMember = "RazaoSocial";
 
-            textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
+            comboBoxMotorista.DataSource = MotoristasBindingSource;
+            comboBoxMotorista.DisplayMember = "Nome";
+
+            maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
 
             textBoxDiretorio.Text = @"C:/Temp";
         }
@@ -52,12 +139,12 @@ namespace MoveInatorForms.Forms.Views
                 NumeroCTe = int.Parse(textBoxNumeroCTe.Text),
                 SerieCTe = int.Parse(textBoxSerieCTe.Text),
 
-                Emissor = textBoxEmissor.Text,
-                CnpjEmissor = maskedTextBoxCnpjEmissor.Text.OnlyNumber(),
+                Emissor = (comboBoxEmissor.SelectedItem as Empresa).RazaoSocial,
+                CnpjEmissor = (comboBoxEmissor.SelectedItem as Empresa).Cnpj,
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
 
-                NomeMotorista = textBoxNomeMotorista.Text,
-                CpfMotorista = maskedTextBoxCpfMotorista.Text.OnlyNumber(),
+                NomeMotorista = (comboBoxMotorista.SelectedItem as Motorista).Nome,
+                CpfMotorista = (comboBoxMotorista.SelectedItem as Motorista).Cpf
             };
         }
 
@@ -67,10 +154,9 @@ namespace MoveInatorForms.Forms.Views
             textBoxSerieMDFe.Enabled = enabled;
 
             maskedTextBoxDataEmissao.Enabled = enabled;
-            maskedTextBoxCnpjEmissor.Enabled = enabled;
 
-            textBoxNomeMotorista.Enabled = enabled;
-            maskedTextBoxCpfMotorista.Enabled = enabled;
+            comboBoxMotorista.Enabled = enabled;
+            comboBoxEmissor.Enabled = enabled;
         }
 
         private void EnableButtons(bool enabled = true)
@@ -96,22 +182,8 @@ namespace MoveInatorForms.Forms.Views
 
             // Emissor
 
-            if (string.IsNullOrEmpty(textBoxEmissor.Text))
-                throw new Exception("Informe um Emissor");
-
             if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
                 throw new Exception("Informe uma Data Emissão valída!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCnpjEmissor.Text.OnlyNumber()))
-                throw new Exception("Informe um CNPJ para o Emissor");
-
-            // Motorista
-
-            if (string.IsNullOrEmpty(textBoxNomeMotorista.Text))
-                throw new Exception("Informe o nome do Motorista!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text.OnlyNumber()))
-                throw new Exception("Informe o Cpf do Motorista!");
 
             // Lista de CTes
             var ctes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
@@ -212,10 +284,6 @@ namespace MoveInatorForms.Forms.Views
             textBoxSerieMDFe.Text = string.Empty;
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-            maskedTextBoxCnpjEmissor.Text = string.Empty;
-
-            textBoxNomeMotorista.Text = string.Empty;
-            maskedTextBoxCpfMotorista.Text = string.Empty;
         }
 
         #endregion
