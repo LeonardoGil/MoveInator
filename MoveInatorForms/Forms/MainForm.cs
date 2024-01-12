@@ -52,7 +52,13 @@ namespace MoveInatorForms.Forms
         private void LoadCSVSimples_ClickEvent(object sender, EventArgs e)
         {
             if (GerarCSVSimplesView is default(GerarCSVSimplesViewControl))
+            {
                 GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
+            }
+            else
+            {
+                GerarCSVSimplesView.Reload();
+            }
 
             LoadView(GerarCSVSimplesView);
         }
