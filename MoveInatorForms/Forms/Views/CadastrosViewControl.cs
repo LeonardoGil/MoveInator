@@ -1,13 +1,13 @@
-﻿using MoveInatorForms.Domains.Entities;
+﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Utilities.Extensions;
 
 namespace MoveInatorForms.Forms.Views
 {
     public partial class CadastrosViewControl : UserControl
     {
-        private readonly BindingSource EmpresasBindingSource = new BindingSource() { DataSource = new List<Empresa>() };
+        private readonly BindingSource EmpresasBindingSource = new() { DataSource = Program.DatabaseJson.Empresas };
 
-        private readonly BindingSource MotoristasBindingSource = new BindingSource() { DataSource = new List<Motorista>() };
+        private readonly BindingSource MotoristasBindingSource = new() { DataSource = Program.DatabaseJson.Motoristas };
 
         private List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
 
@@ -132,6 +132,8 @@ namespace MoveInatorForms.Forms.Views
                 AddEmpresa();
 
                 ClearFieldsEmpresa();
+
+                buttonSalvar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -154,9 +156,8 @@ namespace MoveInatorForms.Forms.Views
             }
 
             EmpresasBindingSource.RemoveAt(row.Index);
+            buttonSalvar.Enabled = true;
         }
-
-
 
         private void AdicionarMotorista_ClickEvent(object sender, EventArgs e)
         {
@@ -169,6 +170,8 @@ namespace MoveInatorForms.Forms.Views
                 AddMotorista();
 
                 ClearFieldsMotorista();
+
+                buttonSalvar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -191,9 +194,15 @@ namespace MoveInatorForms.Forms.Views
             }
 
             MotoristasBindingSource.RemoveAt(row.Index);
+            buttonSalvar.Enabled = true;
+        }
+
+        private void Salvar_ClickEvent(object sender, EventArgs e)
+        {
+            Program.DatabaseJson.Save();
+            buttonSalvar.Enabled = false;
         }
 
         #endregion
-
     }
 }

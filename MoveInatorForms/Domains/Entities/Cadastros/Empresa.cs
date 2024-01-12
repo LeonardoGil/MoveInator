@@ -1,4 +1,4 @@
-﻿namespace MoveInatorForms.Domains.Entities
+﻿namespace MoveInatorForms.Domains.Entities.Cadastros
 {
     public class Empresa
     {
