@@ -3,6 +3,8 @@ using Microsoft.Extensions.Hosting;
 using MoveInatorForms.Domains.Entities.Outros;
 using MoveInatorForms.Forms;
 using MoveInatorForms.Structures;
+using GithubApiLib.Structures;
+using GithubApiLib.Services.Interfaces;
 
 namespace MoveInatorForms
 {
@@ -19,7 +21,8 @@ namespace MoveInatorForms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            var builder = Host.CreateApplicationBuilder().Inject();
+            var builder = Host.CreateApplicationBuilder().Inject()
+                                                         .InjectGithubApiLib();
 
             //Login(builder);
 
@@ -27,7 +30,6 @@ namespace MoveInatorForms
             DatabaseJson = new DatabaseJson();
 
             DatabaseJson.Load();
-
             Run();
         }
 

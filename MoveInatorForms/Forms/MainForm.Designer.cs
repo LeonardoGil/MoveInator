@@ -39,6 +39,7 @@
             menuItemCsvSimples = new ToolStripMenuItem();
             menuItemMDFeSimples = new ToolStripMenuItem();
             stripMenuCadastros = new ToolStripMenuItem();
+            labelVersion = new Label();
             panelView.SuspendLayout();
             menuStrip.SuspendLayout();
             SuspendLayout();
@@ -66,7 +67,7 @@
             labelTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelTitulo.Font = new Font("MesloLGL NF", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.FromArgb(85, 35, 35);
-            labelTitulo.Location = new Point(4, 4);
+            labelTitulo.Location = new Point(294, 5);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(212, 50);
@@ -79,7 +80,7 @@
             labelSubTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelSubTitulo.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             labelSubTitulo.ForeColor = Color.DarkGray;
-            labelSubTitulo.Location = new Point(69, 49);
+            labelSubTitulo.Location = new Point(338, 51);
             labelSubTitulo.Margin = new Padding(0);
             labelSubTitulo.Name = "labelSubTitulo";
             labelSubTitulo.Size = new Size(122, 21);
@@ -130,7 +131,7 @@
             menuStrip.Location = new Point(595, 47);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(4, 3, 0, 2);
-            menuStrip.Size = new Size(324, 30);
+            menuStrip.Size = new Size(204, 30);
             menuStrip.TabIndex = 10;
             menuStrip.Text = "menuStrip";
             // 
@@ -172,6 +173,19 @@
             stripMenuCadastros.Text = "Cadastros";
             stripMenuCadastros.Click += LoadCadastros_ClickEvent;
             // 
+            // labelVersion
+            // 
+            labelVersion.AutoSize = true;
+            labelVersion.BackColor = Color.FromArgb(10, 10, 10);
+            labelVersion.Font = new Font("MesloLGL NF", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVersion.ForeColor = Color.FromArgb(128, 0, 3);
+            labelVersion.Location = new Point(2, 5);
+            labelVersion.Margin = new Padding(0);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new Size(52, 14);
+            labelVersion.TabIndex = 11;
+            labelVersion.Text = "Version: ";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -179,6 +193,7 @@
             BackColor = Color.FromArgb(10, 10, 10);
             ClientSize = new Size(800, 600);
             ControlBox = false;
+            Controls.Add(labelVersion);
             Controls.Add(panelView);
             Controls.Add(buttonExit);
             Controls.Add(labelTitulo);
@@ -214,5 +229,6 @@
         private LinkLabel linkLabel;
         private ToolStripMenuItem menuItemMDFeSimples;
         private ToolStripMenuItem stripMenuCadastros;
+        private Label labelVersion;
     }
 }
