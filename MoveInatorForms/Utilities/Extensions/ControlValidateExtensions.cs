@@ -20,7 +20,11 @@
         }
         public static void ValidateCPF(this MaskedTextBox maskedText, string message)
         {
+            var cpf = maskedText.Text.OnlyNumber();
 
+            if (string.IsNullOrEmpty(cpf)) throw new Exception(message);
+
+            if (cpf.Length != 11) throw new Exception("CPF precisa conter 11 digitos!");
         }
         public static void ValidateCNPJ(this MaskedTextBox maskedText, string message)
         {
@@ -28,7 +32,7 @@
 
             if (string.IsNullOrEmpty(cnpj)) throw new Exception(message);
 
-            if (cnpj.Length != 14) throw new Exception("CNPJ precisa ter 14 digitos!");
+            if (cnpj.Length != 14) throw new Exception("CNPJ precisa conter 14 digitos!");
         }
     }
 }
