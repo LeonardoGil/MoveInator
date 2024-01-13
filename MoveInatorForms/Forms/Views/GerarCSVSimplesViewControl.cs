@@ -147,6 +147,13 @@ namespace MoveInatorForms.Forms.Views
 
         private async Task LoadFormAsync()
         {
+            textBoxNumeroDocumento.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxNumeroDocumento.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxNumeroInicial.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxSerieInicial.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            maskedTextBoxDataEmissao.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            maskedTextBoxCpfCnpjDestinatario.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+
             ViagensViewBindingSource.ListChanged += ListViagemViewModel_ChangedEvent;
 
             dataGridView.DataSource = ViagensViewBindingSource;
