@@ -4,6 +4,7 @@ namespace GithubApiLib.Services.Interfaces
 {
     public interface IReleaseService
     {
-        List<Release> ListReleases();
+        Task<List<Release>> ListReleasesAsync();
+        Task<Release> LastReleaseAsync();
     }
 }

@@ -6,6 +6,7 @@
 
         #region Endpoint Releases
         public const string UrlListReleases = "/repos/LeonardoGil/MoveInator/releases";
+        public const string UrlLastRelease = "/repos/LeonardoGil/MoveInator/releases/latest";
         #endregion
     }
 }

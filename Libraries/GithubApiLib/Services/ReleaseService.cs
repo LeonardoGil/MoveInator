@@ -14,17 +14,32 @@ namespace GithubApiLib.Services
             this.requestGithubAPIService = requestGithubAPIService;
         }
 
-        public List<Release> ListReleases()
+        public async Task<Release> LastReleaseAsync()
+        {
+            var url = new Uri(UrlConsts.UrlAPIBase + UrlConsts.UrlLastRelease);
+
+            var request = requestGithubAPIService.GenerateRequest(HttpMethod.Get, url);
+            var client = new HttpClient();
+
+            var response = await client.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            return JsonSerializer.Deserialize<Release>(responseBody);
+        }
+
+        public async Task<List<Release>> ListReleasesAsync()
         {
             var url = new Uri(UrlConsts.UrlAPIBase + UrlConsts.UrlListReleases);
 
             var request = requestGithubAPIService.GenerateRequest(HttpMethod.Get, url);
             var client = new HttpClient();
 
-            var response = client.SendAsync(request).Result;
+            var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
 
-            string responseBody = response.Content.ReadAsStringAsync().Result;
+            string responseBody = await response.Content.ReadAsStringAsync();
 
             return JsonSerializer.Deserialize<List<Release>>(responseBody);
         }
