@@ -30,6 +30,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddTransient<GerarCSVSimplesViewControl>();
             builder.Services.AddTransient<GerarMDFeSimplesViewControl>();
             builder.Services.AddTransient<CadastrosViewControl>();
+            builder.Services.AddTransient<InicioViewControl>();
 
             return builder;
         }

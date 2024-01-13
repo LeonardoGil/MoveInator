@@ -10,52 +10,16 @@ namespace MoveInatorForms.Forms
     {
         private Point Point;
 
+        private InicioViewControl InicioViewControl;
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
         private CadastrosViewControl CadastrosViewControl;
 
-        private readonly IUpdateService updateService;
-
-        public MainForm(IUpdateService updateService)
+        public MainForm()
         {
-            this.updateService = updateService;
-
             InitializeComponent();
 
-            Task.Run(SetVersion);
-        }
-
-        private void SetVersion()
-        {
-            try
-            {
-                var updated = updateService.Updated();
-
-                Invoke(() =>
-                {
-                    labelVersion.Text += Assembly.GetExecutingAssembly()?.GetName()?.Version?.ToString() ?? "Not Found";
-                    labelVersion.ForeColor = updated ? Color.ForestGreen : Color.Brown;
-
-                    if (!updated)
-                        labelVersion.Text += $"{Environment.NewLine}(Latest version: {updateService.GetLastVersion()})";
-                });
-
-                if (!updated)
-                    DownloadLatestVersion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void DownloadLatestVersion()
-        {
-            var message = "A versão que você esta usando está desatualizada" + Environment.NewLine + "Deseja baixar a nova versão?";
-            var result = MessageBox.Show(message, "Versão desatualizada!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
-                Process.Start("explorer.exe", updateService.LastRelease.Anexados.First().UrlDownload);
+            LoadInicio_ClickEvent(null, EventArgs.Empty);
         }
 
         private void LoadView(Control control)
@@ -125,6 +89,14 @@ namespace MoveInatorForms.Forms
                 CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastrosViewControl>();
 
             LoadView(CadastrosViewControl);
+        }
+
+        private void LoadInicio_ClickEvent(object sender, EventArgs e)
+        {
+            if (InicioViewControl is default(InicioViewControl))
+                InicioViewControl = Program.ServiceProvider.GetRequiredService<InicioViewControl>();
+
+            LoadView(InicioViewControl);
         }
     }
 }

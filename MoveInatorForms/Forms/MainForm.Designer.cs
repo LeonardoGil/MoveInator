@@ -32,16 +32,16 @@
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panelView = new Panel();
-            linkLabel = new LinkLabel();
-            labelInformativa = new Label();
-            menuStrip = new MenuStrip();
+            menuStripDireita = new MenuStrip();
             menuImportacao = new ToolStripMenuItem();
             menuItemCsvSimples = new ToolStripMenuItem();
             menuItemMDFeSimples = new ToolStripMenuItem();
-            stripMenuCadastros = new ToolStripMenuItem();
-            labelVersion = new Label();
-            panelView.SuspendLayout();
-            menuStrip.SuspendLayout();
+            menuCadastros = new ToolStripMenuItem();
+            menuStripEsquerda = new MenuStrip();
+            menuInicio = new ToolStripMenuItem();
+            menuNovidades = new ToolStripMenuItem();
+            menuStripDireita.SuspendLayout();
+            menuStripEsquerda.SuspendLayout();
             SuspendLayout();
             // 
             // buttonExit
@@ -90,50 +90,24 @@
             // panelView
             // 
             panelView.BackColor = Color.FromArgb(31, 31, 31);
-            panelView.Controls.Add(linkLabel);
-            panelView.Controls.Add(labelInformativa);
             panelView.Dock = DockStyle.Bottom;
             panelView.Location = new Point(0, 80);
             panelView.Name = "panelView";
             panelView.Size = new Size(800, 520);
             panelView.TabIndex = 9;
             // 
-            // linkLabel
+            // menuStripDireita
             // 
-            linkLabel.AutoSize = true;
-            linkLabel.LinkColor = SystemColors.HotTrack;
-            linkLabel.Location = new Point(255, 245);
-            linkLabel.Name = "linkLabel";
-            linkLabel.Size = new Size(295, 17);
-            linkLabel.TabIndex = 1;
-            linkLabel.TabStop = true;
-            linkLabel.Text = "https://github.com/LeonardoGil/MoveInator";
-            // 
-            // labelInformativa
-            // 
-            labelInformativa.AutoSize = true;
-            labelInformativa.BackColor = Color.FromArgb(31, 31, 31);
-            labelInformativa.FlatStyle = FlatStyle.Flat;
-            labelInformativa.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            labelInformativa.ForeColor = Color.LightSlateGray;
-            labelInformativa.Location = new Point(268, 221);
-            labelInformativa.Name = "labelInformativa";
-            labelInformativa.Size = new Size(264, 21);
-            labelInformativa.TabIndex = 0;
-            labelInformativa.Text = "Considere apoiar o projeto 💪😁";
-            // 
-            // menuStrip
-            // 
-            menuStrip.BackColor = Color.FromArgb(10, 10, 10);
-            menuStrip.Dock = DockStyle.None;
-            menuStrip.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStrip.Items.AddRange(new ToolStripItem[] { menuImportacao, stripMenuCadastros });
-            menuStrip.Location = new Point(595, 47);
-            menuStrip.Name = "menuStrip";
-            menuStrip.Padding = new Padding(4, 3, 0, 2);
-            menuStrip.Size = new Size(204, 30);
-            menuStrip.TabIndex = 10;
-            menuStrip.Text = "menuStrip";
+            menuStripDireita.BackColor = Color.FromArgb(10, 10, 10);
+            menuStripDireita.Dock = DockStyle.None;
+            menuStripDireita.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            menuStripDireita.Items.AddRange(new ToolStripItem[] { menuImportacao, menuCadastros });
+            menuStripDireita.Location = new Point(594, 47);
+            menuStripDireita.Name = "menuStripDireita";
+            menuStripDireita.Padding = new Padding(4, 3, 0, 2);
+            menuStripDireita.Size = new Size(205, 30);
+            menuStripDireita.TabIndex = 10;
+            menuStripDireita.Text = "menuStrip";
             // 
             // menuImportacao
             // 
@@ -163,28 +137,44 @@
             menuItemMDFeSimples.Text = "MDF-e Simples";
             menuItemMDFeSimples.Click += LoadMDFeSimples_ClickEvent;
             // 
-            // stripMenuCadastros
+            // menuCadastros
             // 
-            stripMenuCadastros.BackColor = Color.FromArgb(31, 31, 31);
-            stripMenuCadastros.ForeColor = Color.DarkGray;
-            stripMenuCadastros.Margin = new Padding(2, 0, 0, 0);
-            stripMenuCadastros.Name = "stripMenuCadastros";
-            stripMenuCadastros.Size = new Size(94, 25);
-            stripMenuCadastros.Text = "Cadastros";
-            stripMenuCadastros.Click += LoadCadastros_ClickEvent;
+            menuCadastros.BackColor = Color.FromArgb(31, 31, 31);
+            menuCadastros.ForeColor = Color.DarkGray;
+            menuCadastros.Margin = new Padding(3, 0, 0, 0);
+            menuCadastros.Name = "menuCadastros";
+            menuCadastros.Size = new Size(94, 25);
+            menuCadastros.Text = "Cadastros";
+            menuCadastros.Click += LoadCadastros_ClickEvent;
             // 
-            // labelVersion
+            // menuStripEsquerda
             // 
-            labelVersion.AutoSize = true;
-            labelVersion.BackColor = Color.FromArgb(10, 10, 10);
-            labelVersion.Font = new Font("MesloLGL NF", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelVersion.ForeColor = Color.FromArgb(128, 0, 3);
-            labelVersion.Location = new Point(2, 5);
-            labelVersion.Margin = new Padding(0);
-            labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(52, 14);
-            labelVersion.TabIndex = 11;
-            labelVersion.Text = "Version: ";
+            menuStripEsquerda.BackColor = Color.FromArgb(10, 10, 10);
+            menuStripEsquerda.Dock = DockStyle.None;
+            menuStripEsquerda.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            menuStripEsquerda.Items.AddRange(new ToolStripItem[] { menuInicio, menuNovidades });
+            menuStripEsquerda.Location = new Point(-1, 48);
+            menuStripEsquerda.Name = "menuStripEsquerda";
+            menuStripEsquerda.Size = new Size(295, 29);
+            menuStripEsquerda.TabIndex = 12;
+            // 
+            // menuInicio
+            // 
+            menuInicio.BackColor = Color.FromArgb(31, 31, 31);
+            menuInicio.ForeColor = Color.DarkGray;
+            menuInicio.Name = "menuInicio";
+            menuInicio.Size = new Size(70, 25);
+            menuInicio.Text = "Inicio";
+            menuInicio.Click += LoadInicio_ClickEvent;
+            // 
+            // menuNovidades
+            // 
+            menuNovidades.BackColor = Color.FromArgb(31, 31, 31);
+            menuNovidades.ForeColor = Color.DarkGray;
+            menuNovidades.Margin = new Padding(3, 0, 0, 0);
+            menuNovidades.Name = "menuNovidades";
+            menuNovidades.Size = new Size(94, 25);
+            menuNovidades.Text = "Novidades";
             // 
             // MainForm
             // 
@@ -193,25 +183,25 @@
             BackColor = Color.FromArgb(10, 10, 10);
             ClientSize = new Size(800, 600);
             ControlBox = false;
-            Controls.Add(labelVersion);
             Controls.Add(panelView);
             Controls.Add(buttonExit);
             Controls.Add(labelTitulo);
             Controls.Add(labelSubTitulo);
-            Controls.Add(menuStrip);
+            Controls.Add(menuStripDireita);
+            Controls.Add(menuStripEsquerda);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
             FormBorderStyle = FormBorderStyle.None;
-            MainMenuStrip = menuStrip;
+            MainMenuStrip = menuStripDireita;
             Name = "MainForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             MouseDown += SetPoint_MouseDownEvent;
             MouseMove += MoveForm_MouseMoveEvent;
-            panelView.ResumeLayout(false);
-            panelView.PerformLayout();
-            menuStrip.ResumeLayout(false);
-            menuStrip.PerformLayout();
+            menuStripDireita.ResumeLayout(false);
+            menuStripDireita.PerformLayout();
+            menuStripEsquerda.ResumeLayout(false);
+            menuStripEsquerda.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,13 +212,13 @@
         private Label labelTitulo;
         private Label labelSubTitulo;
         private Panel panelView;
-        private MenuStrip menuStrip;
+        private MenuStrip menuStripDireita;
         private ToolStripMenuItem menuImportacao;
         private ToolStripMenuItem menuItemCsvSimples;
-        private Label labelInformativa;
-        private LinkLabel linkLabel;
         private ToolStripMenuItem menuItemMDFeSimples;
-        private ToolStripMenuItem stripMenuCadastros;
-        private Label labelVersion;
+        private ToolStripMenuItem menuCadastros;
+        private MenuStrip menuStripEsquerda;
+        private ToolStripMenuItem menuInicio;
+        private ToolStripMenuItem menuNovidades;
     }
 }
