@@ -14,7 +14,7 @@ namespace MoveInatorForms.Forms.Views
     {
         private readonly ICSVService CSVService;
 
-        public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource();
+        public BindingSource ViagensViewBindingSource { get; set; } = new BindingSource() { DataSource = new List<ViagemViewModel>() };
 
         public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
 
@@ -37,13 +37,11 @@ namespace MoveInatorForms.Forms.Views
         {
             buttonGerarCSV.Enabled = false;
 
-            var reloadMotorista = ReloadComboBoxMotorista();
-            var reloadEmpresa = ReloadComboBoxEmpresa();
-
-            Task.WaitAll(reloadEmpresa, reloadMotorista);
-
             try
             {
+                comboBoxEmissor.ReloadBindingSource<Empresa>(EmpresasBindingSource, nameof(Empresa.RazaoSocial), nameof(Empresa.Cnpj));
+                comboBoxMotorista.ReloadBindingSource<Motorista>(MotoristasBindingSource, nameof(Motorista.Nome), nameof(Motorista.Cpf));
+
                 if (!Empresas.Any())
                     throw new Exception("Cadastre um Emissor na aba Cadastros!");
 
@@ -61,56 +59,6 @@ namespace MoveInatorForms.Forms.Views
         }
 
         #region Private Methods
-
-        private async Task ReloadComboBoxMotorista()
-        {
-            var motoristaOld = default(Motorista);
-
-            if (comboBoxMotorista.SelectedItem is not null &&
-                comboBoxMotorista.SelectedItem is Motorista motorista)
-            {
-                MotoristasBindingSource.ResetCurrentItem();
-                motoristaOld = motorista;
-            }
-
-            comboBoxMotorista.DataSource = null;
-            comboBoxMotorista.DataSource = MotoristasBindingSource;
-            comboBoxMotorista.DisplayMember = "Nome";
-
-            if (motoristaOld is not null)
-            {
-                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault(x => x.Cpf == motoristaOld.Cpf);
-            }
-            else
-            {
-                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault();
-            }
-        }
-
-        private async Task ReloadComboBoxEmpresa()
-        {
-            var empresaOld = default(Empresa);
-
-            if (comboBoxEmissor.SelectedItem is not null &&
-                comboBoxEmissor.SelectedItem is Empresa empresa)
-            {
-                EmpresasBindingSource.ResetCurrentItem();
-                empresaOld = empresa;
-            }
-
-            comboBoxEmissor.DataSource = null;
-            comboBoxEmissor.DataSource = EmpresasBindingSource;
-            comboBoxEmissor.DisplayMember = "RazaoSocial";
-
-            if (empresaOld is not null)
-            {
-                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault(x => x.Cnpj == empresaOld.Cnpj);
-            }
-            else
-            {
-                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault();
-            }
-        }
 
         private ViagemViewModel BuildViagemViewModel()
         {
@@ -153,61 +101,33 @@ namespace MoveInatorForms.Forms.Views
 
         private bool ValidateViagemViewModel()
         {
-            // Viagem
-
-            var checkedIndiceViagem = checkedListBoxTipoViagem.CheckedIndices.OfType<int?>().FirstOrDefault();
-
-            if (checkedIndiceViagem is null)
+            #region Viagem
+            var checkedIndiceViagem = checkedListBoxTipoViagem.CheckedIndices.OfType<int?>().FirstOrDefault() ??
                 throw new Exception("Selecione um Tipo Viagem!");
 
-            if (string.IsNullOrEmpty(textBoxNumeroDocumento.Text))
-                throw new Exception("Informe um Numero Documento!");
+            textBoxNumeroDocumento.ValidateNotNullOrEmpty("Informe um Numero Documento!");
 
-            if ((TipoDocumentoViagemEnum)checkedIndiceViagem == TipoDocumentoViagemEnum.MDFe)
-            {
-                if (string.IsNullOrEmpty(textBoxSerieDocumento.Text))
-                    throw new Exception("Informe uma Série Documento!");
-            }
+            if (checkedIndiceViagem == (int)TipoDocumentoViagemEnum.MDFe)
+                textBoxSerieDocumento.ValidateNotNullOrEmpty("Informe uma Série Documento!");
+            #endregion
 
-            // Documento
-
-            var checkedIndiceDocumento = checkedListBoxTipoDocumento.CheckedIndices.OfType<int?>().FirstOrDefault();
-
-            if (checkedIndiceDocumento is null)
+            #region Documento
+            if (!checkedListBoxTipoDocumento.CheckedIndices.OfType<int?>().Any())
                 throw new Exception("Selecione um Tipo Documento!");
 
-            if (!int.TryParse(textBoxNumeroInicial.Text, out _))
-                throw new Exception("Informe um Numero inicial!");
+            textBoxNumeroInicial.ValidateNumber("Informe um Numero inicial!");
+            textBoxSerieInicial.ValidateNumber("Informe uma Série inicial!");
+            numericUpDownQuantidade.ValidateNumberGreaterThan("Informe uma quantidade valída!");
+            #endregion
 
-            if (!int.TryParse(textBoxSerieInicial.Text, out _))
-                throw new Exception("Informe uma Série inicial!");
+            #region Destinatario
+            textBoxNomeDestinatario.ValidateNotNullOrEmpty("Informe o nome do Destinatário!");
+            maskedTextBoxCpfCnpjDestinatario.ValidateCNPJ("Informe o Cpf/Cnpj do Destinatário!");
+            #endregion
 
-            if (numericUpDownQuantidade.Value <= 0)
-                throw new Exception("Informe uma quantidade valída!");
-
-            // Emissor
-
-            if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
-                throw new Exception("Informe uma Data Emissão valída!");
-
-            // Destinatario
-
-            if (string.IsNullOrEmpty(textBoxNomeDestinatario.Text))
-                throw new Exception("Informe o nome do Destinatário!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber()))
-                throw new Exception("Informe o Cpf/Cnpj do Destinatário!");
+            maskedTextBoxDataEmissao.ValidateOnlyDate("Informe uma Data Emissão valída!");
 
             return true;
-        }
-
-        private void ResetCheckedList(CheckedListBox checkedListBox, int index = -1)
-        {
-            foreach (int ind in checkedListBox.CheckedIndices)
-            {
-                if (ind != index)
-                    checkedListBox.SetItemChecked(ind, false);
-            }
         }
 
         private async Task PrepareFieldForNextViagemAsync()
@@ -227,7 +147,6 @@ namespace MoveInatorForms.Forms.Views
 
         private async Task LoadFormAsync()
         {
-            ViagensViewBindingSource.DataSource = new List<ViagemViewModel>();
             ViagensViewBindingSource.ListChanged += ListViagemViewModel_ChangedEvent;
 
             dataGridView.DataSource = ViagensViewBindingSource;
@@ -282,7 +201,7 @@ namespace MoveInatorForms.Forms.Views
         {
             if (sender is CheckedListBox checkedListBox)
             {
-                ResetCheckedList(checkedListBox, e.Index);
+                checkedListBox.ResetCheckedList(e.Index);
             }
         }
 
@@ -290,13 +209,11 @@ namespace MoveInatorForms.Forms.Views
         {
             if (sender is CheckedListBox checkedListBox)
             {
-                ResetCheckedList(checkedListBox, e.Index);
-
-                var mdfeIndex = (int)TipoDocumentoViagemEnum.MDFe;
+                checkedListBox.ResetCheckedList(e.Index);
 
                 var mdfeChecked = false;
 
-                if (e.Index == mdfeIndex)
+                if (e.Index == (int)TipoDocumentoViagemEnum.MDFe)
                 {
                     mdfeChecked = e.NewValue == CheckState.Checked;
                 }
@@ -346,24 +263,17 @@ namespace MoveInatorForms.Forms.Views
         {
             var random = new Random();
             var cnpj = new Cnpj();
-            var cpf = new Cpf();
 
-            ResetCheckedList(checkedListBoxTipoViagem);
-            ResetCheckedList(checkedListBoxTipoDocumento);
+            checkedListBoxTipoViagem.ResetCheckedList();
+            checkedListBoxTipoDocumento.ResetCheckedList();
 
             var tipoViagem = random.Next(0, 2);
 
             checkedListBoxTipoViagem.SetItemChecked(tipoViagem, true);
-            textBoxNumeroDocumento.Text = random.Next(1, 9999).ToString();
 
-            if (tipoViagem == (int)TipoDocumentoViagemEnum.MDFe)
-            {
-                textBoxSerieDocumento.Text = random.Next(1, 500).ToString();
-            }
-            else
-            {
-                textBoxSerieDocumento.Text = string.Empty;
-            }
+            textBoxNumeroDocumento.Text = random.Next(1, 9999).ToString();
+            textBoxSerieDocumento.Text = tipoViagem == (int)TipoDocumentoViagemEnum.MDFe ? random.Next(1, 500).ToString() :
+                                                                                           string.Empty;
 
             checkedListBoxTipoDocumento.SetItemChecked(random.Next(0, 2), true);
             textBoxNumeroInicial.Text = random.Next(1, 9999).ToString();
@@ -371,19 +281,14 @@ namespace MoveInatorForms.Forms.Views
             numericUpDownQuantidade.Value = random.Next(1, 50);
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-            //maskedTextBoxCnpjEmissor.Text = cnpj.GerarFake();
-
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
             maskedTextBoxCpfCnpjDestinatario.Text = cnpj.GerarFake();
-
-            //textBoxNomeMotorista.Text = Data.Nomes.GetRandom();
-            //maskedTextBoxCpfMotorista.Text = cpf.GerarFake();
         }
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
         {
-            ResetCheckedList(checkedListBoxTipoViagem);
-            ResetCheckedList(checkedListBoxTipoDocumento);
+            checkedListBoxTipoViagem.ResetCheckedList();
+            checkedListBoxTipoDocumento.ResetCheckedList();
 
             textBoxNumeroDocumento.Text = string.Empty;
             textBoxSerieDocumento.Text = string.Empty;
@@ -393,13 +298,9 @@ namespace MoveInatorForms.Forms.Views
             numericUpDownQuantidade.Value = 1;
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-            //maskedTextBoxCnpjEmissor.Text = string.Empty;
 
             textBoxNomeDestinatario.Text = string.Empty;
             maskedTextBoxCpfCnpjDestinatario.Text = string.Empty;
-
-            textBoxNumeroDocumento.Text = string.Empty;
-            //maskedTextBoxCpfMotorista.Text = string.Empty;
         }
 
         private void LimparViagensGrid_ClickEvent(object sender, EventArgs e)
