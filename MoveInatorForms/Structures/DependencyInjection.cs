@@ -30,6 +30,8 @@ namespace MoveInatorForms.Structures
             builder.Services.AddTransient<GerarCSVSimplesViewControl>();
             builder.Services.AddTransient<GerarMDFeSimplesViewControl>();
             builder.Services.AddTransient<CadastrosViewControl>();
+            builder.Services.AddTransient<InicioViewControl>();
+            builder.Services.AddTransient<NovidadesViewControl>();
 
             return builder;
         }
@@ -39,6 +41,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddSingleton<ICSVService, CSVService>();
             builder.Services.AddSingleton<IMDFeService, MDFeService>();
             builder.Services.AddSingleton<IFileService, FileService>();
+            builder.Services.AddSingleton<IUpdateService, UpdateService>();
 
             return builder;
         }

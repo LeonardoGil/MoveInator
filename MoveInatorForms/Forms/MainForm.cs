@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
+using MoveInatorForms.Services.Interfaces;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace MoveInatorForms.Forms
 {
@@ -7,24 +10,28 @@ namespace MoveInatorForms.Forms
     {
         private Point Point;
 
+        private InicioViewControl InicioViewControl;
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
         private CadastrosViewControl CadastrosViewControl;
+        private NovidadesViewControl NovidadesViewControl;
 
         public MainForm()
         {
             InitializeComponent();
+
+            LoadInicio_ClickEvent(null, EventArgs.Empty);
         }
 
-        private async Task LoadView(Control control)
+        private void LoadView(Control control)
         {
-            if (panelView.Controls.Contains(control))
-                return;
+            if (!panelView.Controls.Contains(control))
+            {
+                panelView.Controls.Clear();
+                panelView.Controls.Add(control);
 
-            panelView.Controls.Clear();
-            panelView.Controls.Add(control);
-
-            control.Dock = DockStyle.Fill;
+                control.Dock = DockStyle.Fill;
+            }
         }
 
         private void SetPoint_MouseDownEvent(object sender, MouseEventArgs e)
@@ -75,7 +82,6 @@ namespace MoveInatorForms.Forms
             }
 
             LoadView(GerarMDFeSimplesView);
-
         }
 
         private void LoadCadastros_ClickEvent(object sender, EventArgs e)
@@ -84,6 +90,22 @@ namespace MoveInatorForms.Forms
                 CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastrosViewControl>();
 
             LoadView(CadastrosViewControl);
+        }
+
+        private void LoadInicio_ClickEvent(object sender, EventArgs e)
+        {
+            if (InicioViewControl is default(InicioViewControl))
+                InicioViewControl = Program.ServiceProvider.GetRequiredService<InicioViewControl>();
+
+            LoadView(InicioViewControl);
+        }
+
+        private void LoadNovidades_ClickEvent(object sender, EventArgs e)
+        {
+            if (NovidadesViewControl is default(NovidadesViewControl))
+                NovidadesViewControl = Program.ServiceProvider.GetRequiredService<NovidadesViewControl>();
+
+            LoadView(NovidadesViewControl);
         }
     }
 }
