@@ -12,7 +12,7 @@ namespace MoveInatorForms.Forms.Views
     {
         private readonly IMDFeService MDFeService;
 
-        public BindingSource MDFeCTesViewBindingSource { get; set; } = new BindingSource();
+        public BindingSource MDFeCTesViewBindingSource { get; set; } = new BindingSource() { DataSource = new List<MDFeCTeViewModel>() };
 
         public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
 
@@ -36,13 +36,11 @@ namespace MoveInatorForms.Forms.Views
         {
             buttonGerarMDFe.Enabled = false;
 
-            var reloadMotorista = ReloadComboBoxMotorista();
-            var reloadEmpresa = ReloadComboBoxEmpresa();
-
-            Task.WaitAll(reloadEmpresa, reloadMotorista);
-
             try
             {
+                comboBoxEmissor.ReloadBindingSource<Empresa>(EmpresasBindingSource, nameof(Empresa.RazaoSocial), nameof(Empresa.Cnpj));
+                comboBoxMotorista.ReloadBindingSource<Motorista>(MotoristasBindingSource, nameof(Motorista.Nome), nameof(Motorista.Cpf));
+
                 if (!Empresas.Any())
                     throw new Exception("Cadastre um Emissor na aba Cadastros!");
 
@@ -59,59 +57,14 @@ namespace MoveInatorForms.Forms.Views
             }
         }
 
-        private async Task ReloadComboBoxMotorista()
-        {
-            var motoristaOld = default(Motorista);
-
-            if (comboBoxMotorista.SelectedItem is not null &&
-                comboBoxMotorista.SelectedItem is Motorista motorista)
-            {
-                MotoristasBindingSource.ResetCurrentItem();
-                motoristaOld = motorista;
-            }
-
-            comboBoxMotorista.DataSource = null;
-            comboBoxMotorista.DataSource = MotoristasBindingSource;
-            comboBoxMotorista.DisplayMember = "Nome";
-
-            if (motoristaOld is not null)
-            {
-                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault(x => x.Cpf == motoristaOld.Cpf);
-            }
-            else
-            {
-                comboBoxMotorista.SelectedItem = Motoristas.FirstOrDefault();
-            }
-        }
-
-        private async Task ReloadComboBoxEmpresa()
-        {
-            var empresaOld = default(Empresa);
-
-            if (comboBoxEmissor.SelectedItem is not null &&
-                comboBoxEmissor.SelectedItem is Empresa empresa)
-            {
-                EmpresasBindingSource.ResetCurrentItem();
-                empresaOld = empresa;
-            }
-
-            comboBoxEmissor.DataSource = null;
-            comboBoxEmissor.DataSource = EmpresasBindingSource;
-            comboBoxEmissor.DisplayMember = "RazaoSocial";
-
-            if (empresaOld is not null)
-            {
-                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault(x => x.Cnpj == empresaOld.Cnpj);
-            }
-            else
-            {
-                comboBoxEmissor.SelectedItem = Empresas.FirstOrDefault();
-            }
-        }
-
         private async Task LoadFormAsync()
         {
-            MDFeCTesViewBindingSource.DataSource = new List<MDFeCTeViewModel>();
+            textBoxNumeroMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxSerieMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxNumeroCTe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxNumeroMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            maskedTextBoxDataEmissao.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+
             MDFeCTesViewBindingSource.ListChanged += ListMDFeCTesViewModel_ChangedEvent;
 
             dataGridView.DataSource = MDFeCTesViewBindingSource;
@@ -168,28 +121,19 @@ namespace MoveInatorForms.Forms.Views
 
         private void ValidateMDFeCTeViewModel()
         {
-            if (string.IsNullOrEmpty(textBoxNumeroMDFe.Text))
-                throw new Exception("Informe um Numero MDFe!");
+            textBoxNumeroMDFe.ValidateNumber("Informe um Numero MDFe!");
+            textBoxSerieMDFe.ValidateNumber("Informe uma Série MDFe!");
 
-            if (string.IsNullOrEmpty(textBoxSerieMDFe.Text))
-                throw new Exception("Informe uma Série MDFe!");
+            textBoxNumeroCTe.ValidateNumber("Informe um Numero CTe!");
+            textBoxSerieCTe.ValidateNumber("Informe uma Série CTe!");
 
-            if (!int.TryParse(textBoxNumeroCTe.Text, out var numero))
-                throw new Exception("Informe um Numero CTe!");
-
-            if (!int.TryParse(textBoxSerieCTe.Text, out var serie))
-                throw new Exception("Informe uma Série CTe!");
-
-            // Emissor
-
-            if (!DateTime.TryParse(maskedTextBoxDataEmissao.Text, out _))
-                throw new Exception("Informe uma Data Emissão valída!");
+            maskedTextBoxDataEmissao.ValidateOnlyDate("Informe uma Data Emissão valída!");
 
             // Lista de CTes
             var ctes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
 
-            if (ctes.Any(x => x.NumeroCTe == numero && x.SerieCTe == serie))
-                throw new Exception("Já possuí um CTe com esse Numero e Serie");
+            if (ctes.Any(x => x.NumeroCTe == int.Parse(textBoxNumeroCTe.Text) && 
+                              x.SerieCTe == int.Parse(textBoxSerieCTe.Text))) throw new Exception("Já possuí um CTe com esse Numero e Serie");
         }
 
         private async void PrepareFieldForNextCTeAsync()
@@ -226,7 +170,7 @@ namespace MoveInatorForms.Forms.Views
 
         private void ListMDFeCTesViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
         {
-            var enabled = ((List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource).Any();
+            var enabled = MDFeCTes.Any();
 
             buttonGerarMDFe.Enabled = enabled;
             buttonLimparMDFeCTes.Enabled = enabled;
@@ -245,9 +189,7 @@ namespace MoveInatorForms.Forms.Views
 
                 buttonGerarMDFe.Enabled = false;
 
-                var mdfeCTes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
-
-                var filePath = MDFeService.GenerateAsync(textBoxDiretorio.Text, mdfeCTes).Result;
+                var filePath = MDFeService.GenerateAsync(textBoxDiretorio.Text, MDFeCTes).Result;
 
                 MDFeCTesViewBindingSource.Clear();
 
@@ -274,7 +216,7 @@ namespace MoveInatorForms.Forms.Views
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
         {
-            var anyMDFeCTe = ((List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource).Any();
+            var anyMDFeCTe = MDFeCTes.Any();
 
             textBoxNumeroCTe.Text = string.Empty;
             textBoxSerieCTe.Text = string.Empty;
