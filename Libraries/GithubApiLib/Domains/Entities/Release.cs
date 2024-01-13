@@ -25,7 +25,8 @@ namespace GithubApiLib.Domains.Entities
         [JsonPropertyName("published_at")]
         public DateTime PublicadoEm { get; set; }
 
-        public Asset[] assets { get; set; }
+        [JsonPropertyName("assets")]
+        public Asset[] Anexados { get; set; }
 
         [JsonPropertyName("body")]
         public string Conteudo { get; set; }
