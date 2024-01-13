@@ -22,6 +22,9 @@ namespace MoveInatorForms.Forms.Views
 
         private async Task Load()
         {
+            maskedTextBoxCnpjEmpresa.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            maskedTextBoxCpfMotorista.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+
             dataGridViewEmpresas.DataSource = EmpresasBindingSource;
             dataGridViewMotoristas.DataSource = MotoristasBindingSource;
         }
@@ -47,11 +50,8 @@ namespace MoveInatorForms.Forms.Views
 
         private void ValidateMotorista()
         {
-            if (string.IsNullOrEmpty(textBoxNomeMotorista.Text))
-                throw new Exception("Informe um Nome!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCpfMotorista.Text.OnlyNumber()))
-                throw new Exception("Informe um CPF para Motorista!");
+            textBoxNomeMotorista.ValidateNotNullOrEmpty("Informe um Nome!");
+            maskedTextBoxCpfMotorista.ValidateCPF("Informe um CPF para Motorista!");
 
             if (Motoristas.Any(x => x.Cpf == maskedTextBoxCpfMotorista.Text.OnlyNumber()))
                 throw new Exception("Já possuí um Motorista com esse CPF!");
@@ -94,11 +94,8 @@ namespace MoveInatorForms.Forms.Views
 
         private void ValidateEmpresa()
         {
-            if (string.IsNullOrEmpty(textBoxNomeRazaoSocial.Text))
-                throw new Exception("Informe uma Razão Social!");
-
-            if (string.IsNullOrEmpty(maskedTextBoxCnpjEmpresa.Text.OnlyNumber()))
-                throw new Exception("Informe um CNPJ para Empresa!");
+            textBoxNomeRazaoSocial.ValidateNotNullOrEmpty("Informe uma Razão Social!");
+            maskedTextBoxCnpjEmpresa.ValidateCNPJ("Informe um CNPJ para Empresa!");
 
             if (Empresas.Any(x => x.Cnpj == maskedTextBoxCnpjEmpresa.Text.OnlyNumber()))
                 throw new Exception("Já possuí uma empresa com esse CNPJ!");
