@@ -14,6 +14,7 @@ namespace MoveInatorForms.Forms
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
         private CadastrosViewControl CadastrosViewControl;
+        private NovidadesViewControl NovidadesViewControl;
 
         public MainForm()
         {
@@ -97,6 +98,14 @@ namespace MoveInatorForms.Forms
                 InicioViewControl = Program.ServiceProvider.GetRequiredService<InicioViewControl>();
 
             LoadView(InicioViewControl);
+        }
+
+        private void LoadNovidades_ClickEvent(object sender, EventArgs e)
+        {
+            if (NovidadesViewControl is default(NovidadesViewControl))
+                NovidadesViewControl = Program.ServiceProvider.GetRequiredService<NovidadesViewControl>();
+
+            LoadView(NovidadesViewControl);
         }
     }
 }

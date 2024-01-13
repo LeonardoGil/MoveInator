@@ -175,6 +175,7 @@
             menuNovidades.Name = "menuNovidades";
             menuNovidades.Size = new Size(94, 25);
             menuNovidades.Text = "Novidades";
+            menuNovidades.Click += LoadNovidades_ClickEvent;
             // 
             // MainForm
             // 
