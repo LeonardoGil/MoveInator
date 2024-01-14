@@ -1,5 +1,6 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Utilities.Extensions;
+using System.ComponentModel;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -24,6 +25,9 @@ namespace MoveInatorForms.Forms.Views
         {
             maskedTextBoxCnpjEmpresa.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
             maskedTextBoxCpfMotorista.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+
+            EmpresasBindingSource.ListChanged += BindindSourceChanged;
+            MotoristasBindingSource.ListChanged += BindindSourceChanged;
 
             dataGridViewEmpresas.DataSource = EmpresasBindingSource;
             dataGridViewMotoristas.DataSource = MotoristasBindingSource;
@@ -118,6 +122,11 @@ namespace MoveInatorForms.Forms.Views
 
         #region Events
 
+        private void BindindSourceChanged(object? sender, ListChangedEventArgs e)
+        {
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
         private void AdicionarEmpresa_ClickEvent(object sender, EventArgs e)
         {
             try
@@ -129,8 +138,6 @@ namespace MoveInatorForms.Forms.Views
                 AddEmpresa();
 
                 ClearFieldsEmpresa();
-
-                buttonSalvar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -153,7 +160,6 @@ namespace MoveInatorForms.Forms.Views
             }
 
             EmpresasBindingSource.RemoveAt(row.Index);
-            buttonSalvar.Enabled = true;
         }
 
         private void AdicionarMotorista_ClickEvent(object sender, EventArgs e)
@@ -167,8 +173,6 @@ namespace MoveInatorForms.Forms.Views
                 AddMotorista();
 
                 ClearFieldsMotorista();
-
-                buttonSalvar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -197,7 +201,7 @@ namespace MoveInatorForms.Forms.Views
         private void Salvar_ClickEvent(object sender, EventArgs e)
         {
             Program.DatabaseJson.Save();
-            buttonSalvar.Enabled = false;
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
         }
 
         #endregion

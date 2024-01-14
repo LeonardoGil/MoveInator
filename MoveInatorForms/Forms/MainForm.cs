@@ -50,9 +50,10 @@ namespace MoveInatorForms.Forms
 
         private void Exit_ClickEvent(object sender, EventArgs e)
         {
-            var messageBoxResult = MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo);
+            if (!Program.DatabaseJson.Atualizado && MessageBox.Show("Deseja salvar os dados antes de Sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Program.DatabaseJson.Save().Wait();
 
-            if (messageBoxResult == DialogResult.Yes)
+            if (MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 Close();
         }
 
