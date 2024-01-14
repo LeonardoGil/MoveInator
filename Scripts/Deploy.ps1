@@ -1,26 +1,25 @@
-function Deploy-MoveInator {
-    param (
-        [Parameter(Mandatory, Position=0)]
-        [ValidateNotNullOrEmpty()]
-        [string]
-        $version,
+using namespace System.IO;
+using namespace System.Reflection;
 
-        [Parameter(Mandatory, Position=1)]
-        [ValidateNotNullOrEmpty()]
-        [string]
-        $pathProject
-    )
+# Pega o diretorio do projeto
+$pathLocation = Get-Location;
+$pathProject = [Directory]::GetParent($pathLocation).FullName;
 
-    $pathRelease = "$pathProject\MoveInatorForms\bin\Release";
-    $pathBuild = "$pathRelease\net6.0-windows";
-    $pathTemplates = "$pathProject\MoveInatorForms\Templates";
+$pathCSProj = [Path]::Combine($pathProject, 'MoveInatorForms', 'MoveInatorForms.csproj');
+$pathArtefatos = '..\Artefatos';
 
-    Copy-Item -Path "$pathTemplates\*" -Destination $pathBuild;
+dotnet build $pathCSProj -c 'Release' -o $pathArtefatos;
 
-    $filePath = "$pathRelease\MoveInator_$version.zip";
+$pathTemplates = [Path]::Combine($pathProject, 'MoveInatorForms', 'Templates');
 
-    Start-Process 'C:\Program Files\7-Zip\7z.exe' -ArgumentList @('a', '-tzip', $filePath, "$pathBuild\*");
+Copy-Item -Path "$pathTemplates\*" -Destination $pathArtefatos;
 
-    Write-Host "Artefato gerado." -ForegroundColor Green;
-    Write-Output $filePath;
-}
+$version = (Get-Item '..\Artefatos\MoveInatorForms.exe').VersionInfo.FileVersion;
+$filePath = "$pathProject\MoveInator_$version.zip";
+
+Start-Process 'C:\Program Files\7-Zip\7z.exe' -ArgumentList @('a', '-tzip', $filePath, "$pathArtefatos\*");
+
+Write-Host "Artefato gerado." -ForegroundColor Green;
+Write-Output $filePath;
+
+Remove-Item $pathArtefatos;
