@@ -10,7 +10,7 @@ namespace MoveInatorForms.Forms.Cards
         {
             InitializeComponent();
 
-            Task.Run(() => FormatRelease(release));
+            FormatRelease(release);
         }
 
         private void FormatRelease(Release release)
@@ -28,20 +28,24 @@ namespace MoveInatorForms.Forms.Cards
                                            .Replace("### Bug", "💣 Bug")
                                            .Replace(">", "Obs: ");
 
-            Invoke(() =>
-            {
-                labelVersao.Text = versao;
-                labelVersao.Location = new Point((Size.Width / 2) - (labelVersao.Size.Width / 2), labelVersao.Location.Y);
+            labelVersao.Text = versao;
+            labelVersao.Location = new Point((Size.Width / 2) - (labelVersao.Size.Width / 2), labelVersao.Location.Y);
 
-                if (versaoAtual == versao)
-                    labelVersao.ForeColor = Color.ForestGreen;
+            if (versaoAtual == versao)
+                labelVersao.ForeColor = Color.ForestGreen;
 
-                labelData.Text = data;
-                labelDescricao.Text = conteudo;
-                linkLabel.Text = link;
-            });
+            labelData.Text = data;
+            labelDescricao.Text = conteudo;
+            linkLabel.Text = link;
         }
 
-        private void DownloadVersion_LinkClickedEvent(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("explorer.exe", linkLabel.Text);
+        private void DownloadVersion_LinkClickedEvent(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var message = $"Deseja fazer o download da versão {labelVersao.Text}?";
+            var result = MessageBox.Show(message, "Download", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+                Process.Start("explorer.exe", linkLabel.Text);
+        }
     }
 }
