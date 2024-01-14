@@ -1,7 +1,6 @@
 ﻿using MoveInatorForms.Services.Interfaces;
 using System.Diagnostics;
 using System.Reflection;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -51,10 +50,7 @@ namespace MoveInatorForms.Forms.Views
                 Process.Start("explorer.exe", updateService.LastRelease.Anexados.First().UrlDownload);
         }
 
-        private void OpenGitHub_LinkClickedEvent(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("explorer.exe", linkLabel.Text);
-        }
+        private void OpenGitHub_LinkClickedEvent(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("explorer.exe", linkLabel.Text);
 
         private void DownloadVersion_ClickEvent(object sender, EventArgs e)
         {
