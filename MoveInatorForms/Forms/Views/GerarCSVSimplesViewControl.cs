@@ -1,5 +1,4 @@
-﻿using DocumentosBrasileiros;
-using MoveInatorForms.Domains.Entities.Cadastros;
+﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
@@ -7,6 +6,7 @@ using MoveInatorForms.Utilities.Extensions;
 using MoveInatorForms.Utilities.Mocks;
 using System.ComponentModel;
 using System.Text;
+using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -269,7 +269,6 @@ namespace MoveInatorForms.Forms.Views
         private void AutoComplete_ClickEvent(object sender, EventArgs e)
         {
             var random = new Random();
-            var cnpj = new Cnpj();
 
             checkedListBoxTipoViagem.ResetCheckedList();
             checkedListBoxTipoDocumento.ResetCheckedList();
@@ -289,7 +288,7 @@ namespace MoveInatorForms.Forms.Views
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
-            maskedTextBoxCpfCnpjDestinatario.Text = cnpj.GerarFake();
+            maskedTextBoxCpfCnpjDestinatario.Text = CNPJ.Random();
         }
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
