@@ -70,7 +70,7 @@
             if (chaveSemDigito.Length != 43)
                 throw new Exception("Não foi possível calcular o digito Verificador. Motivo: Chave de acesso não contem 43 digitos.");
 
-            digitoVerificador = DigitoVerificadorCalc.Mod11(chaveSemDigito);
+            digitoVerificador = DigitoVerificadorCalc.Mod11(chaveSemDigito, 9);
         }
 
         public override string ToString()

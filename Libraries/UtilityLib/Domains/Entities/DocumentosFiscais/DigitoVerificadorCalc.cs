@@ -2,18 +2,31 @@
 {
     public class DigitoVerificadorCalc
     {
-        public static int Mod11(string chave)
+        public static string AddDigitos(string input, int peso, int digitos = 1)
+        {
+            var count = 1;
+            do
+            {
+                input += Mod11(input, peso).ToString();
+                count++;
+            } 
+            while (count <= digitos);
+
+            return input;
+        }
+
+        public static int Mod11(string input, int peso)
         {
             var multiplicador = 2;
             var soma = 0;
 
-            for (int i = chave.Length - 1; i >= 0; i--)
+            for (int i = input.Length - 1; i >= 0; i--)
             {
-                var number = int.Parse(chave[i].ToString());
+                var number = int.Parse(input[i].ToString());
 
                 soma += number * multiplicador;
 
-                multiplicador = multiplicador >= 9 ? 2 : multiplicador + 1;
+                multiplicador = multiplicador >= peso ? 2 : multiplicador + 1;
             }
 
             var resto = soma % 11;
