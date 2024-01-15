@@ -37,7 +37,7 @@
         private readonly int numero;
         private readonly int tipoEmissao = 1;
         private readonly int codigoNumerico = 12345678;
-        private int cDigitoVerificador;
+        private int digitoVerificador;
 
         public string ChaveDeAcesso { get => string.Concat(UF, DataEmissao, CNPJ, Modelo, Serie, Numero, TipoEmissao, CodigoNumerico, DigitoVerificador); }
 
@@ -61,7 +61,7 @@
 
         public string CodigoNumerico { get => codigoNumerico.ToString(); }
 
-        public string DigitoVerificador { get => cDigitoVerificador.ToString(); }
+        public string DigitoVerificador { get => digitoVerificador.ToString(); }
 
         private void SetDigitoVerificador()
         {
@@ -70,21 +70,7 @@
             if (chaveSemDigito.Length != 43)
                 throw new Exception("Não foi possível calcular o digito Verificador. Motivo: Chave de acesso não contem 43 digitos.");
 
-            var multiplicador = 2;
-            var soma = 0;
-
-            for (int i = 42; i >= 0; i--)
-            {
-                var number = int.Parse(chaveSemDigito[i].ToString());
-
-                soma += number * multiplicador;
-
-                multiplicador = multiplicador >= 9 ? 2 : multiplicador + 1;
-            }
-
-            var resto = soma % 11;
-
-            cDigitoVerificador = resto <= 1 ? 0 : 11 - resto;
+            digitoVerificador = DigitoVerificadorCalc.Mod11(chaveSemDigito);
         }
 
         public override string ToString()
