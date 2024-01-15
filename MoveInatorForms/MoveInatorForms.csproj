@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Libraries\GithubApiLib\GithubApiLib.csproj" />
+    <ProjectReference Include="..\Libraries\UtilityLib\UtilityLib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
-﻿using MoveInatorForms.Domains.Entities.DocumentosFiscais;
-using MoveInatorForms.Domains.Entities.Importacao;
+﻿using MoveInatorForms.Domains.Entities.Importacao;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
-using System.Text;
+using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Services
 {
@@ -47,7 +46,7 @@ namespace MoveInatorForms.Services
 
             var mdfe = new MDFe
             {
-                ChaveAcesso = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.SerieMDFe, single.NumeroMDFe),
+                ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.SerieMDFe, single.NumeroMDFe),
                 Emissor = single.Emissor,
                 CnpjEmissor = single.CnpjEmissor,
                 DataEmissao = single.DataEmissao,
@@ -59,8 +58,8 @@ namespace MoveInatorForms.Services
             {
                 mdfe.CTes.Add(new CTe
                 {
-                    ChaveAcesso = new ChaveAcesso(ModeloDocumentoEnum.CTe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
-                    ChaveAcessoNFe = new ChaveAcesso(ModeloDocumentoEnum.NFe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
+                    ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
+                    ChaveAcessoNFe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
                     CnpjEmissor = cte.CnpjEmissor,
                     DataEmissao = cte.DataEmissao
                 });

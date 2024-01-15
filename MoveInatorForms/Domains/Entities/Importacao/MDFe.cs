@@ -1,4 +1,4 @@
-﻿using MoveInatorForms.Domains.Entities.DocumentosFiscais;
+﻿using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Domains.Entities.Importacao
 {

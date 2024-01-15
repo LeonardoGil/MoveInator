@@ -1,8 +1,8 @@
-﻿using MoveInatorForms.Domains.Entities.DocumentosFiscais;
-using MoveInatorForms.Domains.Entities.Importacao;
+﻿using MoveInatorForms.Domains.Entities.Importacao;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
+using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Services
 {
@@ -59,7 +59,7 @@ namespace MoveInatorForms.Services
                 var mes = int.Parse(viagemViewModel.DataEmissao.ToString("MM"));
                 var ano = int.Parse(viagemViewModel.DataEmissao.ToString("yy"));
 
-                var mdfe = new ChaveAcesso(ModeloDocumentoEnum.MDFe, 42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.SerieViagem.Value, viagemViewModel.NumeroViagem);
+                var mdfe = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, mes, ano, long.Parse(viagemViewModel.CnpjEmissor), viagemViewModel.SerieViagem.Value, viagemViewModel.NumeroViagem);
                 chaveAcesso = mdfe.ChaveDeAcesso;
             }
             
@@ -118,7 +118,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var cte = new ChaveAcesso(ModeloDocumentoEnum.CTe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var cte = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDoCTe = viagemViewModel.SerieDocumento;
             viagem.NumeroDoCTe = numero;
@@ -132,7 +132,7 @@ namespace MoveInatorForms.Services
 
             var numero = viagemViewModel.NumeroDocumento + index;
 
-            var nfe = new ChaveAcesso(ModeloDocumentoEnum.NFe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
+            var nfe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, mes, ano, long.Parse(viagem.CNPJEmissor), viagemViewModel.SerieDocumento, numero);
 
             viagem.SerieDaNFe = viagemViewModel.SerieDocumento;
             viagem.NumerodaNFe = numero;
