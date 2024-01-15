@@ -1,8 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
-using MoveInatorForms.Services.Interfaces;
-using System.Diagnostics;
-using System.Reflection;
 
 namespace MoveInatorForms.Forms
 {
@@ -46,15 +43,6 @@ namespace MoveInatorForms.Forms
                 Left += e.X - Point.X;
                 Top += e.Y - Point.Y;
             }
-        }
-
-        private void Exit_ClickEvent(object sender, EventArgs e)
-        {
-            if (!Program.DatabaseJson.Atualizado && MessageBox.Show("Deseja salvar os dados antes de Sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                Program.DatabaseJson.Save().Wait();
-
-            if (MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                Close();
         }
 
         private void LoadCSVSimples_ClickEvent(object sender, EventArgs e)
@@ -107,6 +95,20 @@ namespace MoveInatorForms.Forms
                 NovidadesViewControl = Program.ServiceProvider.GetRequiredService<NovidadesViewControl>();
 
             LoadView(NovidadesViewControl);
+        }
+
+        private void LoadTokens_ClickEvent(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MainForm_FormClosingEvent(object sender, FormClosingEventArgs e)
+        {
+            if (!Program.DatabaseJson.Atualizado && MessageBox.Show("Deseja salvar os dados antes de Sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Program.DatabaseJson.Save().Wait();
+
+            if (MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }

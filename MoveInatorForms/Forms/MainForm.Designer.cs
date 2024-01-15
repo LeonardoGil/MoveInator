@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonExit = new Button();
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panelView = new Panel();
@@ -36,6 +35,8 @@
             menuImportacao = new ToolStripMenuItem();
             menuItemCsvSimples = new ToolStripMenuItem();
             menuItemMDFeSimples = new ToolStripMenuItem();
+            menuIntegracao = new ToolStripMenuItem();
+            menuItemTokens = new ToolStripMenuItem();
             menuCadastros = new ToolStripMenuItem();
             menuStripEsquerda = new MenuStrip();
             menuInicio = new ToolStripMenuItem();
@@ -44,30 +45,13 @@
             menuStripEsquerda.SuspendLayout();
             SuspendLayout();
             // 
-            // buttonExit
-            // 
-            buttonExit.BackColor = Color.FromArgb(38, 38, 38);
-            buttonExit.FlatAppearance.BorderColor = Color.FromArgb(48, 48, 48);
-            buttonExit.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            buttonExit.FlatStyle = FlatStyle.Flat;
-            buttonExit.Font = new Font("MesloLGL NF", 6F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonExit.ForeColor = SystemColors.ControlLight;
-            buttonExit.Location = new Point(763, 5);
-            buttonExit.Margin = new Padding(1);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(32, 22);
-            buttonExit.TabIndex = 8;
-            buttonExit.Text = "X";
-            buttonExit.UseVisualStyleBackColor = false;
-            buttonExit.Click += Exit_ClickEvent;
-            // 
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
             labelTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelTitulo.Font = new Font("MesloLGL NF", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.FromArgb(85, 35, 35);
-            labelTitulo.Location = new Point(294, 5);
+            labelTitulo.Location = new Point(291, 7);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(212, 50);
@@ -80,7 +64,7 @@
             labelSubTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelSubTitulo.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             labelSubTitulo.ForeColor = Color.DarkGray;
-            labelSubTitulo.Location = new Point(338, 51);
+            labelSubTitulo.Location = new Point(340, 46);
             labelSubTitulo.Margin = new Padding(0);
             labelSubTitulo.Name = "labelSubTitulo";
             labelSubTitulo.Size = new Size(122, 21);
@@ -91,9 +75,9 @@
             // 
             panelView.BackColor = Color.FromArgb(31, 31, 31);
             panelView.Dock = DockStyle.Bottom;
-            panelView.Location = new Point(0, 80);
+            panelView.Location = new Point(0, 76);
             panelView.Name = "panelView";
-            panelView.Size = new Size(800, 520);
+            panelView.Size = new Size(796, 520);
             panelView.TabIndex = 9;
             // 
             // menuStripDireita
@@ -101,11 +85,11 @@
             menuStripDireita.BackColor = Color.FromArgb(10, 10, 10);
             menuStripDireita.Dock = DockStyle.None;
             menuStripDireita.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStripDireita.Items.AddRange(new ToolStripItem[] { menuImportacao, menuCadastros });
-            menuStripDireita.Location = new Point(594, 47);
+            menuStripDireita.Items.AddRange(new ToolStripItem[] { menuImportacao, menuIntegracao, menuCadastros });
+            menuStripDireita.Location = new Point(483, 45);
             menuStripDireita.Name = "menuStripDireita";
             menuStripDireita.Padding = new Padding(4, 3, 0, 2);
-            menuStripDireita.Size = new Size(205, 30);
+            menuStripDireita.Size = new Size(310, 30);
             menuStripDireita.TabIndex = 10;
             menuStripDireita.Text = "menuStrip";
             // 
@@ -137,6 +121,25 @@
             menuItemMDFeSimples.Text = "MDF-e Simples";
             menuItemMDFeSimples.Click += LoadMDFeSimples_ClickEvent;
             // 
+            // menuIntegracao
+            // 
+            menuIntegracao.BackColor = Color.FromArgb(31, 31, 31);
+            menuIntegracao.DropDownItems.AddRange(new ToolStripItem[] { menuItemTokens });
+            menuIntegracao.ForeColor = Color.DarkGray;
+            menuIntegracao.Margin = new Padding(3, 0, 0, 0);
+            menuIntegracao.Name = "menuIntegracao";
+            menuIntegracao.Size = new Size(102, 25);
+            menuIntegracao.Text = "Integração";
+            // 
+            // menuItemTokens
+            // 
+            menuItemTokens.BackColor = Color.FromArgb(31, 31, 31);
+            menuItemTokens.ForeColor = Color.DarkGray;
+            menuItemTokens.Name = "menuItemTokens";
+            menuItemTokens.Size = new Size(128, 26);
+            menuItemTokens.Text = "Tokens";
+            menuItemTokens.Click += LoadTokens_ClickEvent;
+            // 
             // menuCadastros
             // 
             menuCadastros.BackColor = Color.FromArgb(31, 31, 31);
@@ -153,15 +156,17 @@
             menuStripEsquerda.Dock = DockStyle.None;
             menuStripEsquerda.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             menuStripEsquerda.Items.AddRange(new ToolStripItem[] { menuInicio, menuNovidades });
-            menuStripEsquerda.Location = new Point(-1, 48);
+            menuStripEsquerda.Location = new Point(-3, 45);
             menuStripEsquerda.Name = "menuStripEsquerda";
-            menuStripEsquerda.Size = new Size(295, 29);
+            menuStripEsquerda.Padding = new Padding(4, 3, 0, 2);
+            menuStripEsquerda.Size = new Size(176, 30);
             menuStripEsquerda.TabIndex = 12;
             // 
             // menuInicio
             // 
             menuInicio.BackColor = Color.FromArgb(31, 31, 31);
             menuInicio.ForeColor = Color.DarkGray;
+            menuInicio.Margin = new Padding(3, 0, 0, 0);
             menuInicio.Name = "menuInicio";
             menuInicio.Size = new Size(70, 25);
             menuInicio.Text = "Inicio";
@@ -182,21 +187,21 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 10, 10);
-            ClientSize = new Size(800, 600);
-            ControlBox = false;
+            ClientSize = new Size(796, 596);
             Controls.Add(panelView);
-            Controls.Add(buttonExit);
-            Controls.Add(labelTitulo);
             Controls.Add(labelSubTitulo);
             Controls.Add(menuStripDireita);
             Controls.Add(menuStripEsquerda);
+            Controls.Add(labelTitulo);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStripDireita;
             Name = "MainForm";
+            Opacity = 0.97D;
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += MainForm_FormClosingEvent;
             MouseDown += SetPoint_MouseDownEvent;
             MouseMove += MoveForm_MouseMoveEvent;
             menuStripDireita.ResumeLayout(false);
@@ -208,8 +213,6 @@
         }
 
         #endregion
-
-        private Button buttonExit;
         private Label labelTitulo;
         private Label labelSubTitulo;
         private Panel panelView;
@@ -221,5 +224,7 @@
         private MenuStrip menuStripEsquerda;
         private ToolStripMenuItem menuInicio;
         private ToolStripMenuItem menuNovidades;
+        private ToolStripMenuItem menuIntegracao;
+        private ToolStripMenuItem menuItemTokens;
     }
 }
