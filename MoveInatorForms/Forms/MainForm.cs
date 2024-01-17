@@ -12,6 +12,7 @@ namespace MoveInatorForms.Forms
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
         private CadastrosViewControl CadastrosViewControl;
         private NovidadesViewControl NovidadesViewControl;
+        private GerarTokenViewControl GerarTokenViewControl;
 
         public MainForm()
         {
@@ -99,7 +100,10 @@ namespace MoveInatorForms.Forms
 
         private void LoadTokens_ClickEvent(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (GerarTokenViewControl is default(GerarTokenViewControl))
+                GerarTokenViewControl = Program.ServiceProvider.GetRequiredService<GerarTokenViewControl>();
+
+            LoadView(GerarTokenViewControl);
         }
 
         private void MainForm_FormClosingEvent(object sender, FormClosingEventArgs e)

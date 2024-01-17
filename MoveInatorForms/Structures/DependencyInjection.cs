@@ -32,6 +32,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddTransient<CadastrosViewControl>();
             builder.Services.AddTransient<InicioViewControl>();
             builder.Services.AddTransient<NovidadesViewControl>();
+            builder.Services.AddTransient<GerarTokenViewControl>();
 
             return builder;
         }
