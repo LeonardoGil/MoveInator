@@ -53,7 +53,28 @@ namespace MoveInatorForms.Forms.Views
             Invoke(() =>
             {
                 tokenView.Token = $"Bearer {responsePortal.AccessToken}";
-                tokenView.ExpiraEm.AddSeconds(responsePortal.ExpiresIn);
+                tokenView.ExpiraEm = tokenView.ExpiraEm.AddSeconds(responsePortal.ExpiresIn);
+
+                Clipboard.SetText(tokenView.Token);
+                MessageBox.Show("Token COPIADO!");
+            });
+        }
+
+        private void RequestMobile(TokenViewModel tokenView)
+        {
+            var token = new TokenMobileRequest
+            {
+                ClientId = "3b9a77fb35a54e40815f4fa8641234c5",
+                User = tokenView.Motorista.Cpf,
+                Password = tokenView.Motorista.Password
+            };
+
+            var responsePortal = RequestTokenService.RequestTokenMobile(token, tokenView.Url).Result;
+
+            Invoke(() =>
+            {
+                tokenView.Token = $"Bearer {responsePortal.AccessToken}";
+                tokenView.ExpiraEm = tokenView.ExpiraEm.AddSeconds(1800);
 
                 Clipboard.SetText(tokenView.Token);
                 MessageBox.Show("Token COPIADO!");
@@ -179,7 +200,8 @@ namespace MoveInatorForms.Forms.Views
                             break;
 
                         case TokenAPIEnum.Mobile:
-                            throw new NotImplementedException();
+                            RequestMobile(tokenModel);
+                            break;
                     }
                 }
                 catch (Exception ex)
