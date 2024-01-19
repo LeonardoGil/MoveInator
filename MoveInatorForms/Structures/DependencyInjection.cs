@@ -43,6 +43,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddSingleton<IMDFeService, MDFeService>();
             builder.Services.AddSingleton<IFileService, FileService>();
             builder.Services.AddSingleton<IUpdateService, UpdateService>();
+            builder.Services.AddSingleton<IRequestTokenService, RequestTokenService>();
 
             return builder;
         }
