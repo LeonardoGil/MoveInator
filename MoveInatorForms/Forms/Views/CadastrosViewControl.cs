@@ -31,6 +31,9 @@ namespace MoveInatorForms.Forms.Views
 
             dataGridViewEmpresas.DataSource = EmpresasBindingSource;
             dataGridViewMotoristas.DataSource = MotoristasBindingSource;
+
+            dataGridViewEmpresas.FillSpecificCells(nameof(Empresa.RazaoSocial), nameof(Empresa.Cnpj));
+            dataGridViewMotoristas.FillSpecificCells(nameof(Motorista.Nome), nameof(Motorista.Cpf));
         }
 
         #region About Motoristas
