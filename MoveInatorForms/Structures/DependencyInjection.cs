@@ -32,6 +32,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddTransient<CadastrosViewControl>();
             builder.Services.AddTransient<InicioViewControl>();
             builder.Services.AddTransient<NovidadesViewControl>();
+            builder.Services.AddTransient<GerarTokenViewControl>();
 
             return builder;
         }
@@ -42,6 +43,7 @@ namespace MoveInatorForms.Structures
             builder.Services.AddSingleton<IMDFeService, MDFeService>();
             builder.Services.AddSingleton<IFileService, FileService>();
             builder.Services.AddSingleton<IUpdateService, UpdateService>();
+            builder.Services.AddSingleton<IRequestTokenService, RequestTokenService>();
 
             return builder;
         }
