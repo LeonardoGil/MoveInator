@@ -38,6 +38,8 @@ namespace MoveInatorForms.Forms.Views
             dataGridView.DataSource = TokensViewBindingSource;
 
             Reload();
+
+            dataGridView.FillSpecificCells(nameof(TokenViewModel.Token), nameof(TokenViewModel.Url));
         }
 
         private void RequestPortal(TokenViewModel tokenView)

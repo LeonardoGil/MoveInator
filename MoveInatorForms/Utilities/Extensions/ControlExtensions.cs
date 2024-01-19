@@ -38,5 +38,20 @@
                 comboBox.SelectedItem = bindingSource.OfType<T>().FirstOrDefault();
             }
         }
+
+        public static void FillSpecificCells(this DataGridView grid, params string[] cells)
+        {
+            var columns = grid.Columns.OfType<DataGridViewColumn>().ToList();
+
+            foreach (var cellName in cells)
+            {
+                var cell = columns.FirstOrDefault(x => x.DataPropertyName == cellName);
+
+                if (cell is null)
+                    continue;
+
+                cell.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+        }
     }
 }
