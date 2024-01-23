@@ -1,5 +1,5 @@
 ## ✏ Sobre ✏ 
-> Version: 1.0.3.0
+> Version: 1.0.4.0
 
 A ideía dessa aplicação é auxiliar os colaboradores do time Lonestar na realização do Desenvolvimento/Teste da aplicação do Move,
 agilizando processos manuais como: 
@@ -28,6 +28,9 @@ agilizando processos manuais como:
 * Integração com GithubAPI
 > Informar o Usuario sempre que houver uma versão mais recente da aplicação
 
+* Geração do Token de Autenticação do Portal e Mobile
+> Usuário poderá gerar o Token de Autenticação da API do Portal e Mobile
+
 ## ⚙ Features Futuras ⚙
 * Integração com a Aplicação Move
 > Usuário poderá se conectar a aplicação a fim de facilitar no processo de geração de dados
@@ -38,8 +41,4 @@ agilizando processos manuais como:
 
 * Simulador do Aplicativo
 > Usuário poderá simular ações do aplicativo Move a fim de facilitar no processo de geração de cenarios de Teste
-
-* Geração do Token de Autenticação do Portal e Mobile
-> Usuário poderá gerar o Token de Autenticação da API do Portal e Mobile
-
 
