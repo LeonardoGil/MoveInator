@@ -6,6 +6,10 @@
         {
             if (string.IsNullOrEmpty(textBox.Text)) throw new Exception(message);
         }
+        public static void ValidateNotNullOrEmpty(this ComboBox comboBox, string message)
+        {
+            if (string.IsNullOrEmpty(comboBox.Text)) throw new Exception(message);
+        }
         public static void ValidateNumber(this TextBox textBox, string message)
         {
             if (!int.TryParse(textBox.Text, out _)) throw new Exception(message);

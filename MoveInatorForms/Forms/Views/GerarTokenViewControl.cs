@@ -4,24 +4,26 @@ using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services.Interfaces;
 using MoveInatorForms.Utilities.Extensions;
-using MoveInatorForms.Utilities.Mocks;
-using System.Security.Policy;
 
 namespace MoveInatorForms.Forms.Views
 {
     public partial class GerarTokenViewControl : UserControl
     {
-        public BindingSource TokensViewBindingSource { get; set; } = new BindingSource() { DataSource = new List<TokenViewModel>() };
+        public BindingSource TokensViewBindingSource { get; set; } = new() { DataSource = new List<TokenViewModel>() };
 
         public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
 
         public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
+
+        public BindingSource UrlsBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Urls };
 
         public List<TokenViewModel> Tokens => TokensViewBindingSource.OfType<TokenViewModel>().ToList();
 
         public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
 
         public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
+
+        public List<Uri> Urls => UrlsBindingSource.OfType<Uri>().ToList();
 
         private readonly IRequestTokenService RequestTokenService;
 
@@ -36,6 +38,8 @@ namespace MoveInatorForms.Forms.Views
         private async Task LoadFormAsync()
         {
             dataGridView.DataSource = TokensViewBindingSource;
+            comboBoxUrls.DataSource = UrlsBindingSource;
+            comboBoxUrls.ValueMember = nameof(Uri.OriginalString);
 
             Reload();
 
@@ -112,9 +116,9 @@ namespace MoveInatorForms.Forms.Views
             var api = checkedListBoxAPI.CheckedIndices.OfType<int?>().FirstOrDefault() ??
                 throw new Exception("Selecione um Tipo Viagem!");
 
-            textBoxUrl.ValidateNotNullOrEmpty("Informe uma Url!");
+            comboBoxUrls.ValidateNotNullOrEmpty("Informe uma Url!");
 
-            if (!Uri.TryCreate(textBoxUrl.Text, new UriCreationOptions(), out var _))
+            if (!Uri.TryCreate(comboBoxUrls.Text, new UriCreationOptions(), out var _))
                 throw new Exception("Url inválida");
 
             switch ((TokenAPIEnum)api)
@@ -141,7 +145,7 @@ namespace MoveInatorForms.Forms.Views
             var token = new TokenViewModel
             {
                 API = (TokenAPIEnum)checkedListBoxAPI.CheckedIndices.OfType<int>().First(),
-                Url = new Uri(textBoxUrl.Text),
+                Url = new Uri(comboBoxUrls.Text),
                 ExpiraEm = DateTime.Now
             };
 
@@ -150,7 +154,7 @@ namespace MoveInatorForms.Forms.Views
                 case TokenAPIEnum.Portal:
                     token.Empresa = (Empresa)EmpresasBindingSource.Current;
                     break;
-                
+
                 case TokenAPIEnum.Mobile:
                     token.Motorista = (Motorista)MotoristasBindingSource.Current;
                     break;
@@ -204,6 +208,15 @@ namespace MoveInatorForms.Forms.Views
                         case TokenAPIEnum.Mobile:
                             RequestMobile(tokenModel);
                             break;
+                    }
+
+                    if (!Urls.Any(x => x == tokenModel.Url))
+                    {
+                        if (MessageBox.Show("Gostaria de salvar a URL?", "Salvar URL", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            UrlsBindingSource.Add(tokenModel.Url);
+                            Invoke(() => comboBoxUrls.ReloadBindingSource<Uri>(UrlsBindingSource, nameof(Uri.OriginalString), nameof(Uri.OriginalString)));
+                        }
                     }
                 }
                 catch (Exception ex)

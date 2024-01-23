@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelSuperior = new Panel();
             comboBoxMotorista = new ComboBox();
             comboBoxEmpresa = new ComboBox();
             labelMotorista = new Label();
             labelEmpresa = new Label();
-            textBoxUrl = new TextBox();
             labelNumeroDocumento = new Label();
             buttonRequest = new Button();
             checkedListBoxAPI = new CheckedListBox();
             labelAPI = new Label();
             dataGridView = new DataGridView();
             backgroundWorkerRequest = new System.ComponentModel.BackgroundWorker();
+            comboBoxUrls = new ComboBox();
             panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -50,11 +50,11 @@
             // panelSuperior
             // 
             panelSuperior.BackColor = Color.FromArgb(27, 27, 27);
+            panelSuperior.Controls.Add(comboBoxUrls);
             panelSuperior.Controls.Add(comboBoxMotorista);
             panelSuperior.Controls.Add(comboBoxEmpresa);
             panelSuperior.Controls.Add(labelMotorista);
             panelSuperior.Controls.Add(labelEmpresa);
-            panelSuperior.Controls.Add(textBoxUrl);
             panelSuperior.Controls.Add(labelNumeroDocumento);
             panelSuperior.Controls.Add(buttonRequest);
             panelSuperior.Controls.Add(checkedListBoxAPI);
@@ -69,7 +69,7 @@
             // 
             comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(461, 112);
+            comboBoxMotorista.Location = new Point(508, 134);
             comboBoxMotorista.Name = "comboBoxMotorista";
             comboBoxMotorista.Size = new Size(170, 25);
             comboBoxMotorista.TabIndex = 37;
@@ -78,7 +78,7 @@
             // 
             comboBoxEmpresa.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmpresa.FormattingEnabled = true;
-            comboBoxEmpresa.Location = new Point(461, 38);
+            comboBoxEmpresa.Location = new Point(508, 64);
             comboBoxEmpresa.Name = "comboBoxEmpresa";
             comboBoxEmpresa.Size = new Size(170, 25);
             comboBoxEmpresa.TabIndex = 36;
@@ -88,7 +88,7 @@
             labelMotorista.AutoSize = true;
             labelMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelMotorista.Location = new Point(461, 92);
+            labelMotorista.Location = new Point(508, 114);
             labelMotorista.Name = "labelMotorista";
             labelMotorista.Size = new Size(71, 17);
             labelMotorista.TabIndex = 35;
@@ -99,25 +99,18 @@
             labelEmpresa.AutoSize = true;
             labelEmpresa.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmpresa.ForeColor = SystemColors.ControlLightLight;
-            labelEmpresa.Location = new Point(461, 16);
+            labelEmpresa.Location = new Point(508, 42);
             labelEmpresa.Name = "labelEmpresa";
             labelEmpresa.Size = new Size(57, 17);
             labelEmpresa.TabIndex = 34;
             labelEmpresa.Text = "Empresa";
-            // 
-            // textBoxUrl
-            // 
-            textBoxUrl.Location = new Point(14, 112);
-            textBoxUrl.Name = "textBoxUrl";
-            textBoxUrl.Size = new Size(400, 25);
-            textBoxUrl.TabIndex = 32;
             // 
             // labelNumeroDocumento
             // 
             labelNumeroDocumento.AutoSize = true;
             labelNumeroDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroDocumento.Location = new Point(14, 92);
+            labelNumeroDocumento.Location = new Point(18, 114);
             labelNumeroDocumento.Name = "labelNumeroDocumento";
             labelNumeroDocumento.Size = new Size(29, 17);
             labelNumeroDocumento.TabIndex = 31;
@@ -145,7 +138,7 @@
             checkedListBoxAPI.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxAPI.FormattingEnabled = true;
             checkedListBoxAPI.Items.AddRange(new object[] { "Portal", "Mobile" });
-            checkedListBoxAPI.Location = new Point(14, 38);
+            checkedListBoxAPI.Location = new Point(18, 64);
             checkedListBoxAPI.Name = "checkedListBoxAPI";
             checkedListBoxAPI.Size = new Size(97, 40);
             checkedListBoxAPI.TabIndex = 3;
@@ -156,7 +149,7 @@
             labelAPI.AutoSize = true;
             labelAPI.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelAPI.ForeColor = SystemColors.ControlLightLight;
-            labelAPI.Location = new Point(14, 16);
+            labelAPI.Location = new Point(18, 42);
             labelAPI.Name = "labelAPI";
             labelAPI.Size = new Size(29, 17);
             labelAPI.TabIndex = 2;
@@ -171,14 +164,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
@@ -188,16 +181,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -209,6 +202,14 @@
             // backgroundWorkerRequest
             // 
             backgroundWorkerRequest.DoWork += Request_DoWorkEvent;
+            // 
+            // comboBoxUrls
+            // 
+            comboBoxUrls.FormattingEnabled = true;
+            comboBoxUrls.Location = new Point(18, 134);
+            comboBoxUrls.Name = "comboBoxUrls";
+            comboBoxUrls.Size = new Size(461, 25);
+            comboBoxUrls.TabIndex = 38;
             // 
             // GerarTokenViewControl
             // 
@@ -233,12 +234,12 @@
         private Label labelAPI;
         protected DataGridView dataGridView;
         private Button buttonRequest;
-        private TextBox textBoxUrl;
         private Label labelNumeroDocumento;
         private ComboBox comboBoxMotorista;
         private ComboBox comboBoxEmpresa;
         private Label labelMotorista;
         private Label labelEmpresa;
         private System.ComponentModel.BackgroundWorker backgroundWorkerRequest;
+        private ComboBox comboBoxUrls;
     }
 }

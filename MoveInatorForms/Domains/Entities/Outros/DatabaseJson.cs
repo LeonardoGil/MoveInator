@@ -14,6 +14,8 @@ namespace MoveInatorForms.Domains.Entities.Outros
 
         public ObservableCollection<Motorista> Motoristas { get; set; } = new ObservableCollection<Motorista>();
 
+        public ObservableCollection<Uri> Urls { get; set; } = new ObservableCollection<Uri>();
+
         public DatabaseJson()
         {
             AddCollectionChangeEvent();
@@ -64,6 +66,7 @@ namespace MoveInatorForms.Domains.Entities.Outros
 
                 Empresas = database.Empresas;
                 Motoristas = database.Motoristas;
+                Urls = database.Urls;
 
                 AddCollectionChangeEvent();
 
@@ -83,6 +86,7 @@ namespace MoveInatorForms.Domains.Entities.Outros
         {
             Empresas.CollectionChanged += CollectionChanged;
             Motoristas.CollectionChanged += CollectionChanged;
+            Urls.CollectionChanged += CollectionChanged;
         }
     }
 }
