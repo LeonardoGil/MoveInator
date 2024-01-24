@@ -78,7 +78,7 @@
             labelData.AutoSize = true;
             labelData.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelData.ForeColor = Color.DarkGray;
-            labelData.Location = new Point(117, 3);
+            labelData.Location = new Point(113, 4);
             labelData.MaximumSize = new Size(175, 380);
             labelData.Name = "labelData";
             labelData.Size = new Size(78, 17);
@@ -98,7 +98,7 @@
             ForeColor = SystemColors.ControlLightLight;
             Margin = new Padding(5, 5, 0, 5);
             Name = "ReleaseCardControl";
-            Size = new Size(195, 510);
+            Size = new Size(190, 510);
             ResumeLayout(false);
             PerformLayout();
         }
