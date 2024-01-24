@@ -31,40 +31,34 @@
             labelTitulo = new Label();
             labelSubTitulo = new Label();
             panelView = new Panel();
-            menuStripDireita = new MenuStrip();
-            menuImportacao = new ToolStripMenuItem();
-            menuItemCsvSimples = new ToolStripMenuItem();
-            menuItemMDFeSimples = new ToolStripMenuItem();
-            menuIntegracao = new ToolStripMenuItem();
-            menuItemTokens = new ToolStripMenuItem();
-            menuCadastros = new ToolStripMenuItem();
-            menuStripEsquerda = new MenuStrip();
-            menuInicio = new ToolStripMenuItem();
-            menuNovidades = new ToolStripMenuItem();
-            menuStripDireita.SuspendLayout();
-            menuStripEsquerda.SuspendLayout();
+            panelLateral = new Panel();
+            buttonNovidades = new Button();
+            buttonCadastros = new Button();
+            buttonTokens = new Button();
+            buttonImportacaoMDFe = new Button();
+            buttonInicio = new Button();
+            buttonImportacaoCSV = new Button();
+            panelLateral.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.BackColor = Color.FromArgb(10, 10, 10);
-            labelTitulo.Font = new Font("MesloLGL NF", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTitulo.Font = new Font("MesloLGL NF", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.FromArgb(85, 35, 35);
-            labelTitulo.Location = new Point(291, 7);
+            labelTitulo.Location = new Point(9, 14);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(212, 50);
+            labelTitulo.Size = new Size(190, 46);
             labelTitulo.TabIndex = 6;
             labelTitulo.Text = "MoveInator";
             // 
             // labelSubTitulo
             // 
             labelSubTitulo.AutoSize = true;
-            labelSubTitulo.BackColor = Color.FromArgb(10, 10, 10);
             labelSubTitulo.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             labelSubTitulo.ForeColor = Color.DarkGray;
-            labelSubTitulo.Location = new Point(340, 46);
+            labelSubTitulo.Location = new Point(35, 51);
             labelSubTitulo.Margin = new Padding(0);
             labelSubTitulo.Name = "labelSubTitulo";
             labelSubTitulo.Size = new Size(122, 21);
@@ -73,130 +67,139 @@
             // 
             // panelView
             // 
-            panelView.BackColor = Color.FromArgb(31, 31, 31);
-            panelView.Dock = DockStyle.Bottom;
-            panelView.Location = new Point(0, 76);
+            panelView.BackColor = Color.FromArgb(29, 29, 29);
+            panelView.Dock = DockStyle.Fill;
+            panelView.Location = new Point(200, 0);
+            panelView.Margin = new Padding(0, 3, 0, 0);
             panelView.Name = "panelView";
-            panelView.Size = new Size(796, 520);
+            panelView.Size = new Size(600, 600);
             panelView.TabIndex = 9;
             // 
-            // menuStripDireita
+            // panelLateral
             // 
-            menuStripDireita.BackColor = Color.FromArgb(10, 10, 10);
-            menuStripDireita.Dock = DockStyle.None;
-            menuStripDireita.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStripDireita.Items.AddRange(new ToolStripItem[] { menuImportacao, menuIntegracao, menuCadastros });
-            menuStripDireita.Location = new Point(483, 45);
-            menuStripDireita.Name = "menuStripDireita";
-            menuStripDireita.Padding = new Padding(4, 3, 0, 2);
-            menuStripDireita.Size = new Size(310, 30);
-            menuStripDireita.TabIndex = 10;
-            menuStripDireita.Text = "menuStrip";
+            panelLateral.BackColor = Color.FromArgb(17, 17, 17);
+            panelLateral.Controls.Add(buttonNovidades);
+            panelLateral.Controls.Add(buttonCadastros);
+            panelLateral.Controls.Add(buttonTokens);
+            panelLateral.Controls.Add(buttonImportacaoMDFe);
+            panelLateral.Controls.Add(buttonInicio);
+            panelLateral.Controls.Add(buttonImportacaoCSV);
+            panelLateral.Controls.Add(labelSubTitulo);
+            panelLateral.Controls.Add(labelTitulo);
+            panelLateral.Dock = DockStyle.Left;
+            panelLateral.Location = new Point(0, 0);
+            panelLateral.Margin = new Padding(0);
+            panelLateral.Name = "panelLateral";
+            panelLateral.Size = new Size(200, 600);
+            panelLateral.TabIndex = 13;
             // 
-            // menuImportacao
+            // buttonNovidades
             // 
-            menuImportacao.BackColor = Color.FromArgb(31, 31, 31);
-            menuImportacao.DropDownItems.AddRange(new ToolStripItem[] { menuItemCsvSimples, menuItemMDFeSimples });
-            menuImportacao.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuImportacao.ForeColor = Color.DarkGray;
-            menuImportacao.Name = "menuImportacao";
-            menuImportacao.Size = new Size(102, 25);
-            menuImportacao.Text = "Importação";
+            buttonNovidades.FlatAppearance.BorderSize = 0;
+            buttonNovidades.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonNovidades.FlatStyle = FlatStyle.Flat;
+            buttonNovidades.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNovidades.ForeColor = Color.DarkGray;
+            buttonNovidades.Location = new Point(0, 360);
+            buttonNovidades.Margin = new Padding(0);
+            buttonNovidades.Name = "buttonNovidades";
+            buttonNovidades.Size = new Size(200, 50);
+            buttonNovidades.TabIndex = 13;
+            buttonNovidades.Text = "Novidades";
+            buttonNovidades.UseVisualStyleBackColor = true;
+            buttonNovidades.Click += LoadNovidades_ClickEvent;
             // 
-            // menuItemCsvSimples
+            // buttonCadastros
             // 
-            menuItemCsvSimples.BackColor = Color.FromArgb(31, 31, 31);
-            menuItemCsvSimples.ForeColor = Color.DarkGray;
-            menuItemCsvSimples.Name = "menuItemCsvSimples";
-            menuItemCsvSimples.Size = new Size(184, 26);
-            menuItemCsvSimples.Text = "CSV Simples";
-            menuItemCsvSimples.Click += LoadCSVSimples_ClickEvent;
+            buttonCadastros.FlatAppearance.BorderSize = 0;
+            buttonCadastros.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonCadastros.FlatStyle = FlatStyle.Flat;
+            buttonCadastros.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCadastros.ForeColor = Color.DarkGray;
+            buttonCadastros.Location = new Point(0, 310);
+            buttonCadastros.Margin = new Padding(0);
+            buttonCadastros.Name = "buttonCadastros";
+            buttonCadastros.Size = new Size(200, 50);
+            buttonCadastros.TabIndex = 12;
+            buttonCadastros.Text = "Cadastros";
+            buttonCadastros.UseVisualStyleBackColor = true;
+            buttonCadastros.Click += LoadCadastros_ClickEvent;
             // 
-            // menuItemMDFeSimples
+            // buttonTokens
             // 
-            menuItemMDFeSimples.BackColor = Color.FromArgb(31, 31, 31);
-            menuItemMDFeSimples.ForeColor = Color.DarkGray;
-            menuItemMDFeSimples.Name = "menuItemMDFeSimples";
-            menuItemMDFeSimples.Size = new Size(184, 26);
-            menuItemMDFeSimples.Text = "MDF-e Simples";
-            menuItemMDFeSimples.Click += LoadMDFeSimples_ClickEvent;
+            buttonTokens.FlatAppearance.BorderSize = 0;
+            buttonTokens.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonTokens.FlatStyle = FlatStyle.Flat;
+            buttonTokens.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonTokens.ForeColor = Color.DarkGray;
+            buttonTokens.Location = new Point(0, 260);
+            buttonTokens.Margin = new Padding(0);
+            buttonTokens.Name = "buttonTokens";
+            buttonTokens.Size = new Size(200, 50);
+            buttonTokens.TabIndex = 11;
+            buttonTokens.Text = "Tokens";
+            buttonTokens.UseVisualStyleBackColor = true;
+            buttonTokens.Click += LoadTokens_ClickEvent;
             // 
-            // menuIntegracao
+            // buttonImportacaoMDFe
             // 
-            menuIntegracao.BackColor = Color.FromArgb(31, 31, 31);
-            menuIntegracao.DropDownItems.AddRange(new ToolStripItem[] { menuItemTokens });
-            menuIntegracao.ForeColor = Color.DarkGray;
-            menuIntegracao.Margin = new Padding(3, 0, 0, 0);
-            menuIntegracao.Name = "menuIntegracao";
-            menuIntegracao.Size = new Size(102, 25);
-            menuIntegracao.Text = "Integração";
+            buttonImportacaoMDFe.FlatAppearance.BorderSize = 0;
+            buttonImportacaoMDFe.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonImportacaoMDFe.FlatStyle = FlatStyle.Flat;
+            buttonImportacaoMDFe.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonImportacaoMDFe.ForeColor = Color.DarkGray;
+            buttonImportacaoMDFe.Location = new Point(0, 210);
+            buttonImportacaoMDFe.Margin = new Padding(0);
+            buttonImportacaoMDFe.Name = "buttonImportacaoMDFe";
+            buttonImportacaoMDFe.Size = new Size(200, 50);
+            buttonImportacaoMDFe.TabIndex = 10;
+            buttonImportacaoMDFe.Text = "Importação MDFe";
+            buttonImportacaoMDFe.UseVisualStyleBackColor = true;
+            buttonImportacaoMDFe.Click += LoadMDFeSimples_ClickEvent;
             // 
-            // menuItemTokens
+            // buttonInicio
             // 
-            menuItemTokens.BackColor = Color.FromArgb(31, 31, 31);
-            menuItemTokens.ForeColor = Color.DarkGray;
-            menuItemTokens.Name = "menuItemTokens";
-            menuItemTokens.Size = new Size(128, 26);
-            menuItemTokens.Text = "Tokens";
-            menuItemTokens.Click += LoadTokens_ClickEvent;
+            buttonInicio.FlatAppearance.BorderSize = 0;
+            buttonInicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonInicio.FlatStyle = FlatStyle.Flat;
+            buttonInicio.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonInicio.ForeColor = Color.DarkGray;
+            buttonInicio.Location = new Point(0, 110);
+            buttonInicio.Margin = new Padding(0);
+            buttonInicio.Name = "buttonInicio";
+            buttonInicio.Size = new Size(200, 50);
+            buttonInicio.TabIndex = 9;
+            buttonInicio.Text = "Inicio";
+            buttonInicio.UseVisualStyleBackColor = true;
+            buttonInicio.Click += LoadInicio_ClickEvent;
             // 
-            // menuCadastros
+            // buttonImportacaoCSV
             // 
-            menuCadastros.BackColor = Color.FromArgb(31, 31, 31);
-            menuCadastros.ForeColor = Color.DarkGray;
-            menuCadastros.Margin = new Padding(3, 0, 0, 0);
-            menuCadastros.Name = "menuCadastros";
-            menuCadastros.Size = new Size(94, 25);
-            menuCadastros.Text = "Cadastros";
-            menuCadastros.Click += LoadCadastros_ClickEvent;
-            // 
-            // menuStripEsquerda
-            // 
-            menuStripEsquerda.BackColor = Color.FromArgb(10, 10, 10);
-            menuStripEsquerda.Dock = DockStyle.None;
-            menuStripEsquerda.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            menuStripEsquerda.Items.AddRange(new ToolStripItem[] { menuInicio, menuNovidades });
-            menuStripEsquerda.Location = new Point(-3, 45);
-            menuStripEsquerda.Name = "menuStripEsquerda";
-            menuStripEsquerda.Padding = new Padding(4, 3, 0, 2);
-            menuStripEsquerda.Size = new Size(176, 30);
-            menuStripEsquerda.TabIndex = 12;
-            // 
-            // menuInicio
-            // 
-            menuInicio.BackColor = Color.FromArgb(31, 31, 31);
-            menuInicio.ForeColor = Color.DarkGray;
-            menuInicio.Margin = new Padding(3, 0, 0, 0);
-            menuInicio.Name = "menuInicio";
-            menuInicio.Size = new Size(70, 25);
-            menuInicio.Text = "Inicio";
-            menuInicio.Click += LoadInicio_ClickEvent;
-            // 
-            // menuNovidades
-            // 
-            menuNovidades.BackColor = Color.FromArgb(31, 31, 31);
-            menuNovidades.ForeColor = Color.DarkGray;
-            menuNovidades.Margin = new Padding(3, 0, 0, 0);
-            menuNovidades.Name = "menuNovidades";
-            menuNovidades.Size = new Size(94, 25);
-            menuNovidades.Text = "Novidades";
-            menuNovidades.Click += LoadNovidades_ClickEvent;
+            buttonImportacaoCSV.FlatAppearance.BorderSize = 0;
+            buttonImportacaoCSV.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonImportacaoCSV.FlatStyle = FlatStyle.Flat;
+            buttonImportacaoCSV.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonImportacaoCSV.ForeColor = Color.DarkGray;
+            buttonImportacaoCSV.Location = new Point(0, 160);
+            buttonImportacaoCSV.Margin = new Padding(0);
+            buttonImportacaoCSV.Name = "buttonImportacaoCSV";
+            buttonImportacaoCSV.Size = new Size(200, 50);
+            buttonImportacaoCSV.TabIndex = 8;
+            buttonImportacaoCSV.Text = "Importação CSV";
+            buttonImportacaoCSV.UseVisualStyleBackColor = true;
+            buttonImportacaoCSV.Click += LoadCSVSimples_ClickEvent;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 10, 10);
-            ClientSize = new Size(796, 596);
+            ClientSize = new Size(800, 600);
             Controls.Add(panelView);
-            Controls.Add(labelSubTitulo);
-            Controls.Add(menuStripDireita);
-            Controls.Add(menuStripEsquerda);
-            Controls.Add(labelTitulo);
+            Controls.Add(panelLateral);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MainMenuStrip = menuStripDireita;
             Name = "MainForm";
             Opacity = 0.97D;
             ShowIcon = false;
@@ -204,27 +207,21 @@
             FormClosing += MainForm_FormClosingEvent;
             MouseDown += SetPoint_MouseDownEvent;
             MouseMove += MoveForm_MouseMoveEvent;
-            menuStripDireita.ResumeLayout(false);
-            menuStripDireita.PerformLayout();
-            menuStripEsquerda.ResumeLayout(false);
-            menuStripEsquerda.PerformLayout();
+            panelLateral.ResumeLayout(false);
+            panelLateral.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Label labelTitulo;
         private Label labelSubTitulo;
         private Panel panelView;
-        private MenuStrip menuStripDireita;
-        private ToolStripMenuItem menuImportacao;
-        private ToolStripMenuItem menuItemCsvSimples;
-        private ToolStripMenuItem menuItemMDFeSimples;
-        private ToolStripMenuItem menuCadastros;
-        private MenuStrip menuStripEsquerda;
-        private ToolStripMenuItem menuInicio;
-        private ToolStripMenuItem menuNovidades;
-        private ToolStripMenuItem menuIntegracao;
-        private ToolStripMenuItem menuItemTokens;
+        private Panel panelLateral;
+        private Button buttonImportacaoCSV;
+        private Button buttonInicio;
+        private Button buttonCadastros;
+        private Button buttonTokens;
+        private Button buttonImportacaoMDFe;
+        private Button buttonNovidades;
     }
 }
