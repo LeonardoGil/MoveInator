@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
+using MoveInatorForms.Services.Interfaces;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace MoveInatorForms.Forms
 {
@@ -14,9 +17,19 @@ namespace MoveInatorForms.Forms
         private NovidadesViewControl NovidadesViewControl;
         private GerarTokenViewControl GerarTokenViewControl;
 
+        private readonly IUpdateService updateService;
+
         public MainForm()
         {
+        }
+
+        public MainForm(IUpdateService _updateService)
+        {
+            updateService = _updateService;
+
             InitializeComponent();
+
+            Task.Run(SetVersion);
 
             LoadInicio_ClickEvent(null, EventArgs.Empty);
         }
@@ -30,6 +43,50 @@ namespace MoveInatorForms.Forms
 
                 control.Dock = DockStyle.Fill;
             }
+        }
+
+        private void SetVersion()
+        {
+            try
+            {
+                var updated = updateService.Updated();
+
+                Invoke(() =>
+                {
+                    labelVersion.Text += Assembly.GetExecutingAssembly()?.GetName()?.Version?.ToString() ?? "Not Found";
+                    labelVersion.ForeColor = updated ? Color.ForestGreen : Color.Brown;
+
+                    if (!updated)
+                    {
+                        labelVersion.Location = new Point(labelVersion.Location.X, labelVersion.Location.Y - 14);
+                        labelVersion.Text += $"{Environment.NewLine}(Latest version: {updateService.GetLastVersion()})";
+                    }
+                });
+
+                if (!updated)
+                    DownloadLatestVersion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DownloadLatestVersion()
+        {
+            var message = "A versão que você esta usando está desatualizada" + Environment.NewLine + "Deseja baixar a nova versão?";
+            var result = MessageBox.Show(message, "Versão desatualizada!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+                Process.Start("explorer.exe", updateService.LastRelease.Anexados.First().UrlDownload);
+        }
+
+        #region Events
+
+        private void DownloadVersion_ClickEvent(object sender, EventArgs e)
+        {
+            if (!updateService.Updated())
+                DownloadLatestVersion();
         }
 
         private void SetPoint_MouseDownEvent(object sender, MouseEventArgs e)
@@ -114,5 +171,7 @@ namespace MoveInatorForms.Forms
             if (MessageBox.Show("Realmente deseja sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
         }
+
+        #endregion
     }
 }

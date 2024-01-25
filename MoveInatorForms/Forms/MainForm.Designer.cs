@@ -32,6 +32,7 @@
             labelSubTitulo = new Label();
             panelView = new Panel();
             panelLateral = new Panel();
+            labelVersion = new Label();
             buttonNovidades = new Button();
             buttonCadastros = new Button();
             buttonTokens = new Button();
@@ -78,6 +79,7 @@
             // panelLateral
             // 
             panelLateral.BackColor = Color.FromArgb(17, 17, 17);
+            panelLateral.Controls.Add(labelVersion);
             panelLateral.Controls.Add(buttonNovidades);
             panelLateral.Controls.Add(buttonCadastros);
             panelLateral.Controls.Add(buttonTokens);
@@ -92,6 +94,19 @@
             panelLateral.Name = "panelLateral";
             panelLateral.Size = new Size(200, 600);
             panelLateral.TabIndex = 13;
+            // 
+            // labelVersion
+            // 
+            labelVersion.AutoSize = true;
+            labelVersion.Cursor = Cursors.Hand;
+            labelVersion.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVersion.ForeColor = Color.Brown;
+            labelVersion.Location = new Point(3, 578);
+            labelVersion.Margin = new Padding(0);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new Size(71, 17);
+            labelVersion.TabIndex = 14;
+            labelVersion.Text = "Version: ";
             // 
             // buttonNovidades
             // 
@@ -223,5 +238,6 @@
         private Button buttonTokens;
         private Button buttonImportacaoMDFe;
         private Button buttonNovidades;
+        private Label labelVersion;
     }
 }
