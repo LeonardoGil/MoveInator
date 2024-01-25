@@ -28,31 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelView = new Panel();
             linkLabel = new LinkLabel();
             labelInformativa = new Label();
-            panelView.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelView
-            // 
-            panelView.BackColor = Color.FromArgb(31, 31, 31);
-            panelView.Controls.Add(linkLabel);
-            panelView.Controls.Add(labelInformativa);
-            panelView.Dock = DockStyle.Fill;
-            panelView.Location = new Point(0, 0);
-            panelView.Name = "panelView";
-            panelView.Size = new Size(600, 600);
-            panelView.TabIndex = 10;
             // 
             // linkLabel
             // 
             linkLabel.AutoSize = true;
             linkLabel.LinkColor = SystemColors.HotTrack;
-            linkLabel.Location = new Point(158, 290);
+            linkLabel.Location = new Point(153, 306);
             linkLabel.Name = "linkLabel";
             linkLabel.Size = new Size(295, 17);
-            linkLabel.TabIndex = 1;
+            linkLabel.TabIndex = 3;
             linkLabel.TabStop = true;
             linkLabel.Text = "https://github.com/LeonardoGil/MoveInator";
             linkLabel.LinkClicked += OpenGitHub_LinkClickedEvent;
@@ -60,32 +47,28 @@
             // labelInformativa
             // 
             labelInformativa.AutoSize = true;
-            labelInformativa.BackColor = Color.FromArgb(31, 31, 31);
             labelInformativa.FlatStyle = FlatStyle.Flat;
             labelInformativa.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             labelInformativa.ForeColor = Color.LightSlateGray;
-            labelInformativa.Location = new Point(168, 262);
+            labelInformativa.Location = new Point(163, 278);
             labelInformativa.Name = "labelInformativa";
             labelInformativa.Size = new Size(264, 21);
-            labelInformativa.TabIndex = 0;
+            labelInformativa.TabIndex = 2;
             labelInformativa.Text = "Considere apoiar o projeto 💪😁";
             // 
             // InicioViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panelView);
-            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Controls.Add(linkLabel);
+            Controls.Add(labelInformativa);
             Name = "InicioViewControl";
-            Size = new Size(600, 600);
-            panelView.ResumeLayout(false);
-            panelView.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panelView;
         private LinkLabel linkLabel;
         private Label labelInformativa;
     }

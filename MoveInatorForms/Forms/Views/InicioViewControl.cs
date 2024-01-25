@@ -1,11 +1,8 @@
-﻿using MoveInatorForms.Services;
-using MoveInatorForms.Services.Interfaces;
-using System.Diagnostics;
-using System.Reflection;
+﻿using System.Diagnostics;
 
 namespace MoveInatorForms.Forms.Views
 {
-    public partial class InicioViewControl : UserControl
+    public partial class InicioViewControl : BaseViewControl
     {
 
         public InicioViewControl()
