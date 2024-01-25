@@ -3,7 +3,7 @@ using MoveInatorForms.Services.Interfaces;
 
 namespace MoveInatorForms.Forms.Views
 {
-    public partial class NovidadesViewControl : UserControl
+    public partial class NovidadesViewControl : BaseViewControl
     {
         private readonly IUpdateService updateService;
 
@@ -16,13 +16,8 @@ namespace MoveInatorForms.Forms.Views
 
         private void LoadReleases()
         {
-            var takeReleases = updateService.Releases.Count > 10 ? 10 : updateService.Releases.Count;
-
-            var controls = updateService.Releases.OrderByDescending(x => x.CriadoEm)
-                                                 .Take(takeReleases)
-                                                 .ToList()
-                                                 .Select(release => new ReleaseCardControl(release))
-                                                 .ToArray();
+            var controls = updateService.Releases.OrderByDescending(x => x.CriadoEm).ToList()
+                                                 .Select(release => new ReleaseCardControl(release)).ToArray();
 
             Invoke(() => flowLayoutPanel.Controls.AddRange(controls));
         }
