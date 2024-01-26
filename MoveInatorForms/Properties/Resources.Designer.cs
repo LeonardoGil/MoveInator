@@ -93,6 +93,16 @@ namespace MoveInatorForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lixeira_16 {
+            get {
+                object obj = ResourceManager.GetObject("lixeira-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vassoura_16 {
             get {
                 object obj = ResourceManager.GetObject("vassoura-16", resourceCulture);

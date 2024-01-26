@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace MoveInatorForms.Forms.Views
 {
-    public partial class GerarMDFeSimplesViewControl : UserControl
+    public partial class GerarMDFeSimplesViewControl : BaseViewControl
     {
         private readonly IMDFeService MDFeService;
 
@@ -19,7 +19,7 @@ namespace MoveInatorForms.Forms.Views
         public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
 
         public List<MDFeCTeViewModel> MDFeCTes => MDFeCTesViewBindingSource.OfType<MDFeCTeViewModel>().ToList();
-        
+
         public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
 
         public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
@@ -132,7 +132,7 @@ namespace MoveInatorForms.Forms.Views
             // Lista de CTes
             var ctes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
 
-            if (ctes.Any(x => x.NumeroCTe == int.Parse(textBoxNumeroCTe.Text) && 
+            if (ctes.Any(x => x.NumeroCTe == int.Parse(textBoxNumeroCTe.Text) &&
                               x.SerieCTe == int.Parse(textBoxSerieCTe.Text))) throw new Exception("Já possuí um CTe com esse Numero e Serie");
         }
 
