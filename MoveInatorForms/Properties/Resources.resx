@@ -124,13 +124,16 @@
   <data name="arquivo-csv-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arquivo-csv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lixeira-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lixeira-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="adicionar-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adicionar-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dados-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dados-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lixeira-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lixeira-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="requisicao-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\requisicao-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
