@@ -32,9 +32,10 @@
             labelSubTitulo = new Label();
             panelView = new Panel();
             panelLateral = new Panel();
+            buttonMotoristas = new Button();
             labelVersion = new Label();
             buttonNovidades = new Button();
-            buttonCadastros = new Button();
+            buttonEmpresas = new Button();
             buttonTokens = new Button();
             buttonImportacaoMDFe = new Button();
             buttonInicio = new Button();
@@ -79,9 +80,10 @@
             // panelLateral
             // 
             panelLateral.BackColor = Color.FromArgb(17, 17, 17);
+            panelLateral.Controls.Add(buttonMotoristas);
             panelLateral.Controls.Add(labelVersion);
             panelLateral.Controls.Add(buttonNovidades);
-            panelLateral.Controls.Add(buttonCadastros);
+            panelLateral.Controls.Add(buttonEmpresas);
             panelLateral.Controls.Add(buttonTokens);
             panelLateral.Controls.Add(buttonImportacaoMDFe);
             panelLateral.Controls.Add(buttonInicio);
@@ -94,6 +96,22 @@
             panelLateral.Name = "panelLateral";
             panelLateral.Size = new Size(200, 600);
             panelLateral.TabIndex = 13;
+            // 
+            // buttonMotoristas
+            // 
+            buttonMotoristas.FlatAppearance.BorderSize = 0;
+            buttonMotoristas.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonMotoristas.FlatStyle = FlatStyle.Flat;
+            buttonMotoristas.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMotoristas.ForeColor = Color.DarkGray;
+            buttonMotoristas.Location = new Point(0, 360);
+            buttonMotoristas.Margin = new Padding(0);
+            buttonMotoristas.Name = "buttonMotoristas";
+            buttonMotoristas.Size = new Size(200, 50);
+            buttonMotoristas.TabIndex = 15;
+            buttonMotoristas.Text = "Motoristas";
+            buttonMotoristas.UseVisualStyleBackColor = true;
+            buttonMotoristas.Click += LoadCadastroMotorista_ClickEvent;
             // 
             // labelVersion
             // 
@@ -115,7 +133,7 @@
             buttonNovidades.FlatStyle = FlatStyle.Flat;
             buttonNovidades.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonNovidades.ForeColor = Color.DarkGray;
-            buttonNovidades.Location = new Point(0, 360);
+            buttonNovidades.Location = new Point(0, 410);
             buttonNovidades.Margin = new Padding(0);
             buttonNovidades.Name = "buttonNovidades";
             buttonNovidades.Size = new Size(200, 50);
@@ -124,21 +142,21 @@
             buttonNovidades.UseVisualStyleBackColor = true;
             buttonNovidades.Click += LoadNovidades_ClickEvent;
             // 
-            // buttonCadastros
+            // buttonEmpresas
             // 
-            buttonCadastros.FlatAppearance.BorderSize = 0;
-            buttonCadastros.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
-            buttonCadastros.FlatStyle = FlatStyle.Flat;
-            buttonCadastros.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonCadastros.ForeColor = Color.DarkGray;
-            buttonCadastros.Location = new Point(0, 310);
-            buttonCadastros.Margin = new Padding(0);
-            buttonCadastros.Name = "buttonCadastros";
-            buttonCadastros.Size = new Size(200, 50);
-            buttonCadastros.TabIndex = 12;
-            buttonCadastros.Text = "Cadastros";
-            buttonCadastros.UseVisualStyleBackColor = true;
-            buttonCadastros.Click += LoadCadastros_ClickEvent;
+            buttonEmpresas.FlatAppearance.BorderSize = 0;
+            buttonEmpresas.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
+            buttonEmpresas.FlatStyle = FlatStyle.Flat;
+            buttonEmpresas.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEmpresas.ForeColor = Color.DarkGray;
+            buttonEmpresas.Location = new Point(0, 310);
+            buttonEmpresas.Margin = new Padding(0);
+            buttonEmpresas.Name = "buttonEmpresas";
+            buttonEmpresas.Size = new Size(200, 50);
+            buttonEmpresas.TabIndex = 12;
+            buttonEmpresas.Text = "Empresas";
+            buttonEmpresas.UseVisualStyleBackColor = true;
+            buttonEmpresas.Click += LoadCadastroEmpresa_ClickEvent;
             // 
             // buttonTokens
             // 
@@ -234,10 +252,11 @@
         private Panel panelLateral;
         private Button buttonImportacaoCSV;
         private Button buttonInicio;
-        private Button buttonCadastros;
+        private Button buttonEmpresas;
         private Button buttonTokens;
         private Button buttonImportacaoMDFe;
         private Button buttonNovidades;
         private Label labelVersion;
+        private Button buttonMotoristas;
     }
 }

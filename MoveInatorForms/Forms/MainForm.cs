@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
+using MoveInatorForms.Forms.Views.Cadastros;
 using MoveInatorForms.Services.Interfaces;
 using System.Diagnostics;
 using System.Reflection;
@@ -13,9 +14,10 @@ namespace MoveInatorForms.Forms
         private InicioViewControl InicioViewControl;
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
-        private CadastroBaseViewControl CadastrosViewControl;
-        private NovidadesViewControl NovidadesViewControl;
         private GerarTokenViewControl GerarTokenViewControl;
+        private CadastroEmpresaViewControl CadastroEmpresaViewControl;
+        private CadastroMotoristaViewControl CadastroMotoristaViewControl;
+        private NovidadesViewControl NovidadesViewControl;
 
         private readonly IUpdateService updateService;
 
@@ -131,12 +133,20 @@ namespace MoveInatorForms.Forms
             LoadView(GerarMDFeSimplesView);
         }
 
-        private void LoadCadastros_ClickEvent(object sender, EventArgs e)
+        private void LoadCadastroEmpresa_ClickEvent(object sender, EventArgs e)
         {
-            if (CadastrosViewControl is default(CadastroBaseViewControl))
-                CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastroBaseViewControl>();
+            if (CadastroEmpresaViewControl is default(CadastroEmpresaViewControl))
+                CadastroEmpresaViewControl = Program.ServiceProvider.GetRequiredService<CadastroEmpresaViewControl>();
 
-            LoadView(CadastrosViewControl);
+            LoadView(CadastroEmpresaViewControl);
+        }
+
+        private void LoadCadastroMotorista_ClickEvent(object sender, EventArgs e)
+        {
+            if (CadastroMotoristaViewControl is default(CadastroMotoristaViewControl))
+                CadastroMotoristaViewControl = Program.ServiceProvider.GetRequiredService<CadastroMotoristaViewControl>();
+
+            LoadView(CadastroMotoristaViewControl);
         }
 
         private void LoadInicio_ClickEvent(object sender, EventArgs e)

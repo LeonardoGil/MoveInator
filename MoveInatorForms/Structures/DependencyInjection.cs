@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MoveInatorForms.Forms;
 using MoveInatorForms.Forms.Views;
+using MoveInatorForms.Forms.Views.Cadastros;
 using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
 
@@ -29,10 +30,12 @@ namespace MoveInatorForms.Structures
 
             builder.Services.AddTransient<GerarCSVSimplesViewControl>();
             builder.Services.AddTransient<GerarMDFeSimplesViewControl>();
-            builder.Services.AddTransient<CadastroBaseViewControl>();
             builder.Services.AddTransient<InicioViewControl>();
             builder.Services.AddTransient<NovidadesViewControl>();
             builder.Services.AddTransient<GerarTokenViewControl>();
+            builder.Services.AddTransient<CadastroEmpresaViewControl>();
+            builder.Services.AddTransient<CadastroMotoristaViewControl>();
+
 
             return builder;
         }
