@@ -7,7 +7,7 @@ using MoveInatorForms.Utilities.Extensions;
 
 namespace MoveInatorForms.Forms.Views
 {
-    public partial class GerarTokenViewControl : UserControl
+    public partial class GerarTokenViewControl : BaseViewControl
     {
         public BindingSource TokensViewBindingSource { get; set; } = new() { DataSource = new List<TokenViewModel>() };
 

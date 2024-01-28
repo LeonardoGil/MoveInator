@@ -31,7 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panelSuperior = new Panel();
+            comboBoxUrls = new ComboBox();
             comboBoxMotorista = new ComboBox();
             comboBoxEmpresa = new ComboBox();
             labelMotorista = new Label();
@@ -42,34 +42,24 @@
             labelAPI = new Label();
             dataGridView = new DataGridView();
             backgroundWorkerRequest = new System.ComponentModel.BackgroundWorker();
-            comboBoxUrls = new ComboBox();
-            panelSuperior.SuspendLayout();
+            labelTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
-            // panelSuperior
+            // comboBoxUrls
             // 
-            panelSuperior.BackColor = Color.FromArgb(27, 27, 27);
-            panelSuperior.Controls.Add(comboBoxUrls);
-            panelSuperior.Controls.Add(comboBoxMotorista);
-            panelSuperior.Controls.Add(comboBoxEmpresa);
-            panelSuperior.Controls.Add(labelMotorista);
-            panelSuperior.Controls.Add(labelEmpresa);
-            panelSuperior.Controls.Add(labelNumeroDocumento);
-            panelSuperior.Controls.Add(buttonRequest);
-            panelSuperior.Controls.Add(checkedListBoxAPI);
-            panelSuperior.Controls.Add(labelAPI);
-            panelSuperior.Dock = DockStyle.Top;
-            panelSuperior.Location = new Point(0, 0);
-            panelSuperior.Name = "panelSuperior";
-            panelSuperior.Size = new Size(800, 180);
-            panelSuperior.TabIndex = 44;
+            comboBoxUrls.FormattingEnabled = true;
+            comboBoxUrls.Location = new Point(10, 168);
+            comboBoxUrls.Name = "comboBoxUrls";
+            comboBoxUrls.Size = new Size(392, 25);
+            comboBoxUrls.TabIndex = 38;
             // 
             // comboBoxMotorista
             // 
             comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(508, 134);
+            comboBoxMotorista.Location = new Point(420, 168);
+            comboBoxMotorista.Margin = new Padding(3, 3, 10, 3);
             comboBoxMotorista.Name = "comboBoxMotorista";
             comboBoxMotorista.Size = new Size(170, 25);
             comboBoxMotorista.TabIndex = 37;
@@ -78,7 +68,8 @@
             // 
             comboBoxEmpresa.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmpresa.FormattingEnabled = true;
-            comboBoxEmpresa.Location = new Point(508, 64);
+            comboBoxEmpresa.Location = new Point(420, 98);
+            comboBoxEmpresa.Margin = new Padding(3, 3, 10, 3);
             comboBoxEmpresa.Name = "comboBoxEmpresa";
             comboBoxEmpresa.Size = new Size(170, 25);
             comboBoxEmpresa.TabIndex = 36;
@@ -88,7 +79,7 @@
             labelMotorista.AutoSize = true;
             labelMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelMotorista.Location = new Point(508, 114);
+            labelMotorista.Location = new Point(420, 148);
             labelMotorista.Name = "labelMotorista";
             labelMotorista.Size = new Size(71, 17);
             labelMotorista.TabIndex = 35;
@@ -99,7 +90,7 @@
             labelEmpresa.AutoSize = true;
             labelEmpresa.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmpresa.ForeColor = SystemColors.ControlLightLight;
-            labelEmpresa.Location = new Point(508, 42);
+            labelEmpresa.Location = new Point(420, 76);
             labelEmpresa.Name = "labelEmpresa";
             labelEmpresa.Size = new Size(57, 17);
             labelEmpresa.TabIndex = 34;
@@ -110,7 +101,7 @@
             labelNumeroDocumento.AutoSize = true;
             labelNumeroDocumento.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroDocumento.Location = new Point(18, 114);
+            labelNumeroDocumento.Location = new Point(10, 148);
             labelNumeroDocumento.Name = "labelNumeroDocumento";
             labelNumeroDocumento.Size = new Size(29, 17);
             labelNumeroDocumento.TabIndex = 31;
@@ -118,27 +109,32 @@
             // 
             // buttonRequest
             // 
-            buttonRequest.BackColor = Color.FromArgb(38, 38, 38);
             buttonRequest.FlatAppearance.BorderSize = 0;
             buttonRequest.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonRequest.FlatStyle = FlatStyle.Flat;
-            buttonRequest.Location = new Point(705, 140);
+            buttonRequest.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRequest.ForeColor = SystemColors.ControlLightLight;
+            buttonRequest.Image = Properties.Resources.requisicao_16;
+            buttonRequest.ImageAlign = ContentAlignment.TopLeft;
+            buttonRequest.Location = new Point(500, 270);
+            buttonRequest.Margin = new Padding(0, 3, 0, 3);
             buttonRequest.Name = "buttonRequest";
-            buttonRequest.Size = new Size(90, 34);
+            buttonRequest.Size = new Size(100, 27);
             buttonRequest.TabIndex = 30;
-            buttonRequest.Text = "Request";
+            buttonRequest.Text = "Solicitar";
+            buttonRequest.TextAlign = ContentAlignment.BottomRight;
             buttonRequest.UseVisualStyleBackColor = false;
             buttonRequest.Click += Request_ClickEvent;
             // 
             // checkedListBoxAPI
             // 
-            checkedListBoxAPI.BackColor = Color.FromArgb(27, 27, 27);
+            checkedListBoxAPI.BackColor = Color.FromArgb(31, 31, 31);
             checkedListBoxAPI.BorderStyle = BorderStyle.None;
             checkedListBoxAPI.CheckOnClick = true;
             checkedListBoxAPI.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxAPI.FormattingEnabled = true;
             checkedListBoxAPI.Items.AddRange(new object[] { "Portal", "Mobile" });
-            checkedListBoxAPI.Location = new Point(18, 64);
+            checkedListBoxAPI.Location = new Point(10, 98);
             checkedListBoxAPI.Name = "checkedListBoxAPI";
             checkedListBoxAPI.Size = new Size(97, 40);
             checkedListBoxAPI.TabIndex = 3;
@@ -149,7 +145,7 @@
             labelAPI.AutoSize = true;
             labelAPI.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelAPI.ForeColor = SystemColors.ControlLightLight;
-            labelAPI.Location = new Point(18, 42);
+            labelAPI.Location = new Point(10, 76);
             labelAPI.Name = "labelAPI";
             labelAPI.Size = new Size(29, 17);
             labelAPI.TabIndex = 2;
@@ -173,9 +169,10 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
-            dataGridView.Location = new Point(0, 188);
+            dataGridView.Location = new Point(0, 300);
             dataGridView.Margin = new Padding(0);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
@@ -196,40 +193,45 @@
             dataGridView.ShowCellErrors = false;
             dataGridView.ShowCellToolTips = false;
             dataGridView.ShowRowErrors = false;
-            dataGridView.Size = new Size(800, 280);
+            dataGridView.Size = new Size(600, 300);
             dataGridView.TabIndex = 45;
             // 
             // backgroundWorkerRequest
             // 
             backgroundWorkerRequest.DoWork += Request_DoWorkEvent;
             // 
-            // comboBoxUrls
+            // labelTitulo
             // 
-            comboBoxUrls.FormattingEnabled = true;
-            comboBoxUrls.Location = new Point(18, 134);
-            comboBoxUrls.Name = "comboBoxUrls";
-            comboBoxUrls.Size = new Size(461, 25);
-            comboBoxUrls.TabIndex = 38;
+            labelTitulo.AutoSize = true;
+            labelTitulo.Font = new Font("MesloLGL NF", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelTitulo.Location = new Point(10, 20);
+            labelTitulo.Name = "labelTitulo";
+            labelTitulo.Size = new Size(93, 33);
+            labelTitulo.TabIndex = 47;
+            labelTitulo.Text = "Tokens";
             // 
             // GerarTokenViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(10, 10, 10);
+            Controls.Add(labelTitulo);
+            Controls.Add(comboBoxUrls);
             Controls.Add(dataGridView);
-            Controls.Add(panelSuperior);
-            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.DarkGray;
+            Controls.Add(comboBoxMotorista);
+            Controls.Add(comboBoxEmpresa);
+            Controls.Add(labelAPI);
+            Controls.Add(labelMotorista);
+            Controls.Add(checkedListBoxAPI);
+            Controls.Add(labelEmpresa);
+            Controls.Add(buttonRequest);
+            Controls.Add(labelNumeroDocumento);
             Name = "GerarTokenViewControl";
-            Size = new Size(800, 520);
-            panelSuperior.ResumeLayout(false);
-            panelSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Panel panelSuperior;
         private CheckedListBox checkedListBoxAPI;
         private Label labelAPI;
         protected DataGridView dataGridView;
@@ -241,5 +243,6 @@
         private Label labelEmpresa;
         private System.ComponentModel.BackgroundWorker backgroundWorkerRequest;
         private ComboBox comboBoxUrls;
+        private Label labelTitulo;
     }
 }

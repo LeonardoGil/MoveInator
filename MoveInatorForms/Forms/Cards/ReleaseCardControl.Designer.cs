@@ -38,8 +38,8 @@
             // 
             labelVersao.AutoSize = true;
             labelVersao.Font = new Font("MesloLGL NF", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVersao.Location = new Point(10, 30);
-            labelVersao.MaximumSize = new Size(175, 30);
+            labelVersao.Location = new Point(10, 25);
+            labelVersao.MaximumSize = new Size(165, 30);
             labelVersao.Name = "labelVersao";
             labelVersao.Size = new Size(93, 30);
             labelVersao.TabIndex = 0;
@@ -51,8 +51,8 @@
             labelDescricao.AutoSize = true;
             labelDescricao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelDescricao.ForeColor = Color.DarkGray;
-            labelDescricao.Location = new Point(5, 80);
-            labelDescricao.MaximumSize = new Size(185, 370);
+            labelDescricao.Location = new Point(5, 65);
+            labelDescricao.MaximumSize = new Size(170, 370);
             labelDescricao.Name = "labelDescricao";
             labelDescricao.Size = new Size(106, 17);
             labelDescricao.TabIndex = 1;
@@ -63,8 +63,8 @@
             linkLabel.AutoSize = true;
             linkLabel.Font = new Font("MesloLGL NF", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel.LinkColor = SystemColors.HotTrack;
-            linkLabel.Location = new Point(10, 460);
-            linkLabel.MaximumSize = new Size(175, 50);
+            linkLabel.Location = new Point(5, 400);
+            linkLabel.MaximumSize = new Size(170, 50);
             linkLabel.Name = "linkLabel";
             linkLabel.Size = new Size(27, 14);
             linkLabel.TabIndex = 2;
@@ -78,7 +78,7 @@
             labelData.AutoSize = true;
             labelData.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelData.ForeColor = Color.DarkGray;
-            labelData.Location = new Point(113, 4);
+            labelData.Location = new Point(104, 4);
             labelData.MaximumSize = new Size(175, 380);
             labelData.Name = "labelData";
             labelData.Size = new Size(78, 17);
@@ -89,16 +89,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(27, 27, 27);
+            BackColor = Color.FromArgb(21, 21, 21);
             Controls.Add(labelData);
             Controls.Add(linkLabel);
             Controls.Add(labelDescricao);
             Controls.Add(labelVersao);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            Margin = new Padding(5, 5, 0, 5);
+            Margin = new Padding(5);
             Name = "ReleaseCardControl";
-            Size = new Size(190, 510);
+            Size = new Size(180, 450);
             ResumeLayout(false);
             PerformLayout();
         }

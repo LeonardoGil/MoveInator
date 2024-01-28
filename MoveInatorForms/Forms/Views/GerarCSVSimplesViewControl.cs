@@ -10,7 +10,7 @@ using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Forms.Views
 {
-    public partial class GerarCSVSimplesViewControl : UserControl
+    public partial class GerarCSVSimplesViewControl : BaseViewControl
     {
         private readonly ICSVService CSVService;
 
@@ -234,7 +234,6 @@ namespace MoveInatorForms.Forms.Views
             var enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
 
             buttonGerarCSV.Enabled = enabled;
-            buttonLimparViagens.Enabled = enabled;
         }
 
         private void GenerateCSV_ClickEvent(object sender, EventArgs e)
