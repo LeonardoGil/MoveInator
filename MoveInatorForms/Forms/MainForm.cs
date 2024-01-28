@@ -13,7 +13,7 @@ namespace MoveInatorForms.Forms
         private InicioViewControl InicioViewControl;
         private GerarCSVSimplesViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
-        private CadastrosViewControl CadastrosViewControl;
+        private CadastroBaseViewControl CadastrosViewControl;
         private NovidadesViewControl NovidadesViewControl;
         private GerarTokenViewControl GerarTokenViewControl;
 
@@ -133,8 +133,8 @@ namespace MoveInatorForms.Forms
 
         private void LoadCadastros_ClickEvent(object sender, EventArgs e)
         {
-            if (CadastrosViewControl is default(CadastrosViewControl))
-                CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastrosViewControl>();
+            if (CadastrosViewControl is default(CadastroBaseViewControl))
+                CadastrosViewControl = Program.ServiceProvider.GetRequiredService<CadastroBaseViewControl>();
 
             LoadView(CadastrosViewControl);
         }
