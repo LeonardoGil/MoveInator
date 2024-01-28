@@ -186,7 +186,7 @@
             buttonImportacaoMDFe.Name = "buttonImportacaoMDFe";
             buttonImportacaoMDFe.Size = new Size(200, 50);
             buttonImportacaoMDFe.TabIndex = 10;
-            buttonImportacaoMDFe.Text = "Importação MDFe";
+            buttonImportacaoMDFe.Text = "MDFe";
             buttonImportacaoMDFe.UseVisualStyleBackColor = true;
             buttonImportacaoMDFe.Click += LoadMDFeSimples_ClickEvent;
             // 
@@ -218,7 +218,7 @@
             buttonImportacaoCSV.Name = "buttonImportacaoCSV";
             buttonImportacaoCSV.Size = new Size(200, 50);
             buttonImportacaoCSV.TabIndex = 8;
-            buttonImportacaoCSV.Text = "Importação CSV";
+            buttonImportacaoCSV.Text = "CSV";
             buttonImportacaoCSV.UseVisualStyleBackColor = true;
             buttonImportacaoCSV.Click += LoadCSVSimples_ClickEvent;
             // 
