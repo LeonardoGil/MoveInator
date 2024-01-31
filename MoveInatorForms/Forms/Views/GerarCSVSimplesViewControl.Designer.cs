@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarCSVSimplesViewControl));
             buttonAdicionar = new Button();
             buttonGerar = new Button();
             buttonLimpar = new Button();
@@ -64,6 +65,8 @@
             labelDiretorio = new Label();
             labelTitulo = new Label();
             panelActions = new Panel();
+            folderBrowserDialog = new FolderBrowserDialog();
+            buttonFolder = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelActions.SuspendLayout();
@@ -448,7 +451,7 @@
             textBoxDiretorio.Location = new Point(319, 99);
             textBoxDiretorio.Margin = new Padding(3, 3, 10, 3);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(271, 25);
+            textBoxDiretorio.Size = new Size(243, 25);
             textBoxDiretorio.TabIndex = 44;
             // 
             // labelDiretorio
@@ -484,10 +487,32 @@
             panelActions.Size = new Size(336, 27);
             panelActions.TabIndex = 47;
             // 
+            // folderBrowserDialog
+            // 
+            folderBrowserDialog.SelectedPath = "C:\\Temp";
+            // 
+            // buttonFolder
+            // 
+            buttonFolder.FlatAppearance.BorderSize = 0;
+            buttonFolder.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonFolder.FlatStyle = FlatStyle.Flat;
+            buttonFolder.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonFolder.ForeColor = SystemColors.ControlLightLight;
+            buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
+            buttonFolder.Location = new Point(559, 99);
+            buttonFolder.Margin = new Padding(0, 0, 10, 0);
+            buttonFolder.Name = "buttonFolder";
+            buttonFolder.Size = new Size(30, 25);
+            buttonFolder.TabIndex = 43;
+            buttonFolder.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonFolder.UseVisualStyleBackColor = false;
+            buttonFolder.Click += Folder_ClickEvent;
+            // 
             // GerarCSVSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonFolder);
             Controls.Add(panelActions);
             Controls.Add(labelTitulo);
             Controls.Add(comboBoxMotorista);
@@ -560,5 +585,7 @@
         private ComboBox comboBoxEmissor;
         private Label labelTitulo;
         private Panel panelActions;
+        private FolderBrowserDialog folderBrowserDialog;
+        private Button buttonFolder;
     }
 }

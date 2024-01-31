@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarMDFeSimplesViewControl));
             comboBoxMotorista = new ComboBox();
             comboBoxEmissor = new ComboBox();
@@ -55,6 +55,8 @@
             buttonLimparMDFeCTes = new Button();
             labelTitulo = new Label();
             panelActions = new Panel();
+            buttonFolder = new Button();
+            folderBrowserDialog = new FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelActions.SuspendLayout();
             SuspendLayout();
@@ -63,18 +65,18 @@
             // 
             comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(248, 160);
+            comboBoxMotorista.Location = new Point(273, 157);
             comboBoxMotorista.Name = "comboBoxMotorista";
-            comboBoxMotorista.Size = new Size(170, 25);
+            comboBoxMotorista.Size = new Size(191, 25);
             comboBoxMotorista.TabIndex = 53;
             // 
             // comboBoxEmissor
             // 
             comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmissor.FormattingEnabled = true;
-            comboBoxEmissor.Location = new Point(248, 99);
+            comboBoxEmissor.Location = new Point(273, 99);
             comboBoxEmissor.Name = "comboBoxEmissor";
-            comboBoxEmissor.Size = new Size(170, 25);
+            comboBoxEmissor.Size = new Size(191, 25);
             comboBoxEmissor.TabIndex = 52;
             // 
             // labelMotorista
@@ -82,7 +84,7 @@
             labelMotorista.AutoSize = true;
             labelMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelMotorista.Location = new Point(248, 138);
+            labelMotorista.Location = new Point(273, 135);
             labelMotorista.Name = "labelMotorista";
             labelMotorista.Size = new Size(71, 17);
             labelMotorista.TabIndex = 51;
@@ -93,7 +95,7 @@
             labelEmissor.AutoSize = true;
             labelEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(248, 76);
+            labelEmissor.Location = new Point(273, 76);
             labelEmissor.Name = "labelEmissor";
             labelEmissor.Size = new Size(57, 17);
             labelEmissor.TabIndex = 50;
@@ -101,7 +103,7 @@
             // 
             // textBoxSerieMDFe
             // 
-            textBoxSerieMDFe.Location = new Point(130, 98);
+            textBoxSerieMDFe.Location = new Point(140, 98);
             textBoxSerieMDFe.MaxLength = 3;
             textBoxSerieMDFe.Name = "textBoxSerieMDFe";
             textBoxSerieMDFe.Size = new Size(106, 25);
@@ -112,7 +114,7 @@
             labelSerieMDFe.AutoSize = true;
             labelSerieMDFe.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelSerieMDFe.Location = new Point(130, 76);
+            labelSerieMDFe.Location = new Point(140, 76);
             labelSerieMDFe.Name = "labelSerieMDFe";
             labelSerieMDFe.Size = new Size(78, 17);
             labelSerieMDFe.TabIndex = 67;
@@ -138,7 +140,7 @@
             // 
             // textBoxSerieCTe
             // 
-            textBoxSerieCTe.Location = new Point(130, 160);
+            textBoxSerieCTe.Location = new Point(140, 157);
             textBoxSerieCTe.MaxLength = 3;
             textBoxSerieCTe.Name = "textBoxSerieCTe";
             textBoxSerieCTe.Size = new Size(106, 25);
@@ -149,7 +151,7 @@
             labelSerie.AutoSize = true;
             labelSerie.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerie.ForeColor = SystemColors.ControlLightLight;
-            labelSerie.Location = new Point(130, 138);
+            labelSerie.Location = new Point(140, 135);
             labelSerie.Name = "labelSerie";
             labelSerie.Size = new Size(71, 17);
             labelSerie.TabIndex = 63;
@@ -157,7 +159,7 @@
             // 
             // textBoxNumeroCTe
             // 
-            textBoxNumeroCTe.Location = new Point(10, 160);
+            textBoxNumeroCTe.Location = new Point(10, 157);
             textBoxNumeroCTe.Name = "textBoxNumeroCTe";
             textBoxNumeroCTe.Size = new Size(106, 25);
             textBoxNumeroCTe.TabIndex = 62;
@@ -167,7 +169,7 @@
             labelNumero.AutoSize = true;
             labelNumero.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumero.ForeColor = SystemColors.ControlLightLight;
-            labelNumero.Location = new Point(10, 138);
+            labelNumero.Location = new Point(10, 135);
             labelNumero.Name = "labelNumero";
             labelNumero.Size = new Size(78, 17);
             labelNumero.TabIndex = 61;
@@ -175,7 +177,7 @@
             // 
             // maskedTextBoxDataEmissao
             // 
-            maskedTextBoxDataEmissao.Location = new Point(430, 99);
+            maskedTextBoxDataEmissao.Location = new Point(10, 218);
             maskedTextBoxDataEmissao.Mask = "00/00/0000";
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
             maskedTextBoxDataEmissao.Size = new Size(100, 25);
@@ -188,7 +190,7 @@
             labelDataEmissao.AutoSize = true;
             labelDataEmissao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(430, 76);
+            labelDataEmissao.Location = new Point(10, 195);
             labelDataEmissao.Name = "labelDataEmissao";
             labelDataEmissao.Size = new Size(92, 17);
             labelDataEmissao.TabIndex = 53;
@@ -241,14 +243,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
@@ -259,16 +261,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -279,10 +281,10 @@
             // 
             // textBoxDiretorio
             // 
-            textBoxDiretorio.Location = new Point(430, 161);
-            textBoxDiretorio.Margin = new Padding(3, 3, 10, 3);
+            textBoxDiretorio.Location = new Point(140, 218);
+            textBoxDiretorio.Margin = new Padding(0);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(160, 25);
+            textBoxDiretorio.Size = new Size(324, 25);
             textBoxDiretorio.TabIndex = 48;
             // 
             // labelDiretorio
@@ -290,7 +292,7 @@
             labelDiretorio.AutoSize = true;
             labelDiretorio.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDiretorio.ForeColor = SystemColors.ControlLightLight;
-            labelDiretorio.Location = new Point(430, 138);
+            labelDiretorio.Location = new Point(140, 195);
             labelDiretorio.Name = "labelDiretorio";
             labelDiretorio.Size = new Size(71, 17);
             labelDiretorio.TabIndex = 49;
@@ -359,10 +361,32 @@
             panelActions.Size = new Size(360, 27);
             panelActions.TabIndex = 70;
             // 
+            // buttonFolder
+            // 
+            buttonFolder.FlatAppearance.BorderSize = 0;
+            buttonFolder.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonFolder.FlatStyle = FlatStyle.Flat;
+            buttonFolder.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonFolder.ForeColor = SystemColors.ControlLightLight;
+            buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
+            buttonFolder.Location = new Point(464, 217);
+            buttonFolder.Margin = new Padding(0, 0, 10, 0);
+            buttonFolder.Name = "buttonFolder";
+            buttonFolder.Size = new Size(30, 25);
+            buttonFolder.TabIndex = 71;
+            buttonFolder.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonFolder.UseVisualStyleBackColor = false;
+            buttonFolder.Click += Folder_ClickEvent;
+            // 
+            // folderBrowserDialog
+            // 
+            folderBrowserDialog.SelectedPath = "C:\\Temp";
+            // 
             // GerarMDFeSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonFolder);
             Controls.Add(panelActions);
             Controls.Add(labelTitulo);
             Controls.Add(comboBoxMotorista);
@@ -415,5 +439,7 @@
         private Label labelEmissor;
         private Label labelTitulo;
         private Panel panelActions;
+        private Button buttonFolder;
+        private FolderBrowserDialog folderBrowserDialog;
     }
 }

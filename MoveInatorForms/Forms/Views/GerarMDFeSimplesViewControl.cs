@@ -5,6 +5,7 @@ using MoveInatorForms.Services.Interfaces;
 using MoveInatorForms.Utilities.Extensions;
 using MoveInatorForms.Utilities.Mocks;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -72,8 +73,7 @@ namespace MoveInatorForms.Forms.Views
             Reload();
 
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
-
-            textBoxDiretorio.Text = @"C:/Temp";
+            textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
 
         private async Task AddMDFeCTeViewModelGridAsync()
@@ -230,8 +230,6 @@ namespace MoveInatorForms.Forms.Views
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
         }
 
-        #endregion
-
         private void View_ResizeEvent(object sender, EventArgs e)
         {
             if (sender is Control control)
@@ -242,5 +240,13 @@ namespace MoveInatorForms.Forms.Views
                 panelActions.Location = new Point(240 + sizeX, 270 + sizeY);
             }
         }
+
+        private void Folder_ClickEvent(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
+        }
+
+        #endregion
     }
 }

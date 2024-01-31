@@ -164,8 +164,7 @@ namespace MoveInatorForms.Forms.Views
             textBoxNomeDestinatario.Text = Data.Nomes.GetRandom();
 
             numericUpDownQuantidade.Value = 1;
-
-            textBoxDiretorio.Text = @"C:/Temp";
+            textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
 
         private void EnableButtons(bool enabled = true)
@@ -327,6 +326,12 @@ namespace MoveInatorForms.Forms.Views
 
                 panelActions.Location = new Point(264 + sizeX, 270 + sizeY);
             }
+        }
+
+        private void Folder_ClickEvent(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
 
         #endregion
