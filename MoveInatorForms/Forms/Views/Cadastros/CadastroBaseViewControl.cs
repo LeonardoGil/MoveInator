@@ -27,7 +27,7 @@ namespace MoveInatorForms.Forms.Views
             buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
         }
 
-        private void CadastroBaseViewControl_Resize(object sender, EventArgs e)
+        private void View_ResizeEvent(object sender, EventArgs e)
         {
             if (sender is Control control)
             {

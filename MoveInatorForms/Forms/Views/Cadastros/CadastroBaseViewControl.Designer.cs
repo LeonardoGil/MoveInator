@@ -178,7 +178,7 @@
             Controls.Add(labelTitulo);
             Controls.Add(dataGridView);
             Name = "CadastroBaseViewControl";
-            Resize += CadastroBaseViewControl_Resize;
+            Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelActions.ResumeLayout(false);
             ResumeLayout(false);
