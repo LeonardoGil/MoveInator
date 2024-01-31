@@ -73,6 +73,7 @@
             panelView.Dock = DockStyle.Fill;
             panelView.Location = new Point(200, 0);
             panelView.Margin = new Padding(0, 3, 0, 0);
+            panelView.MinimumSize = new Size(600, 600);
             panelView.Name = "panelView";
             panelView.Size = new Size(600, 600);
             panelView.TabIndex = 9;
@@ -232,7 +233,7 @@
             Controls.Add(panelLateral);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MinimumSize = new Size(816, 639);
             Name = "MainForm";
             Opacity = 0.97D;
             ShowIcon = false;
