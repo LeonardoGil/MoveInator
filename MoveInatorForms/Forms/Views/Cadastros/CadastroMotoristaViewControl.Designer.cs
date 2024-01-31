@@ -125,9 +125,6 @@
             Controls.Add(labelCpfMotorista);
             Controls.Add(textBoxNomeMotorista);
             Name = "CadastroMotoristaViewModel";
-            Controls.SetChildIndex(buttonAdicionar, 0);
-            Controls.SetChildIndex(buttonRemover, 0);
-            Controls.SetChildIndex(buttonSalvar, 0);
             Controls.SetChildIndex(labelTitulo, 0);
             Controls.SetChildIndex(textBoxNomeMotorista, 0);
             Controls.SetChildIndex(labelCpfMotorista, 0);

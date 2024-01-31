@@ -37,7 +37,9 @@
             labelTitulo = new Label();
             buttonRemover = new Button();
             buttonAdicionar = new Button();
+            panelActions = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panelActions.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView
@@ -96,7 +98,7 @@
             buttonSalvar.ForeColor = SystemColors.ControlLightLight;
             buttonSalvar.Image = (Image)resources.GetObject("buttonSalvar.Image");
             buttonSalvar.ImageAlign = ContentAlignment.TopLeft;
-            buttonSalvar.Location = new Point(515, 270);
+            buttonSalvar.Location = new Point(195, 0);
             buttonSalvar.Margin = new Padding(0, 3, 0, 3);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(85, 27);
@@ -127,7 +129,7 @@
             buttonRemover.ForeColor = SystemColors.ControlLightLight;
             buttonRemover.Image = Properties.Resources.lixeira_16;
             buttonRemover.ImageAlign = ContentAlignment.TopLeft;
-            buttonRemover.Location = new Point(320, 270);
+            buttonRemover.Location = new Point(0, 0);
             buttonRemover.Margin = new Padding(0, 3, 0, 3);
             buttonRemover.Name = "buttonRemover";
             buttonRemover.Size = new Size(91, 27);
@@ -147,7 +149,7 @@
             buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(411, 270);
+            buttonAdicionar.Location = new Point(91, 0);
             buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(104, 27);
@@ -157,18 +159,28 @@
             buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonAdicionar.UseVisualStyleBackColor = false;
             // 
+            // panelActions
+            // 
+            panelActions.Controls.Add(buttonRemover);
+            panelActions.Controls.Add(buttonAdicionar);
+            panelActions.Controls.Add(buttonSalvar);
+            panelActions.Location = new Point(320, 270);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(280, 27);
+            panelActions.TabIndex = 93;
+            // 
             // CadastroBaseViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(buttonRemover);
-            Controls.Add(buttonAdicionar);
+            Controls.Add(panelActions);
             Controls.Add(labelTitulo);
-            Controls.Add(buttonSalvar);
             Controls.Add(dataGridView);
             Name = "CadastroBaseViewControl";
             Resize += CadastroBaseViewControl_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panelActions.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +197,6 @@
         protected Button buttonSalvar;
         protected Button buttonRemover;
         protected Button buttonAdicionar;
+        private Panel panelActions;
     }
 }

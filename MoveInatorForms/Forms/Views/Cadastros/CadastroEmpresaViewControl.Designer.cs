@@ -141,10 +141,7 @@
             Controls.SetChildIndex(textBoxClientId, 0);
             Controls.SetChildIndex(labelClientSecret, 0);
             Controls.SetChildIndex(textBoxClientSecret, 0);
-            Controls.SetChildIndex(buttonSalvar, 0);
             Controls.SetChildIndex(labelTitulo, 0);
-            Controls.SetChildIndex(buttonAdicionar, 0);
-            Controls.SetChildIndex(buttonRemover, 0);
             ((System.ComponentModel.ISupportInitialize)BindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -29,20 +29,12 @@ namespace MoveInatorForms.Forms.Views
 
         private void CadastroBaseViewControl_Resize(object sender, EventArgs e)
         {
-            var buttonsY = 270;
-            
-            var buttonSaveX = 515;
-            var buttonAddX = 411;
-            var buttonRemoveX = 320;
-
             if (sender is Control control)
             {
                 var sizeX = control.Width - 600;
                 var sizeY = control.Height - 600;
 
-                buttonSalvar.Location = new Point(buttonSaveX + sizeX, buttonsY + sizeY);
-                buttonAdicionar.Location = new Point(buttonAddX + sizeX, buttonsY + sizeY);
-                buttonRemover.Location = new Point(buttonRemoveX + sizeX, buttonsY + sizeY);
+                panelActions.Location = new Point(320 + sizeX, 270 + sizeY);
             }
         }
 
