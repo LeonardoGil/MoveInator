@@ -318,6 +318,17 @@ namespace MoveInatorForms.Forms.Views
             }
         }
 
+        private void View_ResizeEvent(object sender, EventArgs e)
+        {
+            if (sender is Control control)
+            {
+                var sizeX = control.Width - 600;
+                var sizeY = control.Height - 600;
+
+                panelActions.Location = new Point(264 + sizeX, 270 + sizeY);
+            }
+        }
+
         #endregion
     }
 }
