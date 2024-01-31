@@ -38,6 +38,7 @@
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.DarkGray;
             Margin = new Padding(0);
+            MinimumSize = new Size(600, 600);
             Name = "BaseViewControl";
             Size = new Size(600, 600);
             ResumeLayout(false);

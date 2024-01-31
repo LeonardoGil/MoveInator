@@ -1,6 +1,4 @@
-﻿using MoveInatorForms.Domains.Entities.Cadastros;
-using MoveInatorForms.Utilities.Extensions;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -27,6 +25,17 @@ namespace MoveInatorForms.Forms.Views
         {
             Program.DatabaseJson.Save();
             buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
+        private void View_ResizeEvent(object sender, EventArgs e)
+        {
+            if (sender is Control control)
+            {
+                var sizeX = control.Width - 600;
+                var sizeY = control.Height - 600;
+
+                panelActions.Location = new Point(320 + sizeX, 270 + sizeY);
+            }
         }
 
         #endregion

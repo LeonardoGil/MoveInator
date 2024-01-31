@@ -226,6 +226,7 @@
             Controls.Add(buttonRequest);
             Controls.Add(labelNumeroDocumento);
             Name = "GerarTokenViewControl";
+            Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroBaseViewControl));
             dataGridView = new DataGridView();
             buttonSalvar = new Button();
             labelTitulo = new Label();
             buttonRemover = new Button();
             buttonAdicionar = new Button();
+            panelActions = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panelActions.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView
@@ -49,14 +51,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
@@ -67,16 +69,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -87,6 +89,7 @@
             // 
             // buttonSalvar
             // 
+            buttonSalvar.Anchor = AnchorStyles.None;
             buttonSalvar.Enabled = false;
             buttonSalvar.FlatAppearance.BorderSize = 0;
             buttonSalvar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
@@ -95,7 +98,7 @@
             buttonSalvar.ForeColor = SystemColors.ControlLightLight;
             buttonSalvar.Image = (Image)resources.GetObject("buttonSalvar.Image");
             buttonSalvar.ImageAlign = ContentAlignment.TopLeft;
-            buttonSalvar.Location = new Point(515, 270);
+            buttonSalvar.Location = new Point(195, 0);
             buttonSalvar.Margin = new Padding(0, 3, 0, 3);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(85, 27);
@@ -118,6 +121,7 @@
             // 
             // buttonRemover
             // 
+            buttonRemover.Anchor = AnchorStyles.None;
             buttonRemover.FlatAppearance.BorderSize = 0;
             buttonRemover.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonRemover.FlatStyle = FlatStyle.Flat;
@@ -125,7 +129,7 @@
             buttonRemover.ForeColor = SystemColors.ControlLightLight;
             buttonRemover.Image = Properties.Resources.lixeira_16;
             buttonRemover.ImageAlign = ContentAlignment.TopLeft;
-            buttonRemover.Location = new Point(320, 270);
+            buttonRemover.Location = new Point(0, 0);
             buttonRemover.Margin = new Padding(0, 3, 0, 3);
             buttonRemover.Name = "buttonRemover";
             buttonRemover.Size = new Size(91, 27);
@@ -137,6 +141,7 @@
             // 
             // buttonAdicionar
             // 
+            buttonAdicionar.Anchor = AnchorStyles.None;
             buttonAdicionar.FlatAppearance.BorderSize = 0;
             buttonAdicionar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionar.FlatStyle = FlatStyle.Flat;
@@ -144,7 +149,7 @@
             buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(411, 270);
+            buttonAdicionar.Location = new Point(91, 0);
             buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(104, 27);
@@ -154,17 +159,28 @@
             buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonAdicionar.UseVisualStyleBackColor = false;
             // 
+            // panelActions
+            // 
+            panelActions.Controls.Add(buttonRemover);
+            panelActions.Controls.Add(buttonAdicionar);
+            panelActions.Controls.Add(buttonSalvar);
+            panelActions.Location = new Point(320, 270);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(280, 27);
+            panelActions.TabIndex = 93;
+            // 
             // CadastroBaseViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(buttonRemover);
-            Controls.Add(buttonAdicionar);
+            Controls.Add(panelActions);
             Controls.Add(labelTitulo);
-            Controls.Add(buttonSalvar);
             Controls.Add(dataGridView);
             Name = "CadastroBaseViewControl";
+            Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panelActions.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +197,6 @@
         protected Button buttonSalvar;
         protected Button buttonRemover;
         protected Button buttonAdicionar;
+        private Panel panelActions;
     }
 }

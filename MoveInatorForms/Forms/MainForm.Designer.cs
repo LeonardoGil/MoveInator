@@ -32,8 +32,9 @@
             labelSubTitulo = new Label();
             panelView = new Panel();
             panelLateral = new Panel();
-            buttonMotoristas = new Button();
+            panelVersion = new Panel();
             labelVersion = new Label();
+            buttonMotoristas = new Button();
             buttonNovidades = new Button();
             buttonEmpresas = new Button();
             buttonTokens = new Button();
@@ -41,6 +42,7 @@
             buttonInicio = new Button();
             buttonImportacaoCSV = new Button();
             panelLateral.SuspendLayout();
+            panelVersion.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitulo
@@ -73,6 +75,7 @@
             panelView.Dock = DockStyle.Fill;
             panelView.Location = new Point(200, 0);
             panelView.Margin = new Padding(0, 3, 0, 0);
+            panelView.MinimumSize = new Size(600, 600);
             panelView.Name = "panelView";
             panelView.Size = new Size(600, 600);
             panelView.TabIndex = 9;
@@ -80,8 +83,8 @@
             // panelLateral
             // 
             panelLateral.BackColor = Color.FromArgb(17, 17, 17);
+            panelLateral.Controls.Add(panelVersion);
             panelLateral.Controls.Add(buttonMotoristas);
-            panelLateral.Controls.Add(labelVersion);
             panelLateral.Controls.Add(buttonNovidades);
             panelLateral.Controls.Add(buttonEmpresas);
             panelLateral.Controls.Add(buttonTokens);
@@ -96,6 +99,28 @@
             panelLateral.Name = "panelLateral";
             panelLateral.Size = new Size(200, 600);
             panelLateral.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            panelVersion.Controls.Add(labelVersion);
+            panelVersion.Dock = DockStyle.Bottom;
+            panelVersion.Location = new Point(0, 560);
+            panelVersion.Name = "panel1";
+            panelVersion.Size = new Size(200, 40);
+            panelVersion.TabIndex = 16;
+            // 
+            // labelVersion
+            // 
+            labelVersion.AutoSize = true;
+            labelVersion.Cursor = Cursors.Hand;
+            labelVersion.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVersion.ForeColor = Color.Brown;
+            labelVersion.Location = new Point(5, 19);
+            labelVersion.Margin = new Padding(0);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new Size(71, 17);
+            labelVersion.TabIndex = 14;
+            labelVersion.Text = "Version: ";
             // 
             // buttonMotoristas
             // 
@@ -112,19 +137,6 @@
             buttonMotoristas.Text = "Motoristas";
             buttonMotoristas.UseVisualStyleBackColor = true;
             buttonMotoristas.Click += LoadCadastroMotorista_ClickEvent;
-            // 
-            // labelVersion
-            // 
-            labelVersion.AutoSize = true;
-            labelVersion.Cursor = Cursors.Hand;
-            labelVersion.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelVersion.ForeColor = Color.Brown;
-            labelVersion.Location = new Point(3, 578);
-            labelVersion.Margin = new Padding(0);
-            labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(71, 17);
-            labelVersion.TabIndex = 14;
-            labelVersion.Text = "Version: ";
             // 
             // buttonNovidades
             // 
@@ -232,7 +244,7 @@
             Controls.Add(panelLateral);
             Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MinimumSize = new Size(816, 639);
             Name = "MainForm";
             Opacity = 0.97D;
             ShowIcon = false;
@@ -242,6 +254,8 @@
             MouseMove += MoveForm_MouseMoveEvent;
             panelLateral.ResumeLayout(false);
             panelLateral.PerformLayout();
+            panelVersion.ResumeLayout(false);
+            panelVersion.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -258,5 +272,6 @@
         private Button buttonNovidades;
         private Label labelVersion;
         private Button buttonMotoristas;
+        private Panel panelVersion;
     }
 }

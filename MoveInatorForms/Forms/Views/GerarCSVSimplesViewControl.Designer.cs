@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             buttonAdicionar = new Button();
             buttonGerar = new Button();
             buttonLimpar = new Button();
@@ -63,8 +63,10 @@
             textBoxDiretorio = new TextBox();
             labelDiretorio = new Label();
             labelTitulo = new Label();
+            panelActions = new Panel();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panelActions.SuspendLayout();
             SuspendLayout();
             // 
             // buttonAdicionar
@@ -76,8 +78,8 @@
             buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(419, 270);
-            buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
+            buttonAdicionar.Location = new Point(155, 0);
+            buttonAdicionar.Margin = new Padding(0);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(102, 27);
             buttonAdicionar.TabIndex = 29;
@@ -97,8 +99,8 @@
             buttonGerar.ForeColor = SystemColors.ControlLightLight;
             buttonGerar.Image = Properties.Resources.dados_16;
             buttonGerar.ImageAlign = ContentAlignment.TopLeft;
-            buttonGerar.Location = new Point(349, 270);
-            buttonGerar.Margin = new Padding(0, 3, 0, 3);
+            buttonGerar.Location = new Point(85, 0);
+            buttonGerar.Margin = new Padding(0);
             buttonGerar.Name = "buttonGerar";
             buttonGerar.Size = new Size(70, 27);
             buttonGerar.TabIndex = 30;
@@ -118,8 +120,8 @@
             buttonLimpar.ForeColor = SystemColors.ControlLightLight;
             buttonLimpar.Image = Properties.Resources.vassoura_16;
             buttonLimpar.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimpar.Location = new Point(264, 270);
-            buttonLimpar.Margin = new Padding(0, 3, 0, 3);
+            buttonLimpar.Location = new Point(0, 0);
+            buttonLimpar.Margin = new Padding(0);
             buttonLimpar.Name = "buttonLimpar";
             buttonLimpar.Size = new Size(85, 27);
             buttonLimpar.TabIndex = 31;
@@ -383,14 +385,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
@@ -401,16 +403,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -430,8 +432,8 @@
             buttonGerarCSV.ForeColor = SystemColors.ControlLightLight;
             buttonGerarCSV.Image = Properties.Resources.arquivo_csv_16;
             buttonGerarCSV.ImageAlign = ContentAlignment.TopLeft;
-            buttonGerarCSV.Location = new Point(521, 270);
-            buttonGerarCSV.Margin = new Padding(0, 3, 0, 3);
+            buttonGerarCSV.Location = new Point(257, 0);
+            buttonGerarCSV.Margin = new Padding(0);
             buttonGerarCSV.Name = "buttonGerarCSV";
             buttonGerarCSV.Size = new Size(80, 27);
             buttonGerarCSV.TabIndex = 42;
@@ -470,23 +472,32 @@
             labelTitulo.TabIndex = 46;
             labelTitulo.Text = "CSV Simples";
             // 
+            // panelActions
+            // 
+            panelActions.Controls.Add(buttonLimpar);
+            panelActions.Controls.Add(buttonGerarCSV);
+            panelActions.Controls.Add(buttonAdicionar);
+            panelActions.Controls.Add(buttonGerar);
+            panelActions.Location = new Point(264, 270);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(336, 27);
+            panelActions.TabIndex = 47;
+            // 
             // GerarCSVSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panelActions);
             Controls.Add(labelTitulo);
-            Controls.Add(buttonAdicionar);
             Controls.Add(comboBoxMotorista);
-            Controls.Add(buttonGerar);
             Controls.Add(dataGridView);
-            Controls.Add(buttonLimpar);
             Controls.Add(comboBoxEmissor);
             Controls.Add(numericUpDownQuantidade);
             Controls.Add(textBoxDiretorio);
             Controls.Add(textBoxSerieInicial);
             Controls.Add(labelDiretorio);
             Controls.Add(labelSerieInicial);
-            Controls.Add(buttonGerarCSV);
             Controls.Add(textBoxNumeroInicial);
             Controls.Add(labelNumeroInicial);
             Controls.Add(labelQuantidadeDocumentos);
@@ -507,8 +518,10 @@
             Controls.Add(labelNomeMotorista);
             Controls.Add(labelTipoViagem);
             Name = "GerarCSVSimplesViewControl";
+            Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panelActions.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -546,5 +559,6 @@
         private ComboBox comboBoxMotorista;
         private ComboBox comboBoxEmissor;
         private Label labelTitulo;
+        private Panel panelActions;
     }
 }
