@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarMDFeSimplesViewControl));
             comboBoxMotorista = new ComboBox();
             comboBoxEmissor = new ComboBox();
@@ -54,7 +54,9 @@
             buttonGerarMDFe = new Button();
             buttonLimparMDFeCTes = new Button();
             labelTitulo = new Label();
+            panelActions = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panelActions.SuspendLayout();
             SuspendLayout();
             // 
             // comboBoxMotorista
@@ -200,8 +202,8 @@
             buttonAdicionar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(420, 270);
-            buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
+            buttonAdicionar.Location = new Point(180, 0);
+            buttonAdicionar.Margin = new Padding(0);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(102, 27);
             buttonAdicionar.TabIndex = 50;
@@ -219,8 +221,8 @@
             buttonLimpar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimpar.Image = Properties.Resources.vassoura_16;
             buttonLimpar.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimpar.Location = new Point(330, 270);
-            buttonLimpar.Margin = new Padding(0, 3, 0, 3);
+            buttonLimpar.Location = new Point(90, 0);
+            buttonLimpar.Margin = new Padding(0);
             buttonLimpar.Name = "buttonLimpar";
             buttonLimpar.Size = new Size(90, 27);
             buttonLimpar.TabIndex = 52;
@@ -239,14 +241,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle4.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
@@ -257,16 +259,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -303,8 +305,8 @@
             buttonGerarMDFe.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGerarMDFe.Image = (Image)resources.GetObject("buttonGerarMDFe.Image");
             buttonGerarMDFe.ImageAlign = ContentAlignment.TopLeft;
-            buttonGerarMDFe.Location = new Point(520, 270);
-            buttonGerarMDFe.Margin = new Padding(0, 3, 0, 3);
+            buttonGerarMDFe.Location = new Point(280, 0);
+            buttonGerarMDFe.Margin = new Padding(0);
             buttonGerarMDFe.Name = "buttonGerarMDFe";
             buttonGerarMDFe.Size = new Size(80, 27);
             buttonGerarMDFe.TabIndex = 46;
@@ -323,8 +325,8 @@
             buttonLimparMDFeCTes.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimparMDFeCTes.Image = Properties.Resources.lixeira_16;
             buttonLimparMDFeCTes.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimparMDFeCTes.Location = new Point(240, 270);
-            buttonLimparMDFeCTes.Margin = new Padding(0, 3, 0, 3);
+            buttonLimparMDFeCTes.Location = new Point(0, 0);
+            buttonLimparMDFeCTes.Margin = new Padding(0);
             buttonLimparMDFeCTes.Name = "buttonLimparMDFeCTes";
             buttonLimparMDFeCTes.Size = new Size(90, 27);
             buttonLimparMDFeCTes.TabIndex = 47;
@@ -345,10 +347,23 @@
             labelTitulo.TabIndex = 69;
             labelTitulo.Text = "MDFe Simples";
             // 
+            // panelActions
+            // 
+            panelActions.Controls.Add(buttonLimparMDFeCTes);
+            panelActions.Controls.Add(buttonLimpar);
+            panelActions.Controls.Add(buttonAdicionar);
+            panelActions.Controls.Add(buttonGerarMDFe);
+            panelActions.Location = new Point(240, 270);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(360, 27);
+            panelActions.TabIndex = 70;
+            // 
             // GerarMDFeSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panelActions);
             Controls.Add(labelTitulo);
             Controls.Add(comboBoxMotorista);
             Controls.Add(textBoxDiretorio);
@@ -358,14 +373,10 @@
             Controls.Add(labelDiretorio);
             Controls.Add(labelEmissor);
             Controls.Add(textBoxSerieMDFe);
-            Controls.Add(buttonGerarMDFe);
             Controls.Add(labelSerieMDFe);
-            Controls.Add(buttonLimparMDFeCTes);
             Controls.Add(textBoxNumeroMDFe);
-            Controls.Add(buttonAdicionar);
             Controls.Add(labelNumeroMDFe);
             Controls.Add(textBoxSerieCTe);
-            Controls.Add(buttonLimpar);
             Controls.Add(labelSerie);
             Controls.Add(labelDataEmissao);
             Controls.Add(textBoxNumeroCTe);
@@ -373,7 +384,9 @@
             Controls.Add(labelNumero);
             ForeColor = SystemColors.ControlLightLight;
             Name = "GerarMDFeSimplesViewControl";
+            Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panelActions.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -401,5 +414,6 @@
         private ComboBox comboBoxEmissor;
         private Label labelEmissor;
         private Label labelTitulo;
+        private Panel panelActions;
     }
 }
