@@ -65,122 +65,129 @@
             // 
             comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(273, 157);
+            comboBoxMotorista.Location = new Point(234, 120);
+            comboBoxMotorista.Margin = new Padding(3, 2, 3, 2);
             comboBoxMotorista.Name = "comboBoxMotorista";
-            comboBoxMotorista.Size = new Size(191, 25);
+            comboBoxMotorista.Size = new Size(164, 21);
             comboBoxMotorista.TabIndex = 53;
             // 
             // comboBoxEmissor
             // 
             comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmissor.FormattingEnabled = true;
-            comboBoxEmissor.Location = new Point(273, 99);
+            comboBoxEmissor.Location = new Point(234, 76);
+            comboBoxEmissor.Margin = new Padding(3, 2, 3, 2);
             comboBoxEmissor.Name = "comboBoxEmissor";
-            comboBoxEmissor.Size = new Size(191, 25);
+            comboBoxEmissor.Size = new Size(164, 21);
             comboBoxEmissor.TabIndex = 52;
             // 
             // labelMotorista
             // 
             labelMotorista.AutoSize = true;
-            labelMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMotorista.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelMotorista.Location = new Point(273, 135);
+            labelMotorista.Location = new Point(234, 103);
             labelMotorista.Name = "labelMotorista";
-            labelMotorista.Size = new Size(71, 17);
+            labelMotorista.Size = new Size(59, 13);
             labelMotorista.TabIndex = 51;
             labelMotorista.Text = "Motorista";
             // 
             // labelEmissor
             // 
             labelEmissor.AutoSize = true;
-            labelEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmissor.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(273, 76);
+            labelEmissor.Location = new Point(234, 58);
             labelEmissor.Name = "labelEmissor";
-            labelEmissor.Size = new Size(57, 17);
+            labelEmissor.Size = new Size(50, 13);
             labelEmissor.TabIndex = 50;
             labelEmissor.Text = "Emissor";
             // 
             // textBoxSerieMDFe
             // 
-            textBoxSerieMDFe.Location = new Point(140, 98);
+            textBoxSerieMDFe.Location = new Point(120, 75);
+            textBoxSerieMDFe.Margin = new Padding(3, 2, 3, 2);
             textBoxSerieMDFe.MaxLength = 3;
             textBoxSerieMDFe.Name = "textBoxSerieMDFe";
-            textBoxSerieMDFe.Size = new Size(106, 25);
+            textBoxSerieMDFe.Size = new Size(91, 20);
             textBoxSerieMDFe.TabIndex = 68;
             // 
             // labelSerieMDFe
             // 
             labelSerieMDFe.AutoSize = true;
-            labelSerieMDFe.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSerieMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelSerieMDFe.Location = new Point(140, 76);
+            labelSerieMDFe.Location = new Point(120, 58);
             labelSerieMDFe.Name = "labelSerieMDFe";
-            labelSerieMDFe.Size = new Size(78, 17);
+            labelSerieMDFe.Size = new Size(73, 13);
             labelSerieMDFe.TabIndex = 67;
             labelSerieMDFe.Text = "Série MDFe";
             // 
             // textBoxNumeroMDFe
             // 
-            textBoxNumeroMDFe.Location = new Point(10, 98);
+            textBoxNumeroMDFe.Location = new Point(9, 75);
+            textBoxNumeroMDFe.Margin = new Padding(3, 2, 3, 2);
             textBoxNumeroMDFe.Name = "textBoxNumeroMDFe";
-            textBoxNumeroMDFe.Size = new Size(106, 25);
+            textBoxNumeroMDFe.Size = new Size(91, 20);
             textBoxNumeroMDFe.TabIndex = 66;
             // 
             // labelNumeroMDFe
             // 
             labelNumeroMDFe.AutoSize = true;
-            labelNumeroMDFe.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNumeroMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroMDFe.Location = new Point(10, 76);
+            labelNumeroMDFe.Location = new Point(9, 58);
             labelNumeroMDFe.Name = "labelNumeroMDFe";
-            labelNumeroMDFe.Size = new Size(85, 17);
+            labelNumeroMDFe.Size = new Size(87, 13);
             labelNumeroMDFe.TabIndex = 65;
             labelNumeroMDFe.Text = "Numero MDFe";
             // 
             // textBoxSerieCTe
             // 
-            textBoxSerieCTe.Location = new Point(140, 157);
+            textBoxSerieCTe.Location = new Point(120, 120);
+            textBoxSerieCTe.Margin = new Padding(3, 2, 3, 2);
             textBoxSerieCTe.MaxLength = 3;
             textBoxSerieCTe.Name = "textBoxSerieCTe";
-            textBoxSerieCTe.Size = new Size(106, 25);
+            textBoxSerieCTe.Size = new Size(91, 20);
             textBoxSerieCTe.TabIndex = 64;
             // 
             // labelSerie
             // 
             labelSerie.AutoSize = true;
-            labelSerie.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSerie.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerie.ForeColor = SystemColors.ControlLightLight;
-            labelSerie.Location = new Point(140, 135);
+            labelSerie.Location = new Point(120, 103);
             labelSerie.Name = "labelSerie";
-            labelSerie.Size = new Size(71, 17);
+            labelSerie.Size = new Size(63, 13);
             labelSerie.TabIndex = 63;
             labelSerie.Text = "Série CTe";
             // 
             // textBoxNumeroCTe
             // 
-            textBoxNumeroCTe.Location = new Point(10, 157);
+            textBoxNumeroCTe.Location = new Point(9, 120);
+            textBoxNumeroCTe.Margin = new Padding(3, 2, 3, 2);
             textBoxNumeroCTe.Name = "textBoxNumeroCTe";
-            textBoxNumeroCTe.Size = new Size(106, 25);
+            textBoxNumeroCTe.Size = new Size(91, 20);
             textBoxNumeroCTe.TabIndex = 62;
             // 
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNumero.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumero.ForeColor = SystemColors.ControlLightLight;
-            labelNumero.Location = new Point(10, 135);
+            labelNumero.Location = new Point(9, 103);
             labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(78, 17);
+            labelNumero.Size = new Size(77, 13);
             labelNumero.TabIndex = 61;
             labelNumero.Text = "Numero CTe";
             // 
             // maskedTextBoxDataEmissao
             // 
-            maskedTextBoxDataEmissao.Location = new Point(10, 218);
+            maskedTextBoxDataEmissao.Location = new Point(9, 167);
+            maskedTextBoxDataEmissao.Margin = new Padding(3, 2, 3, 2);
             maskedTextBoxDataEmissao.Mask = "00/00/0000";
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
-            maskedTextBoxDataEmissao.Size = new Size(100, 25);
+            maskedTextBoxDataEmissao.Size = new Size(86, 20);
             maskedTextBoxDataEmissao.TabIndex = 54;
             maskedTextBoxDataEmissao.TextAlign = HorizontalAlignment.Center;
             maskedTextBoxDataEmissao.ValidatingType = typeof(DateTime);
@@ -188,11 +195,11 @@
             // labelDataEmissao
             // 
             labelDataEmissao.AutoSize = true;
-            labelDataEmissao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDataEmissao.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(10, 195);
+            labelDataEmissao.Location = new Point(9, 149);
             labelDataEmissao.Name = "labelDataEmissao";
-            labelDataEmissao.Size = new Size(92, 17);
+            labelDataEmissao.Size = new Size(84, 13);
             labelDataEmissao.TabIndex = 53;
             labelDataEmissao.Text = "Data Emissão";
             // 
@@ -201,17 +208,18 @@
             buttonAdicionar.FlatAppearance.BorderSize = 0;
             buttonAdicionar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionar.FlatStyle = FlatStyle.Flat;
-            buttonAdicionar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonAdicionar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(180, 0);
+            buttonAdicionar.Location = new Point(154, 0);
             buttonAdicionar.Margin = new Padding(0);
             buttonAdicionar.Name = "buttonAdicionar";
-            buttonAdicionar.Size = new Size(102, 27);
+            buttonAdicionar.Size = new Size(87, 21);
             buttonAdicionar.TabIndex = 50;
             buttonAdicionar.Text = " Adicionar";
             buttonAdicionar.TextAlign = ContentAlignment.BottomRight;
             buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonAdicionar.UseCompatibleTextRendering = true;
             buttonAdicionar.UseVisualStyleBackColor = false;
             buttonAdicionar.Click += AddMDfeView_ClickEvent;
             // 
@@ -220,17 +228,18 @@
             buttonLimpar.FlatAppearance.BorderSize = 0;
             buttonLimpar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonLimpar.FlatStyle = FlatStyle.Flat;
-            buttonLimpar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimpar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimpar.Image = Properties.Resources.vassoura_16;
             buttonLimpar.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimpar.Location = new Point(90, 0);
+            buttonLimpar.Location = new Point(77, 0);
             buttonLimpar.Margin = new Padding(0);
             buttonLimpar.Name = "buttonLimpar";
-            buttonLimpar.Size = new Size(90, 27);
+            buttonLimpar.Size = new Size(77, 21);
             buttonLimpar.TabIndex = 52;
             buttonLimpar.Text = " Limpar";
             buttonLimpar.TextAlign = ContentAlignment.BottomRight;
             buttonLimpar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLimpar.UseCompatibleTextRendering = true;
             buttonLimpar.UseVisualStyleBackColor = false;
             buttonLimpar.Click += ClearFields_ClickEvent;
             // 
@@ -245,7 +254,7 @@
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
@@ -255,18 +264,18 @@
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
-            dataGridView.Location = new Point(0, 300);
+            dataGridView.Location = new Point(0, 230);
             dataGridView.Margin = new Padding(0);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -276,25 +285,25 @@
             dataGridView.ShowCellErrors = false;
             dataGridView.ShowCellToolTips = false;
             dataGridView.ShowRowErrors = false;
-            dataGridView.Size = new Size(600, 300);
+            dataGridView.Size = new Size(514, 229);
             dataGridView.TabIndex = 34;
             // 
             // textBoxDiretorio
             // 
-            textBoxDiretorio.Location = new Point(140, 218);
+            textBoxDiretorio.Location = new Point(120, 167);
             textBoxDiretorio.Margin = new Padding(0);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(324, 25);
+            textBoxDiretorio.Size = new Size(278, 20);
             textBoxDiretorio.TabIndex = 48;
             // 
             // labelDiretorio
             // 
             labelDiretorio.AutoSize = true;
-            labelDiretorio.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDiretorio.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDiretorio.ForeColor = SystemColors.ControlLightLight;
-            labelDiretorio.Location = new Point(140, 195);
+            labelDiretorio.Location = new Point(120, 149);
             labelDiretorio.Name = "labelDiretorio";
-            labelDiretorio.Size = new Size(71, 17);
+            labelDiretorio.Size = new Size(55, 13);
             labelDiretorio.TabIndex = 49;
             labelDiretorio.Text = "Diretório";
             // 
@@ -304,17 +313,18 @@
             buttonGerarMDFe.FlatAppearance.BorderSize = 0;
             buttonGerarMDFe.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonGerarMDFe.FlatStyle = FlatStyle.Flat;
-            buttonGerarMDFe.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonGerarMDFe.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGerarMDFe.Image = (Image)resources.GetObject("buttonGerarMDFe.Image");
             buttonGerarMDFe.ImageAlign = ContentAlignment.TopLeft;
-            buttonGerarMDFe.Location = new Point(280, 0);
+            buttonGerarMDFe.Location = new Point(240, 0);
             buttonGerarMDFe.Margin = new Padding(0);
             buttonGerarMDFe.Name = "buttonGerarMDFe";
-            buttonGerarMDFe.Size = new Size(80, 27);
+            buttonGerarMDFe.Size = new Size(69, 21);
             buttonGerarMDFe.TabIndex = 46;
             buttonGerarMDFe.Text = " Gerar";
             buttonGerarMDFe.TextAlign = ContentAlignment.BottomRight;
             buttonGerarMDFe.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonGerarMDFe.UseCompatibleTextRendering = true;
             buttonGerarMDFe.UseVisualStyleBackColor = false;
             buttonGerarMDFe.Click += GenerateMDFe_ClickEvent;
             // 
@@ -324,28 +334,29 @@
             buttonLimparMDFeCTes.FlatAppearance.BorderSize = 0;
             buttonLimparMDFeCTes.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonLimparMDFeCTes.FlatStyle = FlatStyle.Flat;
-            buttonLimparMDFeCTes.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimparMDFeCTes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimparMDFeCTes.Image = Properties.Resources.lixeira_16;
             buttonLimparMDFeCTes.ImageAlign = ContentAlignment.TopLeft;
             buttonLimparMDFeCTes.Location = new Point(0, 0);
             buttonLimparMDFeCTes.Margin = new Padding(0);
             buttonLimparMDFeCTes.Name = "buttonLimparMDFeCTes";
-            buttonLimparMDFeCTes.Size = new Size(90, 27);
+            buttonLimparMDFeCTes.Size = new Size(77, 21);
             buttonLimparMDFeCTes.TabIndex = 47;
             buttonLimparMDFeCTes.Text = " Excluir";
             buttonLimparMDFeCTes.TextAlign = ContentAlignment.BottomRight;
             buttonLimparMDFeCTes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLimparMDFeCTes.UseCompatibleTextRendering = true;
             buttonLimparMDFeCTes.UseVisualStyleBackColor = false;
             buttonLimparMDFeCTes.Click += ClearMDFeCTesGrid_ClickEvent;
             // 
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("MesloLGL NF", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelTitulo.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.DarkGray;
-            labelTitulo.Location = new Point(10, 20);
+            labelTitulo.Location = new Point(9, 15);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(171, 33);
+            labelTitulo.Size = new Size(164, 25);
             labelTitulo.TabIndex = 69;
             labelTitulo.Text = "MDFe Simples";
             // 
@@ -355,10 +366,10 @@
             panelActions.Controls.Add(buttonLimpar);
             panelActions.Controls.Add(buttonAdicionar);
             panelActions.Controls.Add(buttonGerarMDFe);
-            panelActions.Location = new Point(240, 270);
-            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Location = new Point(206, 206);
+            panelActions.Margin = new Padding(0, 2, 0, 2);
             panelActions.Name = "panelActions";
-            panelActions.Size = new Size(360, 27);
+            panelActions.Size = new Size(309, 21);
             panelActions.TabIndex = 70;
             // 
             // buttonFolder
@@ -366,13 +377,13 @@
             buttonFolder.FlatAppearance.BorderSize = 0;
             buttonFolder.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonFolder.FlatStyle = FlatStyle.Flat;
-            buttonFolder.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonFolder.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonFolder.ForeColor = SystemColors.ControlLightLight;
             buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
-            buttonFolder.Location = new Point(464, 217);
-            buttonFolder.Margin = new Padding(0, 0, 10, 0);
+            buttonFolder.Location = new Point(398, 166);
+            buttonFolder.Margin = new Padding(0, 0, 9, 0);
             buttonFolder.Name = "buttonFolder";
-            buttonFolder.Size = new Size(30, 25);
+            buttonFolder.Size = new Size(26, 19);
             buttonFolder.TabIndex = 71;
             buttonFolder.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonFolder.UseVisualStyleBackColor = false;
@@ -384,7 +395,7 @@
             // 
             // GerarMDFeSimplesViewControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(buttonFolder);
             Controls.Add(panelActions);
@@ -407,7 +418,9 @@
             Controls.Add(maskedTextBoxDataEmissao);
             Controls.Add(labelNumero);
             ForeColor = SystemColors.ControlLightLight;
+            MinimumSize = new Size(514, 459);
             Name = "GerarMDFeSimplesViewControl";
+            Size = new Size(514, 459);
             Resize += View_ResizeEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelActions.ResumeLayout(false);
