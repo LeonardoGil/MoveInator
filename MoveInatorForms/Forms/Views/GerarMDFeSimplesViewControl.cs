@@ -220,6 +220,7 @@ namespace MoveInatorForms.Forms.Views
 
             textBoxNumeroCTe.Text = string.Empty;
             textBoxSerieCTe.Text = string.Empty;
+            checkedListBoxTipoDocumento.ResetCheckedList();
 
             if (anyMDFeCTe)
                 return;
@@ -248,5 +249,13 @@ namespace MoveInatorForms.Forms.Views
         }
 
         #endregion
+
+        private void ResetCheckedListDocumento_ItemCheckEvent(object sender, ItemCheckEventArgs e)
+        {
+            if (sender is CheckedListBox checkedListBox)
+            {
+                checkedListBox.ResetCheckedList(e.Index);
+            }
+        }
     }
 }

@@ -57,6 +57,8 @@
             panelActions = new Panel();
             buttonFolder = new Button();
             folderBrowserDialog = new FolderBrowserDialog();
+            checkedListBoxTipoDocumento = new CheckedListBox();
+            labelTipoDocumento = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelActions.SuspendLayout();
             SuspendLayout();
@@ -75,7 +77,7 @@
             // 
             comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmissor.FormattingEnabled = true;
-            comboBoxEmissor.Location = new Point(234, 76);
+            comboBoxEmissor.Location = new Point(345, 68);
             comboBoxEmissor.Margin = new Padding(3, 2, 3, 2);
             comboBoxEmissor.Name = "comboBoxEmissor";
             comboBoxEmissor.Size = new Size(164, 21);
@@ -97,7 +99,7 @@
             labelEmissor.AutoSize = true;
             labelEmissor.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(234, 58);
+            labelEmissor.Location = new Point(345, 50);
             labelEmissor.Name = "labelEmissor";
             labelEmissor.Size = new Size(50, 13);
             labelEmissor.TabIndex = 50;
@@ -105,7 +107,7 @@
             // 
             // textBoxSerieMDFe
             // 
-            textBoxSerieMDFe.Location = new Point(120, 75);
+            textBoxSerieMDFe.Location = new Point(231, 67);
             textBoxSerieMDFe.Margin = new Padding(3, 2, 3, 2);
             textBoxSerieMDFe.MaxLength = 3;
             textBoxSerieMDFe.Name = "textBoxSerieMDFe";
@@ -117,7 +119,7 @@
             labelSerieMDFe.AutoSize = true;
             labelSerieMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelSerieMDFe.Location = new Point(120, 58);
+            labelSerieMDFe.Location = new Point(231, 50);
             labelSerieMDFe.Name = "labelSerieMDFe";
             labelSerieMDFe.Size = new Size(73, 13);
             labelSerieMDFe.TabIndex = 67;
@@ -125,7 +127,7 @@
             // 
             // textBoxNumeroMDFe
             // 
-            textBoxNumeroMDFe.Location = new Point(9, 75);
+            textBoxNumeroMDFe.Location = new Point(120, 67);
             textBoxNumeroMDFe.Margin = new Padding(3, 2, 3, 2);
             textBoxNumeroMDFe.Name = "textBoxNumeroMDFe";
             textBoxNumeroMDFe.Size = new Size(91, 20);
@@ -136,7 +138,7 @@
             labelNumeroMDFe.AutoSize = true;
             labelNumeroMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroMDFe.Location = new Point(9, 58);
+            labelNumeroMDFe.Location = new Point(120, 50);
             labelNumeroMDFe.Name = "labelNumeroMDFe";
             labelNumeroMDFe.Size = new Size(87, 13);
             labelNumeroMDFe.TabIndex = 65;
@@ -393,10 +395,38 @@
             // 
             folderBrowserDialog.SelectedPath = "C:\\Temp";
             // 
+            // checkedListBoxTipoDocumento
+            // 
+            checkedListBoxTipoDocumento.BackColor = Color.FromArgb(31, 31, 31);
+            checkedListBoxTipoDocumento.BorderStyle = BorderStyle.None;
+            checkedListBoxTipoDocumento.CheckOnClick = true;
+            checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
+            checkedListBoxTipoDocumento.FormattingEnabled = true;
+            checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
+            checkedListBoxTipoDocumento.Location = new Point(9, 67);
+            checkedListBoxTipoDocumento.Margin = new Padding(3, 2, 3, 2);
+            checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
+            checkedListBoxTipoDocumento.Size = new Size(83, 30);
+            checkedListBoxTipoDocumento.TabIndex = 73;
+            checkedListBoxTipoDocumento.ItemCheck += ResetCheckedListDocumento_ItemCheckEvent;
+            // 
+            // labelTipoDocumento
+            // 
+            labelTipoDocumento.AutoSize = true;
+            labelTipoDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTipoDocumento.ForeColor = SystemColors.ControlLightLight;
+            labelTipoDocumento.Location = new Point(9, 50);
+            labelTipoDocumento.Name = "labelTipoDocumento";
+            labelTipoDocumento.Size = new Size(100, 13);
+            labelTipoDocumento.TabIndex = 72;
+            labelTipoDocumento.Text = "Tipo Documento";
+            // 
             // GerarMDFeSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(checkedListBoxTipoDocumento);
+            Controls.Add(labelTipoDocumento);
             Controls.Add(buttonFolder);
             Controls.Add(panelActions);
             Controls.Add(labelTitulo);
@@ -454,5 +484,7 @@
         private Panel panelActions;
         private Button buttonFolder;
         private FolderBrowserDialog folderBrowserDialog;
+        private CheckedListBox checkedListBoxTipoDocumento;
+        private Label labelTipoDocumento;
     }
 }
