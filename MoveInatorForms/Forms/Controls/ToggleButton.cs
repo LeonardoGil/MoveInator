@@ -10,9 +10,11 @@ namespace MoveInatorForms.Forms.Controls
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
         
-        public override string Text { get => base.Text; set { } }
-        
-        [Category("Toggle")]
+        public override string Text { get => string.Empty; set { } }
+
+        public override bool AutoSize { get => false; set { } }
+
+        [Category(nameof(ToggleButton))]
         public Color OnBackColor
         {
             get => onBackColor;
@@ -23,7 +25,7 @@ namespace MoveInatorForms.Forms.Controls
             }
         }
 
-        [Category("Toggle")]
+        [Category(nameof(ToggleButton))]
         public Color OnToggleColor
         {
             get => onToggleColor;
@@ -34,7 +36,7 @@ namespace MoveInatorForms.Forms.Controls
             }
         }
 
-        [Category("Toggle")]
+        [Category(nameof(ToggleButton))]
         public Color OffBackColor 
         { 
             get => offBackColor;
@@ -45,7 +47,7 @@ namespace MoveInatorForms.Forms.Controls
             }
         }
         
-        [Category("Toggle")]
+        [Category(nameof(ToggleButton))]
         public Color OffToggleColor 
         { 
             get => offToggleColor; 
