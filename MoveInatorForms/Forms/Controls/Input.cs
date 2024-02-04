@@ -9,21 +9,26 @@ namespace MoveInatorForms.Forms.Controls
 
         private readonly Font defaultFont;
 
-        public override Color BackColor { get => Parent?.BackColor ?? Color.White; set => base.BackColor = value; }
-
-        public override Color ForeColor { get => Parent?.ForeColor ?? Color.Black; set => base.ForeColor = value; }
-
         [Category(nameof(Input))]
         public float Weight 
         { 
-            get => weight; 
-            set => weight = value; 
+            get => weight;
+            set
+            {
+                weight = value;
+                Invalidate();
+            }
         }
 
         public Input()
         {
-            defaultFont = Font;
+            BackColor = Color.FromArgb(31, 31, 31);
+            ForeColor = Color.Gray;
+
+            Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             BorderStyle = BorderStyle.FixedSingle;
+            
+            defaultFont = Font;
         }
 
         public void ResizeFont(float percentage)
