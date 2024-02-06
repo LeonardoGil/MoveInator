@@ -126,7 +126,7 @@ namespace MoveInatorForms.Services
                         ctes += "</infCTe>";
                         ctes += Environment.NewLine;
                     }
-                    template = template.Replace("[QuantidadeDocumentos]", mdfe.QuantidadeCTes.ToString())
+                    template = template.Replace("[QuantidadeDocumentos]", $"<qCTe>{mdfe.QuantidadeCTes}</qCTe>")
                                .Replace("[Documentos]", ctes);
                     break;
                 case TipoDocumentoEnum.NFe:
@@ -142,7 +142,7 @@ namespace MoveInatorForms.Services
                         nfes += "</infNFe>";
                         nfes += Environment.NewLine;
                     }
-                    template = template.Replace("[QuantidadeDocumentos]", mdfe.QuantidadeNFes.ToString())
+                    template = template.Replace("[QuantidadeDocumentos]", $"<qNFe>{mdfe.QuantidadeNFes}</qNFe>")
                                .Replace("[Documentos]", nfes);
                     break;
 
