@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarMDFeSimplesViewControl));
             comboBoxMotorista = new ComboBox();
             comboBoxEmissor = new ComboBox();
@@ -40,10 +40,10 @@
             labelSerieMDFe = new Label();
             textBoxNumeroMDFe = new TextBox();
             labelNumeroMDFe = new Label();
-            textBoxSerieCTe = new TextBox();
-            labelSerie = new Label();
-            textBoxNumeroCTe = new TextBox();
-            labelNumero = new Label();
+            textBoxSerieDocumento = new TextBox();
+            labelSerieDocumento = new Label();
+            textBoxNumeroDocumento = new TextBox();
+            labelNumeroDocumento = new Label();
             maskedTextBoxDataEmissao = new MaskedTextBox();
             labelDataEmissao = new Label();
             buttonAdicionar = new Button();
@@ -52,7 +52,7 @@
             textBoxDiretorio = new TextBox();
             labelDiretorio = new Label();
             buttonGerarMDFe = new Button();
-            buttonLimparMDFeCTes = new Button();
+            buttonLimparMDFe = new Button();
             labelTitulo = new Label();
             panelActions = new Panel();
             buttonFolder = new Button();
@@ -144,44 +144,44 @@
             labelNumeroMDFe.TabIndex = 65;
             labelNumeroMDFe.Text = "Numero MDFe";
             // 
-            // textBoxSerieCTe
+            // textBoxSerieDocumento
             // 
-            textBoxSerieCTe.Location = new Point(120, 120);
-            textBoxSerieCTe.Margin = new Padding(3, 2, 3, 2);
-            textBoxSerieCTe.MaxLength = 3;
-            textBoxSerieCTe.Name = "textBoxSerieCTe";
-            textBoxSerieCTe.Size = new Size(91, 20);
-            textBoxSerieCTe.TabIndex = 64;
+            textBoxSerieDocumento.Location = new Point(120, 120);
+            textBoxSerieDocumento.Margin = new Padding(3, 2, 3, 2);
+            textBoxSerieDocumento.MaxLength = 3;
+            textBoxSerieDocumento.Name = "textBoxSerieDocumento";
+            textBoxSerieDocumento.Size = new Size(91, 20);
+            textBoxSerieDocumento.TabIndex = 64;
             // 
-            // labelSerie
+            // labelSerieDocumento
             // 
-            labelSerie.AutoSize = true;
-            labelSerie.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSerie.ForeColor = SystemColors.ControlLightLight;
-            labelSerie.Location = new Point(120, 103);
-            labelSerie.Name = "labelSerie";
-            labelSerie.Size = new Size(63, 13);
-            labelSerie.TabIndex = 63;
-            labelSerie.Text = "Série CTe";
+            labelSerieDocumento.AutoSize = true;
+            labelSerieDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSerieDocumento.ForeColor = SystemColors.ControlLightLight;
+            labelSerieDocumento.Location = new Point(120, 103);
+            labelSerieDocumento.Name = "labelSerieDocumento";
+            labelSerieDocumento.Size = new Size(36, 13);
+            labelSerieDocumento.TabIndex = 63;
+            labelSerieDocumento.Text = "Série";
             // 
-            // textBoxNumeroCTe
+            // textBoxNumeroDocumento
             // 
-            textBoxNumeroCTe.Location = new Point(9, 120);
-            textBoxNumeroCTe.Margin = new Padding(3, 2, 3, 2);
-            textBoxNumeroCTe.Name = "textBoxNumeroCTe";
-            textBoxNumeroCTe.Size = new Size(91, 20);
-            textBoxNumeroCTe.TabIndex = 62;
+            textBoxNumeroDocumento.Location = new Point(9, 120);
+            textBoxNumeroDocumento.Margin = new Padding(3, 2, 3, 2);
+            textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
+            textBoxNumeroDocumento.Size = new Size(91, 20);
+            textBoxNumeroDocumento.TabIndex = 62;
             // 
-            // labelNumero
+            // labelNumeroDocumento
             // 
-            labelNumero.AutoSize = true;
-            labelNumero.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNumero.ForeColor = SystemColors.ControlLightLight;
-            labelNumero.Location = new Point(9, 103);
-            labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(77, 13);
-            labelNumero.TabIndex = 61;
-            labelNumero.Text = "Numero CTe";
+            labelNumeroDocumento.AutoSize = true;
+            labelNumeroDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNumeroDocumento.ForeColor = SystemColors.ControlLightLight;
+            labelNumeroDocumento.Location = new Point(9, 103);
+            labelNumeroDocumento.Name = "labelNumeroDocumento";
+            labelNumeroDocumento.Size = new Size(50, 13);
+            labelNumeroDocumento.TabIndex = 61;
+            labelNumeroDocumento.Text = "Numero";
             // 
             // maskedTextBoxDataEmissao
             // 
@@ -254,14 +254,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
@@ -272,16 +272,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -332,24 +332,24 @@
             // 
             // buttonLimparMDFeCTes
             // 
-            buttonLimparMDFeCTes.Enabled = false;
-            buttonLimparMDFeCTes.FlatAppearance.BorderSize = 0;
-            buttonLimparMDFeCTes.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            buttonLimparMDFeCTes.FlatStyle = FlatStyle.Flat;
-            buttonLimparMDFeCTes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonLimparMDFeCTes.Image = Properties.Resources.lixeira_16;
-            buttonLimparMDFeCTes.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimparMDFeCTes.Location = new Point(0, 0);
-            buttonLimparMDFeCTes.Margin = new Padding(0);
-            buttonLimparMDFeCTes.Name = "buttonLimparMDFeCTes";
-            buttonLimparMDFeCTes.Size = new Size(77, 21);
-            buttonLimparMDFeCTes.TabIndex = 47;
-            buttonLimparMDFeCTes.Text = " Excluir";
-            buttonLimparMDFeCTes.TextAlign = ContentAlignment.BottomRight;
-            buttonLimparMDFeCTes.TextImageRelation = TextImageRelation.ImageBeforeText;
-            buttonLimparMDFeCTes.UseCompatibleTextRendering = true;
-            buttonLimparMDFeCTes.UseVisualStyleBackColor = false;
-            buttonLimparMDFeCTes.Click += ClearMDFeCTesGrid_ClickEvent;
+            buttonLimparMDFe.Enabled = false;
+            buttonLimparMDFe.FlatAppearance.BorderSize = 0;
+            buttonLimparMDFe.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonLimparMDFe.FlatStyle = FlatStyle.Flat;
+            buttonLimparMDFe.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimparMDFe.Image = Properties.Resources.lixeira_16;
+            buttonLimparMDFe.ImageAlign = ContentAlignment.TopLeft;
+            buttonLimparMDFe.Location = new Point(0, 0);
+            buttonLimparMDFe.Margin = new Padding(0);
+            buttonLimparMDFe.Name = "buttonLimparMDFeCTes";
+            buttonLimparMDFe.Size = new Size(77, 21);
+            buttonLimparMDFe.TabIndex = 47;
+            buttonLimparMDFe.Text = " Excluir";
+            buttonLimparMDFe.TextAlign = ContentAlignment.BottomRight;
+            buttonLimparMDFe.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLimparMDFe.UseCompatibleTextRendering = true;
+            buttonLimparMDFe.UseVisualStyleBackColor = false;
+            buttonLimparMDFe.Click += ClearMDFeGrid_ClickEvent;
             // 
             // labelTitulo
             // 
@@ -364,7 +364,7 @@
             // 
             // panelActions
             // 
-            panelActions.Controls.Add(buttonLimparMDFeCTes);
+            panelActions.Controls.Add(buttonLimparMDFe);
             panelActions.Controls.Add(buttonLimpar);
             panelActions.Controls.Add(buttonAdicionar);
             panelActions.Controls.Add(buttonGerarMDFe);
@@ -441,12 +441,12 @@
             Controls.Add(labelSerieMDFe);
             Controls.Add(textBoxNumeroMDFe);
             Controls.Add(labelNumeroMDFe);
-            Controls.Add(textBoxSerieCTe);
-            Controls.Add(labelSerie);
+            Controls.Add(textBoxSerieDocumento);
+            Controls.Add(labelSerieDocumento);
             Controls.Add(labelDataEmissao);
-            Controls.Add(textBoxNumeroCTe);
+            Controls.Add(textBoxNumeroDocumento);
             Controls.Add(maskedTextBoxDataEmissao);
-            Controls.Add(labelNumero);
+            Controls.Add(labelNumeroDocumento);
             ForeColor = SystemColors.ControlLightLight;
             MinimumSize = new Size(514, 459);
             Name = "GerarMDFeSimplesViewControl";
@@ -463,16 +463,16 @@
         private TextBox textBoxDiretorio;
         private Label labelDiretorio;
         private Button buttonGerarMDFe;
-        private Button buttonLimparMDFeCTes;
+        private Button buttonLimparMDFe;
         private Button buttonAdicionar;
         private Button buttonLimpar;
         private MaskedTextBox maskedTextBoxDataEmissao;
         private Label labelDataEmissao;
         private Label labelMotorista;
-        private TextBox textBoxSerieCTe;
-        private Label labelSerie;
-        private TextBox textBoxNumeroCTe;
-        private Label labelNumero;
+        private TextBox textBoxSerieDocumento;
+        private Label labelSerieDocumento;
+        private TextBox textBoxNumeroDocumento;
+        private Label labelNumeroDocumento;
         private TextBox textBoxSerieMDFe;
         private Label labelSerieMDFe;
         private TextBox textBoxNumeroMDFe;

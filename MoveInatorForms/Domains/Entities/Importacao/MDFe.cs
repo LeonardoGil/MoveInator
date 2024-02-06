@@ -1,4 +1,5 @@
-﻿using UtilityLib.Domains.Entities.DocumentosFiscais;
+﻿using MoveInatorForms.Domains.Enums;
+using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorForms.Domains.Entities.Importacao
 {
@@ -18,6 +19,12 @@ namespace MoveInatorForms.Domains.Entities.Importacao
 
         public int QuantidadeCTes { get => CTes.Count; }
 
+        public int QuantidadeNFes { get => NFes.Count; }
+
+        public TipoDocumentoEnum TipoDocumento { get; set; }
+
         public List<CTe> CTes { get; set; } = new List<CTe>();
+
+        public List<NFe> NFes { get; set; } = new List<NFe>();
     }
 }
