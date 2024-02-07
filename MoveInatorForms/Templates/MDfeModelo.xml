@@ -64,7 +64,7 @@
 				<infMunDescarga>
 					<cMunDescarga>3507605</cMunDescarga>
 					<xMunDescarga>Municipio de MoveInator</xMunDescarga>
-					[CTes]
+					[Documentos]
 				</infMunDescarga>
 			</infDoc>
 			<seg>
@@ -94,7 +94,7 @@
 				</infLotacao>
 			</prodPred>
 			<tot>
-				<qCTe>[QuantidadeCTes]</qCTe>
+				[QuantidadeDocumentos]
 				<vCarga>500100.55</vCarga>
 				<cUnid>01</cUnid>
 				<qCarga>38000.0000</qCarga>

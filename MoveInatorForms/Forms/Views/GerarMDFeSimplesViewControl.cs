@@ -1,4 +1,5 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
+using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
 using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
@@ -13,13 +14,13 @@ namespace MoveInatorForms.Forms.Views
     {
         private readonly IMDFeService MDFeService;
 
-        public BindingSource MDFeCTesViewBindingSource { get; set; } = new BindingSource() { DataSource = new List<MDFeCTeViewModel>() };
+        public BindingSource MDFeViewBindingSource { get; set; } = new BindingSource() { DataSource = new List<MDFeViewModel>() };
 
         public BindingSource EmpresasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Empresas };
 
         public BindingSource MotoristasBindingSource { get; set; } = new() { DataSource = Program.DatabaseJson.Motoristas };
 
-        public List<MDFeCTeViewModel> MDFeCTes => MDFeCTesViewBindingSource.OfType<MDFeCTeViewModel>().ToList();
+        public List<MDFeViewModel> DocumentosMDFe => MDFeViewBindingSource.OfType<MDFeViewModel>().ToList();
 
         public List<Empresa> Empresas => EmpresasBindingSource.OfType<Empresa>().ToList();
 
@@ -49,7 +50,7 @@ namespace MoveInatorForms.Forms.Views
                     throw new Exception("Cadastre um Motorista na aba Cadastros!");
 
                 EnableButtons();
-                buttonGerarMDFe.Enabled = MDFeCTes.Any();
+                buttonGerarMDFe.Enabled = DocumentosMDFe.Any();
             }
             catch (Exception ex)
             {
@@ -62,13 +63,13 @@ namespace MoveInatorForms.Forms.Views
         {
             textBoxNumeroMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
             textBoxSerieMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
-            textBoxNumeroCTe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
+            textBoxNumeroDocumento.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
             textBoxNumeroMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
             maskedTextBoxDataEmissao.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
 
-            MDFeCTesViewBindingSource.ListChanged += ListMDFeCTesViewModel_ChangedEvent;
+            MDFeViewBindingSource.ListChanged += ListMDFeViewModel_ChangedEvent;
 
-            dataGridView.DataSource = MDFeCTesViewBindingSource;
+            dataGridView.DataSource = MDFeViewBindingSource;
 
             Reload();
 
@@ -76,22 +77,22 @@ namespace MoveInatorForms.Forms.Views
             textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
 
-        private async Task AddMDFeCTeViewModelGridAsync()
+        private async Task AddMDFeViewModelGridAsync()
         {
-            var model = BuildMDFeCTeViewModel();
+            var model = BuildMDFeViewModel();
 
-            MDFeCTesViewBindingSource.Add(model);
+            MDFeViewBindingSource.Add(model);
         }
 
-        private MDFeCTeViewModel BuildMDFeCTeViewModel()
+        private MDFeViewModel BuildMDFeViewModel()
         {
-            return new MDFeCTeViewModel
+            return new MDFeViewModel
             {
-                NumeroMDFe = int.Parse(textBoxNumeroMDFe.Text),
-                SerieMDFe = int.Parse(textBoxSerieMDFe.Text),
+                Numero = int.Parse(textBoxNumeroMDFe.Text),
+                Serie = int.Parse(textBoxSerieMDFe.Text),
 
-                NumeroCTe = int.Parse(textBoxNumeroCTe.Text),
-                SerieCTe = int.Parse(textBoxSerieCTe.Text),
+                NumeroDocumento = int.Parse(textBoxNumeroDocumento.Text),
+                SerieDocumento = int.Parse(textBoxSerieDocumento.Text),
 
                 Emissor = (comboBoxEmissor.SelectedItem as Empresa).RazaoSocial,
                 CnpjEmissor = (comboBoxEmissor.SelectedItem as Empresa).Cnpj,
@@ -119,26 +120,26 @@ namespace MoveInatorForms.Forms.Views
             buttonLimpar.Enabled = enabled;
         }
 
-        private void ValidateMDFeCTeViewModel()
+        private void ValidateMDFeViewModel()
         {
             textBoxNumeroMDFe.ValidateNumber("Informe um Numero MDFe!");
             textBoxSerieMDFe.ValidateNumber("Informe uma Série MDFe!");
 
-            textBoxNumeroCTe.ValidateNumber("Informe um Numero CTe!");
-            textBoxSerieCTe.ValidateNumber("Informe uma Série CTe!");
+            textBoxNumeroDocumento.ValidateNumber("Informe o Numero do documento!");
+            textBoxSerieDocumento.ValidateNumber("Informe a Série do documento!");
 
             maskedTextBoxDataEmissao.ValidateOnlyDate("Informe uma Data Emissão valída!");
 
             // Lista de CTes
-            var ctes = (List<MDFeCTeViewModel>)MDFeCTesViewBindingSource.DataSource;
+            var ctes = (List<MDFeViewModel>)MDFeViewBindingSource.DataSource;
 
-            if (ctes.Any(x => x.NumeroCTe == int.Parse(textBoxNumeroCTe.Text) &&
-                              x.SerieCTe == int.Parse(textBoxSerieCTe.Text))) throw new Exception("Já possuí um CTe com esse Numero e Serie");
+            if (ctes.Any(x => x.NumeroDocumento == int.Parse(textBoxNumeroDocumento.Text) &&
+                              x.SerieDocumento == int.Parse(textBoxSerieDocumento.Text))) throw new Exception("Já possuí um documento com esse Numero e Serie");
         }
 
         private async void PrepareFieldForNextCTeAsync()
         {
-            textBoxNumeroCTe.Text = (int.Parse(textBoxNumeroCTe.Text) + 1).ToString();
+            textBoxNumeroDocumento.Text = (int.Parse(textBoxNumeroDocumento.Text) + 1).ToString();
         }
 
         #region Events
@@ -147,9 +148,9 @@ namespace MoveInatorForms.Forms.Views
         {
             try
             {
-                ValidateMDFeCTeViewModel();
+                ValidateMDFeViewModel();
 
-                var addTask = AddMDFeCTeViewModelGridAsync();
+                var addTask = AddMDFeViewModelGridAsync();
 
                 PrepareFieldForNextCTeAsync();
 
@@ -164,16 +165,16 @@ namespace MoveInatorForms.Forms.Views
             finally
             {
                 EnableButtons();
-                buttonGerarMDFe.Enabled = MDFeCTes.Any();
+                buttonGerarMDFe.Enabled = DocumentosMDFe.Any();
             }
         }
 
-        private void ListMDFeCTesViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
+        private void ListMDFeViewModel_ChangedEvent(object sender, ListChangedEventArgs e)
         {
-            var enabled = MDFeCTes.Any();
+            var enabled = DocumentosMDFe.Any();
 
             buttonGerarMDFe.Enabled = enabled;
-            buttonLimparMDFeCTes.Enabled = enabled;
+            buttonLimparMDFe.Enabled = enabled;
 
             EnableFields(!enabled);
         }
@@ -189,9 +190,11 @@ namespace MoveInatorForms.Forms.Views
 
                 buttonGerarMDFe.Enabled = false;
 
-                var filePath = MDFeService.GenerateAsync(textBoxDiretorio.Text, MDFeCTes).Result;
+                var tipoDocumento = (TipoDocumentoEnum)checkedListBoxTipoDocumento.CheckedIndices.OfType<int>().First();
 
-                MDFeCTesViewBindingSource.Clear();
+                var filePath = MDFeService.GenerateAsync(textBoxDiretorio.Text, DocumentosMDFe, tipoDocumento).Result;
+
+                MDFeViewBindingSource.Clear();
 
                 MessageBox.Show($"Documentos Gerados no diretório:{Environment.NewLine}{filePath}");
             }
@@ -202,26 +205,27 @@ namespace MoveInatorForms.Forms.Views
             finally
             {
                 EnableButtons();
-                buttonGerarMDFe.Enabled = MDFeCTes.Any();
+                buttonGerarMDFe.Enabled = DocumentosMDFe.Any();
             }
         }
 
-        private void ClearMDFeCTesGrid_ClickEvent(object sender, EventArgs e)
+        private void ClearMDFeGrid_ClickEvent(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Deseja excluír os MDFeCTes?", "Excluír MDFeCTes", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            var result = MessageBox.Show("Deseja excluír os Documentos?", "Excluír Documentos", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Yes)
-                MDFeCTesViewBindingSource.Clear();
+                MDFeViewBindingSource.Clear();
         }
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
         {
-            var anyMDFeCTe = MDFeCTes.Any();
+            var anyMDFe = DocumentosMDFe.Any();
 
-            textBoxNumeroCTe.Text = string.Empty;
-            textBoxSerieCTe.Text = string.Empty;
+            textBoxNumeroDocumento.Text = string.Empty;
+            textBoxSerieDocumento.Text = string.Empty;
+            checkedListBoxTipoDocumento.ResetCheckedList();
 
-            if (anyMDFeCTe)
+            if (anyMDFe)
                 return;
 
             textBoxNumeroMDFe.Text = string.Empty;
@@ -247,6 +251,14 @@ namespace MoveInatorForms.Forms.Views
                 textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
 
+        private void ResetCheckedListDocumento_ItemCheckEvent(object sender, ItemCheckEventArgs e)
+        {
+            if (sender is CheckedListBox checkedListBox)
+            {
+                checkedListBox.ResetCheckedList(e.Index);
+            }
+        }
         #endregion
+
     }
 }
