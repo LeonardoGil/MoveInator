@@ -330,7 +330,7 @@
             buttonGerarMDFe.UseVisualStyleBackColor = false;
             buttonGerarMDFe.Click += GenerateMDFe_ClickEvent;
             // 
-            // buttonLimparMDFeCTes
+            // buttonLimparMDFes
             // 
             buttonLimparMDFe.Enabled = false;
             buttonLimparMDFe.FlatAppearance.BorderSize = 0;
@@ -341,7 +341,7 @@
             buttonLimparMDFe.ImageAlign = ContentAlignment.TopLeft;
             buttonLimparMDFe.Location = new Point(0, 0);
             buttonLimparMDFe.Margin = new Padding(0);
-            buttonLimparMDFe.Name = "buttonLimparMDFeCTes";
+            buttonLimparMDFe.Name = "buttonLimparMDFes";
             buttonLimparMDFe.Size = new Size(77, 21);
             buttonLimparMDFe.TabIndex = 47;
             buttonLimparMDFe.Text = " Excluir";

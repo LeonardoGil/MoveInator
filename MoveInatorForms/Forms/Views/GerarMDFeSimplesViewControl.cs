@@ -219,13 +219,13 @@ namespace MoveInatorForms.Forms.Views
 
         private void ClearFields_ClickEvent(object sender, EventArgs e)
         {
-            var anyMDFeCTe = DocumentosMDFe.Any();
+            var anyMDFe = DocumentosMDFe.Any();
 
             textBoxNumeroDocumento.Text = string.Empty;
             textBoxSerieDocumento.Text = string.Empty;
             checkedListBoxTipoDocumento.ResetCheckedList();
 
-            if (anyMDFeCTe)
+            if (anyMDFe)
                 return;
 
             textBoxNumeroMDFe.Text = string.Empty;
