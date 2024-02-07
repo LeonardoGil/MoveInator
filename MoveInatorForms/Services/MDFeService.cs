@@ -15,15 +15,15 @@ namespace MoveInatorForms.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<MDFeCTeViewModel> mdfeCtes)
+        public async Task<string> GenerateAsync(string path, List<MDFeViewModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
-            var taskConvertMDFe = ConvertToMDFeAsync(mdfeCtes);
+            var taskConvertMDFe = ConvertToMDFeAsync(mdfeViews, tipoDocumento);
 
             if (!Directory.Exists(path))
                 throw new Exception("Diretório não existe!");
 
-            var single = mdfeCtes.First();
-            var newFolder = Path.Combine(path, $"MDFe {single.NumeroMDFe}-{single.SerieMDFe}");
+            var single = mdfeViews.First();
+            var newFolder = Path.Combine(path, $"MDFe {single.Numero}-{single.Serie}");
 
             Directory.CreateDirectory(newFolder);
 
@@ -31,38 +31,64 @@ namespace MoveInatorForms.Services
 
             var tasksGenerate = new List<Task>();
 
-            tasksGenerate.AddRange(mdfe.CTes.Select(cte => GenerateCTeAsync(newFolder, cte)));
-            tasksGenerate.Add(GenerateMDFeAsync(newFolder, mdfe));
+            switch (tipoDocumento)
+            {
+                case TipoDocumentoEnum.CTe:
+                    tasksGenerate.AddRange(mdfe.CTes.Select(cte => GenerateCTeAsync(newFolder, cte)));
+                    break;
+                case TipoDocumentoEnum.NFe:
+                    tasksGenerate.AddRange(mdfe.NFes.Select(nfe => GenerateNFeAsync(newFolder, nfe)));
+                    break;
+                default:
+                    break;
+            }
 
+            tasksGenerate.Add(GenerateMDFeAsync(newFolder, mdfe));
             Task.WaitAll(tasksGenerate.ToArray());
 
             return newFolder;
         }
 
         #region Private
-        private async Task<MDFe> ConvertToMDFeAsync(List<MDFeCTeViewModel> mdfeCTes)
+        private async Task<MDFe> ConvertToMDFeAsync(List<MDFeViewModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
-            var single = mdfeCTes.First();
+            var single = mdfeViews.First();
 
             var mdfe = new MDFe
             {
-                ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.SerieMDFe, single.NumeroMDFe),
+                ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.Serie, single.Numero),
                 Emissor = single.Emissor,
                 CnpjEmissor = single.CnpjEmissor,
                 DataEmissao = single.DataEmissao,
                 Motorista = single.NomeMotorista,
-                CpfMotorista = single.CpfMotorista
+                CpfMotorista = single.CpfMotorista,
+                TipoDocumento = tipoDocumento,
             };
 
-            foreach (var cte in mdfeCTes)
+            foreach (var documento in mdfeViews)
             {
-                mdfe.CTes.Add(new CTe
+                switch (tipoDocumento)
                 {
-                    ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
-                    ChaveAcessoNFe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, cte.DataEmissao, long.Parse(cte.CnpjEmissor), cte.SerieCTe, cte.NumeroCTe),
-                    CnpjEmissor = cte.CnpjEmissor,
-                    DataEmissao = cte.DataEmissao
-                });
+                    case TipoDocumentoEnum.CTe:
+                        mdfe.CTes.Add(new CTe
+                        {
+                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
+                            ChaveAcessoNFe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
+                            CnpjEmissor = documento.CnpjEmissor,
+                            DataEmissao = documento.DataEmissao
+                        });
+                        break;
+                    case TipoDocumentoEnum.NFe:
+                        mdfe.NFes.Add(new NFe
+                        {
+                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
+                            CnpjEmissor = documento.CnpjEmissor,
+                            DataEmissao = documento.DataEmissao
+                        });
+                        break;
+
+                }
+
             }
 
             return mdfe;
@@ -82,23 +108,49 @@ namespace MoveInatorForms.Services
                                .Replace("[CnpjEmissor]", mdfe.CnpjEmissor)
                                .Replace("[NomeMotorista]", mdfe.Motorista)
                                .Replace("[CpfMotorista]", mdfe.CpfMotorista);
-                               
-            var ctes = string.Empty;
 
-            foreach (var cte in mdfe.CTes)
+
+
+            switch (mdfe.TipoDocumento)
             {
-                ctes += "<infCTe>";
-                ctes += Environment.NewLine;
+                case TipoDocumentoEnum.CTe:
+                    var ctes = string.Empty;
+                    foreach (var cte in mdfe.CTes)
+                    {
+                        ctes += "<infCTe>";
+                        ctes += Environment.NewLine;
 
-                ctes += $"<chCTe>{cte.ChaveAcesso}</chCTe>";
-                ctes += Environment.NewLine;
+                        ctes += $"<chCTe>{cte.ChaveAcesso}</chCTe>";
+                        ctes += Environment.NewLine;
 
-                ctes += "</infCTe>";
-                ctes += Environment.NewLine;
+                        ctes += "</infCTe>";
+                        ctes += Environment.NewLine;
+                    }
+                    template = template.Replace("[QuantidadeDocumentos]", $"<qCTe>{mdfe.QuantidadeCTes}</qCTe>")
+                               .Replace("[Documentos]", ctes);
+                    break;
+                case TipoDocumentoEnum.NFe:
+                    var nfes = string.Empty;
+                    foreach (var nfe in mdfe.NFes)
+                    {
+                        nfes += "<infNFe>";
+                        nfes += Environment.NewLine;
+
+                        nfes += $"<chNFe>{nfe.ChaveAcesso}</chNFe>";
+                        nfes += Environment.NewLine;
+
+                        nfes += "</infNFe>";
+                        nfes += Environment.NewLine;
+                    }
+                    template = template.Replace("[QuantidadeDocumentos]", $"<qNFe>{mdfe.QuantidadeNFes}</qNFe>")
+                               .Replace("[Documentos]", nfes);
+                    break;
+
             }
 
-            template = template.Replace("[QuantidadeCTes]", mdfe.QuantidadeCTes.ToString())
-                               .Replace("[CTes]", ctes);
+
+
+
 
             var filePath = Path.Combine(path, $"MoveInator_MDFe{mdfe.ChaveAcesso}.xml");
 
@@ -119,6 +171,23 @@ namespace MoveInatorForms.Services
                                .Replace("[CnpjEmissor]", cte.CnpjEmissor);
 
             var filePath = Path.Combine(path, $"MoveInator_CTe{cte.ChaveAcesso}.xml");
+
+            await fileService.GenerateFileAsync(filePath, template);
+        }
+
+        private async Task GenerateNFeAsync(string path, NFe nfe)
+        {
+            var template = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "NFeModelo.xml"));
+
+            template = template.Replace("[ChaveAcesso]", nfe.ChaveAcesso.ToString())
+                               .Replace("[DigitoVerificador]", nfe.ChaveAcesso.DigitoVerificador)
+                               .Replace("[Estado]", nfe.ChaveAcesso.UF)
+                               .Replace("[Serie]", nfe.ChaveAcesso.Serie.TrimStart('0'))
+                               .Replace("[Numero]", nfe.ChaveAcesso.Numero.TrimStart('0'))
+                               .Replace("[DataEmissao]", nfe.DataEmissao.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"))
+                               .Replace("[CnpjEmissor]", nfe.CnpjEmissor);
+
+            var filePath = Path.Combine(path, $"MoveInator_NFe{nfe.ChaveAcesso}.xml");
 
             await fileService.GenerateFileAsync(filePath, template);
         }

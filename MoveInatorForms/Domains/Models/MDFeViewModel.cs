@@ -1,14 +1,14 @@
 ﻿namespace MoveInatorForms.Domains.Models
 {
-    public class MDFeCTeViewModel
+    public class MDFeViewModel
     {
-        public int NumeroMDFe { get; set; }
+        public int Numero { get; set; }
 
-        public int SerieMDFe { get; set; }
+        public int Serie { get; set; }
 
-        public int NumeroCTe { get; set; }
+        public int NumeroDocumento { get; set; }
 
-        public int SerieCTe { get; set; }
+        public int SerieDocumento { get; set; }
 
         public DateTime DataEmissao { get; set; }
 
