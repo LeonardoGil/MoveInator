@@ -67,11 +67,11 @@
             panelActions = new Panel();
             folderBrowserDialog = new FolderBrowserDialog();
             buttonFolder = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelActions.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // buttonAdicionar
@@ -139,19 +139,18 @@
             // numericUpDownQuantidade
             // 
             numericUpDownQuantidade.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDownQuantidade.Location = new Point(239, 225);
-            numericUpDownQuantidade.Margin = new Padding(5, 0, 0, 0);
+            numericUpDownQuantidade.Location = new Point(249, 225);
+            numericUpDownQuantidade.Margin = new Padding(5, 0, 5, 0);
             numericUpDownQuantidade.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
-            numericUpDownQuantidade.MaximumSize = new Size(120, 0);
             numericUpDownQuantidade.Name = "numericUpDownQuantidade";
-            numericUpDownQuantidade.Size = new Size(92, 25);
+            numericUpDownQuantidade.Size = new Size(84, 25);
             numericUpDownQuantidade.TabIndex = 26;
             // 
             // textBoxSerieInicial
             // 
             textBoxSerieInicial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSerieInicial.Location = new Point(125, 225);
-            textBoxSerieInicial.Margin = new Padding(5, 0, 0, 0);
+            textBoxSerieInicial.Location = new Point(130, 225);
+            textBoxSerieInicial.Margin = new Padding(5, 0, 5, 0);
             textBoxSerieInicial.MaxLength = 3;
             textBoxSerieInicial.Name = "textBoxSerieInicial";
             textBoxSerieInicial.Size = new Size(109, 25);
@@ -161,7 +160,7 @@
             // 
             labelSerieInicial.AutoSize = true;
             labelSerieInicial.ForeColor = SystemColors.ControlLightLight;
-            labelSerieInicial.Location = new Point(125, 203);
+            labelSerieInicial.Location = new Point(130, 203);
             labelSerieInicial.Margin = new Padding(5, 5, 0, 5);
             labelSerieInicial.Name = "labelSerieInicial";
             labelSerieInicial.Size = new Size(37, 17);
@@ -171,8 +170,8 @@
             // textBoxNumeroInicial
             // 
             textBoxNumeroInicial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxNumeroInicial.Location = new Point(125, 158);
-            textBoxNumeroInicial.Margin = new Padding(5, 0, 0, 0);
+            textBoxNumeroInicial.Location = new Point(130, 158);
+            textBoxNumeroInicial.Margin = new Padding(5, 0, 5, 0);
             textBoxNumeroInicial.Name = "textBoxNumeroInicial";
             textBoxNumeroInicial.Size = new Size(109, 25);
             textBoxNumeroInicial.TabIndex = 9;
@@ -181,7 +180,7 @@
             // 
             labelNumeroInicial.AutoSize = true;
             labelNumeroInicial.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroInicial.Location = new Point(125, 136);
+            labelNumeroInicial.Location = new Point(130, 136);
             labelNumeroInicial.Margin = new Padding(5, 5, 0, 5);
             labelNumeroInicial.Name = "labelNumeroInicial";
             labelNumeroInicial.Size = new Size(92, 17);
@@ -192,7 +191,7 @@
             // 
             labelQuantidadeDocumentos.AutoSize = true;
             labelQuantidadeDocumentos.ForeColor = SystemColors.ControlLightLight;
-            labelQuantidadeDocumentos.Location = new Point(239, 203);
+            labelQuantidadeDocumentos.Location = new Point(249, 203);
             labelQuantidadeDocumentos.Margin = new Padding(5, 5, 0, 5);
             labelQuantidadeDocumentos.Name = "labelQuantidadeDocumentos";
             labelQuantidadeDocumentos.Size = new Size(76, 17);
@@ -208,8 +207,8 @@
             checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoDocumento.FormattingEnabled = true;
             checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
-            checkedListBoxTipoDocumento.Location = new Point(120, 77);
-            checkedListBoxTipoDocumento.Margin = new Padding(0);
+            checkedListBoxTipoDocumento.Location = new Point(130, 77);
+            checkedListBoxTipoDocumento.Margin = new Padding(5, 0, 0, 0);
             checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
             checkedListBoxTipoDocumento.Size = new Size(114, 40);
             checkedListBoxTipoDocumento.TabIndex = 7;
@@ -219,7 +218,7 @@
             // 
             labelTipoDocumento.AutoSize = true;
             labelTipoDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelTipoDocumento.Location = new Point(125, 55);
+            labelTipoDocumento.Location = new Point(130, 55);
             labelTipoDocumento.Margin = new Padding(5, 5, 0, 5);
             labelTipoDocumento.Name = "labelTipoDocumento";
             labelTipoDocumento.Size = new Size(105, 17);
@@ -231,7 +230,7 @@
             textBoxSerieDocumento.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxSerieDocumento.Enabled = false;
             textBoxSerieDocumento.Location = new Point(20, 225);
-            textBoxSerieDocumento.Margin = new Padding(20, 0, 0, 0);
+            textBoxSerieDocumento.Margin = new Padding(20, 0, 5, 0);
             textBoxSerieDocumento.MaxLength = 3;
             textBoxSerieDocumento.Name = "textBoxSerieDocumento";
             textBoxSerieDocumento.Size = new Size(100, 25);
@@ -252,7 +251,7 @@
             // 
             textBoxNumeroDocumento.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxNumeroDocumento.Location = new Point(20, 158);
-            textBoxNumeroDocumento.Margin = new Padding(20, 0, 0, 0);
+            textBoxNumeroDocumento.Margin = new Padding(20, 0, 5, 0);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
             textBoxNumeroDocumento.Size = new Size(100, 25);
             textBoxNumeroDocumento.TabIndex = 3;
@@ -280,7 +279,7 @@
             checkedListBoxTipoViagem.Location = new Point(20, 77);
             checkedListBoxTipoViagem.Margin = new Padding(20, 0, 0, 0);
             checkedListBoxTipoViagem.Name = "checkedListBoxTipoViagem";
-            checkedListBoxTipoViagem.Size = new Size(100, 40);
+            checkedListBoxTipoViagem.Size = new Size(105, 40);
             checkedListBoxTipoViagem.TabIndex = 1;
             checkedListBoxTipoViagem.ItemCheck += ResetCheckedListViagem_ItemCheckEvent;
             // 
@@ -300,10 +299,10 @@
             comboBoxMotorista.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(336, 225);
-            comboBoxMotorista.Margin = new Padding(5, 0, 0, 0);
+            comboBoxMotorista.Location = new Point(343, 225);
+            comboBoxMotorista.Margin = new Padding(5, 0, 5, 0);
             comboBoxMotorista.Name = "comboBoxMotorista";
-            comboBoxMotorista.Size = new Size(107, 25);
+            comboBoxMotorista.Size = new Size(98, 25);
             comboBoxMotorista.TabIndex = 33;
             // 
             // comboBoxEmissor
@@ -311,20 +310,20 @@
             comboBoxEmissor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmissor.FormattingEnabled = true;
-            comboBoxEmissor.Location = new Point(336, 158);
-            comboBoxEmissor.Margin = new Padding(5, 0, 0, 0);
+            comboBoxEmissor.Location = new Point(343, 158);
+            comboBoxEmissor.Margin = new Padding(5, 0, 5, 0);
             comboBoxEmissor.Name = "comboBoxEmissor";
-            comboBoxEmissor.Size = new Size(107, 25);
+            comboBoxEmissor.Size = new Size(98, 25);
             comboBoxEmissor.TabIndex = 32;
             // 
             // maskedTextBoxCpfCnpjDestinatario
             // 
             maskedTextBoxCpfCnpjDestinatario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            maskedTextBoxCpfCnpjDestinatario.Location = new Point(448, 225);
+            maskedTextBoxCpfCnpjDestinatario.Location = new Point(451, 225);
             maskedTextBoxCpfCnpjDestinatario.Margin = new Padding(5, 0, 20, 0);
             maskedTextBoxCpfCnpjDestinatario.Mask = "00.000.000/0000-00";
             maskedTextBoxCpfCnpjDestinatario.Name = "maskedTextBoxCpfCnpjDestinatario";
-            maskedTextBoxCpfCnpjDestinatario.Size = new Size(132, 25);
+            maskedTextBoxCpfCnpjDestinatario.Size = new Size(129, 25);
             maskedTextBoxCpfCnpjDestinatario.TabIndex = 21;
             maskedTextBoxCpfCnpjDestinatario.TextAlign = HorizontalAlignment.Center;
             // 
@@ -332,7 +331,7 @@
             // 
             labelCpfCnpjDestinatario.AutoSize = true;
             labelCpfCnpjDestinatario.ForeColor = SystemColors.ControlLightLight;
-            labelCpfCnpjDestinatario.Location = new Point(448, 203);
+            labelCpfCnpjDestinatario.Location = new Point(451, 203);
             labelCpfCnpjDestinatario.Margin = new Padding(5, 5, 0, 5);
             labelCpfCnpjDestinatario.Name = "labelCpfCnpjDestinatario";
             labelCpfCnpjDestinatario.Size = new Size(111, 17);
@@ -342,17 +341,17 @@
             // textBoxNomeDestinatario
             // 
             textBoxNomeDestinatario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxNomeDestinatario.Location = new Point(448, 158);
+            textBoxNomeDestinatario.Location = new Point(451, 158);
             textBoxNomeDestinatario.Margin = new Padding(5, 0, 20, 0);
             textBoxNomeDestinatario.Name = "textBoxNomeDestinatario";
-            textBoxNomeDestinatario.Size = new Size(132, 25);
+            textBoxNomeDestinatario.Size = new Size(129, 25);
             textBoxNomeDestinatario.TabIndex = 19;
             // 
             // labelNomeDestinatario
             // 
             labelNomeDestinatario.AutoSize = true;
             labelNomeDestinatario.ForeColor = SystemColors.ControlLightLight;
-            labelNomeDestinatario.Location = new Point(448, 136);
+            labelNomeDestinatario.Location = new Point(451, 136);
             labelNomeDestinatario.Margin = new Padding(5, 5, 0, 5);
             labelNomeDestinatario.Name = "labelNomeDestinatario";
             labelNomeDestinatario.Size = new Size(118, 17);
@@ -363,7 +362,7 @@
             // 
             labelNomeMotorista.AutoSize = true;
             labelNomeMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelNomeMotorista.Location = new Point(336, 203);
+            labelNomeMotorista.Location = new Point(343, 203);
             labelNomeMotorista.Margin = new Padding(5, 5, 0, 5);
             labelNomeMotorista.Name = "labelNomeMotorista";
             labelNomeMotorista.Size = new Size(65, 17);
@@ -374,7 +373,7 @@
             // 
             labelEmissor.AutoSize = true;
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(336, 136);
+            labelEmissor.Location = new Point(343, 136);
             labelEmissor.Margin = new Padding(5, 5, 0, 5);
             labelEmissor.Name = "labelEmissor";
             labelEmissor.Size = new Size(54, 17);
@@ -384,12 +383,11 @@
             // maskedTextBoxDataEmissao
             // 
             maskedTextBoxDataEmissao.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            maskedTextBoxDataEmissao.Location = new Point(239, 158);
-            maskedTextBoxDataEmissao.Margin = new Padding(5, 0, 0, 0);
+            maskedTextBoxDataEmissao.Location = new Point(249, 158);
+            maskedTextBoxDataEmissao.Margin = new Padding(5, 0, 5, 0);
             maskedTextBoxDataEmissao.Mask = "00/00/0000";
-            maskedTextBoxDataEmissao.MaximumSize = new Size(120, 25);
             maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
-            maskedTextBoxDataEmissao.Size = new Size(92, 25);
+            maskedTextBoxDataEmissao.Size = new Size(84, 25);
             maskedTextBoxDataEmissao.TabIndex = 15;
             maskedTextBoxDataEmissao.TextAlign = HorizontalAlignment.Center;
             maskedTextBoxDataEmissao.ValidatingType = typeof(DateTime);
@@ -398,7 +396,7 @@
             // 
             labelDataEmissao.AutoSize = true;
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(239, 136);
+            labelDataEmissao.Location = new Point(249, 136);
             labelDataEmissao.Margin = new Padding(5, 5, 0, 5);
             labelDataEmissao.Name = "labelDataEmissao";
             labelDataEmissao.Size = new Size(87, 17);
@@ -410,6 +408,8 @@
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = Color.FromArgb(75, 25, 25);
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -423,7 +423,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
             dataGridView.Location = new Point(0, 300);
@@ -475,18 +474,18 @@
             // textBoxDiretorio
             // 
             textBoxDiretorio.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.SetColumnSpan(textBoxDiretorio, 2);
-            textBoxDiretorio.Location = new Point(331, 77);
+            tableLayoutPanel.SetColumnSpan(textBoxDiretorio, 2);
+            textBoxDiretorio.Location = new Point(338, 77);
             textBoxDiretorio.Margin = new Padding(0, 0, 20, 0);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(249, 25);
+            textBoxDiretorio.Size = new Size(242, 25);
             textBoxDiretorio.TabIndex = 44;
             // 
             // labelDiretorio
             // 
             labelDiretorio.AutoSize = true;
             labelDiretorio.ForeColor = SystemColors.ControlLightLight;
-            labelDiretorio.Location = new Point(331, 55);
+            labelDiretorio.Location = new Point(338, 55);
             labelDiretorio.Margin = new Padding(0, 5, 0, 5);
             labelDiretorio.Name = "labelDiretorio";
             labelDiretorio.Size = new Size(60, 17);
@@ -496,7 +495,7 @@
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            tableLayoutPanel1.SetColumnSpan(labelTitulo, 2);
+            tableLayoutPanel.SetColumnSpan(labelTitulo, 2);
             labelTitulo.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitulo.Location = new Point(20, 10);
             labelTitulo.Margin = new Padding(20, 10, 0, 10);
@@ -508,7 +507,7 @@
             // panelActions
             // 
             panelActions.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            tableLayoutPanel1.SetColumnSpan(panelActions, 5);
+            tableLayoutPanel.SetColumnSpan(panelActions, 5);
             panelActions.Controls.Add(buttonLimpar);
             panelActions.Controls.Add(buttonGerarCSV);
             panelActions.Controls.Add(buttonAdicionar);
@@ -531,7 +530,7 @@
             buttonFolder.FlatStyle = FlatStyle.Flat;
             buttonFolder.ForeColor = SystemColors.ControlLightLight;
             buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
-            buttonFolder.Location = new Point(301, 77);
+            buttonFolder.Location = new Point(308, 77);
             buttonFolder.Margin = new Padding(0);
             buttonFolder.Name = "buttonFolder";
             buttonFolder.Size = new Size(30, 25);
@@ -540,74 +539,76 @@
             buttonFolder.UseVisualStyleBackColor = false;
             buttonFolder.Click += Folder_ClickEvent;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
-            tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.5027313F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.6010933F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.8571434F));
-            tableLayoutPanel1.Controls.Add(labelTitulo, 0, 0);
-            tableLayoutPanel1.Controls.Add(comboBoxMotorista, 3, 6);
-            tableLayoutPanel1.Controls.Add(maskedTextBoxCpfCnpjDestinatario, 4, 6);
-            tableLayoutPanel1.Controls.Add(labelCpfCnpjDestinatario, 4, 5);
-            tableLayoutPanel1.Controls.Add(panelActions, 0, 7);
-            tableLayoutPanel1.Controls.Add(textBoxNomeDestinatario, 4, 4);
-            tableLayoutPanel1.Controls.Add(comboBoxEmissor, 3, 4);
-            tableLayoutPanel1.Controls.Add(labelNomeDestinatario, 4, 3);
-            tableLayoutPanel1.Controls.Add(labelTipoViagem, 0, 1);
-            tableLayoutPanel1.Controls.Add(numericUpDownQuantidade, 2, 6);
-            tableLayoutPanel1.Controls.Add(checkedListBoxTipoViagem, 0, 2);
-            tableLayoutPanel1.Controls.Add(labelNomeMotorista, 3, 5);
-            tableLayoutPanel1.Controls.Add(labelQuantidadeDocumentos, 2, 5);
-            tableLayoutPanel1.Controls.Add(textBoxSerieInicial, 1, 6);
-            tableLayoutPanel1.Controls.Add(labelNumeroDocumento, 0, 3);
-            tableLayoutPanel1.Controls.Add(maskedTextBoxDataEmissao, 2, 4);
-            tableLayoutPanel1.Controls.Add(labelSerieInicial, 1, 5);
-            tableLayoutPanel1.Controls.Add(textBoxNumeroDocumento, 0, 4);
-            tableLayoutPanel1.Controls.Add(textBoxNumeroInicial, 1, 4);
-            tableLayoutPanel1.Controls.Add(labelNumeroInicial, 1, 3);
-            tableLayoutPanel1.Controls.Add(labelSerieDocumento, 0, 5);
-            tableLayoutPanel1.Controls.Add(textBoxSerieDocumento, 0, 6);
-            tableLayoutPanel1.Controls.Add(labelTipoDocumento, 1, 1);
-            tableLayoutPanel1.Controls.Add(checkedListBoxTipoDocumento, 1, 2);
-            tableLayoutPanel1.Controls.Add(labelEmissor, 3, 3);
-            tableLayoutPanel1.Controls.Add(textBoxDiretorio, 3, 2);
-            tableLayoutPanel1.Controls.Add(labelDiretorio, 3, 1);
-            tableLayoutPanel1.Controls.Add(buttonFolder, 2, 2);
-            tableLayoutPanel1.Controls.Add(labelDataEmissao, 2, 3);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(600, 300);
-            tableLayoutPanel1.TabIndex = 48;
+            tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel.ColumnCount = 5;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.5027313F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.6010933F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.8571434F));
+            tableLayoutPanel.Controls.Add(labelTitulo, 0, 0);
+            tableLayoutPanel.Controls.Add(comboBoxMotorista, 3, 6);
+            tableLayoutPanel.Controls.Add(maskedTextBoxCpfCnpjDestinatario, 4, 6);
+            tableLayoutPanel.Controls.Add(labelCpfCnpjDestinatario, 4, 5);
+            tableLayoutPanel.Controls.Add(panelActions, 0, 7);
+            tableLayoutPanel.Controls.Add(textBoxNomeDestinatario, 4, 4);
+            tableLayoutPanel.Controls.Add(comboBoxEmissor, 3, 4);
+            tableLayoutPanel.Controls.Add(labelNomeDestinatario, 4, 3);
+            tableLayoutPanel.Controls.Add(labelTipoViagem, 0, 1);
+            tableLayoutPanel.Controls.Add(numericUpDownQuantidade, 2, 6);
+            tableLayoutPanel.Controls.Add(checkedListBoxTipoViagem, 0, 2);
+            tableLayoutPanel.Controls.Add(labelNomeMotorista, 3, 5);
+            tableLayoutPanel.Controls.Add(labelQuantidadeDocumentos, 2, 5);
+            tableLayoutPanel.Controls.Add(textBoxSerieInicial, 1, 6);
+            tableLayoutPanel.Controls.Add(labelNumeroDocumento, 0, 3);
+            tableLayoutPanel.Controls.Add(maskedTextBoxDataEmissao, 2, 4);
+            tableLayoutPanel.Controls.Add(labelSerieInicial, 1, 5);
+            tableLayoutPanel.Controls.Add(textBoxNumeroDocumento, 0, 4);
+            tableLayoutPanel.Controls.Add(textBoxNumeroInicial, 1, 4);
+            tableLayoutPanel.Controls.Add(labelNumeroInicial, 1, 3);
+            tableLayoutPanel.Controls.Add(labelSerieDocumento, 0, 5);
+            tableLayoutPanel.Controls.Add(textBoxSerieDocumento, 0, 6);
+            tableLayoutPanel.Controls.Add(labelTipoDocumento, 1, 1);
+            tableLayoutPanel.Controls.Add(checkedListBoxTipoDocumento, 1, 2);
+            tableLayoutPanel.Controls.Add(labelEmissor, 3, 3);
+            tableLayoutPanel.Controls.Add(textBoxDiretorio, 3, 2);
+            tableLayoutPanel.Controls.Add(labelDiretorio, 3, 1);
+            tableLayoutPanel.Controls.Add(buttonFolder, 2, 2);
+            tableLayoutPanel.Controls.Add(labelDataEmissao, 2, 3);
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Margin = new Padding(0);
+            tableLayoutPanel.MaximumSize = new Size(9999, 400);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 8;
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.Size = new Size(600, 300);
+            tableLayoutPanel.TabIndex = 48;
             // 
             // GerarCSVSimplesViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tableLayoutPanel);
             Controls.Add(dataGridView);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
             Name = "GerarCSVSimplesViewControl";
-            Resize += View_ResizeEvent;
+            SizeChanged += View_SizeChangedEvent;
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelActions.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel.ResumeLayout(false);
+            tableLayoutPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -647,6 +648,6 @@
         private Panel panelActions;
         private FolderBrowserDialog folderBrowserDialog;
         private Button buttonFolder;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel;
     }
 }
