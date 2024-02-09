@@ -150,19 +150,9 @@ namespace MoveInatorForms.Forms.Views
 
         private void TableSizeChanged()
         {
-            var topActive = (dataGridView.Anchor & AnchorStyles.Top) == AnchorStyles.Top;
-
-            if (tableLayoutPanel.Size.Height == tableLayoutPanel.MaximumSize.Height && !topActive)
-            {
-                dataGridView.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
-            }
-            else if (topActive)
-            {
-                dataGridView.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
-            }
-
             dataGridView.Location = new Point(0, tableLayoutPanel.Height);
             dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
         }
 
         #endregion
