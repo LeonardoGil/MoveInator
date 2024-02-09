@@ -163,6 +163,17 @@ namespace MoveInatorForms.Forms.Views
             return token;
         }
 
+        #region Responsive Methods
+
+        private void TableSizeChanged()
+        {
+            dataGridView.Location = new Point(0, tableLayoutPanel.Height);
+            dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
+        }
+
+        #endregion
+
         #region Events
 
         private async void ResetListBoxAPI_ItemCheckEvent(object sender, ItemCheckEventArgs e)
@@ -226,18 +237,13 @@ namespace MoveInatorForms.Forms.Views
             }
         }
 
+        private void View_SizeChangedEvent(object sender, EventArgs e)
+        {
+            TableSizeChanged();
+        }
+
         #endregion
 
-        private void View_ResizeEvent(object sender, EventArgs e)
-        {
-            if (sender is Control control)
-            {
-                var sizeX = control.Width - 600;
-                var sizeY = control.Height - 600;
-
-                buttonRequest.Location = new Point(500 + sizeX, 270 + sizeY);
-            }
-        }
     }
 }
 

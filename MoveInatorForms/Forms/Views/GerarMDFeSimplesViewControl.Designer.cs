@@ -32,19 +32,15 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarMDFeSimplesViewControl));
-            comboBoxMotorista = new ComboBox();
             comboBoxEmissor = new ComboBox();
             labelMotorista = new Label();
             labelEmissor = new Label();
-            textBoxSerieMDFe = new TextBox();
             labelSerieMDFe = new Label();
             textBoxNumeroMDFe = new TextBox();
             labelNumeroMDFe = new Label();
-            textBoxSerieDocumento = new TextBox();
             labelSerieDocumento = new Label();
             textBoxNumeroDocumento = new TextBox();
             labelNumeroDocumento = new Label();
-            maskedTextBoxDataEmissao = new MaskedTextBox();
             labelDataEmissao = new Label();
             buttonAdicionar = new Button();
             buttonLimpar = new Button();
@@ -59,149 +55,119 @@
             folderBrowserDialog = new FolderBrowserDialog();
             checkedListBoxTipoDocumento = new CheckedListBox();
             labelTipoDocumento = new Label();
+            tableLayoutPanel = new TableLayoutPanel();
+            comboBoxMotorista = new ComboBox();
+            textBoxSerieDocumento = new TextBox();
+            textBoxSerieMDFe = new TextBox();
+            maskedTextBoxDataEmissao = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panelActions.SuspendLayout();
+            tableLayoutPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBoxMotorista
-            // 
-            comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxMotorista.FormattingEnabled = true;
-            comboBoxMotorista.Location = new Point(234, 120);
-            comboBoxMotorista.Margin = new Padding(3, 2, 3, 2);
-            comboBoxMotorista.Name = "comboBoxMotorista";
-            comboBoxMotorista.Size = new Size(164, 21);
-            comboBoxMotorista.TabIndex = 53;
             // 
             // comboBoxEmissor
             // 
+            comboBoxEmissor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxEmissor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmissor.FormattingEnabled = true;
-            comboBoxEmissor.Location = new Point(345, 68);
-            comboBoxEmissor.Margin = new Padding(3, 2, 3, 2);
+            comboBoxEmissor.Location = new Point(455, 77);
+            comboBoxEmissor.Margin = new Padding(5, 0, 20, 0);
             comboBoxEmissor.Name = "comboBoxEmissor";
-            comboBoxEmissor.Size = new Size(164, 21);
+            comboBoxEmissor.Size = new Size(125, 25);
             comboBoxEmissor.TabIndex = 52;
             // 
             // labelMotorista
             // 
             labelMotorista.AutoSize = true;
-            labelMotorista.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelMotorista.Location = new Point(234, 103);
+            labelMotorista.Location = new Point(455, 127);
+            labelMotorista.Margin = new Padding(5, 5, 0, 5);
             labelMotorista.Name = "labelMotorista";
-            labelMotorista.Size = new Size(59, 13);
+            labelMotorista.Size = new Size(65, 17);
             labelMotorista.TabIndex = 51;
             labelMotorista.Text = "Motorista";
             // 
             // labelEmissor
             // 
             labelEmissor.AutoSize = true;
-            labelEmissor.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(345, 50);
+            labelEmissor.Location = new Point(455, 55);
+            labelEmissor.Margin = new Padding(5, 5, 0, 5);
             labelEmissor.Name = "labelEmissor";
-            labelEmissor.Size = new Size(50, 13);
+            labelEmissor.Size = new Size(54, 17);
             labelEmissor.TabIndex = 50;
             labelEmissor.Text = "Emissor";
-            // 
-            // textBoxSerieMDFe
-            // 
-            textBoxSerieMDFe.Location = new Point(231, 67);
-            textBoxSerieMDFe.Margin = new Padding(3, 2, 3, 2);
-            textBoxSerieMDFe.MaxLength = 3;
-            textBoxSerieMDFe.Name = "textBoxSerieMDFe";
-            textBoxSerieMDFe.Size = new Size(91, 20);
-            textBoxSerieMDFe.TabIndex = 68;
             // 
             // labelSerieMDFe
             // 
             labelSerieMDFe.AutoSize = true;
-            labelSerieMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelSerieMDFe.Location = new Point(231, 50);
+            labelSerieMDFe.Location = new Point(20, 127);
+            labelSerieMDFe.Margin = new Padding(20, 5, 0, 5);
             labelSerieMDFe.Name = "labelSerieMDFe";
-            labelSerieMDFe.Size = new Size(73, 13);
+            labelSerieMDFe.Size = new Size(75, 17);
             labelSerieMDFe.TabIndex = 67;
             labelSerieMDFe.Text = "Série MDFe";
             // 
             // textBoxNumeroMDFe
             // 
-            textBoxNumeroMDFe.Location = new Point(120, 67);
-            textBoxNumeroMDFe.Margin = new Padding(3, 2, 3, 2);
+            textBoxNumeroMDFe.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxNumeroMDFe.Location = new Point(20, 77);
+            textBoxNumeroMDFe.Margin = new Padding(20, 0, 5, 0);
             textBoxNumeroMDFe.Name = "textBoxNumeroMDFe";
-            textBoxNumeroMDFe.Size = new Size(91, 20);
+            textBoxNumeroMDFe.Size = new Size(125, 25);
             textBoxNumeroMDFe.TabIndex = 66;
             // 
             // labelNumeroMDFe
             // 
             labelNumeroMDFe.AutoSize = true;
-            labelNumeroMDFe.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroMDFe.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroMDFe.Location = new Point(120, 50);
+            labelNumeroMDFe.Location = new Point(20, 55);
+            labelNumeroMDFe.Margin = new Padding(20, 5, 0, 5);
             labelNumeroMDFe.Name = "labelNumeroMDFe";
-            labelNumeroMDFe.Size = new Size(87, 13);
+            labelNumeroMDFe.Size = new Size(94, 17);
             labelNumeroMDFe.TabIndex = 65;
             labelNumeroMDFe.Text = "Numero MDFe";
-            // 
-            // textBoxSerieDocumento
-            // 
-            textBoxSerieDocumento.Location = new Point(120, 120);
-            textBoxSerieDocumento.Margin = new Padding(3, 2, 3, 2);
-            textBoxSerieDocumento.MaxLength = 3;
-            textBoxSerieDocumento.Name = "textBoxSerieDocumento";
-            textBoxSerieDocumento.Size = new Size(91, 20);
-            textBoxSerieDocumento.TabIndex = 64;
             // 
             // labelSerieDocumento
             // 
             labelSerieDocumento.AutoSize = true;
-            labelSerieDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelSerieDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelSerieDocumento.Location = new Point(120, 103);
+            labelSerieDocumento.Location = new Point(305, 127);
+            labelSerieDocumento.Margin = new Padding(5, 5, 0, 5);
             labelSerieDocumento.Name = "labelSerieDocumento";
-            labelSerieDocumento.Size = new Size(36, 13);
+            labelSerieDocumento.Size = new Size(108, 17);
             labelSerieDocumento.TabIndex = 63;
-            labelSerieDocumento.Text = "Série";
+            labelSerieDocumento.Text = "Série Documento";
             // 
             // textBoxNumeroDocumento
             // 
-            textBoxNumeroDocumento.Location = new Point(9, 120);
-            textBoxNumeroDocumento.Margin = new Padding(3, 2, 3, 2);
+            textBoxNumeroDocumento.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxNumeroDocumento.Location = new Point(305, 77);
+            textBoxNumeroDocumento.Margin = new Padding(5, 0, 5, 0);
             textBoxNumeroDocumento.Name = "textBoxNumeroDocumento";
-            textBoxNumeroDocumento.Size = new Size(91, 20);
+            textBoxNumeroDocumento.Size = new Size(140, 25);
             textBoxNumeroDocumento.TabIndex = 62;
             // 
             // labelNumeroDocumento
             // 
             labelNumeroDocumento.AutoSize = true;
-            labelNumeroDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelNumeroDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelNumeroDocumento.Location = new Point(9, 103);
+            labelNumeroDocumento.Location = new Point(305, 55);
+            labelNumeroDocumento.Margin = new Padding(5, 5, 0, 5);
             labelNumeroDocumento.Name = "labelNumeroDocumento";
-            labelNumeroDocumento.Size = new Size(50, 13);
+            labelNumeroDocumento.Size = new Size(127, 17);
             labelNumeroDocumento.TabIndex = 61;
-            labelNumeroDocumento.Text = "Numero";
-            // 
-            // maskedTextBoxDataEmissao
-            // 
-            maskedTextBoxDataEmissao.Location = new Point(9, 167);
-            maskedTextBoxDataEmissao.Margin = new Padding(3, 2, 3, 2);
-            maskedTextBoxDataEmissao.Mask = "00/00/0000";
-            maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
-            maskedTextBoxDataEmissao.Size = new Size(86, 20);
-            maskedTextBoxDataEmissao.TabIndex = 54;
-            maskedTextBoxDataEmissao.TextAlign = HorizontalAlignment.Center;
-            maskedTextBoxDataEmissao.ValidatingType = typeof(DateTime);
+            labelNumeroDocumento.Text = "Numero Documento";
             // 
             // labelDataEmissao
             // 
             labelDataEmissao.AutoSize = true;
-            labelDataEmissao.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDataEmissao.ForeColor = SystemColors.ControlLightLight;
-            labelDataEmissao.Location = new Point(9, 149);
+            labelDataEmissao.Location = new Point(155, 127);
+            labelDataEmissao.Margin = new Padding(5, 5, 0, 5);
             labelDataEmissao.Name = "labelDataEmissao";
-            labelDataEmissao.Size = new Size(84, 13);
+            labelDataEmissao.Size = new Size(87, 17);
             labelDataEmissao.TabIndex = 53;
             labelDataEmissao.Text = "Data Emissão";
             // 
@@ -210,13 +176,12 @@
             buttonAdicionar.FlatAppearance.BorderSize = 0;
             buttonAdicionar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionar.FlatStyle = FlatStyle.Flat;
-            buttonAdicionar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
             buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(154, 0);
+            buttonAdicionar.Location = new Point(180, 0);
             buttonAdicionar.Margin = new Padding(0);
             buttonAdicionar.Name = "buttonAdicionar";
-            buttonAdicionar.Size = new Size(87, 21);
+            buttonAdicionar.Size = new Size(102, 27);
             buttonAdicionar.TabIndex = 50;
             buttonAdicionar.Text = " Adicionar";
             buttonAdicionar.TextAlign = ContentAlignment.BottomRight;
@@ -230,13 +195,12 @@
             buttonLimpar.FlatAppearance.BorderSize = 0;
             buttonLimpar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonLimpar.FlatStyle = FlatStyle.Flat;
-            buttonLimpar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimpar.Image = Properties.Resources.vassoura_16;
             buttonLimpar.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimpar.Location = new Point(77, 0);
+            buttonLimpar.Location = new Point(90, 0);
             buttonLimpar.Margin = new Padding(0);
             buttonLimpar.Name = "buttonLimpar";
-            buttonLimpar.Size = new Size(77, 21);
+            buttonLimpar.Size = new Size(90, 27);
             buttonLimpar.TabIndex = 52;
             buttonLimpar.Text = " Limpar";
             buttonLimpar.TextAlign = ContentAlignment.BottomRight;
@@ -250,29 +214,30 @@
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = Color.FromArgb(75, 25, 25);
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Dock = DockStyle.Bottom;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
-            dataGridView.Location = new Point(0, 230);
+            dataGridView.Location = new Point(0, 300);
             dataGridView.Margin = new Padding(0);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -287,25 +252,27 @@
             dataGridView.ShowCellErrors = false;
             dataGridView.ShowCellToolTips = false;
             dataGridView.ShowRowErrors = false;
-            dataGridView.Size = new Size(514, 229);
+            dataGridView.Size = new Size(600, 300);
             dataGridView.TabIndex = 34;
             // 
             // textBoxDiretorio
             // 
-            textBoxDiretorio.Location = new Point(120, 167);
-            textBoxDiretorio.Margin = new Padding(0);
+            textBoxDiretorio.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel.SetColumnSpan(textBoxDiretorio, 2);
+            textBoxDiretorio.Location = new Point(20, 221);
+            textBoxDiretorio.Margin = new Padding(20, 0, 5, 0);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(278, 20);
+            textBoxDiretorio.Size = new Size(275, 25);
             textBoxDiretorio.TabIndex = 48;
             // 
             // labelDiretorio
             // 
             labelDiretorio.AutoSize = true;
-            labelDiretorio.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelDiretorio.ForeColor = SystemColors.ControlLightLight;
-            labelDiretorio.Location = new Point(120, 149);
+            labelDiretorio.Location = new Point(20, 199);
+            labelDiretorio.Margin = new Padding(20, 5, 0, 5);
             labelDiretorio.Name = "labelDiretorio";
-            labelDiretorio.Size = new Size(55, 13);
+            labelDiretorio.Size = new Size(60, 17);
             labelDiretorio.TabIndex = 49;
             labelDiretorio.Text = "Diretório";
             // 
@@ -315,13 +282,12 @@
             buttonGerarMDFe.FlatAppearance.BorderSize = 0;
             buttonGerarMDFe.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonGerarMDFe.FlatStyle = FlatStyle.Flat;
-            buttonGerarMDFe.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGerarMDFe.Image = (Image)resources.GetObject("buttonGerarMDFe.Image");
             buttonGerarMDFe.ImageAlign = ContentAlignment.TopLeft;
-            buttonGerarMDFe.Location = new Point(240, 0);
+            buttonGerarMDFe.Location = new Point(280, 0);
             buttonGerarMDFe.Margin = new Padding(0);
             buttonGerarMDFe.Name = "buttonGerarMDFe";
-            buttonGerarMDFe.Size = new Size(69, 21);
+            buttonGerarMDFe.Size = new Size(80, 27);
             buttonGerarMDFe.TabIndex = 46;
             buttonGerarMDFe.Text = " Gerar";
             buttonGerarMDFe.TextAlign = ContentAlignment.BottomRight;
@@ -330,19 +296,18 @@
             buttonGerarMDFe.UseVisualStyleBackColor = false;
             buttonGerarMDFe.Click += GenerateMDFe_ClickEvent;
             // 
-            // buttonLimparMDFes
+            // buttonLimparMDFe
             // 
             buttonLimparMDFe.Enabled = false;
             buttonLimparMDFe.FlatAppearance.BorderSize = 0;
             buttonLimparMDFe.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonLimparMDFe.FlatStyle = FlatStyle.Flat;
-            buttonLimparMDFe.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimparMDFe.Image = Properties.Resources.lixeira_16;
             buttonLimparMDFe.ImageAlign = ContentAlignment.TopLeft;
             buttonLimparMDFe.Location = new Point(0, 0);
             buttonLimparMDFe.Margin = new Padding(0);
-            buttonLimparMDFe.Name = "buttonLimparMDFes";
-            buttonLimparMDFe.Size = new Size(77, 21);
+            buttonLimparMDFe.Name = "buttonLimparMDFe";
+            buttonLimparMDFe.Size = new Size(90, 27);
             buttonLimparMDFe.TabIndex = 47;
             buttonLimparMDFe.Text = " Excluir";
             buttonLimparMDFe.TextAlign = ContentAlignment.BottomRight;
@@ -354,24 +319,28 @@
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            labelTitulo.ForeColor = Color.DarkGray;
-            labelTitulo.Location = new Point(9, 15);
+            tableLayoutPanel.SetColumnSpan(labelTitulo, 3);
+            labelTitulo.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTitulo.ForeColor = SystemColors.ControlLightLight;
+            labelTitulo.Location = new Point(20, 10);
+            labelTitulo.Margin = new Padding(20, 10, 0, 10);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(164, 25);
+            labelTitulo.Size = new Size(148, 30);
             labelTitulo.TabIndex = 69;
             labelTitulo.Text = "MDFe Simples";
             // 
             // panelActions
             // 
+            panelActions.Anchor = AnchorStyles.Right;
+            tableLayoutPanel.SetColumnSpan(panelActions, 6);
             panelActions.Controls.Add(buttonLimparMDFe);
             panelActions.Controls.Add(buttonLimpar);
             panelActions.Controls.Add(buttonAdicionar);
             panelActions.Controls.Add(buttonGerarMDFe);
-            panelActions.Location = new Point(206, 206);
-            panelActions.Margin = new Padding(0, 2, 0, 2);
+            panelActions.Location = new Point(240, 269);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
             panelActions.Name = "panelActions";
-            panelActions.Size = new Size(309, 21);
+            panelActions.Size = new Size(360, 27);
             panelActions.TabIndex = 70;
             // 
             // buttonFolder
@@ -379,13 +348,12 @@
             buttonFolder.FlatAppearance.BorderSize = 0;
             buttonFolder.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonFolder.FlatStyle = FlatStyle.Flat;
-            buttonFolder.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonFolder.ForeColor = SystemColors.ControlLightLight;
             buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
-            buttonFolder.Location = new Point(398, 166);
-            buttonFolder.Margin = new Padding(0, 0, 9, 0);
+            buttonFolder.Location = new Point(300, 221);
+            buttonFolder.Margin = new Padding(0, 0, 10, 0);
             buttonFolder.Name = "buttonFolder";
-            buttonFolder.Size = new Size(26, 19);
+            buttonFolder.Size = new Size(30, 25);
             buttonFolder.TabIndex = 71;
             buttonFolder.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonFolder.UseVisualStyleBackColor = false;
@@ -397,65 +365,133 @@
             // 
             // checkedListBoxTipoDocumento
             // 
+            checkedListBoxTipoDocumento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             checkedListBoxTipoDocumento.BackColor = Color.FromArgb(31, 31, 31);
             checkedListBoxTipoDocumento.BorderStyle = BorderStyle.None;
             checkedListBoxTipoDocumento.CheckOnClick = true;
             checkedListBoxTipoDocumento.ForeColor = SystemColors.ControlLightLight;
             checkedListBoxTipoDocumento.FormattingEnabled = true;
             checkedListBoxTipoDocumento.Items.AddRange(new object[] { "CT-e", "NF-e" });
-            checkedListBoxTipoDocumento.Location = new Point(9, 67);
-            checkedListBoxTipoDocumento.Margin = new Padding(3, 2, 3, 2);
+            checkedListBoxTipoDocumento.Location = new Point(155, 77);
+            checkedListBoxTipoDocumento.Margin = new Padding(5, 0, 5, 0);
             checkedListBoxTipoDocumento.Name = "checkedListBoxTipoDocumento";
-            checkedListBoxTipoDocumento.Size = new Size(83, 30);
+            checkedListBoxTipoDocumento.Size = new Size(140, 40);
             checkedListBoxTipoDocumento.TabIndex = 73;
             checkedListBoxTipoDocumento.ItemCheck += ResetCheckedListDocumento_ItemCheckEvent;
             // 
             // labelTipoDocumento
             // 
             labelTipoDocumento.AutoSize = true;
-            labelTipoDocumento.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelTipoDocumento.ForeColor = SystemColors.ControlLightLight;
-            labelTipoDocumento.Location = new Point(9, 50);
+            labelTipoDocumento.Location = new Point(155, 55);
+            labelTipoDocumento.Margin = new Padding(5, 5, 0, 5);
             labelTipoDocumento.Name = "labelTipoDocumento";
-            labelTipoDocumento.Size = new Size(100, 13);
+            labelTipoDocumento.Size = new Size(105, 17);
             labelTipoDocumento.TabIndex = 72;
             labelTipoDocumento.Text = "Tipo Documento";
             // 
+            // tableLayoutPanel
+            // 
+            tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel.ColumnCount = 4;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.Controls.Add(labelTitulo, 0, 0);
+            tableLayoutPanel.Controls.Add(buttonFolder, 2, 6);
+            tableLayoutPanel.Controls.Add(labelDiretorio, 0, 5);
+            tableLayoutPanel.Controls.Add(labelTipoDocumento, 1, 1);
+            tableLayoutPanel.Controls.Add(textBoxDiretorio, 0, 6);
+            tableLayoutPanel.Controls.Add(comboBoxMotorista, 3, 4);
+            tableLayoutPanel.Controls.Add(panelActions, 0, 7);
+            tableLayoutPanel.Controls.Add(checkedListBoxTipoDocumento, 1, 2);
+            tableLayoutPanel.Controls.Add(comboBoxEmissor, 3, 2);
+            tableLayoutPanel.Controls.Add(labelMotorista, 3, 3);
+            tableLayoutPanel.Controls.Add(labelNumeroDocumento, 2, 1);
+            tableLayoutPanel.Controls.Add(textBoxNumeroDocumento, 2, 2);
+            tableLayoutPanel.Controls.Add(labelSerieDocumento, 2, 3);
+            tableLayoutPanel.Controls.Add(textBoxSerieDocumento, 2, 4);
+            tableLayoutPanel.Controls.Add(labelEmissor, 3, 1);
+            tableLayoutPanel.Controls.Add(labelDataEmissao, 1, 3);
+            tableLayoutPanel.Controls.Add(textBoxSerieMDFe, 0, 4);
+            tableLayoutPanel.Controls.Add(maskedTextBoxDataEmissao, 1, 4);
+            tableLayoutPanel.Controls.Add(labelSerieMDFe, 0, 3);
+            tableLayoutPanel.Controls.Add(labelNumeroMDFe, 0, 1);
+            tableLayoutPanel.Controls.Add(textBoxNumeroMDFe, 0, 2);
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.MaximumSize = new Size(9999, 400);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 8;
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.Size = new Size(600, 300);
+            tableLayoutPanel.TabIndex = 74;
+            // 
+            // comboBoxMotorista
+            // 
+            comboBoxMotorista.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxMotorista.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMotorista.FormattingEnabled = true;
+            comboBoxMotorista.Location = new Point(455, 149);
+            comboBoxMotorista.Margin = new Padding(5, 0, 20, 0);
+            comboBoxMotorista.Name = "comboBoxMotorista";
+            comboBoxMotorista.Size = new Size(125, 25);
+            comboBoxMotorista.TabIndex = 53;
+            // 
+            // textBoxSerieDocumento
+            // 
+            textBoxSerieDocumento.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSerieDocumento.Location = new Point(305, 149);
+            textBoxSerieDocumento.Margin = new Padding(5, 0, 5, 0);
+            textBoxSerieDocumento.MaxLength = 3;
+            textBoxSerieDocumento.Name = "textBoxSerieDocumento";
+            textBoxSerieDocumento.Size = new Size(140, 25);
+            textBoxSerieDocumento.TabIndex = 64;
+            // 
+            // textBoxSerieMDFe
+            // 
+            textBoxSerieMDFe.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSerieMDFe.Location = new Point(20, 149);
+            textBoxSerieMDFe.Margin = new Padding(20, 0, 5, 0);
+            textBoxSerieMDFe.MaxLength = 3;
+            textBoxSerieMDFe.Name = "textBoxSerieMDFe";
+            textBoxSerieMDFe.Size = new Size(125, 25);
+            textBoxSerieMDFe.TabIndex = 68;
+            // 
+            // maskedTextBoxDataEmissao
+            // 
+            maskedTextBoxDataEmissao.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            maskedTextBoxDataEmissao.Location = new Point(155, 149);
+            maskedTextBoxDataEmissao.Margin = new Padding(5, 0, 5, 0);
+            maskedTextBoxDataEmissao.Mask = "00/00/0000";
+            maskedTextBoxDataEmissao.Name = "maskedTextBoxDataEmissao";
+            maskedTextBoxDataEmissao.Size = new Size(140, 25);
+            maskedTextBoxDataEmissao.TabIndex = 54;
+            maskedTextBoxDataEmissao.TextAlign = HorizontalAlignment.Center;
+            maskedTextBoxDataEmissao.ValidatingType = typeof(DateTime);
+            // 
             // GerarMDFeSimplesViewControl
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(checkedListBoxTipoDocumento);
-            Controls.Add(labelTipoDocumento);
-            Controls.Add(buttonFolder);
-            Controls.Add(panelActions);
-            Controls.Add(labelTitulo);
-            Controls.Add(comboBoxMotorista);
-            Controls.Add(textBoxDiretorio);
-            Controls.Add(comboBoxEmissor);
+            Controls.Add(tableLayoutPanel);
             Controls.Add(dataGridView);
-            Controls.Add(labelMotorista);
-            Controls.Add(labelDiretorio);
-            Controls.Add(labelEmissor);
-            Controls.Add(textBoxSerieMDFe);
-            Controls.Add(labelSerieMDFe);
-            Controls.Add(textBoxNumeroMDFe);
-            Controls.Add(labelNumeroMDFe);
-            Controls.Add(textBoxSerieDocumento);
-            Controls.Add(labelSerieDocumento);
-            Controls.Add(labelDataEmissao);
-            Controls.Add(textBoxNumeroDocumento);
-            Controls.Add(maskedTextBoxDataEmissao);
-            Controls.Add(labelNumeroDocumento);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            MinimumSize = new Size(514, 459);
             Name = "GerarMDFeSimplesViewControl";
-            Size = new Size(514, 459);
-            Resize += View_ResizeEvent;
+            SizeChanged += View_SizeChangedEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panelActions.ResumeLayout(false);
+            tableLayoutPanel.ResumeLayout(false);
+            tableLayoutPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -466,18 +502,14 @@
         private Button buttonLimparMDFe;
         private Button buttonAdicionar;
         private Button buttonLimpar;
-        private MaskedTextBox maskedTextBoxDataEmissao;
         private Label labelDataEmissao;
         private Label labelMotorista;
-        private TextBox textBoxSerieDocumento;
         private Label labelSerieDocumento;
         private TextBox textBoxNumeroDocumento;
         private Label labelNumeroDocumento;
-        private TextBox textBoxSerieMDFe;
         private Label labelSerieMDFe;
         private TextBox textBoxNumeroMDFe;
         private Label labelNumeroMDFe;
-        private ComboBox comboBoxMotorista;
         private ComboBox comboBoxEmissor;
         private Label labelEmissor;
         private Label labelTitulo;
@@ -486,5 +518,10 @@
         private FolderBrowserDialog folderBrowserDialog;
         private CheckedListBox checkedListBoxTipoDocumento;
         private Label labelTipoDocumento;
+        private TableLayoutPanel tableLayoutPanel;
+        private ComboBox comboBoxMotorista;
+        private TextBox textBoxSerieDocumento;
+        private TextBox textBoxSerieMDFe;
+        private MaskedTextBox maskedTextBoxDataEmissao;
     }
 }

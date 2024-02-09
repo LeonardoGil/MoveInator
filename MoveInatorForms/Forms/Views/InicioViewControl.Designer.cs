@@ -34,6 +34,7 @@
             // 
             // linkLabel
             // 
+            linkLabel.Anchor = AnchorStyles.None;
             linkLabel.AutoSize = true;
             linkLabel.LinkColor = SystemColors.HotTrack;
             linkLabel.Location = new Point(153, 306);
@@ -46,6 +47,7 @@
             // 
             // labelInformativa
             // 
+            labelInformativa.Anchor = AnchorStyles.None;
             labelInformativa.AutoSize = true;
             labelInformativa.FlatStyle = FlatStyle.Flat;
             labelInformativa.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);

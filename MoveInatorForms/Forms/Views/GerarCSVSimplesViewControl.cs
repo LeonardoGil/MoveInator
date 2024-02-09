@@ -176,6 +176,17 @@ namespace MoveInatorForms.Forms.Views
 
         #endregion
 
+        #region Responsive Methods
+
+        private void TableSizeChanged()
+        {
+            dataGridView.Location = new Point(0, tableLayoutPanel.Height);
+            dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
+        }
+
+        #endregion
+
         #region Events
 
         private async void AddViagemViewModel_ClickEventAsync(object sender, EventArgs e)
@@ -317,15 +328,9 @@ namespace MoveInatorForms.Forms.Views
             }
         }
 
-        private void View_ResizeEvent(object sender, EventArgs e)
+        private void View_SizeChangedEvent(object sender, EventArgs e)
         {
-            if (sender is Control control)
-            {
-                var sizeX = control.Width - 600;
-                var sizeY = control.Height - 600;
-
-                panelActions.Location = new Point(264 + sizeX, 270 + sizeY);
-            }
+            TableSizeChanged();
         }
 
         private void Folder_ClickEvent(object sender, EventArgs e)

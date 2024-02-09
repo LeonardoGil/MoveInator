@@ -48,24 +48,24 @@
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("MesloLGL NF", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTitulo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.FromArgb(85, 35, 35);
-            labelTitulo.Location = new Point(9, 14);
+            labelTitulo.Location = new Point(21, 18);
             labelTitulo.Margin = new Padding(7, 0, 7, 5);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(190, 46);
+            labelTitulo.Size = new Size(169, 37);
             labelTitulo.TabIndex = 6;
             labelTitulo.Text = "MoveInator";
             // 
             // labelSubTitulo
             // 
             labelSubTitulo.AutoSize = true;
-            labelSubTitulo.Font = new Font("MesloLGL NF", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            labelSubTitulo.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
             labelSubTitulo.ForeColor = Color.DarkGray;
-            labelSubTitulo.Location = new Point(35, 51);
+            labelSubTitulo.Location = new Point(52, 51);
             labelSubTitulo.Margin = new Padding(0);
             labelSubTitulo.Name = "labelSubTitulo";
-            labelSubTitulo.Size = new Size(122, 21);
+            labelSubTitulo.Size = new Size(95, 17);
             labelSubTitulo.TabIndex = 7;
             labelSubTitulo.Text = "Created by LAG";
             // 
@@ -100,12 +100,12 @@
             panelLateral.Size = new Size(200, 600);
             panelLateral.TabIndex = 13;
             // 
-            // panel1
+            // panelVersion
             // 
             panelVersion.Controls.Add(labelVersion);
             panelVersion.Dock = DockStyle.Bottom;
             panelVersion.Location = new Point(0, 560);
-            panelVersion.Name = "panel1";
+            panelVersion.Name = "panelVersion";
             panelVersion.Size = new Size(200, 40);
             panelVersion.TabIndex = 16;
             // 
@@ -113,12 +113,11 @@
             // 
             labelVersion.AutoSize = true;
             labelVersion.Cursor = Cursors.Hand;
-            labelVersion.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelVersion.ForeColor = Color.Brown;
             labelVersion.Location = new Point(5, 19);
             labelVersion.Margin = new Padding(0);
             labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(71, 17);
+            labelVersion.Size = new Size(58, 17);
             labelVersion.TabIndex = 14;
             labelVersion.Text = "Version: ";
             // 
@@ -127,7 +126,7 @@
             buttonMotoristas.FlatAppearance.BorderSize = 0;
             buttonMotoristas.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonMotoristas.FlatStyle = FlatStyle.Flat;
-            buttonMotoristas.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMotoristas.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonMotoristas.ForeColor = Color.DarkGray;
             buttonMotoristas.Location = new Point(0, 360);
             buttonMotoristas.Margin = new Padding(0);
@@ -143,7 +142,7 @@
             buttonNovidades.FlatAppearance.BorderSize = 0;
             buttonNovidades.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonNovidades.FlatStyle = FlatStyle.Flat;
-            buttonNovidades.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNovidades.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonNovidades.ForeColor = Color.DarkGray;
             buttonNovidades.Location = new Point(0, 410);
             buttonNovidades.Margin = new Padding(0);
@@ -159,7 +158,7 @@
             buttonEmpresas.FlatAppearance.BorderSize = 0;
             buttonEmpresas.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonEmpresas.FlatStyle = FlatStyle.Flat;
-            buttonEmpresas.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEmpresas.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonEmpresas.ForeColor = Color.DarkGray;
             buttonEmpresas.Location = new Point(0, 310);
             buttonEmpresas.Margin = new Padding(0);
@@ -175,7 +174,7 @@
             buttonTokens.FlatAppearance.BorderSize = 0;
             buttonTokens.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonTokens.FlatStyle = FlatStyle.Flat;
-            buttonTokens.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonTokens.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonTokens.ForeColor = Color.DarkGray;
             buttonTokens.Location = new Point(0, 260);
             buttonTokens.Margin = new Padding(0);
@@ -191,7 +190,7 @@
             buttonImportacaoMDFe.FlatAppearance.BorderSize = 0;
             buttonImportacaoMDFe.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonImportacaoMDFe.FlatStyle = FlatStyle.Flat;
-            buttonImportacaoMDFe.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonImportacaoMDFe.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonImportacaoMDFe.ForeColor = Color.DarkGray;
             buttonImportacaoMDFe.Location = new Point(0, 210);
             buttonImportacaoMDFe.Margin = new Padding(0);
@@ -207,7 +206,7 @@
             buttonInicio.FlatAppearance.BorderSize = 0;
             buttonInicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonInicio.FlatStyle = FlatStyle.Flat;
-            buttonInicio.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonInicio.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonInicio.ForeColor = Color.DarkGray;
             buttonInicio.Location = new Point(0, 110);
             buttonInicio.Margin = new Padding(0);
@@ -223,7 +222,7 @@
             buttonImportacaoCSV.FlatAppearance.BorderSize = 0;
             buttonImportacaoCSV.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 21, 21);
             buttonImportacaoCSV.FlatStyle = FlatStyle.Flat;
-            buttonImportacaoCSV.Font = new Font("MesloLGL NF", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonImportacaoCSV.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonImportacaoCSV.ForeColor = Color.DarkGray;
             buttonImportacaoCSV.Location = new Point(0, 160);
             buttonImportacaoCSV.Margin = new Padding(0);
@@ -242,11 +241,11 @@
             ClientSize = new Size(800, 600);
             Controls.Add(panelView);
             Controls.Add(panelLateral);
-            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
             MinimumSize = new Size(816, 639);
             Name = "MainForm";
-            Opacity = 0.97D;
+            Opacity = 0.98D;
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += MainForm_FormClosingEvent;

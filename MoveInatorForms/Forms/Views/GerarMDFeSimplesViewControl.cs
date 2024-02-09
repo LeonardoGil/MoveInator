@@ -59,6 +59,8 @@ namespace MoveInatorForms.Forms.Views
             }
         }
 
+        #region Private Methods
+
         private async Task LoadFormAsync()
         {
             textBoxNumeroMDFe.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
@@ -141,6 +143,19 @@ namespace MoveInatorForms.Forms.Views
         {
             textBoxNumeroDocumento.Text = (int.Parse(textBoxNumeroDocumento.Text) + 1).ToString();
         }
+
+        #endregion
+
+        #region Responsive Methods
+
+        private void TableSizeChanged()
+        {
+            dataGridView.Location = new Point(0, tableLayoutPanel.Height);
+            dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
+        }
+
+        #endregion
 
         #region Events
 
@@ -234,15 +249,9 @@ namespace MoveInatorForms.Forms.Views
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
         }
 
-        private void View_ResizeEvent(object sender, EventArgs e)
+        private void View_SizeChangedEvent(object sender, EventArgs e)
         {
-            if (sender is Control control)
-            {
-                var sizeX = control.Width - 600;
-                var sizeY = control.Height - 600;
-
-                panelActions.Location = new Point(240 + sizeX, 270 + sizeY);
-            }
+            TableSizeChanged();
         }
 
         private void Folder_ClickEvent(object sender, EventArgs e)
@@ -259,6 +268,5 @@ namespace MoveInatorForms.Forms.Views
             }
         }
         #endregion
-
     }
 }
