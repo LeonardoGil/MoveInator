@@ -4,7 +4,6 @@ using MoveInatorForms.Domains.Entities.Outros;
 using MoveInatorForms.Forms;
 using MoveInatorForms.Structures;
 using GithubApiLib.Structures;
-using GithubApiLib.Services.Interfaces;
 
 namespace MoveInatorForms
 {
@@ -24,8 +23,6 @@ namespace MoveInatorForms
             var builder = Host.CreateApplicationBuilder().Inject()
                                                          .InjectGithubApiLib();
 
-            //Login(builder);
-
             ServiceProvider = builder.Build().Services;
             DatabaseJson = new DatabaseJson();
 
@@ -38,18 +35,6 @@ namespace MoveInatorForms
             var main = ServiceProvider.GetRequiredService<MainForm>();
 
             Application.Run(main);
-        }
-
-        static void Login(HostApplicationBuilder builder)
-        {
-            var login = new LoginForm();
-
-            Application.Run(login);
-
-            if (login.OfflineMode)
-                return;
-
-            builder.InjectContext(login.ConnectionString);
         }
     }
 }
