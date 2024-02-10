@@ -37,11 +37,11 @@
             // labelVersao
             // 
             labelVersao.AutoSize = true;
-            labelVersao.Font = new Font("MesloLGL NF", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVersao.Location = new Point(10, 25);
-            labelVersao.MaximumSize = new Size(165, 30);
+            labelVersao.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelVersao.Location = new Point(10, 22);
+            labelVersao.MaximumSize = new Size(165, 26);
             labelVersao.Name = "labelVersao";
-            labelVersao.Size = new Size(93, 30);
+            labelVersao.Size = new Size(77, 26);
             labelVersao.TabIndex = 0;
             labelVersao.Text = "Versao";
             labelVersao.TextAlign = ContentAlignment.MiddleCenter;
@@ -49,24 +49,24 @@
             // labelDescricao
             // 
             labelDescricao.AutoSize = true;
-            labelDescricao.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelDescricao.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             labelDescricao.ForeColor = Color.DarkGray;
-            labelDescricao.Location = new Point(5, 65);
-            labelDescricao.MaximumSize = new Size(170, 370);
+            labelDescricao.Location = new Point(10, 60);
+            labelDescricao.MaximumSize = new Size(170, 326);
             labelDescricao.Name = "labelDescricao";
-            labelDescricao.Size = new Size(106, 17);
+            labelDescricao.Size = new Size(83, 15);
             labelDescricao.TabIndex = 1;
             labelDescricao.Text = "labelDescricao";
             // 
             // linkLabel
             // 
             linkLabel.AutoSize = true;
-            linkLabel.Font = new Font("MesloLGL NF", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel.LinkColor = SystemColors.HotTrack;
             linkLabel.Location = new Point(5, 400);
-            linkLabel.MaximumSize = new Size(170, 50);
+            linkLabel.MaximumSize = new Size(170, 44);
             linkLabel.Name = "linkLabel";
-            linkLabel.Size = new Size(27, 14);
+            linkLabel.Size = new Size(28, 13);
             linkLabel.TabIndex = 2;
             linkLabel.TabStop = true;
             linkLabel.Text = "Link";
@@ -76,27 +76,27 @@
             // labelData
             // 
             labelData.AutoSize = true;
-            labelData.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelData.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelData.ForeColor = Color.DarkGray;
-            labelData.Location = new Point(104, 4);
-            labelData.MaximumSize = new Size(175, 380);
+            labelData.Location = new Point(113, 5);
+            labelData.MaximumSize = new Size(175, 335);
             labelData.Name = "labelData";
-            labelData.Size = new Size(78, 17);
+            labelData.Size = new Size(63, 13);
             labelData.TabIndex = 3;
             labelData.Text = "01/01/1990";
             // 
             // ReleaseCardControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 21, 21);
             Controls.Add(labelData);
             Controls.Add(linkLabel);
             Controls.Add(labelDescricao);
             Controls.Add(labelVersao);
-            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ControlLightLight;
-            Margin = new Padding(5);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "ReleaseCardControl";
             Size = new Size(180, 450);
             ResumeLayout(false);
