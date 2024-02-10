@@ -1,17 +1,22 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Utilities.Extensions;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace MoveInatorForms.Forms.Views.Cadastros
 {
-    public partial class CadastroEmpresaViewControl : CadastroBaseViewControl
+    public partial class CadastroEmpresaViewControl : BaseViewControl
     {
+        protected readonly BindingSource BindingSource = new();
+
         private List<Empresa> Empresas => BindingSource.OfType<Empresa>().ToList();
 
         public CadastroEmpresaViewControl()
         {
             InitializeComponent();
             Load();
+
+            BindingSource.ListChanged += BindindSourceChanged;
         }
 
         private void Load()
@@ -101,5 +106,17 @@ namespace MoveInatorForms.Forms.Views.Cadastros
 
             BindingSource.RemoveAt(row.Index);
         }
+
+        private void BindindSourceChanged(object? sender, ListChangedEventArgs e)
+        {
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
+        private void Salvar_ClickEvent(object sender, EventArgs e)
+        {
+            Program.DatabaseJson.Save();
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
     }
 }

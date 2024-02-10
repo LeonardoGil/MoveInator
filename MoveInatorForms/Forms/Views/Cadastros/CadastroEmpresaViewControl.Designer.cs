@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroEmpresaViewControl));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             textBoxClientSecret = new TextBox();
             labelClientSecret = new Label();
             textBoxClientId = new TextBox();
@@ -36,19 +40,29 @@
             labelEmissor = new Label();
             maskedTextBoxCnpjEmpresa = new MaskedTextBox();
             labelCnpjEmpresa = new Label();
-            ((System.ComponentModel.ISupportInitialize)BindingSource).BeginInit();
+            panelActions = new Panel();
+            buttonRemover = new Button();
+            buttonAdicionar = new Button();
+            buttonSalvar = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            dataGridView = new DataGridView();
+            tableLayoutPanel = new TableLayoutPanel();
+            labelTitulo = new Label();
+            panelActions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            tableLayoutPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // labelTitulo
-            // 
-            labelTitulo.Location = new Point(10, 23);
-            labelTitulo.Text = "Empresas";
             // 
             // textBoxClientSecret
             // 
-            textBoxClientSecret.Location = new Point(10, 217);
+            textBoxClientSecret.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel.SetColumnSpan(textBoxClientSecret, 2);
+            textBoxClientSecret.Location = new Point(20, 221);
+            textBoxClientSecret.Margin = new Padding(20, 0, 20, 0);
             textBoxClientSecret.Name = "textBoxClientSecret";
-            textBoxClientSecret.Size = new Size(474, 25);
+            textBoxClientSecret.Size = new Size(560, 25);
             textBoxClientSecret.TabIndex = 89;
             // 
             // labelClientSecret
@@ -56,7 +70,8 @@
             labelClientSecret.AutoSize = true;
             labelClientSecret.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelClientSecret.ForeColor = SystemColors.ControlLightLight;
-            labelClientSecret.Location = new Point(10, 195);
+            labelClientSecret.Location = new Point(20, 199);
+            labelClientSecret.Margin = new Padding(20, 5, 0, 5);
             labelClientSecret.Name = "labelClientSecret";
             labelClientSecret.Size = new Size(99, 17);
             labelClientSecret.TabIndex = 88;
@@ -64,9 +79,12 @@
             // 
             // textBoxClientId
             // 
-            textBoxClientId.Location = new Point(10, 157);
+            textBoxClientId.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel.SetColumnSpan(textBoxClientId, 2);
+            textBoxClientId.Location = new Point(20, 149);
+            textBoxClientId.Margin = new Padding(20, 0, 20, 0);
             textBoxClientId.Name = "textBoxClientId";
-            textBoxClientId.Size = new Size(474, 25);
+            textBoxClientId.Size = new Size(560, 25);
             textBoxClientId.TabIndex = 87;
             // 
             // labelClientId
@@ -74,7 +92,8 @@
             labelClientId.AutoSize = true;
             labelClientId.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelClientId.ForeColor = SystemColors.ControlLightLight;
-            labelClientId.Location = new Point(10, 136);
+            labelClientId.Location = new Point(20, 127);
+            labelClientId.Margin = new Padding(20, 5, 0, 5);
             labelClientId.Name = "labelClientId";
             labelClientId.Size = new Size(64, 17);
             labelClientId.TabIndex = 86;
@@ -82,9 +101,11 @@
             // 
             // textBoxNomeRazaoSocial
             // 
-            textBoxNomeRazaoSocial.Location = new Point(10, 96);
+            textBoxNomeRazaoSocial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxNomeRazaoSocial.Location = new Point(20, 77);
+            textBoxNomeRazaoSocial.Margin = new Padding(20, 0, 0, 0);
             textBoxNomeRazaoSocial.Name = "textBoxNomeRazaoSocial";
-            textBoxNomeRazaoSocial.Size = new Size(306, 25);
+            textBoxNomeRazaoSocial.Size = new Size(400, 25);
             textBoxNomeRazaoSocial.TabIndex = 85;
             // 
             // labelEmissor
@@ -92,7 +113,8 @@
             labelEmissor.AutoSize = true;
             labelEmissor.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelEmissor.ForeColor = SystemColors.ControlLightLight;
-            labelEmissor.Location = new Point(10, 75);
+            labelEmissor.Location = new Point(20, 55);
+            labelEmissor.Margin = new Padding(20, 5, 0, 5);
             labelEmissor.Name = "labelEmissor";
             labelEmissor.Size = new Size(92, 17);
             labelEmissor.TabIndex = 84;
@@ -100,7 +122,8 @@
             // 
             // maskedTextBoxCnpjEmpresa
             // 
-            maskedTextBoxCnpjEmpresa.Location = new Point(335, 96);
+            maskedTextBoxCnpjEmpresa.Location = new Point(425, 77);
+            maskedTextBoxCnpjEmpresa.Margin = new Padding(5, 0, 20, 0);
             maskedTextBoxCnpjEmpresa.Mask = "00.000.000/0000-00";
             maskedTextBoxCnpjEmpresa.Name = "maskedTextBoxCnpjEmpresa";
             maskedTextBoxCnpjEmpresa.Size = new Size(149, 25);
@@ -113,38 +136,238 @@
             labelCnpjEmpresa.AutoSize = true;
             labelCnpjEmpresa.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelCnpjEmpresa.ForeColor = SystemColors.ControlLightLight;
-            labelCnpjEmpresa.Location = new Point(335, 74);
+            labelCnpjEmpresa.Location = new Point(425, 55);
+            labelCnpjEmpresa.Margin = new Padding(5, 5, 0, 5);
             labelCnpjEmpresa.Name = "labelCnpjEmpresa";
             labelCnpjEmpresa.Size = new Size(36, 17);
             labelCnpjEmpresa.TabIndex = 82;
             labelCnpjEmpresa.Text = "CNPJ";
+            // 
+            // panelActions
+            // 
+            panelActions.Anchor = AnchorStyles.Right;
+            tableLayoutPanel.SetColumnSpan(panelActions, 2);
+            panelActions.Controls.Add(button1);
+            panelActions.Controls.Add(button2);
+            panelActions.Controls.Add(buttonRemover);
+            panelActions.Controls.Add(button3);
+            panelActions.Controls.Add(buttonAdicionar);
+            panelActions.Controls.Add(buttonSalvar);
+            panelActions.Location = new Point(333, 269);
+            panelActions.Margin = new Padding(0, 3, 0, 3);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(267, 27);
+            panelActions.TabIndex = 94;
+            // 
+            // buttonRemover
+            // 
+            buttonRemover.Anchor = AnchorStyles.None;
+            buttonRemover.FlatAppearance.BorderSize = 0;
+            buttonRemover.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonRemover.FlatStyle = FlatStyle.Flat;
+            buttonRemover.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRemover.ForeColor = SystemColors.ControlLightLight;
+            buttonRemover.Image = Properties.Resources.lixeira_16;
+            buttonRemover.Location = new Point(28, -37);
+            buttonRemover.Margin = new Padding(0, 3, 0, 3);
+            buttonRemover.Name = "buttonRemover";
+            buttonRemover.Size = new Size(91, 27);
+            buttonRemover.TabIndex = 92;
+            buttonRemover.Text = " Remover";
+            buttonRemover.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonRemover.UseVisualStyleBackColor = false;
+            // 
+            // buttonAdicionar
+            // 
+            buttonAdicionar.Anchor = AnchorStyles.None;
+            buttonAdicionar.FlatAppearance.BorderSize = 0;
+            buttonAdicionar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonAdicionar.FlatStyle = FlatStyle.Flat;
+            buttonAdicionar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
+            buttonAdicionar.Image = Properties.Resources.adicionar_16;
+            buttonAdicionar.Location = new Point(119, -37);
+            buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
+            buttonAdicionar.Name = "buttonAdicionar";
+            buttonAdicionar.Size = new Size(104, 27);
+            buttonAdicionar.TabIndex = 91;
+            buttonAdicionar.Text = " Adicionar";
+            buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonAdicionar.UseVisualStyleBackColor = false;
+            // 
+            // buttonSalvar
+            // 
+            buttonSalvar.Anchor = AnchorStyles.None;
+            buttonSalvar.Enabled = false;
+            buttonSalvar.FlatAppearance.BorderSize = 0;
+            buttonSalvar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonSalvar.FlatStyle = FlatStyle.Flat;
+            buttonSalvar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSalvar.ForeColor = SystemColors.ControlLightLight;
+            buttonSalvar.Image = (Image)resources.GetObject("buttonSalvar.Image");
+            buttonSalvar.Location = new Point(223, -37);
+            buttonSalvar.Margin = new Padding(0, 3, 0, 3);
+            buttonSalvar.Name = "buttonSalvar";
+            buttonSalvar.Size = new Size(75, 27);
+            buttonSalvar.TabIndex = 43;
+            buttonSalvar.Text = " Salvar";
+            buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonSalvar.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Image = Properties.Resources.lixeira_16;
+            button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(0, 3, 0, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 27);
+            button1.TabIndex = 97;
+            button1.Text = " Remover";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.None;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Image = Properties.Resources.adicionar_16;
+            button2.Location = new Point(91, 0);
+            button2.Margin = new Padding(0, 3, 0, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 27);
+            button2.TabIndex = 96;
+            button2.Text = " Adicionar";
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.None;
+            button3.Enabled = false;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ControlLightLight;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(195, 0);
+            button3.Margin = new Padding(0, 3, 0, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 27);
+            button3.TabIndex = 95;
+            button3.Text = " Salvar";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView
+            // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.BackgroundColor = Color.FromArgb(75, 25, 25);
+            dataGridView.BorderStyle = BorderStyle.None;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.GridColor = Color.FromArgb(12, 12, 12);
+            dataGridView.Location = new Point(0, 300);
+            dataGridView.Margin = new Padding(0);
+            dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.RowTemplate.Height = 25;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.ShowCellErrors = false;
+            dataGridView.ShowCellToolTips = false;
+            dataGridView.ShowRowErrors = false;
+            dataGridView.Size = new Size(600, 300);
+            dataGridView.TabIndex = 95;
+            // 
+            // tableLayoutPanel
+            // 
+            tableLayoutPanel.ColumnCount = 2;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel.Controls.Add(labelTitulo, 0, 0);
+            tableLayoutPanel.Controls.Add(labelEmissor, 0, 1);
+            tableLayoutPanel.Controls.Add(panelActions, 0, 7);
+            tableLayoutPanel.Controls.Add(textBoxNomeRazaoSocial, 0, 2);
+            tableLayoutPanel.Controls.Add(textBoxClientSecret, 0, 6);
+            tableLayoutPanel.Controls.Add(labelClientId, 0, 3);
+            tableLayoutPanel.Controls.Add(labelClientSecret, 0, 5);
+            tableLayoutPanel.Controls.Add(textBoxClientId, 0, 4);
+            tableLayoutPanel.Controls.Add(maskedTextBoxCnpjEmpresa, 1, 2);
+            tableLayoutPanel.Controls.Add(labelCnpjEmpresa, 1, 1);
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 8;
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.Size = new Size(600, 300);
+            tableLayoutPanel.TabIndex = 96;
+            // 
+            // labelTitulo
+            // 
+            labelTitulo.AutoSize = true;
+            tableLayoutPanel.SetColumnSpan(labelTitulo, 2);
+            labelTitulo.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTitulo.Location = new Point(20, 10);
+            labelTitulo.Margin = new Padding(20, 10, 0, 10);
+            labelTitulo.Name = "labelTitulo";
+            labelTitulo.Size = new Size(129, 30);
+            labelTitulo.TabIndex = 97;
+            labelTitulo.Text = "CSV Simples";
             // 
             // CadastroEmpresaViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
-            Controls.Add(textBoxClientSecret);
-            Controls.Add(labelClientSecret);
-            Controls.Add(textBoxClientId);
-            Controls.Add(labelClientId);
-            Controls.Add(textBoxNomeRazaoSocial);
-            Controls.Add(labelEmissor);
-            Controls.Add(maskedTextBoxCnpjEmpresa);
-            Controls.Add(labelCnpjEmpresa);
+            Controls.Add(tableLayoutPanel);
+            Controls.Add(dataGridView);
             Name = "CadastroEmpresaViewControl";
-            Controls.SetChildIndex(labelCnpjEmpresa, 0);
-            Controls.SetChildIndex(maskedTextBoxCnpjEmpresa, 0);
-            Controls.SetChildIndex(labelEmissor, 0);
-            Controls.SetChildIndex(textBoxNomeRazaoSocial, 0);
-            Controls.SetChildIndex(labelClientId, 0);
-            Controls.SetChildIndex(textBoxClientId, 0);
-            Controls.SetChildIndex(labelClientSecret, 0);
-            Controls.SetChildIndex(textBoxClientSecret, 0);
-            Controls.SetChildIndex(labelTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)BindingSource).EndInit();
+            panelActions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            tableLayoutPanel.ResumeLayout(false);
+            tableLayoutPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -156,5 +379,15 @@
         private Label labelEmissor;
         private MaskedTextBox maskedTextBoxCnpjEmpresa;
         private Label labelCnpjEmpresa;
+        private Panel panelActions;
+        protected Button buttonRemover;
+        protected Button buttonAdicionar;
+        protected Button buttonSalvar;
+        protected Button button1;
+        protected Button button2;
+        protected Button button3;
+        protected DataGridView dataGridView;
+        private TableLayoutPanel tableLayoutPanel;
+        private Label labelTitulo;
     }
 }
