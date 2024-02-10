@@ -72,6 +72,14 @@ namespace MoveInatorForms.Forms.Views.Cadastros
             textBoxClientSecret.Text = string.Empty;
         }
 
+        private void TableSizeChanged()
+        {
+            dataGridView.Location = new Point(0, tableLayoutPanel.Height);
+            dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
+        }
+
+
         private void AddEmpresa_ClickEvent(object sender, EventArgs e)
         {
             try
@@ -118,5 +126,9 @@ namespace MoveInatorForms.Forms.Views.Cadastros
             buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
         }
 
+        private void View_SizeChangedEvent(object sender, EventArgs e)
+        {
+            TableSizeChanged();
+        }
     }
 }

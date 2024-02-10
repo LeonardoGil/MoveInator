@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroEmpresaViewControl));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             textBoxClientSecret = new TextBox();
             labelClientSecret = new Label();
             textBoxClientId = new TextBox();
@@ -41,12 +41,12 @@
             maskedTextBoxCnpjEmpresa = new MaskedTextBox();
             labelCnpjEmpresa = new Label();
             panelActions = new Panel();
-            buttonRemover = new Button();
-            buttonAdicionar = new Button();
-            buttonSalvar = new Button();
             button1 = new Button();
             button2 = new Button();
+            buttonRemover = new Button();
             button3 = new Button();
+            buttonAdicionar = new Button();
+            buttonSalvar = new Button();
             dataGridView = new DataGridView();
             tableLayoutPanel = new TableLayoutPanel();
             labelTitulo = new Label();
@@ -122,11 +122,12 @@
             // 
             // maskedTextBoxCnpjEmpresa
             // 
+            maskedTextBoxCnpjEmpresa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             maskedTextBoxCnpjEmpresa.Location = new Point(425, 77);
             maskedTextBoxCnpjEmpresa.Margin = new Padding(5, 0, 20, 0);
             maskedTextBoxCnpjEmpresa.Mask = "00.000.000/0000-00";
             maskedTextBoxCnpjEmpresa.Name = "maskedTextBoxCnpjEmpresa";
-            maskedTextBoxCnpjEmpresa.Size = new Size(149, 25);
+            maskedTextBoxCnpjEmpresa.Size = new Size(155, 25);
             maskedTextBoxCnpjEmpresa.TabIndex = 83;
             maskedTextBoxCnpjEmpresa.TextAlign = HorizontalAlignment.Center;
             maskedTextBoxCnpjEmpresa.ValidatingType = typeof(DateTime);
@@ -159,6 +160,42 @@
             panelActions.Size = new Size(267, 27);
             panelActions.TabIndex = 94;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Image = Properties.Resources.lixeira_16;
+            button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(0, 3, 0, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 27);
+            button1.TabIndex = 97;
+            button1.Text = " Remover";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.None;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Image = Properties.Resources.adicionar_16;
+            button2.Location = new Point(91, 0);
+            button2.Margin = new Padding(0, 3, 0, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 27);
+            button2.TabIndex = 96;
+            button2.Text = " Adicionar";
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
             // buttonRemover
             // 
             buttonRemover.Anchor = AnchorStyles.None;
@@ -176,6 +213,25 @@
             buttonRemover.Text = " Remover";
             buttonRemover.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonRemover.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.None;
+            button3.Enabled = false;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ControlLightLight;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(195, 0);
+            button3.Margin = new Padding(0, 3, 0, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 27);
+            button3.TabIndex = 95;
+            button3.Text = " Salvar";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = false;
             // 
             // buttonAdicionar
             // 
@@ -214,61 +270,6 @@
             buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.lixeira_16;
-            button1.Location = new Point(0, 0);
-            button1.Margin = new Padding(0, 3, 0, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 27);
-            button1.TabIndex = 97;
-            button1.Text = " Remover";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = Properties.Resources.adicionar_16;
-            button2.Location = new Point(91, 0);
-            button2.Margin = new Padding(0, 3, 0, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 27);
-            button2.TabIndex = 96;
-            button2.Text = " Adicionar";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Enabled = false;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(195, 0);
-            button3.Margin = new Padding(0, 3, 0, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 27);
-            button3.TabIndex = 95;
-            button3.Text = " Salvar";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
-            // 
             // dataGridView
             // 
             dataGridView.AllowUserToAddRows = false;
@@ -279,14 +280,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
@@ -296,16 +297,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle6.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -316,6 +317,7 @@
             // 
             // tableLayoutPanel
             // 
+            tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel.ColumnCount = 2;
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
@@ -330,6 +332,7 @@
             tableLayoutPanel.Controls.Add(maskedTextBoxCnpjEmpresa, 1, 2);
             tableLayoutPanel.Controls.Add(labelCnpjEmpresa, 1, 1);
             tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.MaximumSize = new Size(9999, 400);
             tableLayoutPanel.Name = "tableLayoutPanel";
             tableLayoutPanel.RowCount = 8;
             tableLayoutPanel.RowStyles.Add(new RowStyle());
@@ -348,12 +351,13 @@
             labelTitulo.AutoSize = true;
             tableLayoutPanel.SetColumnSpan(labelTitulo, 2);
             labelTitulo.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTitulo.ForeColor = SystemColors.ControlLightLight;
             labelTitulo.Location = new Point(20, 10);
             labelTitulo.Margin = new Padding(20, 10, 0, 10);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(129, 30);
+            labelTitulo.Size = new Size(187, 30);
             labelTitulo.TabIndex = 97;
-            labelTitulo.Text = "CSV Simples";
+            labelTitulo.Text = "Cadastro Empresa";
             // 
             // CadastroEmpresaViewControl
             // 
@@ -363,6 +367,7 @@
             Controls.Add(tableLayoutPanel);
             Controls.Add(dataGridView);
             Name = "CadastroEmpresaViewControl";
+            SizeChanged += View_SizeChangedEvent;
             panelActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             tableLayoutPanel.ResumeLayout(false);

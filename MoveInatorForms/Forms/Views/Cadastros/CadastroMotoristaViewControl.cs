@@ -1,16 +1,21 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Utilities.Extensions;
+using System.ComponentModel;
 
 namespace MoveInatorForms.Forms.Views.Cadastros
 {
-    public partial class CadastroMotoristaViewControl : CadastroBaseViewControl
+    public partial class CadastroMotoristaViewControl : BaseViewControl
     {
+        protected readonly BindingSource BindingSource = new();
+
         private List<Motorista> Motoristas => BindingSource.OfType<Motorista>().ToList();
 
         public CadastroMotoristaViewControl()
         {
             InitializeComponent();
             Load();
+
+            BindingSource.ListChanged += BindindSourceChanged;
         }
 
         private void Load()
@@ -62,6 +67,13 @@ namespace MoveInatorForms.Forms.Views.Cadastros
             textBoxPassword.Text = string.Empty;
         }
 
+        private void TableSizeChanged()
+        {
+            dataGridView.Location = new Point(0, tableLayoutPanel.Height);
+            dataGridView.Height = Height - tableLayoutPanel.Height;
+            dataGridView.Width = Width;
+        }
+
         private void AddMotorista_ClickEvent(object sender, EventArgs e)
         {
             try
@@ -95,6 +107,22 @@ namespace MoveInatorForms.Forms.Views.Cadastros
             }
 
             BindingSource.RemoveAt(row.Index);
+        }
+
+        private void BindindSourceChanged(object? sender, ListChangedEventArgs e)
+        {
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
+        private void Salvar_ClickEvent(object sender, EventArgs e)
+        {
+            Program.DatabaseJson.Save();
+            buttonSalvar.Enabled = !Program.DatabaseJson.Atualizado;
+        }
+
+        private void View_SizeChangedEvent(object sender, EventArgs e)
+        {
+            TableSizeChanged();
         }
     }
 }
