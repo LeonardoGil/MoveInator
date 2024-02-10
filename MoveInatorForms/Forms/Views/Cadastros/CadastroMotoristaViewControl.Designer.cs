@@ -39,9 +39,6 @@
             labelCpfMotorista = new Label();
             textBoxNomeMotorista = new TextBox();
             panelActions = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             buttonRemover = new Button();
             buttonAdicionar = new Button();
             buttonSalvar = new Button();
@@ -59,13 +56,13 @@
             textBoxPassword.Location = new Point(20, 188);
             textBoxPassword.Margin = new Padding(20, 0, 5, 0);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(395, 25);
+            textBoxPassword.Size = new Size(455, 25);
             textBoxPassword.TabIndex = 89;
             // 
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelSenha.ForeColor = SystemColors.ControlLightLight;
             labelSenha.Location = new Point(20, 166);
             labelSenha.Margin = new Padding(20, 5, 0, 5);
@@ -77,32 +74,32 @@
             // maskedTextBoxCpfMotorista
             // 
             maskedTextBoxCpfMotorista.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            maskedTextBoxCpfMotorista.Location = new Point(425, 77);
+            maskedTextBoxCpfMotorista.Location = new Point(485, 77);
             maskedTextBoxCpfMotorista.Margin = new Padding(5, 0, 20, 0);
             maskedTextBoxCpfMotorista.Mask = "000.000.000-00";
             maskedTextBoxCpfMotorista.Name = "maskedTextBoxCpfMotorista";
-            maskedTextBoxCpfMotorista.Size = new Size(155, 25);
+            maskedTextBoxCpfMotorista.Size = new Size(95, 25);
             maskedTextBoxCpfMotorista.TabIndex = 86;
             maskedTextBoxCpfMotorista.TextAlign = HorizontalAlignment.Center;
             // 
             // labelNomeMotorista
             // 
             labelNomeMotorista.AutoSize = true;
-            labelNomeMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNomeMotorista.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelNomeMotorista.ForeColor = SystemColors.ControlLightLight;
             labelNomeMotorista.Location = new Point(20, 55);
             labelNomeMotorista.Margin = new Padding(20, 5, 0, 5);
             labelNomeMotorista.Name = "labelNomeMotorista";
-            labelNomeMotorista.Size = new Size(36, 17);
+            labelNomeMotorista.Size = new Size(44, 17);
             labelNomeMotorista.TabIndex = 83;
             labelNomeMotorista.Text = "Nome";
             // 
             // labelCpfMotorista
             // 
             labelCpfMotorista.AutoSize = true;
-            labelCpfMotorista.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCpfMotorista.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelCpfMotorista.ForeColor = SystemColors.ControlLightLight;
-            labelCpfMotorista.Location = new Point(425, 55);
+            labelCpfMotorista.Location = new Point(485, 55);
             labelCpfMotorista.Margin = new Padding(5, 5, 0, 5);
             labelCpfMotorista.Name = "labelCpfMotorista";
             labelCpfMotorista.Size = new Size(29, 17);
@@ -115,16 +112,13 @@
             textBoxNomeMotorista.Location = new Point(20, 77);
             textBoxNomeMotorista.Margin = new Padding(20, 0, 5, 0);
             textBoxNomeMotorista.Name = "textBoxNomeMotorista";
-            textBoxNomeMotorista.Size = new Size(395, 25);
+            textBoxNomeMotorista.Size = new Size(455, 25);
             textBoxNomeMotorista.TabIndex = 84;
             // 
             // panelActions
             // 
             panelActions.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tableLayoutPanel.SetColumnSpan(panelActions, 2);
-            panelActions.Controls.Add(button1);
-            panelActions.Controls.Add(button2);
-            panelActions.Controls.Add(button3);
             panelActions.Controls.Add(buttonRemover);
             panelActions.Controls.Add(buttonAdicionar);
             panelActions.Controls.Add(buttonSalvar);
@@ -134,78 +128,21 @@
             panelActions.Size = new Size(280, 27);
             panelActions.TabIndex = 94;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.lixeira_16;
-            button1.Location = new Point(0, 0);
-            button1.Margin = new Padding(0, 3, 0, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 27);
-            button1.TabIndex = 95;
-            button1.Text = " Remover";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = Properties.Resources.adicionar_16;
-            button2.Location = new Point(91, 0);
-            button2.Margin = new Padding(0, 3, 0, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 27);
-            button2.TabIndex = 94;
-            button2.Text = " Adicionar";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Enabled = false;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(195, 0);
-            button3.Margin = new Padding(0, 3, 0, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(85, 27);
-            button3.TabIndex = 93;
-            button3.Text = " Salvar";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
-            // 
             // buttonRemover
             // 
             buttonRemover.Anchor = AnchorStyles.None;
             buttonRemover.FlatAppearance.BorderSize = 0;
             buttonRemover.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonRemover.FlatStyle = FlatStyle.Flat;
-            buttonRemover.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRemover.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRemover.ForeColor = SystemColors.ControlLightLight;
             buttonRemover.Image = Properties.Resources.lixeira_16;
-            buttonRemover.ImageAlign = ContentAlignment.TopLeft;
-            buttonRemover.Location = new Point(40, -37);
+            buttonRemover.Location = new Point(0, 0);
             buttonRemover.Margin = new Padding(0, 3, 0, 3);
             buttonRemover.Name = "buttonRemover";
             buttonRemover.Size = new Size(91, 27);
             buttonRemover.TabIndex = 92;
             buttonRemover.Text = " Remover";
-            buttonRemover.TextAlign = ContentAlignment.BottomRight;
             buttonRemover.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonRemover.UseVisualStyleBackColor = false;
             // 
@@ -215,17 +152,15 @@
             buttonAdicionar.FlatAppearance.BorderSize = 0;
             buttonAdicionar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonAdicionar.FlatStyle = FlatStyle.Flat;
-            buttonAdicionar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonAdicionar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
-            buttonAdicionar.ImageAlign = ContentAlignment.TopLeft;
-            buttonAdicionar.Location = new Point(131, -37);
+            buttonAdicionar.Location = new Point(91, 0);
             buttonAdicionar.Margin = new Padding(0, 3, 0, 3);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(104, 27);
             buttonAdicionar.TabIndex = 91;
             buttonAdicionar.Text = " Adicionar";
-            buttonAdicionar.TextAlign = ContentAlignment.BottomRight;
             buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonAdicionar.UseVisualStyleBackColor = false;
             // 
@@ -236,17 +171,15 @@
             buttonSalvar.FlatAppearance.BorderSize = 0;
             buttonSalvar.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
             buttonSalvar.FlatStyle = FlatStyle.Flat;
-            buttonSalvar.Font = new Font("MesloLGL NF", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSalvar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSalvar.ForeColor = SystemColors.ControlLightLight;
             buttonSalvar.Image = (Image)resources.GetObject("buttonSalvar.Image");
-            buttonSalvar.ImageAlign = ContentAlignment.TopLeft;
-            buttonSalvar.Location = new Point(235, -37);
+            buttonSalvar.Location = new Point(195, 0);
             buttonSalvar.Margin = new Padding(0, 3, 0, 3);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(85, 27);
             buttonSalvar.TabIndex = 43;
             buttonSalvar.Text = " Salvar";
-            buttonSalvar.TextAlign = ContentAlignment.BottomRight;
             buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = false;
             // 
@@ -261,7 +194,7 @@
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
@@ -277,12 +210,12 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle3.Font = new Font("MesloLGL NF", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -311,8 +244,8 @@
             // 
             tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel.ColumnCount = 2;
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel.Controls.Add(labelTitulo, 0, 0);
             tableLayoutPanel.Controls.Add(labelNomeMotorista, 0, 1);
             tableLayoutPanel.Controls.Add(panelActions, 0, 5);
@@ -361,9 +294,6 @@
         protected Button buttonRemover;
         protected Button buttonAdicionar;
         protected Button buttonSalvar;
-        protected Button button1;
-        protected Button button2;
-        protected Button button3;
         protected DataGridView dataGridView;
         private Label labelTitulo;
         private TableLayoutPanel tableLayoutPanel;

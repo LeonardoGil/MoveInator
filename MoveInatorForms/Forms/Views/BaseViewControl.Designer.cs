@@ -35,8 +35,8 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
-            Font = new Font("MesloLGL NF", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.DarkGray;
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = SystemColors.ControlLightLight;
             Margin = new Padding(0);
             MinimumSize = new Size(600, 600);
             Name = "BaseViewControl";
