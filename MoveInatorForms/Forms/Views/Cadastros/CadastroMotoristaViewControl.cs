@@ -21,13 +21,9 @@ namespace MoveInatorForms.Forms.Views.Cadastros
         private void Load()
         {
             maskedTextBoxCpfMotorista.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
-            buttonAdicionar.Click += AddMotorista_ClickEvent;
-            buttonRemover.Click += RemoveMotorista_ClickEvent;
 
             BindingSource.DataSource = Program.DatabaseJson.Motoristas;
             dataGridView.DataSource = BindingSource;
-
-            dataGridView.FillSpecificCells(nameof(Motorista.Nome), nameof(Motorista.Cpf));
         }
 
         private Motorista BuildMotorista()
