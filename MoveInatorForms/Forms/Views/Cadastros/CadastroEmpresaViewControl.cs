@@ -1,7 +1,6 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Utilities.Extensions;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace MoveInatorForms.Forms.Views.Cadastros
 {
@@ -22,8 +21,6 @@ namespace MoveInatorForms.Forms.Views.Cadastros
         private void Load()
         {
             maskedTextBoxCnpjEmpresa.KeyPress += ControlEventsExtensions.OnlyNumber_KeyPressEvent;
-            buttonAdicionar.Click += AddEmpresa_ClickEvent;
-            buttonRemover.Click += RemoveEmpresa_ClickEvent;
 
             BindingSource.DataSource = Program.DatabaseJson.Empresas;
             dataGridView.DataSource = BindingSource;
@@ -79,6 +76,7 @@ namespace MoveInatorForms.Forms.Views.Cadastros
             dataGridView.Width = Width;
         }
 
+        #region Events
 
         private void AddEmpresa_ClickEvent(object sender, EventArgs e)
         {
@@ -130,5 +128,7 @@ namespace MoveInatorForms.Forms.Views.Cadastros
         {
             TableSizeChanged();
         }
+
+        #endregion
     }
 }

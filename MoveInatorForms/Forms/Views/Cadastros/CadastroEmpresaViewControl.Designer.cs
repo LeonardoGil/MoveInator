@@ -171,6 +171,7 @@
             buttonRemover.Text = " Remover";
             buttonRemover.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonRemover.UseVisualStyleBackColor = false;
+            buttonRemover.Click += RemoveEmpresa_ClickEvent;
             // 
             // buttonAdicionar
             // 
@@ -189,6 +190,7 @@
             buttonAdicionar.Text = " Adicionar";
             buttonAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonAdicionar.UseVisualStyleBackColor = false;
+            buttonAdicionar.Click += AddEmpresa_ClickEvent;
             // 
             // buttonSalvar
             // 
@@ -208,6 +210,7 @@
             buttonSalvar.Text = " Salvar";
             buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = false;
+            buttonSalvar.Click += Salvar_ClickEvent;
             // 
             // dataGridView
             // 
@@ -221,7 +224,7 @@
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
