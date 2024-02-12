@@ -4,8 +4,6 @@
     {
         public int TipoDocumento { get; set; }
 
-        public int OrdemViagem { get; set; }
-
         public string NumeroDocumento { get; set; }
 
         public string SerieDocumento { get; set; }
@@ -65,7 +63,6 @@
             var fields = new string[]
             {
                 nameof(TipoDocumento),
-                nameof(OrdemViagem),
                 nameof(NumeroDocumento),
                 nameof(SerieDocumento),
                 nameof(DataEmissao),
@@ -103,7 +100,6 @@
             var fields = new string[]
             {
                 TipoDocumento.ToString(),
-                OrdemViagem.ToString(),
                 NumeroDocumento,
                 SerieDocumento,
                 DataEmissao.ToString("d"),
