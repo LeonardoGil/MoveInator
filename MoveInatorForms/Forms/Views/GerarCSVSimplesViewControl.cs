@@ -88,7 +88,9 @@ namespace MoveInatorForms.Forms.Views
                 CpfCnpjDestinatario = maskedTextBoxCpfCnpjDestinatario.Text.OnlyNumber(),
 
                 NomeMotorista = (comboBoxMotorista.SelectedItem as Motorista).Nome,
-                CpfMotorista = (comboBoxMotorista.SelectedItem as Motorista).Cpf
+                CpfMotorista = (comboBoxMotorista.SelectedItem as Motorista).Cpf,
+
+                CodigoVeiculo = textBoxCodigoVeiculo.Text,
             };
         }
 

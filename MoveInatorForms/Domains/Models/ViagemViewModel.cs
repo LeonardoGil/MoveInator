@@ -46,5 +46,7 @@ namespace MoveInatorForms.Domains.Models
         public string NomeMotorista { get; set; }
 
         public string CpfMotorista { get; set; }
+
+        public string CodigoVeiculo { get; set; }
     }
 }

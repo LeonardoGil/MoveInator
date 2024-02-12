@@ -28,6 +28,8 @@
 
         public string CPFMotorista { get; set; }
 
+        public string CodigoVeiculo { get; set; }
+
         public string PlacaDoVeiculo { get; set; }
 
         public int NumerodaNFe { get; set; }
@@ -75,6 +77,7 @@
                 nameof(QuantidadeNFe),
                 nameof(NomeDoMotorista),
                 nameof(CPFMotorista),
+                nameof(CodigoVeiculo),
                 nameof(PlacaDoVeiculo),
                 nameof(NumerodaNFe),
                 nameof(SerieDaNFe),
@@ -112,6 +115,7 @@
                 QuantidadeNFe?.ToString() ?? string.Empty,
                 NomeDoMotorista,
                 CPFMotorista,
+                CodigoVeiculo,
                 PlacaDoVeiculo,
                 NumerodaNFe.ToString(),
                 SerieDaNFe.ToString(),

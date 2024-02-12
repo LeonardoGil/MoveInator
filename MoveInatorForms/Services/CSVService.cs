@@ -79,6 +79,7 @@ namespace MoveInatorForms.Services
                     QuantidadeDaCarga = null,
                     NomeDoMotorista = viagemViewModel.NomeMotorista,
                     CPFMotorista = viagemViewModel.CpfMotorista,
+                    CodigoVeiculo = viagemViewModel.CodigoVeiculo,
                     PlacaDoVeiculo = "MOV1E24",
                     NomeDestinatario = viagemViewModel.NomeDestinatario,
                     CNPJCPFDestinatario = viagemViewModel.CpfCnpjDestinatario,
