@@ -63,6 +63,7 @@ namespace MoveInatorForms.Services
                 Motorista = single.NomeMotorista,
                 CpfMotorista = single.CpfMotorista,
                 TipoDocumento = tipoDocumento,
+                TipoVeiculo = single.TipoVeiculo
             };
 
             foreach (var documento in mdfeViews)
@@ -107,9 +108,8 @@ namespace MoveInatorForms.Services
                                .Replace("[Emissor]", mdfe.Emissor)
                                .Replace("[CnpjEmissor]", mdfe.CnpjEmissor)
                                .Replace("[NomeMotorista]", mdfe.Motorista)
-                               .Replace("[CpfMotorista]", mdfe.CpfMotorista);
-
-
+                               .Replace("[CpfMotorista]", mdfe.CpfMotorista)
+                               .Replace("[TipoVeiculo]", ((int)mdfe.TipoVeiculo).ToString("D2"));
 
             switch (mdfe.TipoDocumento)
             {

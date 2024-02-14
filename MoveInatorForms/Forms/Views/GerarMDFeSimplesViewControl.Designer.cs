@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarMDFeSimplesViewControl));
             comboBoxEmissor = new ComboBox();
             labelMotorista = new Label();
@@ -56,6 +56,8 @@
             checkedListBoxTipoDocumento = new CheckedListBox();
             labelTipoDocumento = new Label();
             tableLayoutPanel = new TableLayoutPanel();
+            comboBoxTipoVeiculo = new ComboBox();
+            labelTipoVeiculo = new Label();
             comboBoxMotorista = new ComboBox();
             textBoxSerieDocumento = new TextBox();
             textBoxSerieMDFe = new TextBox();
@@ -220,14 +222,14 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 31, 31);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 37, 37);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 31, 31);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 37, 37);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.FromArgb(12, 12, 12);
@@ -237,16 +239,16 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(46, 46, 46);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowTemplate.Height = 25;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.ShowCellErrors = false;
@@ -259,18 +261,18 @@
             // 
             textBoxDiretorio.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel.SetColumnSpan(textBoxDiretorio, 2);
-            textBoxDiretorio.Location = new Point(20, 221);
-            textBoxDiretorio.Margin = new Padding(20, 0, 5, 0);
+            textBoxDiretorio.Location = new Point(155, 221);
+            textBoxDiretorio.Margin = new Padding(5, 0, 5, 0);
             textBoxDiretorio.Name = "textBoxDiretorio";
-            textBoxDiretorio.Size = new Size(275, 25);
+            textBoxDiretorio.Size = new Size(290, 25);
             textBoxDiretorio.TabIndex = 48;
             // 
             // labelDiretorio
             // 
             labelDiretorio.AutoSize = true;
             labelDiretorio.ForeColor = SystemColors.ControlLightLight;
-            labelDiretorio.Location = new Point(20, 199);
-            labelDiretorio.Margin = new Padding(20, 5, 0, 5);
+            labelDiretorio.Location = new Point(155, 199);
+            labelDiretorio.Margin = new Padding(5, 5, 0, 5);
             labelDiretorio.Name = "labelDiretorio";
             labelDiretorio.Size = new Size(60, 17);
             labelDiretorio.TabIndex = 49;
@@ -350,7 +352,7 @@
             buttonFolder.FlatStyle = FlatStyle.Flat;
             buttonFolder.ForeColor = SystemColors.ControlLightLight;
             buttonFolder.Image = (Image)resources.GetObject("buttonFolder.Image");
-            buttonFolder.Location = new Point(300, 221);
+            buttonFolder.Location = new Point(450, 221);
             buttonFolder.Margin = new Padding(0, 0, 10, 0);
             buttonFolder.Name = "buttonFolder";
             buttonFolder.Size = new Size(30, 25);
@@ -398,11 +400,10 @@
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.Controls.Add(comboBoxTipoVeiculo, 0, 6);
+            tableLayoutPanel.Controls.Add(labelTipoVeiculo, 0, 5);
             tableLayoutPanel.Controls.Add(labelTitulo, 0, 0);
-            tableLayoutPanel.Controls.Add(buttonFolder, 2, 6);
-            tableLayoutPanel.Controls.Add(labelDiretorio, 0, 5);
             tableLayoutPanel.Controls.Add(labelTipoDocumento, 1, 1);
-            tableLayoutPanel.Controls.Add(textBoxDiretorio, 0, 6);
             tableLayoutPanel.Controls.Add(comboBoxMotorista, 3, 4);
             tableLayoutPanel.Controls.Add(panelActions, 0, 7);
             tableLayoutPanel.Controls.Add(checkedListBoxTipoDocumento, 1, 2);
@@ -419,6 +420,9 @@
             tableLayoutPanel.Controls.Add(labelSerieMDFe, 0, 3);
             tableLayoutPanel.Controls.Add(labelNumeroMDFe, 0, 1);
             tableLayoutPanel.Controls.Add(textBoxNumeroMDFe, 0, 2);
+            tableLayoutPanel.Controls.Add(buttonFolder, 3, 6);
+            tableLayoutPanel.Controls.Add(textBoxDiretorio, 1, 6);
+            tableLayoutPanel.Controls.Add(labelDiretorio, 1, 5);
             tableLayoutPanel.Location = new Point(0, 0);
             tableLayoutPanel.MaximumSize = new Size(9999, 400);
             tableLayoutPanel.Name = "tableLayoutPanel";
@@ -431,8 +435,31 @@
             tableLayoutPanel.RowStyles.Add(new RowStyle());
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel.Size = new Size(600, 300);
             tableLayoutPanel.TabIndex = 74;
+            // 
+            // comboBoxTipoVeiculo
+            // 
+            comboBoxTipoVeiculo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxTipoVeiculo.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTipoVeiculo.FormattingEnabled = true;
+            comboBoxTipoVeiculo.Location = new Point(20, 221);
+            comboBoxTipoVeiculo.Margin = new Padding(20, 0, 5, 0);
+            comboBoxTipoVeiculo.Name = "comboBoxTipoVeiculo";
+            comboBoxTipoVeiculo.Size = new Size(125, 25);
+            comboBoxTipoVeiculo.TabIndex = 75;
+            // 
+            // labelTipoVeiculo
+            // 
+            labelTipoVeiculo.AutoSize = true;
+            labelTipoVeiculo.ForeColor = SystemColors.ControlLightLight;
+            labelTipoVeiculo.Location = new Point(20, 199);
+            labelTipoVeiculo.Margin = new Padding(20, 5, 0, 5);
+            labelTipoVeiculo.Name = "labelTipoVeiculo";
+            labelTipoVeiculo.Size = new Size(79, 17);
+            labelTipoVeiculo.TabIndex = 75;
+            labelTipoVeiculo.Text = "Tipo Veiculo";
             // 
             // comboBoxMotorista
             // 
@@ -483,8 +510,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel);
             Controls.Add(dataGridView);
-            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = SystemColors.ControlLightLight;
             Name = "GerarMDFeSimplesViewControl";
             SizeChanged += View_SizeChangedEvent;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
@@ -523,5 +548,7 @@
         private TextBox textBoxSerieDocumento;
         private TextBox textBoxSerieMDFe;
         private MaskedTextBox maskedTextBoxDataEmissao;
+        private ComboBox comboBoxTipoVeiculo;
+        private Label labelTipoVeiculo;
     }
 }

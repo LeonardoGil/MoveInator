@@ -54,7 +54,7 @@
 							<xNome>[NomeMotorista]</xNome>
 							<CPF>[CpfMotorista]</CPF>
 						</condutor>
-						<tpRod>06</tpRod>
+						<tpRod>[TipoVeiculo]</tpRod>
 						<tpCar>00</tpCar>
 						<UF>SC</UF>
 					</veicTracao>

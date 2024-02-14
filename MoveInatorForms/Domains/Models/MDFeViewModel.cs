@@ -1,4 +1,6 @@
-﻿namespace MoveInatorForms.Domains.Models
+﻿using MoveInatorForms.Domains.Enums;
+
+namespace MoveInatorForms.Domains.Models
 {
     public class MDFeViewModel
     {
@@ -19,5 +21,7 @@
         public string NomeMotorista { get; set; }
 
         public string CpfMotorista { get; set; }
+
+        public TipoVeiculoEnum TipoVeiculo { get; set; }
     }
 }
