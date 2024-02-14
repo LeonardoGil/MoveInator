@@ -1,12 +1,9 @@
 ﻿using MoveInatorForms.Domains.Entities.Cadastros;
 using MoveInatorForms.Domains.Enums;
 using MoveInatorForms.Domains.Models;
-using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
 using MoveInatorForms.Utilities.Extensions;
-using MoveInatorForms.Utilities.Mocks;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace MoveInatorForms.Forms.Views
 {
@@ -75,6 +72,11 @@ namespace MoveInatorForms.Forms.Views
 
             Reload();
 
+            comboBoxTipoVeiculo.DataSource = new BindingSource
+            {
+                DataSource = Enum.GetNames<TipoVeiculoEnum>()
+            };
+
             maskedTextBoxDataEmissao.Text = DateTime.Now.ToString("d");
             textBoxDiretorio.Text = folderBrowserDialog.SelectedPath;
         }
@@ -88,6 +90,9 @@ namespace MoveInatorForms.Forms.Views
 
         private MDFeViewModel BuildMDFeViewModel()
         {
+            var empresa = comboBoxEmissor.SelectedItem as Empresa;
+            var motorista = comboBoxMotorista.SelectedItem as Motorista;
+
             return new MDFeViewModel
             {
                 Numero = int.Parse(textBoxNumeroMDFe.Text),
@@ -96,12 +101,13 @@ namespace MoveInatorForms.Forms.Views
                 NumeroDocumento = int.Parse(textBoxNumeroDocumento.Text),
                 SerieDocumento = int.Parse(textBoxSerieDocumento.Text),
 
-                Emissor = (comboBoxEmissor.SelectedItem as Empresa).RazaoSocial,
-                CnpjEmissor = (comboBoxEmissor.SelectedItem as Empresa).Cnpj,
+                Emissor = empresa.RazaoSocial,
+                CnpjEmissor = empresa.Cnpj,
                 DataEmissao = DateTime.Parse(maskedTextBoxDataEmissao.Text),
 
-                NomeMotorista = (comboBoxMotorista.SelectedItem as Motorista).Nome,
-                CpfMotorista = (comboBoxMotorista.SelectedItem as Motorista).Cpf
+                NomeMotorista = motorista.Nome,
+                CpfMotorista = motorista.Cpf,
+                TipoVeiculo = Enum.Parse<TipoVeiculoEnum>(Convert.ToString(comboBoxTipoVeiculo.SelectedItem))
             };
         }
 
