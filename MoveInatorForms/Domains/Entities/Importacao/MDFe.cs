@@ -23,6 +23,8 @@ namespace MoveInatorForms.Domains.Entities.Importacao
 
         public TipoDocumentoEnum TipoDocumento { get; set; }
 
+        public TipoVeiculoEnum TipoVeiculo { get; set; }
+
         public List<CTe> CTes { get; set; } = new List<CTe>();
 
         public List<NFe> NFes { get; set; } = new List<NFe>();
