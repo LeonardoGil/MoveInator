@@ -117,6 +117,7 @@ namespace MoveInatorForms.Forms.Views
             textBoxSerieMDFe.Enabled = enabled;
 
             maskedTextBoxDataEmissao.Enabled = enabled;
+            checkedListBoxTipoDocumento.Enabled = enabled;
 
             comboBoxMotorista.Enabled = enabled;
             comboBoxEmissor.Enabled = enabled;
@@ -137,6 +138,7 @@ namespace MoveInatorForms.Forms.Views
             textBoxSerieDocumento.ValidateNumber("Informe a Série do documento!");
 
             maskedTextBoxDataEmissao.ValidateOnlyDate("Informe uma Data Emissão valída!");
+            checkedListBoxTipoDocumento.ValidateOneChecked("Informe o tipo Documento!");
 
             // Lista de CTes
             var ctes = (List<MDFeViewModel>)MDFeViewBindingSource.DataSource;
