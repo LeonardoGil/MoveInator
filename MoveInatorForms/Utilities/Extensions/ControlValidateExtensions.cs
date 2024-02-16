@@ -1,4 +1,6 @@
-﻿namespace MoveInatorForms.Utilities.Extensions
+﻿using MoveInatorForms.Domains.Enums;
+
+namespace MoveInatorForms.Utilities.Extensions
 {
     public static class ControlValidateExtensions
     {
@@ -37,6 +39,11 @@
             if (string.IsNullOrEmpty(cnpj)) throw new Exception(message);
 
             if (cnpj.Length != 14) throw new Exception("CNPJ precisa conter 14 digitos!");
+        }
+        public static void ValidateOneChecked(this CheckedListBox checkedListBox, string message)
+        {
+            if (!checkedListBox.CheckedIndices.OfType<int>().Any())
+                throw new Exception(message);
         }
     }
 }
