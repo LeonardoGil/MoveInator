@@ -8,7 +8,7 @@ $pathProject = [Directory]::GetParent($pathLocation).FullName;
 $pathCSProj = [Path]::Combine($pathProject, 'MoveInatorForms', 'MoveInatorForms.csproj');
 $pathArtefatos = '..\Artefatos';
 
-dotnet build $pathCSProj -c 'Release' -o $pathArtefatos;
+dotnet build $pathCSProj -c 'Release' -o $pathArtefatos -v q;
 
 $pathTemplates = [Path]::Combine($pathProject, 'MoveInatorForms', 'Templates');
 
@@ -22,4 +22,4 @@ Start-Process 'C:\Program Files\7-Zip\7z.exe' -ArgumentList @('a', '-tzip', $fil
 Write-Host "Artefato gerado." -ForegroundColor Green;
 Write-Output $filePath;
 
-Remove-Item $pathArtefatos;
+Remove-Item $pathArtefatos -Recurse -Force;
