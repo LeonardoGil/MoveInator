@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using MoveInatorForms.Forms;
 using MoveInatorForms.Forms.Views;
 using MoveInatorForms.Forms.Views.Cadastros;
+using MoveInatorForms.Forms.Views.Manifestos;
 using MoveInatorForms.Services;
 using MoveInatorForms.Services.Interfaces;
 
@@ -28,7 +29,7 @@ namespace MoveInatorForms.Structures
         {
             builder.Services.AddTransient<MainForm>();
 
-            builder.Services.AddTransient<GerarCSVSimplesViewControl>();
+            builder.Services.AddTransient<GerarManifestoViewControl>();
             builder.Services.AddTransient<GerarMDFeSimplesViewControl>();
             builder.Services.AddTransient<InicioViewControl>();
             builder.Services.AddTransient<NovidadesViewControl>();

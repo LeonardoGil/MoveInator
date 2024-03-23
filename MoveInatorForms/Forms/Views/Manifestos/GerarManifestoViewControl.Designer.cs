@@ -1,6 +1,6 @@
-﻿namespace MoveInatorForms.Forms.Views
+﻿namespace MoveInatorForms.Forms.Views.Manifestos
 {
-    partial class GerarCSVSimplesViewControl
+    partial class GerarManifestoViewControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarCSVSimplesViewControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerarManifestoViewControl));
             buttonAdicionar = new Button();
             buttonGerar = new Button();
             buttonLimpar = new Button();
@@ -609,13 +609,13 @@
             labelCodigoVeiculo.TabIndex = 48;
             labelCodigoVeiculo.Text = "Código Veículo";
             // 
-            // GerarCSVSimplesViewControl
+            // GerarManifestoViewControl
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel);
             Controls.Add(dataGridView);
-            Name = "GerarCSVSimplesViewControl";
+            Name = "GerarManifestoViewControl";
             SizeChanged += View_SizeChangedEvent;
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();

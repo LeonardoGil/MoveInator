@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoveInatorForms.Forms.Views;
 using MoveInatorForms.Forms.Views.Cadastros;
+using MoveInatorForms.Forms.Views.Manifestos;
 using MoveInatorForms.Services.Interfaces;
 using System.Diagnostics;
 using System.Reflection;
@@ -12,7 +13,7 @@ namespace MoveInatorForms.Forms
         private Point Point;
 
         private InicioViewControl InicioViewControl;
-        private GerarCSVSimplesViewControl GerarCSVSimplesView;
+        private GerarManifestoViewControl GerarCSVSimplesView;
         private GerarMDFeSimplesViewControl GerarMDFeSimplesView;
         private GerarTokenViewControl GerarTokenViewControl;
         private CadastroEmpresaViewControl CadastroEmpresaViewControl;
@@ -107,9 +108,9 @@ namespace MoveInatorForms.Forms
 
         private void LoadCSVSimples_ClickEvent(object sender, EventArgs e)
         {
-            if (GerarCSVSimplesView is default(GerarCSVSimplesViewControl))
+            if (GerarCSVSimplesView is default(GerarManifestoViewControl))
             {
-                GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarCSVSimplesViewControl>();
+                GerarCSVSimplesView = Program.ServiceProvider.GetRequiredService<GerarManifestoViewControl>();
             }
             else
             {

@@ -5,12 +5,11 @@ using MoveInatorForms.Services.Interfaces;
 using MoveInatorForms.Utilities.Extensions;
 using MoveInatorForms.Utilities.Mocks;
 using System.ComponentModel;
-using System.Text;
 using UtilityLib.Domains.Entities.DocumentosFiscais;
 
-namespace MoveInatorForms.Forms.Views
+namespace MoveInatorForms.Forms.Views.Manifestos
 {
-    public partial class GerarCSVSimplesViewControl : BaseViewControl
+    public partial class GerarManifestoViewControl : BaseViewControl
     {
         private readonly ICSVService CSVService;
 
@@ -26,7 +25,7 @@ namespace MoveInatorForms.Forms.Views
 
         public List<Motorista> Motoristas => MotoristasBindingSource.OfType<Motorista>().ToList();
 
-        public GerarCSVSimplesViewControl(ICSVService cSVService)
+        public GerarManifestoViewControl(ICSVService cSVService)
         {
             CSVService = cSVService;
             InitializeComponent();
