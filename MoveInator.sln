@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubApiLib", "Libraries\GithubApiLib\GithubApiLib.csproj", "{520D6C24-3BFE-44BB-9786-C6D10400FE52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityLib", "Libraries\UtilityLib\UtilityLib.csproj", "{D83C8368-4FB1-4345-B694-680C20CC0DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilityLib", "Libraries\UtilityLib\UtilityLib.csproj", "{D83C8368-4FB1-4345-B694-680C20CC0DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveInatorMaui", "MoveInatorMaui\MoveInatorMaui.csproj", "{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,12 @@ Global
 		{D83C8368-4FB1-4345-B694-680C20CC0DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D83C8368-4FB1-4345-B694-680C20CC0DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D83C8368-4FB1-4345-B694-680C20CC0DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
