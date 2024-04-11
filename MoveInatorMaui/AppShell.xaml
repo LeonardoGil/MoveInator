@@ -4,12 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MoveInatorMaui"
-    Shell.FlyoutBehavior="Disabled"
-    Title="MoveInatorMaui">
+    xmlns:views="clr-namespace:MoveInatorMaui.Views">
 
-    <ShellContent
-        Title="Home"
+    <FlyoutItem Title="Home">
+        <ShellContent ContentTemplate="{DataTemplate views:HomePage}">
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Importação">
+            <ShellContent Title="CSV" 
+              ContentTemplate="{DataTemplate views:HomePage}">
+            </ShellContent>
+            <ShellContent Title="MDF-e" 
+              ContentTemplate="{DataTemplate views:HomePage}">
+            </ShellContent>
+        </Tab>
+        
+    </FlyoutItem>
+
+
+
+    <!--<ShellContent
+        Title="MoveInator"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+        Route="MainPage" />-->
 </Shell>

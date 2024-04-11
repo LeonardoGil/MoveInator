@@ -15,9 +15,9 @@ namespace MoveInatorMaui
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+//#if DEBUG
+//    		builder.Logging.AddDebug();
+//#endif
 
             return builder.Build();
         }
