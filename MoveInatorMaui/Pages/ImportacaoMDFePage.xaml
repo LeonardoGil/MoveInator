@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoveInatorMaui.Pages.ImportacaoMDFePage"
+             Title="ImportacaoMDFePage">
+    <VerticalStackLayout>
+        <Label 
+            Text="MDF-e"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            FontSize="Large" 
+            Padding="20, 0, 0, 20"/>
+
+        <HorizontalStackLayout>
+            <BoxView BackgroundColor="Aqua"
+                     WidthRequest="100"
+                     HeightRequest="100">
+            </BoxView>
+            <BoxView BackgroundColor="Red"
+         WidthRequest="100"
+         HeightRequest="100">
+            </BoxView>
+            <BoxView BackgroundColor="Green"
+         WidthRequest="100"
+         HeightRequest="100">
+            </BoxView>
+            <BoxView BackgroundColor="Purple"
+         WidthRequest="100"
+         HeightRequest="100">
+            </BoxView>
+            <BoxView BackgroundColor="Brown"
+         WidthRequest="100"
+         HeightRequest="100">
+            </BoxView>
+            <BoxView BackgroundColor="Blue"
+         WidthRequest="100"
+         HeightRequest="100">
+            </BoxView>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

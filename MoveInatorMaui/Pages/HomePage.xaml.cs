@@ -1,4 +1,4 @@
-namespace MoveInatorMaui.Views;
+namespace MoveInatorMaui.Pages;
 
 public partial class HomePage : ContentPage
 {

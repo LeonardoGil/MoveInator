@@ -4,29 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MoveInatorMaui"
-    xmlns:views="clr-namespace:MoveInatorMaui.Views">
+    xmlns:pages="clr-namespace:MoveInatorMaui.Pages"
+    xmlns:cadastroPages="clr-namespace:MoveInatorMaui.Pages.Cadastros"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="false"
+    Shell.NavBarIsVisible="false"
+    >
 
-    <FlyoutItem Title="Home">
-        <ShellContent ContentTemplate="{DataTemplate views:HomePage}">
-        </ShellContent>
-    </FlyoutItem>
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Text="MoveInator"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Importação">
-            <ShellContent Title="CSV" 
-              ContentTemplate="{DataTemplate views:HomePage}">
-            </ShellContent>
-            <ShellContent Title="MDF-e" 
-              ContentTemplate="{DataTemplate views:HomePage}">
-            </ShellContent>
-        </Tab>
-        
-    </FlyoutItem>
-
+    <ShellContent ContentTemplate="{DataTemplate pages:HomePage}">
+    </ShellContent>
 
 
-    <!--<ShellContent
-        Title="MoveInator"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />-->
+    <ShellContent Title="CSV" 
+                  ContentTemplate="{DataTemplate pages:HomePage}"
+                  Route="CSV">
+    </ShellContent>
+    <ShellContent Title="MDF-e" 
+                  ContentTemplate="{DataTemplate pages:ImportacaoMDFePage}"
+                  Route="MDFe">
+    </ShellContent>
+
+    <ShellContent Title="Cadastro Empresa" 
+                  ContentTemplate="{DataTemplate cadastroPages:CadastroEmpresaPage}"
+                  Route="CadastroEmpresa">
+    </ShellContent>
 </Shell>

@@ -2,7 +2,8 @@
   "profiles": {
     "Windows Machine": {
       "commandName": "Project",
-      "nativeDebugging": false
+      "nativeDebugging": false,
+      "hotReloadProfile": "aspnetcore"
     }
   }
 }
