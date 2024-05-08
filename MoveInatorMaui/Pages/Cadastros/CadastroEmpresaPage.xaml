@@ -19,46 +19,109 @@
                   RowSpacing="10"
                   ColumnSpacing="10">
 
-
+                <!-- Group 0 -->
                 <Label Text="Razão Social"
                        FontAttributes="Bold"
                        FontSize="Small"
                        Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+
+                <Entry Placeholder="Obrigatório"
+                       FontSize="18"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Grid.Column="0" />
+
+                <!-- Group 1 -->
+                <Label Text="CNPJ"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       Grid.Row="2"
                        Grid.Column="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
                 <Entry Placeholder="Obrigatório"
                        FontSize="18"
-                       Grid.Row="1"
+                       Grid.Row="3"
                        Grid.Column="0" />
 
-                <Label Text="CNPJ"
+
+                <Label Text="Ambiente"
                        FontAttributes="Bold"
                        FontSize="Small"
-                       Grid.Row="0"
+                       Grid.Row="2"
                        Grid.Column="1"
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
+                <Picker x:Name="pickerAmbiente"
+                        FontSize="18"
+                        Grid.Row="3"
+                        Grid.Column="1">
 
-                <Entry Placeholder="Obrigatório"
-                       FontSize="18"
-                       Grid.Row="1"
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Lone1</x:String>
+                            <x:String>Lone2</x:String>
+                            <x:String>Lone3</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+                <!-- Group 2 -->
+
+                <Label Text="ClientId"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+
+                <Entry FontSize="18"
+                       Grid.Row="5"
+                       Grid.Column="0" />
+
+                <Label Text="ClientSecret"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+
+                <Entry FontSize="18"
+                       Grid.Row="5"
                        Grid.Column="1" />
-
-                <!--<Entry Placeholder="ClientId"
-               FontSize="18"
-               Grid.Row="1"
-               Grid.Column="0"
-               Grid.ColumnSpan="2" />
-
-                <Entry Placeholder="ClientSecret"
-               FontSize="18"
-               Grid.Row="2"
-               Grid.Column="0"
-               Grid.ColumnSpan="2" />-->
             </Grid>
+
+            <Frame BorderColor="Black"
+                   CornerRadius="20">
+
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Teste 1</x:String>
+                            <x:String>Teste 2</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+
+                    <!--<ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding}"></Label>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>-->
+
+                </ListView>
+
+            </Frame>
+
+
 
             <Button Text="Salvar"
             FontSize="26"
