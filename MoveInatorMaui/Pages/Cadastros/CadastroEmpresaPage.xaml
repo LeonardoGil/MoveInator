@@ -3,47 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
              Title="CadastroEmpresaPage">
-    <VerticalStackLayout>
 
-        <Label Padding="20"
-               Text="Empresas"
-               HorizontalTextAlignment="Center"
-               FontSize="30"
-               TextColor="Gray" />
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="15">
 
-        <Grid RowDefinitions="Auto, Auto, Auto"
-              ColumnDefinitions="0.50*, 0.50*"
-              Padding="15"
-              RowSpacing="10"
-              ColumnSpacing="10">
+            <Label Text="Empresas"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="30"
+                   TextColor="Gray" />
 
-            <Entry Placeholder="Razão Social"
-                   FontSize="18"
-                   Grid.Row="0"
-                   Grid.Column="0" />
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="0.50*, 0.50*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
 
-            <Entry Placeholder="CNPJ"
-                   FontSize="18"
-                   Grid.Row="0"
-                   Grid.Column="1" />
 
-            <Entry Placeholder="ClientId"
-                   FontSize="18"
-                   Grid.Row="1"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2" />
-            
-            <Entry Placeholder="ClientSecret"
-                   FontSize="18"
-                   Grid.Row="2"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2" />
-        </Grid>
+                <Label Text="Razão Social"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
 
-        <Button Text="Salvar"
-                FontSize="26"
-                HorizontalOptions="Center"
-                VerticalOptions="End" />
-        
-    </VerticalStackLayout>
+                <Entry Placeholder="Obrigatório"
+                       FontSize="18"
+                       Grid.Row="1"
+                       Grid.Column="0" />
+
+                <Label Text="CNPJ"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+
+
+                <Entry Placeholder="Obrigatório"
+                       FontSize="18"
+                       Grid.Row="1"
+                       Grid.Column="1" />
+
+                <!--<Entry Placeholder="ClientId"
+               FontSize="18"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="2" />
+
+                <Entry Placeholder="ClientSecret"
+               FontSize="18"
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="2" />-->
+            </Grid>
+
+            <Button Text="Salvar"
+            FontSize="26"
+            HorizontalOptions="Center"
+            VerticalOptions="End" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
