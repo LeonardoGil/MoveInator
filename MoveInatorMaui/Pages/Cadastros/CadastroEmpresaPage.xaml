@@ -87,7 +87,8 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry FontSize="18"
+                <Entry Text="{Binding ViewModel.ClientId}"
+                       FontSize="18"
                        Grid.Row="5"
                        Grid.Column="0" />
 
@@ -99,31 +100,21 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry FontSize="18"
+                <Entry Text="{Binding ViewModel.ClientSecret}"
+                       FontSize="18"
                        Grid.Row="5"
                        Grid.Column="1" />
             </Grid>
 
-            <Frame BorderColor="Black"
-                   CornerRadius="20">
-
-                <ListView>
-                    <ListView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Teste 1</x:String>
-                            <x:String>Teste 2</x:String>
-                        </x:Array>
-                    </ListView.ItemsSource>
-
-                    <!--<ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding}"></Label>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>-->
-
-                </ListView>
-
-            </Frame>
+            <ListView ItemsSource="{Binding Empresas}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding RazaoSocial}"></Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Button Text="Salvar"
                     FontSize="26"
