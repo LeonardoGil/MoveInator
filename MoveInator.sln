@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilityLib", "Libraries\Uti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveInatorMaui", "MoveInatorMaui\MoveInatorMaui.csproj", "{282EC5B9-A6F9-4C5F-B4CB-5CA39E946D43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveInatorDomain", "MoveInatorDomain\MoveInatorDomain.csproj", "{69143B76-60A7-48EF-8714-F9F70A60481C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveInatorDomain", "MoveInatorDomain\MoveInatorDomain.csproj", "{69143B76-60A7-48EF-8714-F9F70A60481C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveInatorApplication", "MoveInatorApplication\MoveInatorApplication.csproj", "{6320A72D-7CF9-48AC-8CE3-62EB56BB1ECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{69143B76-60A7-48EF-8714-F9F70A60481C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69143B76-60A7-48EF-8714-F9F70A60481C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69143B76-60A7-48EF-8714-F9F70A60481C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6320A72D-7CF9-48AC-8CE3-62EB56BB1ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6320A72D-7CF9-48AC-8CE3-62EB56BB1ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6320A72D-7CF9-48AC-8CE3-62EB56BB1ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6320A72D-7CF9-48AC-8CE3-62EB56BB1ECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
