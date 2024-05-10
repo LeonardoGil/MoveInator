@@ -11,6 +11,8 @@ namespace MoveInatorDomain.Models
         public string ClientId { get; set; }
 
         public string ClientSecrect { get; set; }
+
+        public Guid? AmbienteId { get; set; }
     }
 
     public class CadastroEmpresaViewModelValidator : AbstractValidator<CadastroEmpresaViewModel>

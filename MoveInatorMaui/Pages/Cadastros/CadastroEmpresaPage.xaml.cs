@@ -11,4 +11,9 @@ public partial class CadastroEmpresaPage : ContentPage
 		InitializeComponent();
 		BindingContext = ViewModel;
 	}
+
+    private async void Salvar_Clicked(object sender, EventArgs e)
+    {
+		await DisplayAlert("Teste", ViewModel.RazaoSocial ?? "Nothing", "Ok né");
+    }
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoveInatorMaui.Pages.Cadastros"
              x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
+             
              Title="CadastroEmpresaPage">
 
     <ScrollView>
@@ -29,7 +31,8 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Placeholder="Obrigatório"
+                <Entry Text="{Binding ViewModel.RazaoSocial}"
+                       Placeholder="Obrigatório"
                        FontSize="18"
                        Grid.Row="1"
                        Grid.ColumnSpan="2"
@@ -44,7 +47,8 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Placeholder="Obrigatório"
+                <Entry Text="{Binding ViewModel.Cnpj}"
+                       Placeholder="Obrigatório"
                        FontSize="18"
                        Grid.Row="3"
                        Grid.Column="0" />
@@ -121,12 +125,11 @@
 
             </Frame>
 
-
-
             <Button Text="Salvar"
-            FontSize="26"
-            HorizontalOptions="Center"
-            VerticalOptions="End" />
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Clicked="Salvar_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>
