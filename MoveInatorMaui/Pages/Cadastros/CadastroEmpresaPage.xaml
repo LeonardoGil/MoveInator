@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MoveInatorMaui.Pages.Cadastros"
              x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
-             
              Title="CadastroEmpresaPage">
 
     <ScrollView>
@@ -31,7 +30,7 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Text="{Binding ViewModel.RazaoSocial}"
+                <Entry Text="{Binding Empresa.RazaoSocial}"
                        Placeholder="Obrigatório"
                        FontSize="18"
                        Grid.Row="1"
@@ -47,7 +46,7 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Text="{Binding ViewModel.Cnpj}"
+                <Entry Text="{Binding Empresa.Cnpj}"
                        Placeholder="Obrigatório"
                        FontSize="18"
                        Grid.Row="3"
@@ -87,7 +86,7 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Text="{Binding ViewModel.ClientId}"
+                <Entry Text="{Binding Empresa.ClientId}"
                        FontSize="18"
                        Grid.Row="5"
                        Grid.Column="0" />
@@ -100,13 +99,13 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Text="{Binding ViewModel.ClientSecret}"
+                <Entry Text="{Binding Empresa.ClientSecret}"
                        FontSize="18"
                        Grid.Row="5"
                        Grid.Column="1" />
             </Grid>
 
-            <ListView ItemsSource="{Binding Empresas}">
+            <ListView ItemsSource="{Binding ListaEmpresa}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

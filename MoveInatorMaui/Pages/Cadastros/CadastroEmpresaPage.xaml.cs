@@ -1,22 +1,17 @@
-using MoveInatorDomain.Entities.Cadastros;
-using MoveInatorDomain.Models;
+using MoveInatorMaui.ViewModels;
+using MoveInatorMaui.ViewModels.Pages;
 
 namespace MoveInatorMaui.Pages.Cadastros;
 
 public partial class CadastroEmpresaPage : ContentPage
 {
-    public CadastroEmpresaViewModel ViewModel { get; set; } = new CadastroEmpresaViewModel();
-
-    public List<CadastroEmpresaViewModel> Empresas { get; set; } = new List<CadastroEmpresaViewModel>();
+    protected CadastroEmpresaViewModel ViewModel { get; set; }
 
     public CadastroEmpresaPage()
     {
         InitializeComponent();
-        BindingContext = new
-        {
-            ViewModel,
-            Empresas
-        };
+
+        BindingContext = ViewModel = new CadastroEmpresaViewModel();
     }
 
     private async void Salvar_Clicked(object sender, EventArgs e)
@@ -29,7 +24,7 @@ public partial class CadastroEmpresaPage : ContentPage
         //    ClientSecrect = ViewModel.ClientSecrect
         //};
 
-        Empresas.Add(ViewModel);
-        ViewModel = new CadastroEmpresaViewModel();
+        ViewModel.ListaEmpresa.Add(ViewModel.Empresa);
+        ViewModel.Empresa = new EmpresaViewModel();
     }
 }
