@@ -2,18 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MoveInatorMaui.Pages.Cadastros"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
              Title="CadastroEmpresaPage">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30"
-                             Spacing="15">
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
 
-            <Label Text="Empresas"
-                   HorizontalTextAlignment="Center"
-                   FontAttributes="Bold"
-                   FontSize="30"
-                   TextColor="Gray" />
+            <Grid ColumnDefinitions="0.7*, 0.3*">
+                <Label Text="Empresas"
+                       VerticalTextAlignment="Center"
+                       Style="{StaticResource title}"
+                       Margin="20, 0" />
+
+                <HorizontalStackLayout Grid.Column="1"
+                                       Padding="5"
+                                       HorizontalOptions="End"
+                                       Spacing="10"
+                                       FlowDirection="RightToLeft">
+
+                    <Button Text="Salvar"
+                            FontSize="Small"
+                            VerticalOptions="Center"
+                            Clicked="Salvar_Clicked" />
+
+                    <Button Text="Limpar"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+
+                    <Button Text="Excluir"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+
+                </HorizontalStackLayout>
+            </Grid>
 
             <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
                   ColumnDefinitions="0.50*, 0.50*"
@@ -22,45 +45,44 @@
 
                 <!-- Group 0 -->
                 <Label Text="Razão Social"
-                       FontAttributes="Bold"
-                       FontSize="Small"
-                       Grid.Row="0"
-                       Grid.Column="0"
                        Grid.ColumnSpan="2"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
 
                 <Entry x:Name="razaoSocialEntry"
                        Text="{Binding Empresa.RazaoSocial}"
                        Placeholder="Obrigatório"
-                       FontSize="18"
                        Grid.Row="1"
                        Grid.ColumnSpan="2"
-                       Grid.Column="0" />
+                       Grid.Column="0">
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                                        ValidStyle="{StaticResource ValidEntryStyle}"
+                                                        Flags="ValidateOnValueChanged"
+                                                        MinimumLength="4"
+                                                        MaximumLength="20"/>
+                    </Entry.Behaviors>
+                </Entry>
 
                 <!-- Group 1 -->
                 <Label Text="CNPJ"
-                       FontAttributes="Bold"
-                       FontSize="Small"
                        Grid.Row="2"
-                       Grid.Column="0"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
 
                 <Entry Text="{Binding Empresa.Cnpj}"
                        Placeholder="Obrigatório"
-                       FontSize="18"
                        Grid.Row="3"
                        Grid.Column="0" />
 
-
                 <Label Text="Ambiente"
-                       FontAttributes="Bold"
-                       FontSize="Small"
                        Grid.Row="2"
                        Grid.Column="1"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
 
                 <Picker x:Name="pickerAmbiente"
                         FontSize="18"
@@ -80,28 +102,24 @@
                 <!-- Group 2 -->
 
                 <Label Text="ClientId"
-                       FontAttributes="Bold"
-                       FontSize="Small"
                        Grid.Row="4"
                        Grid.Column="0"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center" 
+                       Padding="5, 0"/>
 
                 <Entry Text="{Binding Empresa.ClientId}"
-                       FontSize="18"
                        Grid.Row="5"
                        Grid.Column="0" />
 
                 <Label Text="ClientSecret"
-                       FontAttributes="Bold"
-                       FontSize="Small"
                        Grid.Row="4"
                        Grid.Column="1"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center" 
+                       Padding="5, 0"/>
 
                 <Entry Text="{Binding Empresa.ClientSecret}"
-                       FontSize="18"
                        Grid.Row="5"
                        Grid.Column="1" />
             </Grid>
@@ -114,13 +132,20 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                            <Label Text="Test" 
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
             </ListView>
 
-            <Button Text="Salvar"
-                    FontSize="26"
-                    HorizontalOptions="Center"
-                    VerticalOptions="End"
-                    Clicked="Salvar_Clicked"/>
+
 
         </VerticalStackLayout>
     </ScrollView>

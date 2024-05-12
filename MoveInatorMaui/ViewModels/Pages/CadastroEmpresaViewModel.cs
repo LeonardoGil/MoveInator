@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace MoveInatorMaui.ViewModels.Pages
 {
-    public partial class CadastroEmpresaViewModel : BaseViewModel
+    public partial class CadastroEmpresaViewModel : ObservableValidator
     {
         [ObservableProperty]
         public EmpresaViewModel empresa = new();
