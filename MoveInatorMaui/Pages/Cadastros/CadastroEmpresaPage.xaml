@@ -30,7 +30,8 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
 
-                <Entry Text="{Binding Empresa.RazaoSocial}"
+                <Entry x:Name="razaoSocialEntry"
+                       Text="{Binding Empresa.RazaoSocial}"
                        Placeholder="Obrigatório"
                        FontSize="18"
                        Grid.Row="1"
