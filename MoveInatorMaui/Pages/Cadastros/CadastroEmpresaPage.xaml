@@ -124,25 +124,34 @@
                        Grid.Column="1" />
             </Grid>
 
-            <ListView ItemsSource="{Binding ListaEmpresa}">
+            <ListView ItemsSource="{Binding ListaEmpresa}"
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding RazaoSocial}"></Label>
+                            <Grid ColumnDefinitions=".7*, 0.3*"
+                                  Padding="5">
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Text="{Binding RazaoSocial}"
+                                           FontAttributes="Bold"
+                                           FontSize="18"/>
+
+                                    <Label Text="{Binding Cnpj}"
+                                           TextColor="DarkGray"
+                                           FontSize="14"/>
+                                </VerticalStackLayout>
+
+                                <HorizontalStackLayout HorizontalOptions="End"
+                                                       Grid.Column="1"
+                                                       Spacing="5"
+                                                       Padding="5">
+                                    <Button Text="Aloha" BackgroundColor="{StaticResource Sucess}"/>
+                                    <Button Text="Teste" BackgroundColor="{StaticResource Warning}"/>
+                                </HorizontalStackLayout>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
-                <ListView.FooterTemplate>
-                    <DataTemplate>
-                        <StackLayout HorizontalOptions="Center"
-                                     VerticalOptions="Center">
-                            <Label Text="Test" 
-                                   HorizontalTextAlignment="Center"
-                                   HorizontalOptions="Fill"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </ListView.FooterTemplate>
             </ListView>
 
 
