@@ -8,7 +8,8 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20"
-                             Spacing="20">
+                             Spacing="20"
+                             Style="{StaticResource fundo}">
 
             <Grid ColumnDefinitions="0.7*, 0.3*">
                 <Label Text="Empresas"
@@ -28,10 +29,6 @@
                             Clicked="Salvar_Clicked" />
 
                     <Button Text="Limpar"
-                            FontSize="Small"
-                            VerticalOptions="Center" />
-
-                    <Button Text="Excluir"
                             FontSize="Small"
                             VerticalOptions="Center" />
 
@@ -124,39 +121,43 @@
                        Grid.Column="1" />
             </Grid>
 
-            <ListView ItemsSource="{Binding ListaEmpresa}"
-                      >
+            <ListView ItemsSource="{Binding ListaEmpresa}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnDefinitions=".7*, 0.3*"
-                                  Padding="5">
-                                <VerticalStackLayout Grid.Column="0">
-                                    <Label Text="{Binding RazaoSocial}"
-                                           FontAttributes="Bold"
-                                           FontSize="18"/>
+                            <Frame Background="#404040"
+                                   HasShadow="True"
+                                   CornerRadius="14"
+                                   Padding="10"
+                                   Margin="0, 5">
 
-                                    <Label Text="{Binding Cnpj}"
-                                           TextColor="DarkGray"
-                                           FontSize="14"/>
-                                </VerticalStackLayout>
+                                <Grid ColumnDefinitions=".7*, 0.3*">
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding RazaoSocial}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               Padding="5, 2"/>
 
-                                <HorizontalStackLayout HorizontalOptions="End"
-                                                       Grid.Column="1"
-                                                       Spacing="5"
-                                                       Padding="5">
-                                    <Button Text="Aloha" BackgroundColor="{StaticResource Sucess}"/>
-                                    <Button Text="Teste" BackgroundColor="{StaticResource Warning}"/>
-                                </HorizontalStackLayout>
-                            </Grid>
+                                        <Label Text="{Binding Cnpj}"
+                                               TextColor="DarkGray"
+                                               FontSize="14"
+                                               Padding="8, 0"/>
+                                    </VerticalStackLayout>
+
+                                    <HorizontalStackLayout HorizontalOptions="End"
+                                                           Grid.Column="1"
+                                                           Spacing="5"
+                                                           Padding="5">
+                                        <Button Text="Aloha" BackgroundColor="{StaticResource Sucess}"/>
+                                        <Button Text="Teste" BackgroundColor="{StaticResource Warning}"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-
-
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

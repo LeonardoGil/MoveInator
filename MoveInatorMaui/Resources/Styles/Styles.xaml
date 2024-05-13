@@ -4,30 +4,48 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Style x:Key="ValidEntryStyle" TargetType="Entry">
-        <Setter Property="TextColor" Value="{StaticResource Sucess}" />
-    </Style>
-
-    <Style x:Key="InvalidEntryStyle" TargetType="Entry">
-        <Setter Property="TextColor" Value="{StaticResource Fail}" />
-    </Style>
-
-    <Style TargetType="Label">
-        <Setter Property="FontFamily" Value="Cascadia Mono" />
-        <Setter Property="FontSize" Value="Small" />
-    </Style>
-
-    <Style x:Key="title" TargetType="Label">
-        <Setter Property="FontSize" Value="Large" />
-        <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="TextColor" Value="{StaticResource Primary}" />
-    </Style>
-    
+        
     <Style TargetType="Entry">
         <Setter Property="FontFamily" Value="Cascadia Mono" />
         <Setter Property="FontSize" Value="18" />
     </Style>
 
+    <Style TargetType="Entry" x:Key="ValidEntryStyle">
+        <Setter Property="TextColor" Value="{StaticResource Sucess}" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="InvalidEntryStyle">
+        <Setter Property="TextColor" Value="{StaticResource Fail}" />
+    </Style>
+
+    
+    
+    
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="Cascadia Mono" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="WhiteSmoke" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="title" >
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource Primary}" />
+    </Style>
+    
+
+
+    <Style TargetType="StackLayout" x:Key="fundo">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0, 0"
+                                 EndPoint="0, 1">
+                <GradientStop Color="#303030"
+                          Offset="0.1"/>
+                <GradientStop Color="#111111"
+                          Offset="1" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
 
 
 

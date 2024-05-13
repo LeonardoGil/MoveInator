@@ -8,8 +8,7 @@
     xmlns:cadastroPages="clr-namespace:MoveInatorMaui.Pages.Cadastros"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="false"
-    Shell.NavBarIsVisible="false"
-    >
+    Shell.NavBarIsVisible="false">
 
     <Shell.FlyoutHeader>
         <VerticalStackLayout>
