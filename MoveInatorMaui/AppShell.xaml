@@ -8,16 +8,26 @@
     xmlns:cadastroPages="clr-namespace:MoveInatorMaui.Pages.Cadastros"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="false"
-    Shell.NavBarIsVisible="false">
+    Shell.NavBarIsVisible="false"
+    FlyoutBackground="#121212">
 
+   
     <Shell.FlyoutHeader>
         <VerticalStackLayout>
             <Label HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center"
                    Text="MoveInator"/>
-        </VerticalStackLayout>
+        </VerticalStackLayout>                      
     </Shell.FlyoutHeader>
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Title}"
+                   FontSize="Micro"
+                   Padding="5"/>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
     <ShellContent ContentTemplate="{DataTemplate pages:HomePage}">
     </ShellContent>
 
