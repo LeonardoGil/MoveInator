@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using MoveInatorMaui.Configurations;
 
 namespace MoveInatorMaui
 {
@@ -11,6 +12,7 @@ namespace MoveInatorMaui
             
             builder.UseMauiApp<App>()
                    .UseMauiCommunityToolkit()
+                   .InjectPages()
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
