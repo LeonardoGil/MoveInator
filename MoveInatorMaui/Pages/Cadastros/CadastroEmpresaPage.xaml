@@ -160,7 +160,7 @@
                                     <VerticalStackLayout Grid.Column="0">
                                         <Label Text="{Binding RazaoSocial}"
                                                FontAttributes="Bold"
-                                               DesontSize="18"
+                                               FontSize="18"
                                                Padding="5, 2"/>
 
                                         <Label Text="{Binding Cnpj}"

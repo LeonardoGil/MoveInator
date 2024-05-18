@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui;
-using Microsoft.Extensions.Logging;
 using MoveInatorMaui.Configurations;
 
 namespace MoveInatorMaui
@@ -9,7 +8,7 @@ namespace MoveInatorMaui
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            
+
             builder.UseMauiApp<App>()
                    .UseMauiCommunityToolkit()
                    .InjectPages()
@@ -20,7 +19,8 @@ namespace MoveInatorMaui
                    });
 
 //#if DEBUG
-//    		builder.Logging.AddDebug();
+//            builder.Logging.SetMinimumLevel(LogLevel.Trace);
+//            builder.Logging.AddDebug();
 //#endif
 
             return builder.Build();
