@@ -88,13 +88,18 @@
                        VerticalOptions="Center"
                        Padding="5, 0"/>
 
-                <Entry Text="{Binding Empresa.Cnpj}"
+                <Entry x:Name="cnpjEntry"
+                       Text="{Binding Empresa.Cnpj}"
                        Placeholder="Obrigatório"
                        Grid.Row="3"
                        Grid.Column="0"
                        Keyboard="Numeric">
                     <Entry.Behaviors>
                         <toolkit:MaskedBehavior Mask="XX.XXX.XXX/XXXX-XX" />
+                        <toolkit:CharactersValidationBehavior  MinimumLength="17"
+                                                               Flags="ValidateOnValueChanged"
+                                                               InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                                               ValidStyle="{StaticResource ValidEntryStyle}" />
                     </Entry.Behaviors>
                 </Entry>
 
@@ -140,7 +145,7 @@
                        VerticalOptions="Center" 
                        Padding="5, 0"/>
 
-                <Entry Text="{Binding Empresa.ClientSecret}"
+                <Entry Text="{Binding Empresa.ClientSecrect}"
                        Grid.Row="5"
                        Grid.Column="1" />
             </Grid>
@@ -155,6 +160,12 @@
                                    CornerRadius="14"
                                    Padding="10"
                                    Margin="0, 5">
+                                <Frame.Shadow>
+                                    <Shadow Brush="Black"
+                                            Offset="20,20"
+                                            Radius="40"
+                                            Opacity="0.8" />
+                                </Frame.Shadow>
 
                                 <Grid ColumnDefinitions=".7*, 0.3*">
                                     <VerticalStackLayout Grid.Column="0">

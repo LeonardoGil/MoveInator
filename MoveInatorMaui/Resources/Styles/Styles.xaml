@@ -30,7 +30,7 @@
     <Style TargetType="Label" x:Key="title" >
         <Setter Property="FontSize" Value="Large" />
         <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="TextColor" Value="{StaticResource Primary}" />
+        <Setter Property="TextColor" Value="White" />
     </Style>
     
 

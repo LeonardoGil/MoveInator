@@ -12,11 +12,16 @@ public partial class CadastroEmpresaPage : ContentPage
 
     public CadastroEmpresaPage()
     {
-        InitializeComponent();
-
         BindingContext = ViewModel = new CadastroEmpresaViewModel();
+        
+        InitializeComponent();
     }
 
+    /// <summary>
+    /// Testes
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void Salvar_Clicked(object sender, EventArgs e)
     {
         try
@@ -37,15 +42,15 @@ public partial class CadastroEmpresaPage : ContentPage
     {
         var result = true;
 
-        var razaoSocialTextValidation = razaoSocialEntry.Behaviors.OfType<TextValidationBehavior>().FirstOrDefault();
-
-        if (razaoSocialTextValidation is not default(TextValidationBehavior) && razaoSocialTextValidation.IsNotValid)
+        if (razaoSocialEntry.Behaviors.OfType<ValidationBehavior>().Any(x => x.IsNotValid))
         {
-            var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-            var toast = Toast.Make("Razão Social inválido!", ToastDuration.Short);
+            await Toast.Make("Razão Social inválido!", ToastDuration.Short).Show();
+            result = false;
+        }
 
-            await toast.Show(cancellationToken.Token);
-
+        if (cnpjEntry.Behaviors.OfType<ValidationBehavior>().Any(x => x.IsNotValid))
+        {
+            await Toast.Make("Cnpj inválido!", ToastDuration.Short).Show();
             result = false;
         }
 
