@@ -113,16 +113,11 @@
                 <Picker x:Name="pickerAmbiente"
                         FontSize="18"
                         Grid.Row="3"
-                        Grid.Column="1">
-
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Lone1</x:String>
-                            <x:String>Lone2</x:String>
-                            <x:String>Lone3</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-
+                        Grid.Column="1"
+                        IsEnabled="False">
+                    <!--
+                        TO DO: Adicionar Picker Ambiente
+                    -->
                 </Picker>
 
                 <!-- Group 2 -->
@@ -184,8 +179,10 @@
                                                            Grid.Column="1"
                                                            Spacing="5"
                                                            Padding="5">
-                                        <Button Text="Aloha" BackgroundColor="{StaticResource Sucess}"/>
-                                        <Button Text="Teste" BackgroundColor="{StaticResource Warning}"/>
+                                        <Button Text="Excluir" 
+                                                BackgroundColor="{StaticResource Warning}"
+                                                Clicked="Excluir_Clicked"
+                                                BindingContext="{Binding .}"/>
                                     </HorizontalStackLayout>
                                 </Grid>
                             </Frame>

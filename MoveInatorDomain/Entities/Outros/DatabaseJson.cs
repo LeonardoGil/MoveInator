@@ -39,8 +39,8 @@ namespace MoveInatorDomain.Entities.Outros
 
                 using (var file = File.Create(FilePath))
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes(content);
-                    file.Write(info, 0, info.Length);
+                    var info = new UTF8Encoding(true).GetBytes(content);
+                    await file.WriteAsync(info);
                 }
 
                 Atualizado = true;
@@ -71,6 +71,10 @@ namespace MoveInatorDomain.Entities.Outros
                 AddCollectionChangeEvent();
 
                 Atualizado = true;
+            }
+            catch (FileNotFoundException)
+            {
+                await Save(new DatabaseJson());
             }
             catch (UnauthorizedAccessException)
             {
