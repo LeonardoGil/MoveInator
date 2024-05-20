@@ -4,6 +4,14 @@
       "commandName": "Project",
       "nativeDebugging": false,
       "hotReloadProfile": "aspnetcore"
+    },
+    "Teste": {
+      "commandName": "Project",
+      "dotnetRunMessages": true
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
     }
   }
 }

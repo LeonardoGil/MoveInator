@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using FluentValidation;
+using MoveInatorApplication.Models;
 using System.Collections.ObjectModel;
 
 namespace MoveInatorMaui.ViewModels.Pages
@@ -7,15 +8,15 @@ namespace MoveInatorMaui.ViewModels.Pages
     public partial class CadastroEmpresaViewModel : ObservableValidator
     {
         [ObservableProperty]
-        public EmpresaViewModel empresa = new();
+        public EmpresaModel empresa = new();
 
         [ObservableProperty]
-        public ObservableCollection<EmpresaViewModel> listaEmpresa = new ObservableCollection<EmpresaViewModel>();
+        public ObservableCollection<EmpresaModel> listaEmpresa = new ObservableCollection<EmpresaModel>();
     }
 
-    public class CadastroEmpresaViewModelValidator : AbstractValidator<EmpresaViewModel>
+    public class CadastroEmpresaModelValidator : AbstractValidator<EmpresaModel>
     {
-        public CadastroEmpresaViewModelValidator()
+        public CadastroEmpresaModelValidator()
         {
             RuleFor(x => x.RazaoSocial)
                 .NotEmpty()

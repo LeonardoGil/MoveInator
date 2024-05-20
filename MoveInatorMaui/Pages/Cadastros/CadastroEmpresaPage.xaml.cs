@@ -2,7 +2,7 @@ using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Core.Extensions;
-using MoveInatorMaui.ViewModels;
+using MoveInatorApplication.Models;
 using MoveInatorMaui.ViewModels.Pages;
 
 namespace MoveInatorMaui.Pages.Cadastros;
@@ -19,12 +19,12 @@ public partial class CadastroEmpresaPage : ContentPage
         InitializeComponent();
     }
 
-    private async Task Add(EmpresaViewModel view)
+    private async Task Add(EmpresaModel view)
     {
         if (await Validate())
         {
             ViewModel.ListaEmpresa.Add(view);
-            ViewModel.Empresa = new EmpresaViewModel();
+            ViewModel.Empresa = new EmpresaModel();
         }
     }
 
@@ -65,7 +65,7 @@ public partial class CadastroEmpresaPage : ContentPage
     {
         var empresas = MauiProgram.DatabaseJson.Empresas;
 
-        ViewModel.ListaEmpresa = empresas.Select(empresa => new EmpresaViewModel
+        ViewModel.ListaEmpresa = empresas.Select(empresa => new EmpresaModel
         {
             RazaoSocial = empresa.RazaoSocial
         })
@@ -74,7 +74,7 @@ public partial class CadastroEmpresaPage : ContentPage
 
     private void Excluir_Clicked(object sender, EventArgs e)
     {
-        if (sender is View view && view.BindingContext is EmpresaViewModel empresa)
+        if (sender is View view && view.BindingContext is EmpresaModel empresa)
         {
             ViewModel.ListaEmpresa.Remove(empresa);
         }

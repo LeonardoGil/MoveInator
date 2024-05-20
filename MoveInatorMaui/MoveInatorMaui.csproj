@@ -70,6 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\MoveInatorApplication\MoveInatorApplication.csproj" />
 	  <ProjectReference Include="..\MoveInatorDomain\MoveInatorDomain.csproj" />
 	</ItemGroup>
 
