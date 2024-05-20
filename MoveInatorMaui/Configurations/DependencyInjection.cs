@@ -1,4 +1,7 @@
-﻿using MoveInatorMaui.Pages.Cadastros;
+﻿using MoveInatorApplication.Mappers;
+using MoveInatorApplication.Services;
+using MoveInatorApplication.Services.Interfaces;
+using MoveInatorMaui.Pages.Cadastros;
 
 namespace MoveInatorMaui.Configurations
 {
@@ -12,6 +15,22 @@ namespace MoveInatorMaui.Configurations
             builder.Services.AddSingleton<CadastroEmpresaPage>();
 
             return builder;
+        }
+
+        public static MauiAppBuilder InjectServices(this MauiAppBuilder builder)
+        {
+            builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
+
+            return builder;
+
+        }
+
+        public static MauiAppBuilder InjectMappers(this MauiAppBuilder builder)
+        {
+            builder.Services.AddAutoMapper(typeof(EmpresaProfile));
+
+            return builder;
+
         }
     }
 }

@@ -45,7 +45,7 @@
                     <Button Text="Salvar"
                             FontSize="Small"
                             VerticalOptions="Center"
-                            Clicked="Salvar_Clicked" />
+                            Clicked="Save_Clicked" />
 
                     <Button Text="Limpar"
                             FontSize="Small"
@@ -181,7 +181,7 @@
                                                            Padding="5">
                                         <Button Text="Excluir" 
                                                 BackgroundColor="{StaticResource Warning}"
-                                                Clicked="Excluir_Clicked"
+                                                Clicked="Delete_Clicked"
                                                 BindingContext="{Binding .}"/>
                                     </HorizontalStackLayout>
                                 </Grid>

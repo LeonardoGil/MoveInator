@@ -11,7 +11,7 @@ namespace MoveInatorMaui.ViewModels.Pages
         public EmpresaModel empresa = new();
 
         [ObservableProperty]
-        public ObservableCollection<EmpresaModel> listaEmpresa = new ObservableCollection<EmpresaModel>();
+        public ObservableCollection<EmpresaModel> listaEmpresa = new();
     }
 
     public class CadastroEmpresaModelValidator : AbstractValidator<EmpresaModel>
