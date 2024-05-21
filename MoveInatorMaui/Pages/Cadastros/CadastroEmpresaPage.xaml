@@ -146,7 +146,8 @@
             </Grid>
 
             <ListView ItemsSource="{Binding ListaEmpresa}"
-                      SelectionMode="Single">
+                      SelectionMode="None"
+                      x:Name="empresasListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -155,13 +156,7 @@
                                    CornerRadius="14"
                                    Padding="10"
                                    Margin="0, 5">
-                                <Frame.Shadow>
-                                    <Shadow Brush="Black"
-                                            Offset="20,20"
-                                            Radius="40"
-                                            Opacity="0.8" />
-                                </Frame.Shadow>
-
+                                
                                 <Grid ColumnDefinitions=".7*, 0.3*">
                                     <VerticalStackLayout Grid.Column="0">
                                         <Label Text="{Binding RazaoSocial}"
@@ -174,13 +169,16 @@
                                                FontSize="14"
                                                Padding="8, 0"/>
                                     </VerticalStackLayout>
-
                                     <HorizontalStackLayout HorizontalOptions="End"
                                                            Grid.Column="1"
                                                            Spacing="5"
                                                            Padding="5">
-                                        <Button Text="Excluir" 
+                                        <Button Text="Editar" 
                                                 BackgroundColor="{StaticResource Warning}"
+                                                Clicked="Edit_Clicked"
+                                                BindingContext="{Binding .}"/>
+                                        <Button Text="Excluir" 
+                                                BackgroundColor="{StaticResource Fail}"
                                                 Clicked="Delete_Clicked"
                                                 BindingContext="{Binding .}"/>
                                     </HorizontalStackLayout>

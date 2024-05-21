@@ -4,6 +4,7 @@ using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Core.Extensions;
 using MoveInatorApplication.Models;
+using MoveInatorApplication.Services;
 using MoveInatorApplication.Services.Interfaces;
 using MoveInatorDomain.Entities.Cadastros;
 using MoveInatorDomain.Entities.Outros;
@@ -13,17 +14,13 @@ namespace MoveInatorMaui.Pages.Cadastros;
 
 public partial class CadastroEmpresaPage : ContentPage
 {
-    private readonly IMapper mapper;
-    private readonly IDatabaseService databaseService;
-    private readonly DatabaseJson databaseJson;
+    private readonly IEmpresaService empresaService;
 
     protected CadastroEmpresaViewModel ViewModel { get; set; }
 
-    public CadastroEmpresaPage(IDatabaseService _databaseService, IMapper _mapper)
+    public CadastroEmpresaPage(IEmpresaService _empresaService)
     {
-        mapper = _mapper;
-        databaseService = _databaseService;
-        databaseJson = databaseService.Load().Result;
+        empresaService = _empresaService;
 
         BindingContext = ViewModel = new CadastroEmpresaViewModel();
 
@@ -33,32 +30,31 @@ public partial class CadastroEmpresaPage : ContentPage
 
     private void LoadEmpresas()
     {
-        ViewModel.ListaEmpresa = databaseJson.Empresas.Select(empresa => mapper.Map<EmpresaModel>(empresa)).ToObservableCollection();
+        ViewModel.ListaEmpresa = empresaService.GetModels().ToObservableCollection();
     }
 
     private async Task Add(EmpresaModel empresaModel)
     {
-        if (await Validate())
-        {
-            var empresa = mapper.Map<Empresa>(empresaModel);
+        await empresaService.Add(empresaModel);
 
-            databaseJson.Empresas.Add(empresa);
+        ViewModel.ListaEmpresa.Add(empresaModel);
+        ViewModel.Empresa = new EmpresaModel();
+    }
 
-            await databaseService.Save(databaseJson);
+    private async Task Edit(EmpresaModel empresaModel)
+    {
+        await empresaService.Edit(empresaModel);
 
-            ViewModel.ListaEmpresa.Add(empresaModel);
-
-            ViewModel.Empresa = new EmpresaModel();
-        }
+        // Gambeta do BEM
+        ViewModel.ListaEmpresa.Remove(empresaModel);
+        ViewModel.ListaEmpresa.Add(empresaModel);
+        
+        ViewModel.Empresa = new EmpresaModel();
     }
 
     private async Task Remove(EmpresaModel empresaModel)
     {
-        var empresa = databaseJson.Empresas.First(x => x.Id == empresaModel.Id);
-
-        databaseJson.Empresas.Remove(empresa);
-
-        await databaseService.Save(databaseJson);
+        await empresaService.Remove(empresaModel.Id);
 
         ViewModel.ListaEmpresa.Remove(empresaModel);
     }
@@ -88,7 +84,15 @@ public partial class CadastroEmpresaPage : ContentPage
     {
         try
         {
-            await Add(ViewModel.Empresa);
+            if (!await Validate())
+                return;
+
+            var isNew = !ViewModel.ListaEmpresa.Contains(ViewModel.Empresa);
+
+            if (isNew)
+                await Add(ViewModel.Empresa);
+            else
+                await Edit(ViewModel.Empresa);
         }
         catch (Exception ex)
         {
@@ -103,6 +107,21 @@ public partial class CadastroEmpresaPage : ContentPage
             try
             {
                 await Remove(empresa);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro do Erro", ex.Message, "OK");
+            }
+        }
+    }
+
+    private async void Edit_Clicked(object sender, EventArgs e)
+    {
+        if (sender is View view && view.BindingContext is EmpresaModel empresa)
+        {
+            try
+            {
+                ViewModel.Empresa = empresa;
             }
             catch (Exception ex)
             {

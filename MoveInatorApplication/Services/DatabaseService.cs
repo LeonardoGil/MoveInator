@@ -7,14 +7,18 @@ namespace MoveInatorApplication.Services
 {
     public class DatabaseService : IDatabaseService
     {
-        public async Task Save(DatabaseJson database)
+        public DatabaseJson Database { get; set; }
+
+        public DatabaseService() => Database = Load().Result;
+        
+        public async Task Save()
         {
             try
             {
                 if (File.Exists(DatabaseJson.FilePath))
                     File.Delete(DatabaseJson.FilePath);
 
-                var content = JsonSerializer.Serialize(database);
+                var content = JsonSerializer.Serialize(Database);
 
                 using (var file = File.Create(DatabaseJson.FilePath))
                 {
@@ -22,7 +26,7 @@ namespace MoveInatorApplication.Services
                     await file.WriteAsync(info);
                 }
 
-                database.Atualizado = true;
+                Database.Atualizado = true;
             }
             catch (UnauthorizedAccessException)
             {
@@ -51,7 +55,7 @@ namespace MoveInatorApplication.Services
             catch (FileNotFoundException)
             {
                 var database = new DatabaseJson();
-                await Save(database);
+                await Save();
 
                 return database;
             }

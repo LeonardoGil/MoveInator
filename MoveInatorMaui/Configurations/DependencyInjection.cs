@@ -20,6 +20,7 @@ namespace MoveInatorMaui.Configurations
         public static MauiAppBuilder InjectServices(this MauiAppBuilder builder)
         {
             builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
+            builder.Services.AddSingleton<IEmpresaService, EmpresaService>();
 
             return builder;
 

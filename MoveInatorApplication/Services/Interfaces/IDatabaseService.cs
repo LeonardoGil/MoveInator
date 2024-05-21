@@ -4,7 +4,9 @@ namespace MoveInatorApplication.Services.Interfaces
 {
     public interface IDatabaseService
     {
-        Task Save(DatabaseJson database);
+        DatabaseJson Database { get; set; }
+
+        Task Save();
 
         Task<DatabaseJson> Load();
     }

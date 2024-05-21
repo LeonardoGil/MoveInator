@@ -22,7 +22,6 @@ namespace MoveInatorMaui
                    });
 
 #if DEBUG
-            builder.Logging.SetMinimumLevel(LogLevel.Trace);
             builder.Logging.AddDebug();
 #endif
 
