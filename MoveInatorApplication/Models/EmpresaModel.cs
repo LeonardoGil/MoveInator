@@ -2,6 +2,8 @@
 {
     public class EmpresaModel
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string RazaoSocial { get; set; }
 
         public string Cnpj { get; set; }

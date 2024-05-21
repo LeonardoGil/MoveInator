@@ -33,23 +33,34 @@ public partial class CadastroEmpresaPage : ContentPage
 
     private void LoadEmpresas()
     {
-        ViewModel.ListaEmpresa = databaseJson.Empresas.Select(empresa => new EmpresaModel { RazaoSocial = empresa.RazaoSocial }).ToObservableCollection();
+        ViewModel.ListaEmpresa = databaseJson.Empresas.Select(empresa => mapper.Map<EmpresaModel>(empresa)).ToObservableCollection();
     }
 
-    private async Task Add()
+    private async Task Add(EmpresaModel empresaModel)
     {
         if (await Validate())
         {
-            var empresa = mapper.Map<Empresa>(ViewModel.Empresa);
+            var empresa = mapper.Map<Empresa>(empresaModel);
 
             databaseJson.Empresas.Add(empresa);
 
             await databaseService.Save(databaseJson);
 
-            ViewModel.ListaEmpresa.Add(ViewModel.Empresa);
+            ViewModel.ListaEmpresa.Add(empresaModel);
 
             ViewModel.Empresa = new EmpresaModel();
         }
+    }
+
+    private async Task Remove(EmpresaModel empresaModel)
+    {
+        var empresa = databaseJson.Empresas.First(x => x.Id == empresaModel.Id);
+
+        databaseJson.Empresas.Remove(empresa);
+
+        await databaseService.Save(databaseJson);
+
+        ViewModel.ListaEmpresa.Remove(empresaModel);
     }
 
     private async Task<bool> Validate()
@@ -77,7 +88,7 @@ public partial class CadastroEmpresaPage : ContentPage
     {
         try
         {
-            await Add();
+            await Add(ViewModel.Empresa);
         }
         catch (Exception ex)
         {
@@ -87,12 +98,16 @@ public partial class CadastroEmpresaPage : ContentPage
 
     private async void Delete_Clicked(object sender, EventArgs e)
     {
-        await Task.Run(() =>
+        if (sender is View view && view.BindingContext is EmpresaModel empresa)
         {
-            if (sender is View view && view.BindingContext is EmpresaModel empresa)
+            try
             {
-                ViewModel.ListaEmpresa.Remove(empresa);
+                await Remove(empresa);
             }
-        });
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro do Erro", ex.Message, "OK");
+            }
+        }
     }
 }
