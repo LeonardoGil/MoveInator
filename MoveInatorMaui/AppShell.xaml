@@ -5,13 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MoveInatorMaui"
     xmlns:pages="clr-namespace:MoveInatorMaui.Pages"
-    xmlns:cadastroPages="clr-namespace:MoveInatorMaui.Pages.Cadastros"
+    xmlns:importacao="clr-namespace:MoveInatorMaui.Pages.Importacoes"
+    xmlns:cadastro="clr-namespace:MoveInatorMaui.Pages.Cadastros"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="false"
     Shell.NavBarIsVisible="false"
     FlyoutBackground="#121212">
-
-   
+    
     <Shell.FlyoutHeader>
         <VerticalStackLayout>
             <Label HorizontalTextAlignment="Center"
@@ -27,22 +27,19 @@
                    Padding="5"/>
         </DataTemplate>
     </Shell.ItemTemplate>
-    
-    <ShellContent ContentTemplate="{DataTemplate pages:HomePage}">
-    </ShellContent>
 
-
-    <ShellContent Title="CSV" 
+    <ShellContent Title="Inicio" 
                   ContentTemplate="{DataTemplate pages:HomePage}"
-                  Route="CSV">
+                  Route="Home">
     </ShellContent>
-    <ShellContent Title="MDF-e" 
-                  ContentTemplate="{DataTemplate pages:ImportacaoMDFePage}"
-                  Route="MDFe">
+
+    <ShellContent Title="Importação Xml" 
+                  ContentTemplate="{DataTemplate importacao:ImportacaoXmlPage}"
+                  Route="ImportacaoXml">
     </ShellContent>
 
     <ShellContent Title="Cadastro Empresa" 
-                  ContentTemplate="{DataTemplate cadastroPages:CadastroEmpresaPage}"
+                  ContentTemplate="{DataTemplate cadastro:CadastroEmpresaPage}"
                   Route="CadastroEmpresa">
     </ShellContent>
 </Shell>
