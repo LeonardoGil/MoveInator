@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoveInatorMaui.Pages.Importacoes.ImportacaoXmlPage"
              Title="Importação Xml">
-    <VerticalStackLayout>
-        
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource backgroundDefault}">
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

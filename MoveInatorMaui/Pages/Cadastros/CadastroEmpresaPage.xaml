@@ -26,10 +26,8 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20"
-                             Spacing="20"
-                             Style="{StaticResource fundo}">
-
+        <VerticalStackLayout Style="{StaticResource backgroundDefault}">
+            
             <Grid ColumnDefinitions="0.7*, 0.3*">
                 <Label Text="Empresas"
                        VerticalTextAlignment="Center"
@@ -41,16 +39,13 @@
                                        HorizontalOptions="End"
                                        Spacing="10"
                                        FlowDirection="RightToLeft">
-
                     <Button Text="Salvar"
                             FontSize="Small"
                             VerticalOptions="Center"
                             Clicked="Save_Clicked" />
-
                     <Button Text="Limpar"
                             FontSize="Small"
                             VerticalOptions="Center" />
-
                 </HorizontalStackLayout>
             </Grid>
 

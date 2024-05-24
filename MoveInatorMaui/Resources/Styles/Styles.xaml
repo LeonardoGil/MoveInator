@@ -20,7 +20,6 @@
 
     
     
-    
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="Cascadia Mono" />
         <Setter Property="FontSize" Value="Small" />
@@ -34,15 +33,14 @@
     </Style>
     
 
-
-    <Style TargetType="StackLayout" x:Key="fundo">
+    <Style TargetType="StackLayout" x:Key="backgroundDefault">
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Spacing" Value="20"/>
         <Setter Property="Background">
             <LinearGradientBrush StartPoint="0, 0"
                                  EndPoint="0, 1">
-                <GradientStop Color="#303030"
-                          Offset="0.1"/>
-                <GradientStop Color="#111111"
-                          Offset="1" />
+                <GradientStop Color="#303030" Offset="0.1"/>
+                <GradientStop Color="#111111" Offset="1" />
             </LinearGradientBrush>
         </Setter>
     </Style>
