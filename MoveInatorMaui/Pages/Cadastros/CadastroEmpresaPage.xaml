@@ -6,25 +6,6 @@
              x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
              Title="CadastroEmpresaPage">
 
-
-    <ContentPage.Resources>
-        <Style TargetType="Frame" x:Key="frameSelected">
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState x:Name="Normal" />
-                        <VisualState x:Name="Selected">
-                            <VisualState.Setters>
-                                <Setter Property="BackgroundColor"
-                                    Value="LightSkyBlue" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-    </ContentPage.Resources>
-
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource backgroundDefault}">
             
