@@ -6,6 +6,57 @@
 
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource backgroundDefault}">
+            <Grid ColumnDefinitions="0.7*, 0.3*">
+                <Label Text="MDF-e (XML)"
+                       VerticalTextAlignment="Center"
+                       Style="{StaticResource title}"
+                       Margin="20, 0" />
+
+                <HorizontalStackLayout Grid.Column="1"
+                                       Padding="5"
+                                       HorizontalOptions="End"
+                                       Spacing="10"
+                                       FlowDirection="RightToLeft">
+                    <Button Text="Gerar Arquivo"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+                    <Button Text="Adicionar"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+                    <Button Text="Limpar"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="0.25*, 0.25*, 0.25*, 0.25*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Text="Numero MDF-e"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
+
+                <!--Text="{Binding Empresa.RazaoSocial}"-->
+                <Entry x:Name="numeroMDFeEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="1" />
+
+                <Label Text="Tipo Documento"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Column="1" />
+
+                <StackLayout RadioButtonGroup.GroupName="tipoDocumento"
+                             Grid.Row="1"
+                             Grid.Column="1">
+                    <RadioButton Content="CT-e" />
+                    <RadioButton Content="NF-e" />
+                </StackLayout>
+            </Grid>
 
         </VerticalStackLayout>
     </ScrollView>
