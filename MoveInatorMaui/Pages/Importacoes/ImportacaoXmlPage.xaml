@@ -34,15 +34,17 @@
                   RowSpacing="10"
                   ColumnSpacing="10">
 
+                <!-- Line 0 -->
+                
                 <Label Text="Numero MDF-e"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"
                        Padding="5, 0"/>
 
-                <!--Text="{Binding Empresa.RazaoSocial}"-->
                 <Entry x:Name="numeroMDFeEntry"
                        Placeholder="Obrigatório"
-                       Grid.Row="1" />
+                       Grid.Row="1" 
+                       VerticalOptions="Start"/>
 
                 <Label Text="Tipo Documento"
                        HorizontalOptions="Start"
@@ -56,8 +58,86 @@
                     <RadioButton Content="CT-e" />
                     <RadioButton Content="NF-e" />
                 </StackLayout>
-            </Grid>
 
+                <Label Text="Numero Documento"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Column="2" />
+
+                <Entry x:Name="numeroDocumentoEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="1" 
+                       Grid.Column="2"
+                       VerticalOptions="Start"/>
+
+                <Label Text="Emissor"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Column="3" />
+
+                <Picker x:Name="emissorPicker"
+                        Grid.Row="1" 
+                        Grid.Column="3"
+                        VerticalOptions="Start"
+                        IsEnabled="False">
+                </Picker>
+                
+                <!-- Line 1 -->
+
+                <Label Text="Série MDF-e"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"/>
+
+                <Entry x:Name="serieMDFeEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3" 
+                       VerticalOptions="Start"/>
+
+                <Label Text="Data Emissão"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"
+                       Grid.Column="1"/>
+
+                <Entry x:Name="dataEmissaoEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3" 
+                       VerticalOptions="Start"
+                       Grid.Column="1"/>
+
+                <Label Text="Série Documento"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"
+                       Grid.Column="2" />
+
+                <Entry x:Name="serieDocumentoEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3" 
+                       Grid.Column="2"
+                       VerticalOptions="Start"/>
+
+                <Label Text="Motorista"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"
+                       Grid.Column="4" />
+
+                <Picker x:Name="motoristaPicker"
+                        Grid.Row="3" 
+                        Grid.Column="4"
+                        VerticalOptions="Start"
+                        IsEnabled="False">
+                </Picker>
+            </Grid>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
