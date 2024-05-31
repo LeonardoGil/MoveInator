@@ -42,4 +42,9 @@
                   ContentTemplate="{DataTemplate cadastro:CadastroEmpresaPage}"
                   Route="CadastroEmpresa">
     </ShellContent>
+    
+    <ShellContent Title="Cadastro Motorista" 
+              ContentTemplate="{DataTemplate cadastro:CadastroMotoristaPage}"
+              Route="CadastroMotorista">
+    </ShellContent>
 </Shell>
