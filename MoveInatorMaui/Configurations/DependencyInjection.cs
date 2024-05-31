@@ -29,7 +29,8 @@ namespace MoveInatorMaui.Configurations
         public static MauiAppBuilder InjectMappers(this MauiAppBuilder builder)
         {
             builder.Services.AddAutoMapper(typeof(EmpresaProfile));
-
+            builder.Services.AddAutoMapper(typeof(MotoristaProfile));
+            
             return builder;
 
         }
