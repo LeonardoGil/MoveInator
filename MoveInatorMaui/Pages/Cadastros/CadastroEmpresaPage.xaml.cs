@@ -4,8 +4,11 @@ using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Core.Extensions;
 using MoveInatorApplication.Models;
+using MoveInatorApplication.Services;
 using MoveInatorApplication.Services.Interfaces;
-using MoveInatorMaui.ViewModels;
+using MoveInatorDomain.Entities.Cadastros;
+using MoveInatorDomain.Entities.Outros;
+using MoveInatorMaui.ViewModels.Pages;
 
 namespace MoveInatorMaui.Pages.Cadastros;
 
