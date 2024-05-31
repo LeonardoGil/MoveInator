@@ -3,7 +3,7 @@ using FluentValidation;
 using MoveInatorApplication.Models;
 using System.Collections.ObjectModel;
 
-namespace MoveInatorMaui.ViewModels.Pages
+namespace MoveInatorMaui.ViewModels
 {
     public partial class CadastroEmpresaViewModel : ObservableValidator
     {
