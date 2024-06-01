@@ -1,6 +1,6 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
-using FluentValidation;
+using CommunityToolkit.Maui.Core.Extensions;
 using MoveInatorApplication.Models;
 using MoveInatorApplication.Services.Interfaces;
 using MoveInatorApplication.Validators;
@@ -20,9 +20,15 @@ public partial class CadastroMotoristaPage : ContentPage
 
         BindingContext = ViewModel = new CadastroMotoristaViewModel();
 
+        LoadMotoristas();
         InitializeComponent();
     }
-    
+
+    private void LoadMotoristas()
+    {
+        ViewModel.ListaMotorista = _motoristaServices.GetModels().ToObservableCollection();
+    }
+
     private async Task Add(MotoristaModel motoristaModel)
     {
         await _motoristaServices.Add(motoristaModel);
