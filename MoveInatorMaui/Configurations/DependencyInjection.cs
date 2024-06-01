@@ -13,6 +13,7 @@ namespace MoveInatorMaui.Configurations
             builder.Services.AddSingleton<AppShell>();
             
             builder.Services.AddSingleton<CadastroEmpresaPage>();
+            builder.Services.AddSingleton<CadastroMotoristaPage>();
 
             return builder;
         }
