@@ -3,14 +3,14 @@ using System.Text.Json;
 using System.Text;
 using MoveInatorDomain.Entities.Outros;
 
-namespace MoveInatorApplication.Services
+namespace MoveInatorApplication.Services.Entities
 {
     public class DatabaseService : IDatabaseService
     {
         public DatabaseJson Database { get; set; }
 
         public DatabaseService() => Database = Load().Result;
-        
+
         public async Task Save()
         {
             try
@@ -46,7 +46,7 @@ namespace MoveInatorApplication.Services
                     throw new FileNotFoundException($"Arquivo {DatabaseJson.FilePath} não encontrado!");
 
                 var database = JsonSerializer.Deserialize<DatabaseJson>(File.ReadAllText(DatabaseJson.FilePath));
-                
+
                 database.AddCollectionChangeEvent();
                 database.Atualizado = true;
 

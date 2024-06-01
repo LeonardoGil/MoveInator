@@ -5,14 +5,14 @@ using MoveInatorDomain.Entities.Cadastros;
 using MoveInatorDomain.Entities.Outros;
 using System.Reflection;
 
-namespace MoveInatorApplication.Services
+namespace MoveInatorApplication.Services.Entities
 {
     public class EmpresaService : IEmpresaService
     {
         private readonly IDatabaseService databaseService;
         private readonly IMapper mapper;
 
-        public EmpresaService(IDatabaseService _databaseService, 
+        public EmpresaService(IDatabaseService _databaseService,
                               IMapper _mapper)
         {
             databaseService = _databaseService;
@@ -24,7 +24,7 @@ namespace MoveInatorApplication.Services
             var empresa = mapper.Map<Empresa>(model);
 
             databaseService.Database.Empresas.Add(empresa);
-            
+
             await databaseService.Save();
         }
 

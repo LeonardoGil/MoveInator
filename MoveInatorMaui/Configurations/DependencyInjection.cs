@@ -1,5 +1,5 @@
 ﻿using MoveInatorApplication.Mappers;
-using MoveInatorApplication.Services;
+using MoveInatorApplication.Services.Entities;
 using MoveInatorApplication.Services.Interfaces;
 using MoveInatorMaui.Pages.Cadastros;
 
