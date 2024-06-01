@@ -22,6 +22,7 @@ namespace MoveInatorMaui.Configurations
         {
             builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
             builder.Services.AddSingleton<IEmpresaService, EmpresaService>();
+            builder.Services.AddSingleton<IMotoristaService, MotoristaService>();
 
             return builder;
 
