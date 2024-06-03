@@ -136,6 +136,19 @@
                         VerticalOptions="Start"
                         IsEnabled="False">
                 </Picker>
+
+                <Label Text="Diretório"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="4" />
+
+                <Entry x:Name="diretorioEntry"
+                       Text="C:\Temp"
+                       Placeholder="Obrigatório"
+                       Grid.Row="5" 
+                       Grid.ColumnSpan="2"
+                       VerticalOptions="Start"/>
             </Grid>
             
         </VerticalStackLayout>
