@@ -19,7 +19,8 @@
                                        FlowDirection="RightToLeft">
                     <Button Text="Gerar Arquivo"
                             FontSize="Small"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center" 
+                            Clicked="GenerateFile_Clicked"/>
                     <Button Text="Adicionar"
                             FontSize="Small"
                             VerticalOptions="Center" />
