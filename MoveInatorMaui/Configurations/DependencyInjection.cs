@@ -2,6 +2,7 @@
 using MoveInatorApplication.Services.Entities;
 using MoveInatorApplication.Services.Interfaces;
 using MoveInatorMaui.Pages.Cadastros;
+using MoveInatorMaui.Pages.Importacoes;
 
 namespace MoveInatorMaui.Configurations
 {
@@ -14,6 +15,8 @@ namespace MoveInatorMaui.Configurations
             
             builder.Services.AddSingleton<CadastroEmpresaPage>();
             builder.Services.AddSingleton<CadastroMotoristaPage>();
+            
+            builder.Services.AddSingleton<ImportacaoXmlPage>();
 
             return builder;
         }
