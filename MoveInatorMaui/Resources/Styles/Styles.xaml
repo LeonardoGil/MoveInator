@@ -18,8 +18,13 @@
         <Setter Property="TextColor" Value="{StaticResource Fail}" />
     </Style>
 
-    
-    
+    <Style TargetType="Picker">
+        <Setter Property="FontFamily" Value="Cascadia Mono" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+
+
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="Cascadia Mono" />
         <Setter Property="FontSize" Value="Small" />

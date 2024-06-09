@@ -82,9 +82,9 @@
                         Grid.Row="1" 
                         Grid.Column="3"
                         VerticalOptions="Start"
-                        IsEnabled="False">
-                </Picker>
-                
+                        ItemsSource="{Binding ListaEmpresa}"
+                        ItemDisplayBinding="{Binding RazaoSocial}" />
+
                 <!-- Line 1 -->
 
                 <Label Text="Série MDF-e"
@@ -135,8 +135,8 @@
                         Grid.Row="3" 
                         Grid.Column="4"
                         VerticalOptions="Start"
-                        IsEnabled="False">
-                </Picker>
+                        ItemsSource="{Binding ListaMotorista}"
+                        ItemDisplayBinding="{Binding Nome}"/>
 
                 <Label Text="Diretório"
                        HorizontalOptions="Start"
