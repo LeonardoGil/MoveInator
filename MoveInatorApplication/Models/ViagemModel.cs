@@ -1,8 +1,8 @@
 ﻿using MoveInatorDomain.Enums;
 
-namespace MoveInatorDomain.Models
+namespace MoveInatorApplication.Models
 {
-    public class ViagemViewModel
+    public class ViagemModel
     {
         private TipoDocumentoViagemEnum _tipoViagem;
 

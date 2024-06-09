@@ -1,7 +1,7 @@
-﻿using MoveInatorApplication.Services.Interfaces;
+﻿using MoveInatorApplication.Models;
+using MoveInatorApplication.Services.Interfaces;
 using MoveInatorDomain.Entities.Importacao;
 using MoveInatorDomain.Enums;
-using MoveInatorDomain.Models;
 using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorApplication.Services
@@ -15,7 +15,7 @@ namespace MoveInatorApplication.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<MDFeViewModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        public async Task<string> GenerateAsync(string path, List<MDFeModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
             var taskConvertMDFe = ConvertToMDFeAsync(mdfeViews, tipoDocumento);
 
@@ -50,7 +50,7 @@ namespace MoveInatorApplication.Services
         }
 
         #region Private
-        private async Task<MDFe> ConvertToMDFeAsync(List<MDFeViewModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        private async Task<MDFe> ConvertToMDFeAsync(List<MDFeModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
             var single = mdfeViews.First();
 

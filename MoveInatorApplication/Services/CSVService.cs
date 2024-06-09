@@ -1,7 +1,7 @@
-﻿using MoveInatorApplication.Services.Interfaces;
+﻿using MoveInatorApplication.Models;
+using MoveInatorApplication.Services.Interfaces;
 using MoveInatorDomain.Entities.Importacao;
 using MoveInatorDomain.Enums;
-using MoveInatorDomain.Models;
 using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorApplication.Services
@@ -15,7 +15,7 @@ namespace MoveInatorApplication.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<ViagemViewModel> viagensViewModel)
+        public async Task<string> GenerateAsync(string path, List<ViagemModel> viagensViewModel)
         {
             if (!Directory.Exists(path))
                 throw new Exception("Diretório não existe!");
@@ -38,7 +38,7 @@ namespace MoveInatorApplication.Services
 
         #region Private
 
-        private List<Manifesto> ConvertToViagemCSV(List<ViagemViewModel> viagensViewModel)
+        private List<Manifesto> ConvertToViagemCSV(List<ViagemModel> viagensViewModel)
         {
             var taskProcessViagensCSV = viagensViewModel.Select(ProcessConvertToViagemCSVAsync);
 
@@ -49,7 +49,7 @@ namespace MoveInatorApplication.Services
             return viagens;
         }
 
-        private async Task<List<Manifesto>> ProcessConvertToViagemCSVAsync(ViagemViewModel viagemViewModel)
+        private async Task<List<Manifesto>> ProcessConvertToViagemCSVAsync(ViagemModel viagemViewModel)
         {
             var viagens = new List<Manifesto>();
             var chaveAcesso = string.Empty;
@@ -111,7 +111,7 @@ namespace MoveInatorApplication.Services
             return viagens;
         }
 
-        private void ProcessEntregaCSVCTe(Manifesto viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVCTe(Manifesto viagem, ViagemModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
@@ -125,7 +125,7 @@ namespace MoveInatorApplication.Services
             viagem.ChaveDeAcessoDoCTe = cte.ChaveDeAcesso;
         }
 
-        private void ProcessEntregaCSVNFe(Manifesto viagem, ViagemViewModel viagemViewModel, int index)
+        private void ProcessEntregaCSVNFe(Manifesto viagem, ViagemModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));

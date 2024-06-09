@@ -1,8 +1,8 @@
 ﻿using MoveInatorDomain.Enums;
 
-namespace MoveInatorDomain.Models
+namespace MoveInatorApplication.Models
 {
-    public class MDFeViewModel
+    public class MDFeModel
     {
         public int Numero { get; set; }
 

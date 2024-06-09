@@ -2,9 +2,9 @@
 using MoveInatorDomain.Enums;
 using System.ComponentModel;
 
-namespace MoveInatorDomain.Models
+namespace MoveInatorApplication.Models
 {
-    public class TokenViewModel
+    public class TokenModel
     {
         public TokenAPIEnum API { get; set; }
 
