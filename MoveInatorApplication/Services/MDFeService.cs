@@ -56,12 +56,12 @@ namespace MoveInatorApplication.Services
 
             var mdfe = new MDFe
             {
-                ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.CnpjEmissor), single.Serie, single.Numero),
-                Emissor = single.Emissor,
-                CnpjEmissor = single.CnpjEmissor,
+                ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.MDFe, 42, single.DataEmissao, long.Parse(single.Empresa.Cnpj), single.Serie, single.Numero),
+                Emissor = single.Empresa.RazaoSocial,
+                CnpjEmissor = single.Empresa.Cnpj,
                 DataEmissao = single.DataEmissao,
-                Motorista = single.NomeMotorista,
-                CpfMotorista = single.CpfMotorista,
+                Motorista = single.Motorista.Nome,
+                CpfMotorista = single.Motorista.Cpf,
                 TipoDocumento = tipoDocumento,
                 TipoVeiculo = single.TipoVeiculo
             };
@@ -73,17 +73,18 @@ namespace MoveInatorApplication.Services
                     case TipoDocumentoEnum.CTe:
                         mdfe.CTes.Add(new CTe
                         {
-                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
-                            ChaveAcessoNFe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
-                            CnpjEmissor = documento.CnpjEmissor,
+                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.CTe, 42, documento.DataEmissao, long.Parse(documento.Empresa.Cnpj), documento.SerieDocumento, documento.NumeroDocumento),
+                            ChaveAcessoNFe = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.Empresa.Cnpj), documento.SerieDocumento, documento.NumeroDocumento),
+                            CnpjEmissor = documento.Empresa.Cnpj,
                             DataEmissao = documento.DataEmissao
                         });
                         break;
+                    
                     case TipoDocumentoEnum.NFe:
                         mdfe.NFes.Add(new NFe
                         {
-                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.CnpjEmissor), documento.SerieDocumento, documento.NumeroDocumento),
-                            CnpjEmissor = documento.CnpjEmissor,
+                            ChaveAcesso = new ChaveAcesso((int)ModeloDocumentoEnum.NFe, 42, documento.DataEmissao, long.Parse(documento.Empresa.Cnpj), documento.SerieDocumento, documento.NumeroDocumento),
+                            CnpjEmissor = documento.Empresa.Cnpj,
                             DataEmissao = documento.DataEmissao
                         });
                         break;
@@ -148,10 +149,6 @@ namespace MoveInatorApplication.Services
 
             }
 
-
-
-
-
             var filePath = Path.Combine(path, $"MoveInator_MDFe{mdfe.ChaveAcesso}.xml");
 
             await fileService.GenerateFileAsync(filePath, template);
@@ -191,6 +188,7 @@ namespace MoveInatorApplication.Services
 
             await fileService.GenerateFileAsync(filePath, template);
         }
+
         #endregion
     }
 }

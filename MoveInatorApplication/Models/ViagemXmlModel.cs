@@ -14,13 +14,9 @@ namespace MoveInatorApplication.Models
 
         public DateTime DataEmissao { get; set; }
 
-        public string Emissor { get; set; }
+        public EmpresaModel Empresa { get; set; }
 
-        public string CnpjEmissor { get; set; }
-
-        public string NomeMotorista { get; set; }
-
-        public string CpfMotorista { get; set; }
+        public MotoristaModel Motorista { get; set; }
 
         public TipoVeiculoEnum TipoVeiculo { get; set; }
     }
