@@ -5,6 +5,6 @@ namespace MoveInatorApplication.Services.Interfaces
 {
     public interface IMDFeService
     {
-        Task<string> GenerateAsync(string path, List<MDFeModel> mdfeViews, TipoDocumentoEnum tipoDocumento);
+        Task<string> GenerateAsync(string path, List<ViagemXmlModel> mdfeViews, TipoDocumentoEnum tipoDocumento);
     }
 }

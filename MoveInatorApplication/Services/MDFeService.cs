@@ -15,7 +15,7 @@ namespace MoveInatorApplication.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<MDFeModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        public async Task<string> GenerateAsync(string path, List<ViagemXmlModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
             var taskConvertMDFe = ConvertToMDFeAsync(mdfeViews, tipoDocumento);
 
@@ -50,7 +50,7 @@ namespace MoveInatorApplication.Services
         }
 
         #region Private
-        private async Task<MDFe> ConvertToMDFeAsync(List<MDFeModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        private async Task<MDFe> ConvertToMDFeAsync(List<ViagemXmlModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
         {
             var single = mdfeViews.First();
 

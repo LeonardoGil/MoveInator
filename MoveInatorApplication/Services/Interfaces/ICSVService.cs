@@ -4,6 +4,6 @@ namespace MoveInatorApplication.Services.Interfaces
 {
     public interface ICSVService
     {
-        Task<string> GenerateAsync(string path, List<ViagemModel> viagens);
+        Task<string> GenerateAsync(string path, List<ViagemCsvModel> viagens);
     }
 }

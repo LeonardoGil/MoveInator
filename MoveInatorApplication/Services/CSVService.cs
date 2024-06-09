@@ -15,7 +15,7 @@ namespace MoveInatorApplication.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<ViagemModel> viagensViewModel)
+        public async Task<string> GenerateAsync(string path, List<ViagemCsvModel> viagensViewModel)
         {
             if (!Directory.Exists(path))
                 throw new Exception("Diretório não existe!");
@@ -38,7 +38,7 @@ namespace MoveInatorApplication.Services
 
         #region Private
 
-        private List<Manifesto> ConvertToViagemCSV(List<ViagemModel> viagensViewModel)
+        private List<Manifesto> ConvertToViagemCSV(List<ViagemCsvModel> viagensViewModel)
         {
             var taskProcessViagensCSV = viagensViewModel.Select(ProcessConvertToViagemCSVAsync);
 
@@ -49,7 +49,7 @@ namespace MoveInatorApplication.Services
             return viagens;
         }
 
-        private async Task<List<Manifesto>> ProcessConvertToViagemCSVAsync(ViagemModel viagemViewModel)
+        private async Task<List<Manifesto>> ProcessConvertToViagemCSVAsync(ViagemCsvModel viagemViewModel)
         {
             var viagens = new List<Manifesto>();
             var chaveAcesso = string.Empty;
@@ -111,7 +111,7 @@ namespace MoveInatorApplication.Services
             return viagens;
         }
 
-        private void ProcessEntregaCSVCTe(Manifesto viagem, ViagemModel viagemViewModel, int index)
+        private void ProcessEntregaCSVCTe(Manifesto viagem, ViagemCsvModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));
@@ -125,7 +125,7 @@ namespace MoveInatorApplication.Services
             viagem.ChaveDeAcessoDoCTe = cte.ChaveDeAcesso;
         }
 
-        private void ProcessEntregaCSVNFe(Manifesto viagem, ViagemModel viagemViewModel, int index)
+        private void ProcessEntregaCSVNFe(Manifesto viagem, ViagemCsvModel viagemViewModel, int index)
         {
             var mes = int.Parse(viagem.DataEmissao.ToString("MM"));
             var ano = int.Parse(viagem.DataEmissao.ToString("yy"));

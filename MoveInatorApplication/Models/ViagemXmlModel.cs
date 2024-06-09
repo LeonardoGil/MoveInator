@@ -2,7 +2,7 @@
 
 namespace MoveInatorApplication.Models
 {
-    public class MDFeModel
+    public class ViagemXmlModel
     {
         public int Numero { get; set; }
 

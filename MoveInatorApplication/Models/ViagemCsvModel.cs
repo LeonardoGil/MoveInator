@@ -2,7 +2,7 @@
 
 namespace MoveInatorApplication.Models
 {
-    public class ViagemModel
+    public class ViagemCsvModel
     {
         private TipoDocumentoViagemEnum _tipoViagem;
 
