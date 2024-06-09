@@ -1,5 +1,8 @@
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Core.Extensions;
 using MoveInatorApplication.Services.Interfaces;
+using MoveInatorApplication.Validators;
 using MoveInatorMaui.ViewModels;
 
 namespace MoveInatorMaui.Pages.Importacoes;
@@ -19,8 +22,9 @@ public partial class ImportacaoXmlPage : ContentPage
 
         BindingContext = ViewModel;
 
+        Loaded += Page_Loaded;
+
         InitializeComponent();
-        InitializePickers();
     }
 
     private void InitializePickers()
@@ -29,7 +33,37 @@ public partial class ImportacaoXmlPage : ContentPage
         ViewModel.ListaEmpresa = _empresaService.GetModels().ToObservableCollection();
     }
 
-    private void GenerateFile_Clicked(object sender, EventArgs e)
+    private async Task<bool> Validate()
+    {
+        var validator = new ViagemXmlModelValidator().Validate(ViewModel.Viagem);
+
+        foreach (var erro in validator.Errors)
+            await Toast.Make(erro.ErrorMessage, ToastDuration.Short).Show();
+
+        return validator.IsValid;
+    }
+
+    private async void Page_Loaded(object sender, EventArgs e)
+    {
+        InitializePickers();
+    }
+
+    private async void Add_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!await Validate())
+                return;
+
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro do Erro", ex.Message, "OK");
+        }
+    }
+
+    private async void GenerateFile_Clicked(object sender, EventArgs e)
     {
         throw new NotImplementedException();
     }

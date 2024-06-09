@@ -11,5 +11,11 @@ namespace MoveInatorMaui.ViewModels
 
         [ObservableProperty]
         public ObservableCollection<MotoristaModel> listaMotorista = new();
+
+        [ObservableProperty]
+        public ObservableCollection<ViagemXmlModel> listaViagem= new();
+
+        [ObservableProperty]
+        public ViagemXmlModel viagem = new();
     }
 }

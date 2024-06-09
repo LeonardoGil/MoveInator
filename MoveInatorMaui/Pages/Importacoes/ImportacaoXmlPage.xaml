@@ -23,7 +23,8 @@
                             Clicked="GenerateFile_Clicked"/>
                     <Button Text="Adicionar"
                             FontSize="Small"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center" 
+                            Clicked="Add_Clicked"/>
                     <Button Text="Limpar"
                             FontSize="Small"
                             VerticalOptions="Center" />
@@ -83,7 +84,8 @@
                         Grid.Column="3"
                         VerticalOptions="Start"
                         ItemsSource="{Binding ListaEmpresa}"
-                        ItemDisplayBinding="{Binding RazaoSocial}" />
+                        ItemDisplayBinding="{Binding RazaoSocial}"
+                        SelectedItem="{Binding Viagem.Empresa}"/>
 
                 <!-- Line 1 -->
 
@@ -136,7 +138,8 @@
                         Grid.Column="4"
                         VerticalOptions="Start"
                         ItemsSource="{Binding ListaMotorista}"
-                        ItemDisplayBinding="{Binding Nome}"/>
+                        ItemDisplayBinding="{Binding Nome}"
+                        SelectedItem="{Binding Viagem.Motorista}"/>
 
                 <Label Text="Diretório"
                        HorizontalOptions="Start"
