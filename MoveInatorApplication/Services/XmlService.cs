@@ -6,11 +6,11 @@ using UtilityLib.Domains.Entities.DocumentosFiscais;
 
 namespace MoveInatorApplication.Services
 {
-    public class MDFeService : IMDFeService
+    public class XmlService : IXmlService
     {
         private readonly IFileService fileService;
 
-        public MDFeService(IFileService fileService)
+        public XmlService(IFileService fileService)
         {
             this.fileService = fileService;
         }
