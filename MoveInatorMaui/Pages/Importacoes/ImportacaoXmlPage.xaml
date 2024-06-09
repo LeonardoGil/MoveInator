@@ -46,7 +46,8 @@
                 <Entry x:Name="numeroMDFeEntry"
                        Placeholder="Obrigatório"
                        Grid.Row="1" 
-                       VerticalOptions="Start"/>
+                       VerticalOptions="Start"
+                       Text="{Binding Viagem.Numero}"/>
 
                 <Label Text="Tipo Documento"
                        HorizontalOptions="Start"
@@ -54,7 +55,8 @@
                        Padding="5, 0"
                        Grid.Column="1" />
 
-                <StackLayout RadioButtonGroup.GroupName="tipoDocumento"
+                <StackLayout RadioButtonGroup.GroupName="tipoDocumentoGroup"
+                             RadioButtonGroup.SelectedValue="{Binding Viagem.TipoDocumento}"
                              Grid.Row="1"
                              Grid.Column="1">
                     <RadioButton Content="CT-e" />
@@ -71,7 +73,8 @@
                        Placeholder="Obrigatório"
                        Grid.Row="1" 
                        Grid.Column="2"
-                       VerticalOptions="Start"/>
+                       VerticalOptions="Start"
+                       Text="{Binding Viagem.NumeroDocumento}"/>
 
                 <Label Text="Emissor"
                        HorizontalOptions="Start"
@@ -98,7 +101,8 @@
                 <Entry x:Name="serieMDFeEntry"
                        Placeholder="Obrigatório"
                        Grid.Row="3" 
-                       VerticalOptions="Start"/>
+                       VerticalOptions="Start"
+                       Text="{Binding Viagem.Serie}" />
 
                 <Label Text="Data Emissão"
                        HorizontalOptions="Start"
@@ -111,7 +115,8 @@
                        Placeholder="Obrigatório"
                        Grid.Row="3" 
                        VerticalOptions="Start"
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       Text="{Binding Viagem.DataEmissao}"/>
 
                 <Label Text="Série Documento"
                        HorizontalOptions="Start"
@@ -124,7 +129,8 @@
                        Placeholder="Obrigatório"
                        Grid.Row="3" 
                        Grid.Column="2"
-                       VerticalOptions="Start"/>
+                       VerticalOptions="Start"
+                       Text="{Binding Viagem.SerieDocumento}"/>
 
                 <Label Text="Motorista"
                        HorizontalOptions="Start"
@@ -148,13 +154,54 @@
                        Grid.Row="4" />
 
                 <Entry x:Name="diretorioEntry"
-                       Text="C:\Temp"
                        Placeholder="Obrigatório"
                        Grid.Row="5" 
                        Grid.ColumnSpan="2"
-                       VerticalOptions="Start"/>
+                       VerticalOptions="Start"
+                       Text="{Binding Diretorio}"/>
             </Grid>
-            
+
+            <ListView ItemsSource="{Binding ListaViagem}"
+                      SelectionMode="None"
+                      x:Name="ViagemListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Background="#404040"
+                                   CornerRadius="14"
+                                   Padding="10"
+                                   Margin="0, 5">
+
+                                <Grid ColumnDefinitions=".7*, 0.3*">
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding Numero}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               Padding="5, 2"/>
+
+                                        <Label Text="{Binding Serie}"
+                                               TextColor="DarkGray"
+                                               FontSize="14"
+                                               Padding="8, 0"/>
+                                    </VerticalStackLayout>
+                                    
+                                    <HorizontalStackLayout HorizontalOptions="End"
+                                               Grid.Column="1"
+                                               Spacing="5"
+                                               Padding="5">
+                                        
+                                        <Button Text="Excluir" 
+                                                BackgroundColor="{StaticResource Fail}"
+                                                BindingContext="{Binding .}"
+                                                Clicked="RemoveViagem_Clicked"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

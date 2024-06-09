@@ -1,4 +1,5 @@
 ﻿using MoveInatorApplication.Mappers;
+using MoveInatorApplication.Services;
 using MoveInatorApplication.Services.Entities;
 using MoveInatorApplication.Services.Interfaces;
 using MoveInatorMaui.Pages.Cadastros;
@@ -26,6 +27,9 @@ namespace MoveInatorMaui.Configurations
             builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
             builder.Services.AddSingleton<IEmpresaService, EmpresaService>();
             builder.Services.AddSingleton<IMotoristaService, MotoristaService>();
+            
+            builder.Services.AddSingleton<IXmlService, XmlService>();
+            builder.Services.AddSingleton<IFileService, FileService>();
 
             return builder;
 

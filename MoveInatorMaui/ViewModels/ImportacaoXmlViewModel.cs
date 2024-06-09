@@ -17,5 +17,8 @@ namespace MoveInatorMaui.ViewModels
 
         [ObservableProperty]
         public ViagemXmlModel viagem = new();
+
+        [ObservableProperty]
+        public string diretorio = @"C:\Temp";
     }
 }

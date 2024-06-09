@@ -8,19 +8,19 @@ namespace MoveInatorApplication.Validators
         public ViagemXmlModelValidator()
         {
             RuleFor(viagem => viagem.Numero)
-                .Equal(0)
+                .NotEqual(0)
                 .WithMessage("Numero é Obrigatório!");
 
             RuleFor(viagem => viagem.Serie)
-                .Equal(0)
+                .NotEqual(0)
                 .WithMessage("Serie é Obrigatório!");
 
             RuleFor(viagem => viagem.NumeroDocumento)
-                .Equal(0)
+                .NotEqual(0)
                 .WithMessage("Numero Documento é Obrigatório!");
 
             RuleFor(viagem => viagem.SerieDocumento)
-                .Equal(0)
+                .NotEqual(0)
                 .WithMessage("Serie Documento é Obrigatório!");
 
             RuleFor(viagem => viagem.DataEmissao)

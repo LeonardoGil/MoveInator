@@ -18,6 +18,8 @@ namespace MoveInatorApplication.Models
 
         public MotoristaModel Motorista { get; set; }
 
+        public TipoDocumentoEnum TipoDocumento { get; set; }
+
         public TipoVeiculoEnum TipoVeiculo { get; set; }
     }
 }
