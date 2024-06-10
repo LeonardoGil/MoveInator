@@ -15,9 +15,9 @@ namespace MoveInatorApplication.Services
             this.fileService = fileService;
         }
 
-        public async Task<string> GenerateAsync(string path, List<ViagemXmlModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        public async Task<string> GenerateAsync(string path, List<ViagemXmlModel> mdfeViews)
         {
-            var taskConvertMDFe = ConvertToMDFeAsync(mdfeViews, tipoDocumento);
+            var taskConvertMDFe = ConvertToMDFeAsync(mdfeViews);
 
             if (!Directory.Exists(path))
                 throw new Exception("Diretório não existe!");
@@ -31,28 +31,29 @@ namespace MoveInatorApplication.Services
 
             var tasksGenerate = new List<Task>();
 
-            switch (tipoDocumento)
+            switch (mdfe.TipoDocumento)
             {
                 case TipoDocumentoEnum.CTe:
                     tasksGenerate.AddRange(mdfe.CTes.Select(cte => GenerateCTeAsync(newFolder, cte)));
                     break;
+
                 case TipoDocumentoEnum.NFe:
                     tasksGenerate.AddRange(mdfe.NFes.Select(nfe => GenerateNFeAsync(newFolder, nfe)));
-                    break;
-                default:
                     break;
             }
 
             tasksGenerate.Add(GenerateMDFeAsync(newFolder, mdfe));
-            Task.WaitAll(tasksGenerate.ToArray());
+            
+            Task.WaitAll([.. tasksGenerate]);
 
             return newFolder;
         }
 
         #region Private
-        private async Task<MDFe> ConvertToMDFeAsync(List<ViagemXmlModel> mdfeViews, TipoDocumentoEnum tipoDocumento)
+        private async Task<MDFe> ConvertToMDFeAsync(List<ViagemXmlModel> mdfeViews)
         {
             var single = mdfeViews.First();
+            var tipoDocumento = single.TipoDocumento;
 
             var mdfe = new MDFe
             {
