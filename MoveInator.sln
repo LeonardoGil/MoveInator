@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveInatorForms(Deprecated)", "MoveInatorForms\MoveInatorForms(Deprecated).csproj", "{DBAA8EEA-4985-42E3-860A-6D0F50411973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveInatorForms", "MoveInatorForms\MoveInatorForms.csproj", "{DBAA8EEA-4985-42E3-860A-6D0F50411973}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{FCFA237C-C5B9-4E6D-9CAB-D39958C98C26}"
 EndProject
