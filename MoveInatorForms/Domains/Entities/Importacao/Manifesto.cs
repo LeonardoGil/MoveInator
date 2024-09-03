@@ -86,7 +86,7 @@
                 nameof(SerieDoCTe),
                 nameof(ChaveDeAcessoDoCTe),
                 nameof(NomeDestinatario),
-                nameof(CNPJCPFDestinatario),
+                nameof(CNPJCPFDestinatario).Insert(4, "/"),
                 nameof(Logradouro),
                 nameof(Numero),
                 nameof(Bairro),
