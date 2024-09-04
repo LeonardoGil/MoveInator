@@ -1,12 +1,7 @@
 ## ✏ Sobre
 
 Uma aplicação idealizado com instuito de auxiliar os colaboradores do time Lonestar na realização do Desenvolvimento/Teste da aplicação do Move,
-agilizando processos manuais do contidiano
-
-* **Gere os arquivos de Impotação:** Manifesto e MDFe (CTe e NFe)
-* **Requesite os Tokens de Autenticação** (Portal e Mobile)
-* **Simule as funções do Aplicativo** (Iniciar Viagem, Gerar Ocorrência, Concluír Entrega...) 🚧 **(Em construção)**
-* **Realize integração direta com a API** (Adicionar/Editar/Excluir as Viagens/Entregas) 🚧 **(Em construção)**
+Facilitando processos manuais do contidiano
 
 > Version: 1.0.7.0
 
