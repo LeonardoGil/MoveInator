@@ -246,6 +246,7 @@ namespace MoveInatorForms.Forms.Views
             var enabled = ((List<ViagemViewModel>)ViagensViewBindingSource.DataSource).Any();
 
             buttonGerarCSV.Enabled = enabled;
+            buttonLimparCSV.Enabled = enabled;
         }
 
         private void GenerateCSV_ClickEvent(object sender, EventArgs e)
@@ -328,6 +329,14 @@ namespace MoveInatorForms.Forms.Views
             {
                 ViagensViewBindingSource.Clear();
             }
+        }
+
+        private void ClearCSVGrid_ClickEvent(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Deseja excluir os Documentos?", "Excluir Documentos", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+                ViagensViewBindingSource.Clear();
         }
 
         private void View_SizeChangedEvent(object sender, EventArgs e)

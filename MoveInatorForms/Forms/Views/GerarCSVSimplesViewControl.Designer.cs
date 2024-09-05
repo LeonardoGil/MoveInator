@@ -65,6 +65,7 @@
             labelDiretorio = new Label();
             labelTitulo = new Label();
             panelActions = new Panel();
+            buttonLimparCSV = new Button();
             folderBrowserDialog = new FolderBrowserDialog();
             buttonFolder = new Button();
             tableLayoutPanel = new TableLayoutPanel();
@@ -84,7 +85,7 @@
             buttonAdicionar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdicionar.ForeColor = SystemColors.ControlLightLight;
             buttonAdicionar.Image = Properties.Resources.adicionar_16;
-            buttonAdicionar.Location = new Point(155, 0);
+            buttonAdicionar.Location = new Point(237, 0);
             buttonAdicionar.Margin = new Padding(0);
             buttonAdicionar.Name = "buttonAdicionar";
             buttonAdicionar.Size = new Size(95, 27);
@@ -103,7 +104,7 @@
             buttonGerar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGerar.ForeColor = SystemColors.ControlLightLight;
             buttonGerar.Image = Properties.Resources.dados_16;
-            buttonGerar.Location = new Point(85, 0);
+            buttonGerar.Location = new Point(167, 0);
             buttonGerar.Margin = new Padding(0);
             buttonGerar.Name = "buttonGerar";
             buttonGerar.Size = new Size(70, 27);
@@ -122,13 +123,14 @@
             buttonLimpar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonLimpar.ForeColor = SystemColors.ControlLightLight;
             buttonLimpar.Image = Properties.Resources.vassoura_16;
-            buttonLimpar.Location = new Point(0, 0);
+            buttonLimpar.Location = new Point(82, 0);
             buttonLimpar.Margin = new Padding(0);
             buttonLimpar.Name = "buttonLimpar";
             buttonLimpar.Size = new Size(85, 27);
             buttonLimpar.TabIndex = 31;
             buttonLimpar.Text = "Limpar";
             buttonLimpar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLimpar.UseCompatibleTextRendering = true;
             buttonLimpar.UseVisualStyleBackColor = false;
             buttonLimpar.Click += ClearFields_ClickEvent;
             // 
@@ -336,12 +338,10 @@
             // 
             // textBoxNomeDestinatario
             // 
-            textBoxNomeDestinatario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxNomeDestinatario.Location = new Point(397, 144);
-            textBoxNomeDestinatario.Margin = new Padding(5, 0, 20, 0);
+            textBoxNomeDestinatario.Location = new Point(395, 147);
             textBoxNomeDestinatario.Name = "textBoxNomeDestinatario";
-            textBoxNomeDestinatario.Size = new Size(183, 25);
-            textBoxNomeDestinatario.TabIndex = 19;
+            textBoxNomeDestinatario.Size = new Size(100, 25);
+            textBoxNomeDestinatario.TabIndex = 50;
             // 
             // labelNomeDestinatario
             // 
@@ -455,7 +455,7 @@
             buttonGerarCSV.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGerarCSV.ForeColor = SystemColors.ControlLightLight;
             buttonGerarCSV.Image = Properties.Resources.arquivo_csv_16;
-            buttonGerarCSV.Location = new Point(250, 0);
+            buttonGerarCSV.Location = new Point(332, 0);
             buttonGerarCSV.Margin = new Padding(0);
             buttonGerarCSV.Name = "buttonGerarCSV";
             buttonGerarCSV.Size = new Size(80, 27);
@@ -501,15 +501,35 @@
             // 
             panelActions.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tableLayoutPanel.SetColumnSpan(panelActions, 4);
+            panelActions.Controls.Add(buttonLimparCSV);
             panelActions.Controls.Add(buttonLimpar);
             panelActions.Controls.Add(buttonGerarCSV);
             panelActions.Controls.Add(buttonAdicionar);
             panelActions.Controls.Add(buttonGerar);
-            panelActions.Location = new Point(270, 270);
+            panelActions.Location = new Point(188, 270);
             panelActions.Margin = new Padding(0, 3, 0, 3);
             panelActions.Name = "panelActions";
-            panelActions.Size = new Size(330, 27);
+            panelActions.Size = new Size(412, 27);
             panelActions.TabIndex = 47;
+            // 
+            // buttonLimparCSV
+            // 
+            buttonLimparCSV.Enabled = false;
+            buttonLimparCSV.FlatAppearance.BorderSize = 0;
+            buttonLimparCSV.FlatAppearance.MouseDownBackColor = Color.FromArgb(56, 56, 56);
+            buttonLimparCSV.FlatStyle = FlatStyle.Flat;
+            buttonLimparCSV.Image = Properties.Resources.lixeira_16;
+            buttonLimparCSV.ImageAlign = ContentAlignment.TopLeft;
+            buttonLimparCSV.Location = new Point(0, 0);
+            buttonLimparCSV.Margin = new Padding(0);
+            buttonLimparCSV.Name = "buttonLimparCSV";
+            buttonLimparCSV.Size = new Size(82, 27);
+            buttonLimparCSV.TabIndex = 47;
+            buttonLimparCSV.Text = " Excluir";
+            buttonLimparCSV.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLimparCSV.UseCompatibleTextRendering = true;
+            buttonLimparCSV.UseVisualStyleBackColor = false;
+            buttonLimparCSV.Click += ClearCSVGrid_ClickEvent;
             // 
             // folderBrowserDialog
             // 
@@ -664,5 +684,6 @@
         private TableLayoutPanel tableLayoutPanel;
         private TextBox textBoxCodigoVeiculo;
         private Label labelCodigoVeiculo;
+        private Button buttonLimparCSV;
     }
 }
