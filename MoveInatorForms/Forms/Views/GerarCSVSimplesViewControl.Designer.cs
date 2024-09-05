@@ -520,10 +520,10 @@
             buttonLimparCSV.FlatStyle = FlatStyle.Flat;
             buttonLimparCSV.Image = Properties.Resources.lixeira_16;
             buttonLimparCSV.ImageAlign = ContentAlignment.TopLeft;
-            buttonLimparCSV.Location = new Point(-3, 0);
+            buttonLimparCSV.Location = new Point(0, 0);
             buttonLimparCSV.Margin = new Padding(0);
             buttonLimparCSV.Name = "buttonLimparCSV";
-            buttonLimparCSV.Size = new Size(90, 27);
+            buttonLimparCSV.Size = new Size(82, 27);
             buttonLimparCSV.TabIndex = 47;
             buttonLimparCSV.Text = " Excluir";
             buttonLimparCSV.TextImageRelation = TextImageRelation.ImageBeforeText;
