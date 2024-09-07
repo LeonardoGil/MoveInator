@@ -192,7 +192,7 @@
                                         
                                         <Button Text="Excluir" 
                                                 BackgroundColor="{StaticResource Fail}"
-                                                BindingContext="{Binding .}"
+                                                CommandParameter="{Binding .}"
                                                 Clicked="RemoveViagem_Clicked"/>
                                     </HorizontalStackLayout>
                                 </Grid>

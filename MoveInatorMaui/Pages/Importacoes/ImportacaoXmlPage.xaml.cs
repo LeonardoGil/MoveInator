@@ -15,7 +15,6 @@ public partial class ImportacaoXmlPage : ContentPage
     private readonly IEmpresaService _empresaService;
     private readonly IXmlService _xmlService;
 
-
     protected ImportacaoXmlViewModel ViewModel { get; set; } = new ImportacaoXmlViewModel();
 
     public ImportacaoXmlPage(IMotoristaService motoristaService,
@@ -60,9 +59,12 @@ public partial class ImportacaoXmlPage : ContentPage
     {
         var validator = new ViagemXmlModelValidator().Validate(viagem);
 
-        var message = string.Join(Environment.NewLine, validator.Errors);
+        if (validator.Errors.Any())
+        {
+            var message = string.Join(Environment.NewLine, validator.Errors);
 
-        await Toast.Make(message, ToastDuration.Short).Show();
+            await Toast.Make(message, ToastDuration.Short).Show();
+        }
 
         return validator.IsValid;
     }
@@ -76,8 +78,10 @@ public partial class ImportacaoXmlPage : ContentPage
     {
         try
         {
-            if (sender is ViagemXmlModel viagem)
+            if (sender is Button button && button.CommandParameter is ViagemXmlModel viagem)
+            {
                 ViewModel.ListaViagem.Remove(viagem);
+            }
         }
         catch (Exception ex)
         {
@@ -104,7 +108,21 @@ public partial class ImportacaoXmlPage : ContentPage
 
     private async void GenerateFile_Clicked(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (!Directory.Exists(ViewModel.Diretorio))
+                throw new Exception("Informe um Diretório válido");
+
+            var filePath = _xmlService.GenerateAsync(ViewModel.Diretorio, ViewModel.ListaViagem.ToList()).Result;
+
+            ViewModel.ListaViagem.Clear();
+
+            await DisplayAlert("Documento Gerado", $"Diretório: {filePath}", "OK");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro do Erro", ex.Message, "OK");
+        }
     }
 
     private async void ListaViagem_Changed(object sender, NotifyCollectionChangedEventArgs e)
