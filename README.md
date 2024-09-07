@@ -1,7 +1,6 @@
 ## ✏ Sobre
 
-Uma aplicação idealizado com instuito de auxiliar os colaboradores do time Lonestar na realização do Desenvolvimento/Teste da aplicação do Move,
-Facilitando processos manuais do contidiano
+Gerador de documentos MDFe e CSVs...
 
 > Version: 1.0.7.0
 
