@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoveInatorMaui.Pages.Cadastros"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MoveInatorMaui.Pages.Cadastros.CadastroEmpresaPage"
+             Title="CadastroEmpresaPage">
+
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource backgroundDefault}">
+            
+            <Grid ColumnDefinitions="0.7*, 0.3*">
+                <Label Text="Empresas"
+                       VerticalTextAlignment="Center"
+                       Style="{StaticResource title}"
+                       Margin="20, 0" />
+
+                <HorizontalStackLayout Grid.Column="1"
+                                       Padding="5"
+                                       HorizontalOptions="End"
+                                       Spacing="10"
+                                       FlowDirection="RightToLeft">
+                    <Button Text="Salvar"
+                            FontSize="Small"
+                            VerticalOptions="Center"
+                            Clicked="Save_Clicked" />
+                    <Button Text="Limpar"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="0.50*, 0.50*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <!-- Group 0 -->
+                <Label Text="Razão Social"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
+
+                <Entry x:Name="razaoSocialEntry"
+                       Text="{Binding Empresa.RazaoSocial}"
+                       Placeholder="Obrigatório"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Grid.Column="0">
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                                        ValidStyle="{StaticResource ValidEntryStyle}"
+                                                        Flags="ValidateOnValueChanged"
+                                                        MinimumLength="4"
+                                                        MaximumLength="30"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <!-- Group 1 -->
+                <Label Text="CNPJ"
+                       Grid.Row="2"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
+
+                <Entry x:Name="cnpjEntry"
+                       Text="{Binding Empresa.Cnpj}"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <toolkit:MaskedBehavior Mask="XX.XXX.XXX/XXXX-XX" />
+                        <toolkit:CharactersValidationBehavior  MinimumLength="17"
+                                                               Flags="ValidateOnValueChanged"
+                                                               InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                                               ValidStyle="{StaticResource ValidEntryStyle}" />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Ambiente"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
+
+                <Picker x:Name="pickerAmbiente"
+                        FontSize="18"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        IsEnabled="False">
+                    <!--
+                        TO DO: Adicionar Picker Ambiente
+                    -->
+                </Picker>
+
+                <!-- Group 2 -->
+
+                <Label Text="ClientId"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" 
+                       Padding="5, 0"/>
+
+                <Entry Text="{Binding Empresa.ClientId}"
+                       Grid.Row="5"
+                       Grid.Column="0" />
+
+                <Label Text="ClientSecret"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" 
+                       Padding="5, 0"/>
+
+                <Entry Text="{Binding Empresa.ClientSecrect}"
+                       Grid.Row="5"
+                       Grid.Column="1" />
+            </Grid>
+
+            <ListView ItemsSource="{Binding ListaEmpresa}"
+                      SelectionMode="None"
+                      x:Name="empresasListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Background="#404040"
+                                   HasShadow="True"
+                                   CornerRadius="14"
+                                   Padding="10"
+                                   Margin="0, 5">
+                                
+                                <Grid ColumnDefinitions=".7*, 0.3*">
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding RazaoSocial}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               Padding="5, 2"/>
+
+                                        <Label Text="{Binding Cnpj}"
+                                               TextColor="DarkGray"
+                                               FontSize="14"
+                                               Padding="8, 0"/>
+                                    </VerticalStackLayout>
+                                    <HorizontalStackLayout HorizontalOptions="End"
+                                                           Grid.Column="1"
+                                                           Spacing="5"
+                                                           Padding="5">
+                                        <Button Text="Editar" 
+                                                BackgroundColor="{StaticResource Warning}"
+                                                Clicked="Edit_Clicked"
+                                                BindingContext="{Binding .}"/>
+                                        <Button Text="Excluir" 
+                                                BackgroundColor="{StaticResource Fail}"
+                                                Clicked="Delete_Clicked"
+                                                BindingContext="{Binding .}"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

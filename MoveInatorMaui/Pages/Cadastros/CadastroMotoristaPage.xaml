@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoveInatorMaui.Pages.Cadastros.CadastroMotoristaPage"
+             Title="CadastroMotoristaPage">
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource backgroundDefault}">
+            <Grid ColumnDefinitions="0.7*, 0.3*">
+                <Label Text="Empresas"
+                       VerticalTextAlignment="Center"
+                       Style="{StaticResource title}"
+                       Margin="20, 0" />
+
+                <HorizontalStackLayout Grid.Column="1"
+                               Padding="5"
+                               HorizontalOptions="End"
+                               Spacing="10"
+                               FlowDirection="RightToLeft">
+                    <Button Text="Salvar"
+                            FontSize="Small"
+                            VerticalOptions="Center"
+                            Clicked="Save_Clicked" />
+
+                    <Button Text="Limpar"
+                            FontSize="Small"
+                            VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid ColumnDefinitions="0.5*, 0.5*"
+                  RowDefinitions="auto, auto, auto, auto"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Text="Nome"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"/>
+
+                <Entry x:Name="nomeEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Motorista.Nome}"/>
+
+                <Label Text="Senha"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"/>
+
+                <Entry x:Name="senhaEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3"
+                       Text="{Binding Motorista.Senha}"/>
+
+                <Label Text="CPF"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Padding="5, 0"
+                       Grid.Row="2"
+                       Grid.Column="1"/>
+
+                <Entry x:Name="cpfEntry"
+                       Placeholder="Obrigatório"
+                       Grid.Row="3"
+                       Grid.Column="1" 
+                       Text="{Binding Motorista.Cpf}"/>
+            </Grid>
+
+            <ListView ItemsSource="{Binding ListaMotorista}"
+                      SelectionMode="None"
+                      x:Name="motoristasListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Background="#404040"
+                                   CornerRadius="14"
+                                   Padding="10"
+                                   Margin="0, 5">
+                                
+                                <Grid ColumnDefinitions=".7*, 0.3*">
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding Nome}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               Padding="5, 2"/>
+
+                                        <Label Text="{Binding Cpf}"
+                                               TextColor="DarkGray"
+                                               FontSize="14"
+                                               Padding="8, 0"/>
+                                    </VerticalStackLayout>
+                                    <HorizontalStackLayout HorizontalOptions="End"
+                                               Grid.Column="1"
+                                               Spacing="5"
+                                               Padding="5">
+                                        <Button Text="Editar" 
+                                                BackgroundColor="{StaticResource Warning}"
+                                                BindingContext="{Binding .}"
+                                                Clicked="Edit_Clicked"/>
+                                        <Button Text="Excluir" 
+                                                BackgroundColor="{StaticResource Fail}"
+                                                BindingContext="{Binding .}"
+                                                Clicked="Delete_Clicked"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -2,7 +2,16 @@
   "profiles": {
     "Windows Machine": {
       "commandName": "Project",
-      "nativeDebugging": false
+      "nativeDebugging": false,
+      "hotReloadProfile": "aspnetcore"
+    },
+    "Teste": {
+      "commandName": "Project",
+      "dotnetRunMessages": true
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
     }
   }
 }

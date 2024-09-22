@@ -4,12 +4,47 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MoveInatorMaui"
-    Shell.FlyoutBehavior="Disabled"
-    Title="MoveInatorMaui">
+    xmlns:pages="clr-namespace:MoveInatorMaui.Pages"
+    xmlns:importacao="clr-namespace:MoveInatorMaui.Pages.Importacoes"
+    xmlns:cadastro="clr-namespace:MoveInatorMaui.Pages.Cadastros"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="false"
+    Shell.NavBarIsVisible="false"
+    FlyoutBackground="#121212">
+    
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Text="MoveInator"/>
+        </VerticalStackLayout>                      
+    </Shell.FlyoutHeader>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Title}"
+                   FontSize="Micro"
+                   Padding="5"/>
+        </DataTemplate>
+    </Shell.ItemTemplate>
 
+    <ShellContent Title="Inicio" 
+                  ContentTemplate="{DataTemplate pages:HomePage}"
+                  Route="Home">
+    </ShellContent>
+
+    <ShellContent Title="Importação Xml" 
+                  ContentTemplate="{DataTemplate importacao:ImportacaoXmlPage}"
+                  Route="ImportacaoXml">
+    </ShellContent>
+
+    <ShellContent Title="Cadastro Empresa" 
+                  ContentTemplate="{DataTemplate cadastro:CadastroEmpresaPage}"
+                  Route="CadastroEmpresa">
+    </ShellContent>
+    
+    <ShellContent Title="Cadastro Motorista" 
+              ContentTemplate="{DataTemplate cadastro:CadastroMotoristaPage}"
+              Route="CadastroMotorista">
+    </ShellContent>
 </Shell>
